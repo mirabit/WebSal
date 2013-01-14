@@ -1,0 +1,833 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="../webgestext/xsltforms/xsltforms.xsl" type="text/xsl"?>
+<!--<?xml-stylesheet href="../xsltforms/xsltforms.xsl" type="text/xsl"?>-->
+<!--<?xsltforms-options debug="yes"?> -->
+<?css-conversion no?>
+
+<html 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:xforms="http://www.w3.org/2002/xforms"
+ xmlns:ev="http://www.w3.org/2001/xml-events"
+ xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:re="http://schemas.datacontract.org/2004/07/Revisal.Entities">
+	<head>
+		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> <!--  -->
+		<title>Revisal</title>  
+		<!--<link rel="stylesheet" href="sal.css"></link> -->
+		<link rel="stylesheet" href="selekt.css"></link>
+		<style type="text/css">
+			@namespace xforms url("http://www.w3.org/2002/xforms");
+			body {font-size: 0.9em;}
+			
+			/* The default field width for all inputs */
+			
+			legend {font-weight:italic;font-size:1.4em;}
+			b {color:#000000;padding:3mm;}
+			i {color:#000000;}
+			.tabelm {border: 1px solid black;width:260mm;height:310mm;padding:2mm;} 	
+			.tab {border-width:thin; border-style:solid; border-color:#aaaaaa}
+			.tab2 {width:85em}
+			.trsm {width:4.25em}
+			.trmd {width:8.5em}
+			.trbig {width:34em}
+			.fnu1{width:5em} 
+
+			.dvtxtdrv {z-index:2;width:80%;position:relative;border-radius:.7em .7em .7em .7em;padding:3mm 25mm 3mm 25mm;
+			border:solid 1px #61797B;box-shadow: 0px 0px 50px #C2CCD0;}
+	.dvtxt3 {z-index:2;width:60%;position:relative;border-radius: .7em  .7em .7em .7em;padding:2px;
+			border:solid 3px #61797B;box-shadow: 0px 0px 50px #C2CCD0; width:330mm;height:auto;}
+	.dvtxt4 {z-index:2;width:59%;position:relative;border-radius: .7em  .7em .7em .7em;padding:0px;
+			border:solid 3px #61797B;box-shadow: 0px 0px 50px #C2CCD0; width:330mm;height:auto;}
+		
+		.labs {font-style:italic;font-size:14px;text-align:left;padding:0px 0px 0px 0px;color:#250000;}
+		.dn1{font-style:italic;font-size:14px;text-align:left;padding:5px 0px 5px 10px; background-color:#ECECEC;}
+		.dn2{font-style:italic;font-size:14px;text-align:left;padding:5px 0px 5px 10px; background-color:#ECECEC;}	
+		.out1{font-style:italic;font-size:16px;text-align:left;font-weight:bold;color:#250000;padding:5px 0px 5px 10px; background-color:#ECECEC;}
+		.out2{font-style:italic;font-size:16px;text-align:left;font-weight:bold;color:#250000;padding:5px 0px 5px 10px; background-color:#ECECEC;}
+
+		.outf{font-style:italic;font-size:22px;text-align:left;font-weight:bold;color:#250000;padding:5px 0px 5px 10px; background-color:#ECECEC;}
+		.dfa0 input {text-align:left;}
+		.dfa3 input {width:8px;text-align:left;font-weight:bold;}
+		.dfa7 input {width:50px;text-align:left;font-weight:bold;}
+		.dfa8 input {height:7.0px; width:17em;text-align:left;font-size:22px;font-style:italic;}
+		.dfa9 input {width:15px;text-align:left}
+
+.dia {vertical-align:top; border: 0px solid black; font-size:18px;color:#000000; background-color:#C3C3C3;font-weight:bold;
+padding:1.0mm 0.5mm 1.0mm 0.5mm; }
+.dia1 {vertical-align:top; border: 0px solid black; font-size:16px;color:#000000;font-weight:bold; background-color:#C3C3C3;
+ padding:0.5mm 10.0mm 0.5mm 10.0mm;margin: 0px 900px 0px 30px }
+
+.ddia {vertical-align:top; border: 0px solid black; font-size:18px;color:#000000; background-color:#C3C3C3;font-weight:bold;
+padding:1.5mm 0.0mm 1.5mm 10.0mm; }
+
+.t7r1cn  {border-width:0px;border-style:outset; width:10px;text-align:center;background-color:#C3C3C3;font-weight:bold; padding:2px}
+.t7r1c1H  {border-width:0px;border-style:outset; width:5px;text-align:center; background-color:#C3C3C3;font-weight:bold;padding:2px}
+.t7r1c2H  {border-width:0px;border-style:outset; width:35px;text-align:center;background-color:#C3C3C3;font-weight:bold; padding:2px}
+.t7r1c3H  {border-width:0px;border-style:outset; width:50px;text-align:center; background-color:#C3C3C3;font-weight:bold;padding:2px}
+.t7r1c4H  {border-width:0px;border-style:outset; width:58px;text-align:center;background-color:#C3C3C3; font-weight:bold;padding:2px}
+.t7r1c5H  {border-width:0px;border-style:outset; width:92px;text-align:center;background-color:#C3C3C3; font-weight:bold;padding:2px}
+
+.t7r1cD  {border-width:1px;border-style:outset; width:15mm;text-align:left; padding:2px}
+.t7r1c3  {border-width:1px;border-style:outset; width:25mm;text-align:left; padding:2px}
+
+.t7r1c5  {border-width:0.1mm; border-style: none none none none; width:20mm;text-align:left; padding:2px}
+.t7r1c4  {border-width:1px;border-style:outset; width:50mm;text-align:left; padding:2px}
+.t7r1c6  {border-width:0.1mm; border-style: none solid solid solid; width:70mm;text-align:center; padding:10px}
+
+    .T1val3 .xf-value {width:24mm; border-style:none;text-align:center;}
+    .T1val0 .xf-value {width:32mm; border-style:none;text-align:center;}
+
+		</style>
+
+		<style type="text/css" media="print">
+    		.noprint{display: none;}
+    	</style>
+    
+		<style type="text/css">
+			#DetaliiSalariat { width: 90em;height: 60em;}
+		</style>
+
+		<script type="text/javascript" src="modalwin.js"></script>
+		<script type="text/javascript">
+			function openwin(){
+				if(navigator.javaEnabled()){;
+					ShowWindow('salToFile.xhtml',400,400,1,1);
+				}else{
+					alert("Nu găsesc plugin java instalat!\nPentru salvare fișier este necesar să aveți instalat pluginul java pentru browser!");
+				}
+			}
+		</script>
+
+		<script type="text/javascript" src="loadSal.js"/>
+
+		<xforms:model id="SAL">
+			<xforms:instance id="rvisal">
+				<DATE xmlns="">
+		   			<d/>																						
+				</DATE> 
+		 	</xforms:instance> 
+			<xforms:instance id="sal">
+				<DATE xmlns="">
+		   			<d/>																						
+				</DATE> 
+		 	</xforms:instance> 
+			<xforms:instance id="temprvs">
+				<DATE xmlns="">
+					<counter>0</counter>
+				</DATE>
+			</xforms:instance>
+			<xforms:instance id="tempasig">
+				<DATE xmlns="">
+					<counter>0</counter>
+				</DATE>
+			</xforms:instance>
+			<xforms:instance id="sablonrv">
+			<!--<xforms:instance id="rvisal" xmlns="">-->
+				<XmlReport>
+					<Header>
+						<ClientApplication>Revisal</ClientApplication>
+						<XmlVersion>0</XmlVersion>
+						<UploadId i:nil="true" />
+						<UploadDescription i:nil="true" />					
+						<Angajator>
+								<Adresa></Adresa>
+								<Contact>
+									<Email></Email>
+									<Fax></Fax>
+									<ReprezentantLegal></ReprezentantLegal>
+									<Telefon></Telefon>
+								</Contact>
+								<Detalii>
+								<!--<Detalii i:type="DetaliiAngajatorPersoanaJuridica">-->
+									<DomeniuActivitate>
+										<Cod>4711</Cod>
+										<Versiune>2</Versiune>
+									</DomeniuActivitate>
+									<Nume></Nume>
+									<Cui></Cui>
+									<CuiParinte i:nil="true"/>
+									<FormaJuridicaPJ></FormaJuridicaPJ>
+									<FormaOrganizarePJ></FormaOrganizarePJ>
+									<FormaProprietate></FormaProprietate>
+									<NivelInfiintare></NivelInfiintare>
+									<NumeParinte i:nil="true"/>
+								</Detalii>
+							<Localitate>
+								<CodSiruta></CodSiruta>
+							</Localitate>
+						</Angajator>
+					</Header>
+
+					<Salariati>
+						<Salariat>
+							<Adresa></Adresa>
+							<Cnp></Cnp>
+							<CnpVechi/>
+								<Contracte>
+									<Contract>
+										<Cor>
+											<Cod></Cod>
+											<Versiune></Versiune>
+										</Cor>
+										<DataConsemnare></DataConsemnare>
+										<DataContract></DataContract>
+										<DataInceputContract></DataInceputContract>
+										<DataSfarsitContract/>
+										<DateContractVechi/>
+										<Detalii/>
+										<ExceptieDataSfarsit/>
+										<NumarContract></NumarContract>
+										<NumereContractVechi/>
+										<Salariu>800</Salariu>
+										<SporuriSalariu/>
+										<StareCurenta>
+											<DataIncetareDetasare/>
+											<DataIncetareSuspendare/>
+											<StarePrecedenta/>
+										</StareCurenta>
+										<TimpMunca>
+											<Durata/>
+											<IntervalTimp/>
+											<Norma></Norma>
+											<Repartizare></Repartizare>
+										</TimpMunca>
+											<TipContract></TipContract>
+											<TipDurata></TipDurata>
+											<TipNorma></TipNorma>
+									</Contract>
+								</Contracte>
+							<DetaliiSalariatStrain/>
+							<Localitate>
+								<CodSiruta></CodSiruta>
+							</Localitate>
+							<Mentiuni/>
+							<Nationalitate>
+								<Nume></Nume>
+							</Nationalitate>
+							<Nume></Nume>
+							<Prenume></Prenume>
+							<TipActIdentitate></TipActIdentitate>
+						</Salariat>
+					</Salariati>
+				</XmlReport>
+			</xforms:instance>
+			<xforms:submission id="sxml" method="get" mediatype="application/zip" resource="revisal.xml"/>
+			<!--<xforms:submission id="RVS" method="put" replace="none" action="file://" ref="instance('rvisal')" includenamespaceprefixes="my"/>
+
+			<xforms:submission id="loadsal" method="get" replace="instance" instance="sal" serialization="none" action="file://"/>
+			<xforms:submission id="loadrvs" method="get" replace="instance" instance="rvisal" serialization="none" action="file://"/>-->
+		</xforms:model>
+  </head>
+
+<body bgcolor="#F3F3F3" text="#000000" rightmargin="800" topmargin="40" onload="loadSal();">
+<br/>
+<xforms:switch>
+
+
+		<xforms:case id="alegefis" class="p1">
+			<table class="dvtxtdrv" border="0" align="center" width="100%">
+				<tr>
+					<td>
+
+			<br/>
+			<div style="padding-left:1em;">
+				<span style="font-size:2em;color:#008080;padding:0.5em;">WebSal</span>
+				<span style="font-size:1.5em;color:#008080;padding:0.2em;">v.</span>
+				<!--<span style="font-size:1.5em;color:#008080;padding:0.2em;">
+				<xforms:output ref="instance('sablon')/@vers"/></span>-->
+			</div>
+			<hr align="center" color="#D7D5D8" width="100%"/>
+			<div align="center" class="tit1"><h3>REGISTRU ELECTRONIC EVIDENŢĂ SALARIAŢI</h3></div>
+,					<!--<hr align="center" color="#D7D5D8" width="100%"/>-->
+			<br/><br/>
+			<div  style="font-size:1.0em;"><label> Firma: </label><b> <xforms:output ref="instance('sal')/Date_firma/Firma" /></b></div>
+			<div  style="font-size:1.0em;">
+				<label>  Luna de lucru: </label><b><xforms:output value="substring(instance('sal')/LunaLucru,5,2)" class="TNval1"/></b>					
+				<label>  / </label><b><xforms:output value="substring(instance('sal')/LunaLucru,1,4)" class="TNval1"/></b>
+			</div>
+			<br/>
+			<div class="dvtxtdrv" border="0" align="center"  width="75%">
+				<!--<div><b>Preluare date implicite (din WebSal)din WebSal</b></div>
+				<div class="che1">
+					<xforms:trigger id="loadWS">
+						<xforms:label class="large button orange">Încarcă date implicite</xforms:label>
+						
+						<xforms:refresh ev:event="DOMActivate" model="D_RVS"/>
+						<xforms:toggle case="revsal" ev:event="DOMActivate"/>
+					</xforms:trigger>
+				</div>	-->
+				<div class="che1">
+				<b>Preluare date implicite (din WebSal)  </b>					
+					<xforms:trigger id="loadWS" appearance="minimal">
+						<xforms:action ev:event="DOMActivate">
+      
+<!--NEW  ANGAJATOR 12.10.2011-->
+
+<xforms:insert origin="instance('sablonrv')" context="instance('rvisal')" nodeset="."/> 
+<xforms:setvalue ref="instance('rvisal')/Header/Angajator/Localitate/CodSiruta" value="instance('sal')/Date_firma/Localitatea"/>
+<xforms:setvalue ref="instance('rvisal')/Header/Angajator/Adresa" value="instance('sal')/Date_firma/Strada"/>
+<xforms:setvalue ref="instance('rvisal')/Header/Angajator/Detalii/FormaJuridicaPJ" value="instance('sal')/Date_firma/RvsalID/@FormJuridID"/>
+<xforms:setvalue ref="instance('rvisal')/Header/Angajator/Detalii/FormaOrganizarePJ" value="instance('sal')/Date_firma/RvsalID/@FormOrgID"/>
+<xforms:setvalue ref="instance('rvisal')/Header/Angajator/Detalii/FormaProprietate" value="instance('sal')/Date_firma/RvsalID/@FormPropID"/>
+<xforms:setvalue ref="instance('rvisal')/Header/Angajator/Detalii/NivelInfiintare" value="instance('sal')/Date_firma/RvsalID/@TipSocID"/>
+<xforms:setvalue ref="instance('rvisal')/Header/Angajator/Detalii/DomeniuActivitate/Cod" value="instance('sal')/Date_firma/RvsalID/@DomActivID"/>
+<xforms:setvalue ref="instance('rvisal')/Header/Angajator/Detalii/NumeParinte" 
+value="concat(instance('sal')/Date_firma/Prefix,' ',instance('sal')/Date_firma/Firma,' ',instance('sal')/Date_firma/Sufix)"/>
+<xforms:setvalue ref="instance('rvisal')/Header/Angajator/Detalii/Nume" value="concat(instance('sal')/Date_firma/Prefix,instance('sal')/Date_firma/Firma,instance('sal')/Date_firma/Sufix)"/>
+<xforms:setvalue ref="instance('rvisal')/Header/Angajator/Detalii/Cui" value="instance('sal')/Date_firma/CISTVA"/>
+<xforms:setvalue ref="instance('rvisal')/Header/Angajator/Contact/Telefon" value="instance('sal')/Date_firma/Tel"/>
+<xforms:setvalue ref="instance('rvisal')/Header/Angajator/Contact/Fax" value="instance('sal')/Date_firma/Fax"/>
+<xforms:setvalue ref="instance('rvisal')/Header/Angajator/Contact/Email" value="instance('sal')/Date_firma/Mail"/>
+<xforms:setvalue ref="instance('rvisal')/Header/Angajator/Contact/ReprezentantLegal" 
+value="concat(instance('sal')/Date_operare/NumeO,' ',instance('sal')/Date_operare/PrenumeO)"/>
+<xforms:setvalue ref="instance('rvisal')/Header/Angajator/Detalii/CuiParinte" value="instance('sal')/Date_firma/CISTVA"/>
+
+<!-- Modificat  CONTRACTE si ANGAJATI   30oct 2011 -->
+
+<xforms:delete nodeset="instance('rvisal')/Salariati/Salariat"/>
+<xforms:setvalue ref="instance('tempasig')/counter" value="1"/>
+
+<xforms:action while="instance('tempasig')/counter &lt; count(instance('sal')/Personal/Salariat) + 1"  >
+<xforms:insert origin="instance('sablonrv')/Salariati/Salariat" context="instance('rvisal')/Salariati" nodeset="/Salariat" at="index('last')" position="after"/>
+
+												<!-- 1). Se completeaza  :       Daca cetatenia salariatului este Romana se introduce CNP-ul.
+															Daca cetatenia salariatului nu este romana se completeaza conform tabelului de mai jos:-->
+	<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat[number(instance('tempasig')/counter)]/ANGAJATID" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/@CNP"/>
+
+												<!-- 2). Se completeaza cu CUI/CIF/CNP angajator,            NU MERGE ??????????????
+												<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat/ANGAJATORID" value="instance('sal')../../Date_firma[number(instance('tempasig')/counter)]/CISTVA"/>-->
+
+<!-- CO 3,4). Se completeaza cu Se completeaza cu numele , prenumele salariatului-->
+<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat[number(instance('tempasig')/counter)]/Nume" 
+value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/@Nume"/>
+<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat[number(instance('tempasig')/counter)]/Prenume" 
+value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/@Prenume"/>
+
+<!-- CO 8). Se completeaza cu CNP-ul salariatului.   -->
+<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat[number(instance('tempasig')/counter)]/Cnp" 
+value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/@CNP"/>
+
+<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat[number(instance('tempasig')/counter)]/TipActIdentitate" 
+value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/SalRvsal/@TipActID"/>
+
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  -->
+
+<!--NOU . Se completeaza salariu brut al salariatului.   -->
+<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat[number(instance('tempasig')/counter)]/Contracte/Contract/Salariu" 
+value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Contract/Salariu"/>
+
+<!-- NOU. Se completeaza In functie de cetatenia salariatului se completeaza cu codul asociat  -->
+<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat[number(instance('tempasig')/counter)]/Contracte/Contract/Cor/Cod" 
+value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/@Functia"/>
+
+<!-- NOU. Daca Tara este Romania se completeaza codul de tara RO
+Daca tara nu este Romania se completeaza codul international asociat tarii respective,  -->
+<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat[number(instance('tempasig')/counter)]/Nationalitate/Nume" 
+value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/SalRvsal/@Nationalitate"/>
+
+<!--NOU . Se completeaza adresa completa a salariatului   -->
+<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat[number(instance('tempasig')/counter)]/Adresa" 
+value="concat('LOC.',instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/AdresaS/@Localitatea,
+', STR.',instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/AdresaS/@Strada,
+', BL.',instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/AdresaS/@Bloc,
+', AP.',instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/AdresaS/@Apartament,
+', NR.',instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/AdresaS/@Nr)"/>
+
+<!--NOU . Se completeaza salariu brut al salariatului.  ?????? din revisal ???? -->													
+<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat[number(instance('tempasig')/counter)]/Contracte/Contract/TimpMunca/Norma" 
+value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/OreNZdpvdCM"/>
+
+<!--NOU . Se completeaza SPORURI salariatului  ????????????   
+<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat[number(instance('tempasig')/counter)]/Contracte/Contract/SporuriSalariu" 
+value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Spor_vechime"/>-->
+
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  -->
+
+<!-- 7.  Se completeaza cu numarul contractului dat de angajator.   -->
+<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat[number(instance('tempasig')/counter)]/Contracte/Contract/NumarContract" 
+value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Contract/@NumarContract"/>
+
+<!--CO 13).  Se completeaza cu data la care se introduc si se consemneaza valide informatiile 
+     ( zz.ll.aaaa )      ce privesc salariatul. Formatul datei este zz/ll/aaaa.   -->
+<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat[number(instance('tempasig')/counter)]/Contracte/Contract/DataContract"
+value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Contract/DataContract"/>
+
+<!-- NU INCARCA ????? 10.  Se completeaza cu data incheierii contractului intre angajator si salariat.   -->
+<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat/Contracte/Contract/DataInceputContract" 
+value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Contract/DataInceputContract"/>
+
+<!-- 11.  Se completeaza cu data incetarii contractului intre angajator si salariat, 
+in cazul unui contract cu durata determinata. Daca durata contractului este nedeterminata nu se completeaza.   -->
+<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat[number(instance('tempasig')/counter)]/Contracte/Contract/DataSfarsitContract" 
+value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Contract/DataSfarsitContract"/>
+
+<!-- NU INCARCA ????? 10.  Srate curenta ????????????? Vezi  revisal.xml  ?????????? -->
+<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat[number(instance('tempasig')/counter)]/Contracte/Contract/StareCurenta" 
+value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Contract/StareCurentaId"/>
+
+<!-- 4.  In functie de durata contractului se completeaza cu codul asociat in tabelul de mai jos:
+                             Nedeterminata 1 , Determinata 2   -->
+<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat[number(instance('tempasig')/counter)]/Contracte/Contract/TipDurata" 
+value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Contract/TipDurata"/>
+
+<!-- 5.  In functie de tipul normei se completeaza cu codul asociat in tabelul de mai jos:
+                Norma Cod : Norma intreaga 1 , Cu timp partial 2   -->
+<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat[number(instance('tempasig')/counter)]/Contracte/Contract/TipNorma" 
+value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Contract/TipNorma"/>
+
+<!-- 6.  In functie de tipul contractului se completeaza cu codul asociat in tabelul de mai jos:
+Tip contract Cod :   CONTRACT INDIVIDUAL DE MUNCA 1 , CONTRACT DE UCENICIE LA LOCUL DE MUNCA 2
+                   CONTRACT DE MUNCA LA DOMICILIU 3 , CONTRACT DE MUNCA TEMPORARA 4   -->
+<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat[number(instance('tempasig')/counter)]/Contracte/Contract/TipContract" 
+value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Contract/TipContract"/>
+
+<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat[number(instance('tempasig')/counter)]/Contracte/Contract/TimpMunca/Norma" 
+value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Contract/TimpMuncaNorma"/>
+
+<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat[number(instance('tempasig')/counter)]/Contracte/Contract/TimpMunca/Repartizare" 
+value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Contract/TimpMuncaRepartizare"/>
+
+<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat[number(instance('tempasig')/counter)]/Contracte/Contract/TimpMunca/IntervalTimp" 
+value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Contract/TimpMuncaIntervalTimp"/>
+
+<xforms:setvalue ref="instance('rvisal')/Salariati/Salariat[number(instance('tempasig')/counter)]/Contracte/Contract/TimpMunca/Durata" 
+value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Contract/TimpMuncaDurata"/>
+
+        <xforms:setvalue ref="instance('tempasig')/counter" value=". + 1"/>
+</xforms:action>
+   
+
+<!-- CONTRACTE --> 
+
+</xforms:action> 
+
+			<xforms:label class="large button orange"> Încarcă </xforms:label>
+
+			<!--<xforms:refresh ev:event="DOMActivate" model="D_RVS"/>-->
+			<xforms:toggle case="revsal" ev:event="DOMActivate"/>
+		</xforms:trigger>					
+		</div><br/>
+			
+			
+			<div class="che1">
+				<xforms:label> Alege un fișier cu date (tip REVISAL) </xforms:label>
+				<input type="file" id="fileuplrvs2" onchange="readFile('rvisal',this.id)"/>
+				<xforms:trigger appearance="minimal">
+					<xforms:label class="large button yellow"> Încarcă </xforms:label>
+					<xforms:refresh ev:event="DOMActivate" model="SAL"/>
+					<xforms:toggle case="revsal" ev:event="DOMActivate"/>
+				</xforms:trigger>
+			</div>			
+		</div>
+
+			<br/><br/>
+
+			<div id="darkk">
+					<a href="index01.xhtml">
+						<xforms:trigger> 									 
+							<xforms:label>&#171; Înapoi la pagina principală &#171;</xforms:label> 
+							<xforms:hint>Înapoi la pagina principală</xforms:hint>
+						</xforms:trigger>
+					</a>			
+			</div>			
+					<br/>
+				</td>
+			</tr>
+		</table>
+	 </xforms:case> 
+
+<!--END case id="alegefis" -->
+
+	<xforms:case id="revsal">
+	<xforms:group ref="instance('rvisal')">
+
+		<table align="center" border="0" cellspacing="2" cellpadding="0" width="100%">
+		<div align="center" class="tit1"><h3>REGISTRU ELECTRONIC EVIDENŢĂ SALARIAŢI</h3></div>
+		</table>
+
+		<div>
+		<fieldset class="dvtxt3">
+		<legend><i>Date Angajator - REVISAL</i></legend> 
+
+				<table border="0" align="center" cellspacing="5" cellpadding="0" width="100%">
+					<tr>
+						<td colspan="6" class="ddia">ANGAJATOR</td>
+					</tr>
+					<tr class="labs">
+						<td class="dn1">Denumire angajator : </td> 
+						<td class="outf"><xforms:output ref="Header/Angajator/Detalii/Nume" class="dfa7"/></td>
+						<td class="dn1">CUI/CIF angajator : </td> 
+						<td class="out1"><xforms:output ref="Header/Angajator/Detalii/Cui" class="dfa3"/></td>
+					</tr>		
+					<tr class="labs">
+						<td class="dn2">Localitatea : </td> 
+						<td class="out2"><xforms:output type="text" ref="Header/Angajator/Localitate/CodSiruta" class="dfa7"/></td>
+						<td class="dn2">Adresa : </td> 
+						<td class="out2"><xforms:output type="text" name="text" ref="Header/Angajator/Adresa" class="dfa7"/></td>
+					</tr>
+					<tr class="labs">
+						<td class="dn1">Judet : </td> 
+						<td class="out1"><xforms:output type="text" name="text" ref="Header/ANGAJATOR/ANGAJATORBLOC" class="dfa3"/></td>
+						<td class="dn1">Telefon : </td>
+						<td class="out1"><xforms:output type="text" name="text" ref="Header/Angajator/Contact/Telefon" class="dfa3"/></td>
+					</tr>
+					<tr class="labs">
+
+						<td class="dn2">Sector : </td> 
+						<td class="out2"><xforms:output type="text" name="text" ref="Header/ANGAJATOR/ANGAJATORSECTOR" class="dfa3"/></td>
+						<td class="dn2">Fax : </td> 
+						<td class="out2"><xforms:output type="text" name="text" ref="Header/Angajator/Contact/Fax" class="dfa3"/></td>
+					</tr>
+					<tr class="labs">
+						<td class="dn1">Reprez.legal: </td> 
+						<td class="out1"><xforms:output type="text" name="text" ref="Header/Angajator/Contact/ReprezentantLegal" class="dfa7"/></td>
+						<td class="dn1">E-mail : </td> 
+						<td class="out1" colspan="4"><xforms:output type="text" name="text" ref="Header/Angajator/Contact/Email" class="dfa9"/></td> 
+					</tr>
+				</table>
+
+		<hr size="5" align="center" color="#D7D5D8" width="98%"/>
+
+				<table border="0" align="center" cellspacing="5" cellpadding="0" width="100%">		
+					<tr class="labs">
+						<td class="dn2">Angajator_Den._Parinte :</td> 
+						<td class="out2"><xforms:output ref="Header/Angajator/Detalii/NumeParinte" class="dfa7"/></td>
+						<td class="dn2">Angajator_CUI_Parinte : </td> 
+						<td class="out2"><xforms:output ref="Header/ANGAJATOR/ANGAJATORID" class="dfa3"/></td>
+					</tr>
+					<tr class="labs">
+						<td class="dn1">Forma juridica :</td> 
+						<td class="out2"><xforms:output ref="Header/Angajator/Detalii/FormaJuridicaPJ" class="dfa7"/></td>				
+						<td class="dn1">Forma organizare :</td>
+						<td class="out2"><xforms:output type="text" name="text" ref="Header/Angajator/Detalii/FormaOrganizarePJ" class="dfa3"/></td> 
+					</tr>
+					<tr class="labs">
+						<td class="dn2">Forma de proprietate :</td>
+						<td class="out2"><xforms:output type="text" name="text" ref="Header/Angajator/Detalii/FormaProprietate" class="dfa3"/></td> 
+						<td class="dn2">Nivel infiintare : </td>
+						<td class="out2"><xforms:output type="text" name="text" ref="Header/Angajator/Detalii/NivelInfiintare" class="dfa3"/></td> 
+					</tr>
+					<tr class="labs">
+						<td class="dn1">Domeniu principal de activitate: </td>
+						<td class="out2" colspan="4"><xforms:output ref="Header/Angajator/Detalii/DomeniuActivitate/Cod" class="dfa3"/></td>
+					</tr>
+				</table>
+			</fieldset>
+	</div>
+<br/><br/>
+<div>
+<fieldset class="dvtxt3">
+
+<legend><i>Lista contracte salariati/Fisa individuala detailata salariat</i></legend> 
+
+			<table border="0" cellspacing="0" cellpadding="0" width="100%"> 
+
+						<tr>
+							<td class="ddia">CONTRACTE</td>
+						</tr>
+
+						<table align="center" border="0" cellspacing="2" cellpadding="2" width="100%">
+							<tr>								
+								<td class="t7r1cn">Nr. crt.  Detalii</td>
+								<!--<td class="t7r1c1H">Detalii salariat</td>-->
+								<td class="t7r1c5H">Nume / prenume</td>
+								<!--<td class="t7r1c3H">Prenume</td>-->
+								<td class="t7r1c3H">CNP</td>
+								<td class="t7r1c4H">Nr.contract</td>
+								<td class="t7r1c4H">Data contract</td>
+								<td class="t7r1c4H">Data inceput</td>
+								<td class="t7r1c4H">Data sfarsit</td>
+								<td class="t7r1c4H">Stare</td>
+								<td class="t7r1c4H">Tip contract</td>
+								<td class="t7r1c4H">Tip norma</td>
+								<td class="t7r1c4H">Tip durata</td>
+							</tr>
+						</table>
+
+						<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%"> 
+							<xforms:repeat nodeset="instance('rvisal')/Salariati/Salariat" id="repeatasigurat"> 	
+								<tr>
+									<td class="dia"><xforms:output value="position()"/></td>
+									<td class="t7r1cD" align="center">
+										<xforms:trigger>
+											<xforms:label>Detalii </xforms:label>
+											<xforms:action ev:event="DOMActivate">
+												<!--<xforms:toggle case="editsalRvs" />-->
+												<xforms:show dialog="DetaliiSalariat"/>
+											</xforms:action>
+										</xforms:trigger>
+									</td>									
+									<td class="t7r1c3"><xforms:output class="T1val3" ref="Nume"/></td>
+									<td class="t7r1c3"><xforms:output class="T1val3" ref="Prenume"/></td>
+									<td class="t7r1c3"><xforms:output class="T1val3" ref="Cnp"/></td>
+									<td class="t7r1c3"><xforms:output class="T1val3" ref="Contracte/Contract/NumarContract"/></td>
+									<td class="t7r1c3"><xforms:output class="T1val3" ref="Contracte/Contract/DataContract"/></td>
+									<td class="t7r1c3"><xforms:output class="T1val3" ref="Contracte/Contract/DataInceputContract"/></td>
+									<td class="t7r1c3"><xforms:output class="T1val3" ref="Contracte/Contract/DataSfarsitContract"/></td>
+									<td class="t7r1c3"><xforms:output class="T1val3" ref="Contracte/Contract/StareCurenta"/></td>
+									<td class="t7r1c3"><xforms:output class="T1val3" ref="Contracte/Contract/TipContract"/></td>
+									<td class="t7r1c3"><xforms:output class="T1val3" ref="Contracte/Contract/TipNorma"/></td>
+									<td class="t7r1c3"><xforms:output class="T1val3" ref="Contracte/Contract/TipDurata"/></td>
+								</tr>          	
+							</xforms:repeat>
+						</table>
+					</table>
+				</fieldset>
+			</div>
+		<br/>
+			</xforms:group>
+		<br/>
+
+<div class="noprint">
+ <div id="dark"> 
+
+					<a href="#" onclick="window.print()">
+						<xforms:trigger> 									 
+							<xforms:label>&#171;Tiparire &#171;</xforms:label> 
+							<xforms:hint>Click pentru Tiparire</xforms:hint>
+						</xforms:trigger>
+					</a>            
+
+  			<!--<xforms:submit submission="RVS">
+      				<xforms:label><i> ^ SALVARE Fisier revisal XML</i></xforms:label>
+     			 	<xforms:hint>Click pentru a alege unde sa se salveze fisierul XML</xforms:hint>
+			</xforms:submit>-->
+			
+			<xforms:trigger appearance="minimall"> 
+				<xforms:label class="medium button orange"> Salvează în fișier </xforms:label>
+				<xforms:load resource="javascript:saveToFile('rvisal')" ev:event="DOMActivate" />
+				<!--<xforms:load resource="javascript:indentObj('rvisal')" ev:event="DOMActivate" />								
+                <xforms:load resource="javascript:openwin('rvisal')" ev:event="DOMActivate" />-->
+			</xforms:trigger> 			
+
+			<!--<xforms:submit submission="sxml">
+				<xforms:label><i> ^ Vizualizare fisier revisal XML</i></xforms:label>
+				<xforms:hint>Click</xforms:hint>
+			</xforms:submit>-->
+			<xforms:trigger appearance="minimall"> 
+				<xforms:label> ^ Vizualizare date XML </xforms:label>
+				<xforms:load resource="javascript:viewXml('rvisal')" ev:event="DOMActivate" />
+				<!--<xforms:load resource="javascript:indentObj('rvisal')" ev:event="DOMActivate" />								
+                <xforms:load resource="javascript:openwin('rvisal')" ev:event="DOMActivate" />
+                <xforms:show dialog="ViewXML" ev:event="DOMActivate" />-->
+			</xforms:trigger> 			
+
+<hr color="#ffffff"/>
+
+					<a href="index01.xhtml">
+						<xforms:trigger> 									 
+							<xforms:label>&#171; Înapoi la pagina principală &#171;</xforms:label> 
+							<xforms:hint>Înapoi la pagina principală</xforms:hint>
+						</xforms:trigger>
+					</a>
+    
+				<xforms:trigger id="pagaleg">
+					<xforms:label>Revenire la pagina alegere</xforms:label>
+
+					<xforms:toggle case="alegefis" ev:event="DOMActivate"/>
+					<xforms:hint>Revenire la pagina alegere</xforms:hint>
+				</xforms:trigger>         
+
+<a name="anexa11"></a>
+
+</div>
+</div>
+
+</xforms:case> <!--END case id="revsal" -->
+
+</xforms:switch><!---->
+
+
+
+
+
+<!--NOU 30.oct.2011 ___modificat 22apr2012__  Fisa individuala salariat __xxxxxxxxx   -->
+
+
+
+	<xforms:dialog id="DetaliiSalariat">
+
+		
+		<xforms:group nodeset="Salariat" ref="instance('rvisal')/Salariati/Salariat[index('repeatasigurat')]">
+
+		
+ <div id="modificRvs" align="center" style="width:95%"> 
+
+		<xforms:output ref="Header/Angajator/Detalii/Nume" class="dfa7"/>
+		
+		<fieldset class="dvtxt3">
+		<legend align="center"><h3>Fisa individuala salariat</h3></legend>
+			
+		<div>
+				<fieldset class="dvtxt4">
+					<legend><i> Angajator </i></legend> 
+
+					<table border="0" align="center" cellspacing="5" cellpadding="0" width="100%">
+						<tr class="labs">
+							<td class="dn1">Denumire angajator : </td> 
+							<td class="outf"><xforms:output ref="instance('rvisal')/Header/Angajator/Detalii/Nume" class="dfa7"/></td>
+							<td class="dn1">CUI/CIF angajator : </td> 
+							<td class="out1"><xforms:output ref="instance('rvisal')/Header/Angajator/Detalii/Cui" class="dfa3"/></td>
+						</tr>
+					</table>
+				</fieldset>
+
+	<hr size="5" align="center" color="#FFFFFF" width="98%"/>
+
+		<fieldset class="dvtxt4">
+			<legend><i> Salariat </i></legend> 
+
+			<table border="0" align="center" cellspacing="5" cellpadding="0" width="100%">
+
+				<tr class="labs">
+					<td class="dn2">Salariat :</td> 
+					<td class="out2"><xforms:output value="concat(Nume,' ', Prenume)" class="dfa7"/></td>
+					<td class="dn2">Nationaliţate : </td> 
+					<td class="out2"><xforms:output ref="Nationalitate/Nume" class="dfa3"/></td>
+					<td class="out2" rowspan="3"><img src="img03.jpg" align="center" width="100" height="100" border="0" title="Poza" /></td>	
+				</tr>
+				<tr class="labs">
+					<td class="dn1">Act identitate :</td> 
+					<td class="out2"><xforms:output ref="TipActIdentitate" class="dfa7"/></td>				
+					<td class="dn1">CNP :</td>
+					<td class="out2"><xforms:output type="text" name="text" ref="Cnp" class="dfa3"/></td> 
+				</tr>
+				<tr class="labs">
+					<td class="dn2">Domiciliu :</td>
+					<td class="out2" colspan="3"><xforms:output type="text" name="text" ref="Adresa" class="dfa3"/></td> 
+				
+				</tr>
+			</table>
+		</fieldset>
+
+	<hr size="5" align="center" color="#FFFFFF" width="98%"/>
+
+		<fieldset class="dvtxt4">
+			<legend><i> Date generale </i></legend> 
+
+			<table border="0" align="center" cellspacing="5" cellpadding="0" width="100%">
+				<tr class="labs">
+					<td class="dn1">Functia / Ocupatia : </td>
+					<td class="out2" colspan="4"><xforms:output ref="Contracte/Contract/Cor/Cod" class="dfa3"/></td>
+				</tr>
+				<tr class="labs">
+					<td class="dn1">Nr.contract :</td> 
+					<td class="out2"><xforms:output ref="Contracte/Contract/NumarContract" class="dfa7"/></td>
+					<td class="dn2">Data contract : </td> 
+					<td class="out2"><xforms:output ref="Contracte/Contract/DataContract" class="dfa3"/></td>
+				</tr>
+				<tr class="labs">
+					<td class="dn2">Tip contract :</td>
+					<td class="out2"><xforms:output type="text" name="text" ref="Contracte/Contract/TipContract" class="dfa3"/></td> 				
+					<td class="dn1">Data inceput :</td>
+					<td class="out2"><xforms:output type="text" name="text" ref="Contracte/Contract/DataInceputContract" class="dfa3"/></td> 
+				</tr>		
+				<tr class="labs">
+					<td class="dn2">Tip Durata :</td>
+					<td class="out2"><xforms:output type="text" name="text" ref="Contracte/Contract/TipDurata" class="dfa3"/></td>
+					<td class="dn2">Data sfarsit : </td>
+					<td class="out2"><xforms:output type="text" name="text" ref="Contracte/Contract/DataSfarsitContract" class="dfa3"/></td> 
+				</tr>
+				<tr class="labs">
+					<td class="dn2">Tip norma :</td>
+					<td class="out2"><xforms:output type="text" name="text" ref="Contracte/Contract/TipNorma" class="dfa3"/></td>    
+					<td class="dn2">Timp Munca/Durata : </td>
+					<td class="out2"><xforms:output type="text" name="text" ref="Contracte/Contract/TimpMunca/Durata" class="dfa3"/></td>					 
+				</tr>
+				<tr class="labs">
+					<td class="dn2">Salariu brut : </td>
+					<td class="out2"><b><xforms:output type="text" name="text" ref="Contracte/Contract/Salariu" class="dfa3"/></b> - RON</td>
+					<td class="dn2">Timp Munca/Norma : </td>
+					<td class="out2"><xforms:output type="text" name="text" ref="Contracte/Contract/TimpMunca/Norma" class="dfa3"/></td>					 
+				</tr>
+				<tr class="labs">					
+					<td class="dn2">Xxxxx contract :</td> 
+					<td class="out2"></td>
+					<td class="dn2">Timp Munca/IntervalTimp :</td>
+					<td class="out2"><xforms:output type="text" name="text" ref="Contracte/Contract/TimpMunca/IntervalTimp" class="dfa3"/></td> 
+				</tr>
+				<tr class="labs">					
+					<td class="dn2">Stare contract :</td> 
+					<td class="out2"><xforms:output ref="Contracte/Contract/StareCurenta" class="dfa7"/></td>
+					<td class="dn2">Timp Munca/Repartizare :</td>
+					<td class="out2"><xforms:output type="text" name="text" ref="Contracte/Contract/TimpMunca/Repartizare" class="dfa3"/></td>
+ 
+				</tr>
+			</table>
+		</fieldset>
+
+	<hr size="5" align="center" color="#FFFFFF" width="98%"/>
+
+		<fieldset class="dvtxt4">
+			<legend><i> Sporuri salariu </i></legend> 
+
+			<table border="0" align="center" cellspacing="5" cellpadding="0" width="100%">
+				<tr class="labs">
+					<td class="dn2">Tip spor :</td>
+					<td class="dn2">Cuantum :</td>
+				</tr>
+<!--			<tr class="labs">
+					<td class="out2"><xforms:output type="text" name="text" ref="Salariati/Salariat/Contracte/Contract/SporuriSalariu" class="dfa3"/></td> 
+					<td class="out2"><xforms:output type="text" name="text" ref="Salariati/Salariat/Contracte/Contract/SporuriSalariu" class="dfa3"/></td> 
+				</tr>	-->
+			</table>
+		</fieldset>
+
+	<hr size="5" align="center" color="#FFFFFF" width="98%"/>
+
+		<fieldset class="dvtxt4">
+			<legend><i> Data consemnare </i></legend> 
+
+			<table border="0" align="center" cellspacing="5" cellpadding="0" width="100%">
+					<tr class="labs">
+						<td class="dn1">Data la care produce efecte : </td>
+						<td class="out2" colspan="4"></td>
+					</tr>	
+			</table>
+		</fieldset>
+
+	<hr size="5" align="center" color="#FFFFFF" width="98%"/>
+
+	</div>
+
+	</fieldset>
+<br/>
+                        <xforms:trigger>  
+                            <xforms:label> ^ Corectie</xforms:label>
+                            <xforms:insert nodeset="/Salariati/Salariat" at="index('repeatasigurat')" replace="true"/>
+                            <xforms:action ev:event="DOMActivate">
+                                <xforms:hide dialog="DetaliiSalariat" />
+                            </xforms:action>			
+                        </xforms:trigger>     
+  
+	
+		<xforms:trigger>
+			<xforms:label>Renunță</xforms:label>
+			<xforms:action ev:event="DOMActivate">
+				<xforms:hide dialog="DetaliiSalariat"/>
+	
+			</xforms:action>
+		</xforms:trigger>
+    </div> 		
+		</xforms:group>
+	</xforms:dialog>
+	
+	<xforms:dialog id="ViewXML">
+		<div id="view">
+			<div aliggn="right">
+				<span> dfdfdfd  hgfffg </span>
+			</div>	
+		</div>	
+		<div>
+			<xforms:trigger appearance="minimall"> 
+				<xforms:label> Închide </xforms:label>
+				<!--<xforms:load resource="javascript:saveToFile('rvisal')" ev:event="DOMActivate" />-->
+                <xforms:hide dialog="ViewXML" ev:event="DOMActivate" />
+			</xforms:trigger> 					
+		</div>
+	</xforms:dialog>
+
+<br/><br/>
+</body>
+</html>
+

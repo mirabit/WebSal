@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<?xml-stylesheet href="../xsltforms/xsltforms.xsl" type="text/xsl"?>-->
+<?xml-stylesheet href="../webgestext/xsltforms/xsltforms.xsl" type="text/xsl"?>
+<?css-conversion no?>
+
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:xforms="http://www.w3.org/2002/xforms"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ev="http://www.w3.org/2001/xml-events">
+	
+	<head>
+		<meta version="0.9.3" http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+		<title>ADMINISTRARE DATE GENERALE acc01</title>  
+		<link rel="stylesheet" href="selekta.css"></link>   
+
+		<style type="text/css">
+			@namespace xforms url("http://www.w3.org/2002/xforms"); 
+		.xf-value {width:100%;font-size:1.2em;font-style:italic;}	
+		</style>
+		<style type="text/css">
+				#addCF { width: 70em; height: 27em; background-color:#E7E7E7; }
+	    		#editCF { width: 78em; height: 30em;}	    	
+                #ConfirmDelete { width: 38em; height: 25em; background-color:#DCDCDC;}
+		.afisare {background: #ffffff url(images/exclamation.png) no-repeat 0px;
+			padding-left: 5px;font-size:16px;font-weight:bold; height: 25em; width: 1000px;padding:5mm;
+			border:solid 4px #C2CCD0;}
+		.inpst3 {color:#193CFF; font-weight:bold; text-decoration:underline;}			
+		</style>  
+		<style type="text/css">
+			@namespace xf url("http://www.w3.org/2002/xforms");
+			 
+			/* Put the tab divs all on one line */
+			div.horiz-tabs-menu div {
+			  display: inline;
+			}               
+			 
+			/* style each individual tab */
+			div.horiz-tabs-menu div a {
+				color: black;
+				border: 0.1em outset #BBB;  /* Make it look like a button */
+				border-bottom: 0.1em solid #CCC;
+				font-weight: bold;
+				font-family: Helvetica, sans-serif;
+				text-decoration: none;
+				margin-right: 5px;
+				padding: 0.2em;
+				/* round the top corners - works under FireFox */
+				-moz-border-radius: .5em .5em 0em 0em;
+			 }
+			 
+			/* Make non-selected tabs appear in the background */
+			div.horiz-tabs-menu div:not(:target) a {
+			   border-bottom: none;         /* Make the bottom border disappear */
+			   background: #999;
+			}               
+			 
+			/* Make the selected (targeted) item or default selection to appear on top */
+			div.horiz-tabs-menu div:target  a {
+			   border-bottom: 0.1em solid #CCC;   /* Visually connect tab and tab body */
+			   background: #CCC;                          /* Set active tab to light gray */
+			}
+			 
+			/* set non-selected tabs to dark gray */
+			div.horiz-tabs-menu div:not(:target) a {
+			   border-bottom: none; /* Make the bottom border disappear */
+			   background: #999;           /* Set inactive tabs are dark gray */
+			}
+			 
+			xf|switch xf|case div {
+			  background: #CCC;             /* Light gray */
+			  padding: 0.3em;               /* Looks better */
+			}       
+		</style>
+
+		<script type="text/javascript">	
+			function ChangePath() {
+			//var cale=GetCookie('cale'); 		
+			var theCookie=""+document.cookie;
+			var ind=theCookie.indexOf("cale=");
+			if (ind==-1){//
+			alert("Nu am găsit cookie");
+				}else{
+				var ind1=theCookie.indexOf(";",ind);
+				if (ind1==-1) ind1=theCookie.length; 
+				//return unescape(theCookie.substring(ind+cale.length+1,ind1));
+				var cale= unescape(theCookie.substring(ind+5,ind1));	
+				//alert("cale:"+cale);
+				var model=document.getElementById("SAL");
+				
+				var instanceElement = document.getElementById('sal');               
+				instanceElement.setAttribute('resource', cale); 
+				//alert("file:"+instanceElement.getAttribute('resource'));	
+				var subm = document.getElementById('s01');               
+				subm.setAttribute('action', cale);								
+				model.refresh();					
+				}	
+			}
+		</script>		
+ 		<script type="text/javascript" src="loadSal.js"/> 
+		<xforms:model id="SAL" version="1.1">    
+            <xforms:instance id="sal" xmlns="">
+				<DATE/>			
+		 	</xforms:instance> 
+			<xforms:instance id="salsablonfix" resource="salsablon.xml"/>
+			<xforms:instance id="dategen" resource="dategen.xml"/>
+			<xforms:instance id="NCsablon" xmlns="">
+				<data>
+					<NC id="" obp="nu" tip="" A_codOblig="" DenA_codOblig="" A_codBugetar="">
+						<Nr_Doc>0</Nr_Doc>
+						<Procent>0</Procent>
+						<Explicatie>X</Explicatie>
+						<Den_ContD>X</Den_ContD>       
+						<Den_ContC>X</Den_ContC>
+						<Debit_Cont>0</Debit_Cont>
+						<Credit_Cont>0</Credit_Cont>
+						<Debit_Val>0</Debit_Val>			
+						<Credit_Val>0</Credit_Val>	
+					</NC>
+				</data>	
+			</xforms:instance>
+			<xforms:instance id="tmp" xmlns="">
+				<data>
+					<anulSelectat>2012</anulSelectat>
+					<annou/>
+					<tipform>edit</tipform>
+					<Luna nr="11" nume="Noiembrie"></Luna>
+					<Ziua nr="10" nume="Special Day" luna="01"/>
+					<ZiuaAnte nr="" nume="" luna="" poz=""/>
+					<DataSel/>
+				</data>	
+			</xforms:instance>
+						
+			<xforms:submission id="s01" method="put" action="sal.xml" ref="instance('sal')"/>
+			<xforms:submission id="sdateg" method="put" action="dategen.xml" ref="instance('dategen')" replace="none"/>
+			
+			<xforms:bind id="d" required="true()" type="xsd:date" nodeset="instance('dategen')/data"/>
+			<xforms:bind nodeset="instance('dategen')/Luni/Luna/@OreNl" calculate="../@NrZlucruL * 8"/>
+			<xforms:bind type="xsd:date" nodeset="instance('tmp')/DataSel"/>
+			<!--<xforms:action ev:event="xforms-model-construct">
+				<xforms:load resource="javascript:ChangePath()"/>
+			</xforms:action>	-->
+		</xforms:model>
+
+  	</head>
+	
+	<body bgcolor="#E3E3E3" text="#000000" rightmargin="150" topmargin="80" onload="loadSal();">
+
+		<div style="padding: 1em;" class="horiz-tabs-menu"> 
+			<div> 
+			<xforms:trigger appearance="minimal">
+				<xforms:label>Administrare coefivienți </xforms:label>
+				<xforms:toggle case="coef" ev:event="DOMActivate"/>				
+			</xforms:trigger> 
+			<div>
+			</div>    	
+			<xforms:trigger appearance="minimal">
+				<xforms:label>Sărbători legale </xforms:label>
+				<xforms:toggle case="sarb" ev:event="DOMActivate"/>				
+			</xforms:trigger> 
+			</div>
+			<div>   	
+			<xforms:trigger appearance="minimal">
+				<xforms:label>Deduceri personale </xforms:label>
+				<xforms:toggle case="ded" ev:event="DOMActivate"/>				
+			</xforms:trigger>
+			</div>
+			<!--<div id="tab4"> 			
+			<a href="#tab4">Sfdfdfyyy rtrtrt 
+				<xforms:toggle case="sarb" ev:event="DOMActivate"/>				
+			</a> 
+			</div>
+			<div id="tab5"> 			
+			<a href="#tab5">t5555555 
+				<xforms:toggle case="coef" ev:event="DOMActivate"/>				
+			</a> 
+			</div> --> 											
+		</div>
+
+<xforms:switch>
+	<xforms:case id="coef">		
+		<div align="center">
+			<table>
+				<!--<tbody>-->
+					<tr id="Fond2">						
+						<td>  
+							<b>
+							<!--	<xforms:output ref="/SAL/Date_firma/Prefix" class="val3"/>
+							<xforms:output ref="/SAL/Date_firma/Sufix" class="val3"/>-->
+								<xforms:output ref="/SAL/Date_firma/Firma" class="val2"/></b></td>   
+						<td>
+							<label>CUI: RO</label><b>
+								<xforms:output ref="/SAL/Date_firma/CISTVA" class="val2"/></b></td>
+						<td>
+							<label>Sediu:</label><b>
+								<xforms:output type="text" ref="/SAL/Date_firma/Localitatea"/></b></td>
+						<td>
+							<label>Cod Reg.COM :</label><b>
+								<xforms:output ref="/SAL/Date_firma/Cod_Reg_Comertului"/></b></td>
+						<td>
+							<label>Nr.Inreg.ITM :</label><b>
+								<xforms:output ref="/SAL/Date_firma/Numar_ITM" class="val2"/></b></td>
+					</tr>
+				<!--</tbody>-->
+			</table>	
+		</div>
+
+		<hr align="center" color="#D7D5D8" width="70%"/>
+        	
+		<div align="center">
+			
+				<table border="0" cellspacing="10" cellpadding="0" width="90%">
+				<xforms:repeat id="repeatRow" nodeset="instance('sal')/NCsal/NC"> 					   		
+					<tr>
+						<td>
+					<table border="0" width="100%">
+						<tr class="Fond">
+							<td  colspan="3" width="100%" align="left">
+								<!--<xforms:trigger appearance="minimal" id="tedit"> -->
+									<xforms:trigger>
+									<xforms:label><b><xforms:output ref="@DenA_codOblig"/></b></xforms:label>
+									<xforms:hint class="afisare2">CLIK PENTRU EDITARE</xforms:hint>	
+									<xforms:action ev:event="DOMActivate">
+										<!--<xforms:toggle case="accedit" />-->
+										<xforms:show dialog="editCF"/>
+									</xforms:action>
+								</xforms:trigger>
+							</td>
+						</tr>
+						<tr>
+							<td width="30%" align="right">Cod bugetar <b><xforms:output class="bcod" ref="@A_codBugetar"/></b></td>
+							<td width="60%" align="center">Cod creanta fiscala <b><xforms:output ref="@A_codOblig"/></b></td>
+							<td colspan="1" width="10%" align="left">Plata <b><xforms:output ref="@obp"/></b></td>
+						</tr>	
+					</table>
+					<table border="0" width="100%">
+						<tr>
+							<td width="12%">Cont debit</td>	
+							<td width="9%"><b><xforms:output class="df2" ref="Debit_Cont"/></b></td>	
+							<td width="40%"><xforms:output class="df1" ref="Den_ContD"/></td>	        
+							<td width="20%" align="left"  class="Fond">Procent obligatie <b><xforms:output ref="Procent"/> % </b></td>
+						</tr>
+					</table>
+					<table border="0" width="100%">
+						<tr>
+							<td width="14%">Cont credit</td>	
+							<td width="12%"><b><xforms:output class="df2" ref="Credit_Cont"/></b></td>	
+							<td width="40%"><xforms:output class="df1" ref="Den_ContC"/></td>	
+							<td width="15%" align="right">
+								<xforms:trigger appearance="minimal">
+								<xforms:label class="small button red">Șterge</xforms:label>
+								<xforms:action ev:event="DOMActivate">
+									<xforms:show dialog="ConfirmDelete"/>
+								</xforms:action>
+								</xforms:trigger>
+							</td>																																				
+						</tr>
+					</table></td></tr>
+				</xforms:repeat> 					
+				</table> 
+			
+			<hr align="center" color="#C2CCD0" width="70%"/>
+			<div>		
+				<xforms:trigger id="trandnou">
+				<xforms:label><b> Rând nou</b></xforms:label>
+				<xforms:action ev:event="DOMActivate">						
+					<!--<xforms:toggle case="accnou" />-->
+					<xforms:show dialog="addCF"/>
+				</xforms:action>
+				</xforms:trigger>
+			<br/><br/>
+			<b id="Edit">Număr creante adaugate =  <xforms:output class="Fond3" value="count(instance('sal')/NCsal/NC)"/></b>	
+			</div>	
+			<hr align="center" color="#C2CCD0" width="70%"/>		
+			<div>					
+				<xforms:trigger id="default"> 
+				<!--<xforms:label class="medium button green">&#164; Reset &#164;</xforms:label> -->
+				<xforms:label><b>&#164; Reset &#164;</b></xforms:label>
+				<xforms:hint>Încarcă valorile implicite</xforms:hint>   
+				<xforms:action ev:event="DOMActivate">		
+					<xforms:show dialog="ConfirmReset"/>
+				</xforms:action>
+				</xforms:trigger>
+
+			</div>		
+		</div>		
+	</xforms:case>
+
+	<xforms:case id="ded">
+	
+	</xforms:case>
+	
+	<xforms:case id="sarb">
+	<div align="center"><br/>
+		<br/>
+		<div>Alege anul
+			<xforms:select1 class="Ztd1" ref="instance('tmp')/anulSelectat">
+				<xforms:itemset nodeset="instance('dategen')/ZileLibere/Anul">
+					<xforms:label ref="@nr"/>
+					<xforms:value ref="@nr"/>
+				</xforms:itemset>
+			</xforms:select1>
+			<span style="padding:0.5em;">
+			<xforms:trigger appearance="minimal">
+				<xforms:label class="medium button red" style="padding-right:0.9em;float:right">Șterge anul selectat</xforms:label>
+				<xforms:action ev:event="DOMActivate">
+					<xforms:delete nodeset="instance('dategen')/ZileLibere/Anul[@nr=instance('tmp')/anulSelectat]"/>							
+				</xforms:action>
+			</xforms:trigger>
+			</span>	
+			<span style="padding:0.5em;">
+			<xforms:trigger appearance="minimal">
+				<xforms:label class="medium button blue" style="padding-right:0.9em;float:right">Adaugă an nou</xforms:label>
+				<xforms:action ev:event="DOMActivate">
+					<xforms:insert origin="instance('dategen')/ZileLibere/Anul[last()]" context="instance('dategen')/ZileLibere" nodeset="/Anul" position="after"/>
+					<xforms:setvalue ref="instance('dategen')/ZileLibere/Anul[last()]/@nr" value="instance('tmp')/annou"/>							
+				</xforms:action>
+			</xforms:trigger>
+			</span>	
+			<span style="padding:0.5em;"><xforms:input ref="instance('tmp')/annou" class="inpst"/></span>	
+		</div>
+		<br/><br/>
+		<div> 
+			<b>Sărbători legale pe anul <xforms:output ref="instance('tmp')/anulSelectat" class="inpst"/></b>
+		</div>
+		<table width="70%" border="1">	
+			<tr>
+				<!--<th style="width:20%">LUNA</th>
+				<th style="width:15%">ZIUA</th>
+				<th style="width:32%">SARBATOAREA</th>
+				<th style="width:18%" ><nobr>Modifică
+								<xforms:trigger appearance="minimal">
+									<xforms:hint class="afisare">
+										<p>Click pentru modificare pe icoana de mai jos</p>
+									</xforms:hint>
+								</xforms:trigger></nobr>
+				</th>
+				<th style="width:15%"><nobr>Sterge
+								<xforms:trigger appearance="minimal">
+									<xforms:hint class="afisare">
+										<p>Click pentru ştergere pe ( X ) ATENŢIE!!! datele şterse nu se mai pot recupera</p>
+									</xforms:hint>
+								</xforms:trigger></nobr>
+				</th>-->
+
+			</tr>
+				
+		</table>
+
+		<br/>
+		<!--<xforms:repeat nodeset="instance('dategen')/ZileLibere/Anul[@nr=instance('tmp')/anulSelectat]/Luna/Ziua" id="repeatzl">-->
+		<xforms:repeat nodeset="instance('dategen')/ZileLibere/Anul[@nr=instance('tmp')/anulSelectat]/Ziua" id="repeatzl">
+		<table width="70%" border="0" margin-left="1em">
+			<tr>
+				<td style="width:5%"><xforms:output value="position()"></xforms:output></td>
+				<td style="width:20%"><xforms:output ref="instance('dategen')/Luni/Luna[@nr=current()/@luna]"></xforms:output></td>
+				<td style="width:15%"><xforms:output ref="@nr"></xforms:output></td>
+				<td style="width:32%"><xforms:output ref="@nume"></xforms:output></td>
+				<td style="width:5%; text-align:center;" title="Modifică">
+					<xforms:trigger appearance="minimal">
+						<xforms:label><img src="img/edit.png" style="width:19px; height:19px"/></xforms:label>
+						<xforms:action ev:event="DOMActivate">
+							<xforms:setvalue ref="instance('tmp')/Ziua/@luna" value="current()/@luna"/>
+							<xforms:setvalue ref="instance('tmp')/Ziua/@nr" value="current()/@nr"/>
+							<xforms:setvalue ref="instance('tmp')/Ziua/@nume" value="current()/@nume"/>
+							<xforms:setvalue ref="instance('tmp')/DataSel" value="concat(instance('tmp')/anulSelectat,'-',instance('tmp')/Ziua/@luna,'-',instance('tmp')/Ziua/@nr)"/>
+							<xforms:show dialog="ModificaSarbatoare"/>
+						</xforms:action>
+					</xforms:trigger>
+				</td>
+				<td style="wifth:5%; text-align:center;" title="Șterge"> 
+					<xforms:trigger appearance="minimal">
+               			<xforms:label><img src="img/delete.png" style="width:19px; height:19px"/></xforms:label>
+						<xforms:action ev:event="DOMActivate">
+							<xforms:show dialog="ConfirmDelZiSarb"/>
+						</xforms:action>
+					</xforms:trigger>
+				</td>
+			</tr>
+		</table>
+		</xforms:repeat>
+		<br/>		
+		<xforms:group>
+			<xforms:trigger appearance="minimal" id="insertbutton" >
+				<xforms:label class="medium button greenn"><b>&#164; Adaugă sarbatoare &#164;</b></xforms:label>
+			
+				<xforms:action ev:event="DOMActivate">
+					<xforms:setvalue ref="instance('tmp')/tipform" value="'add'"/>
+					<xforms:show dialog="AdaugaSarbatoare"/>	
+				</xforms:action>
+			</xforms:trigger>
+		</xforms:group>	
+	</div>
+	</xforms:case>	<!-- sfârșit Sărbători -->					
+</xforms:switch>
+		
+		<hr align="center" color="#C2CCD0" width="90%"/>
+				<!-- <xforms:trigger appearance="minimal" id="intr">
+						<xforms:label  class="medium button orange">&#164; Salvează &#164;</xforms:label> 
+						<xforms:hint>Salvează datele introduse sau modificate</xforms:hint>
+					<xforms:action ev:event="DOMActivate">					
+						<xforms:load resource="javascript:saveDataLocal('sal'); saveDataLocal('dategen');"/>	
+						<xforms:load resource="javascript:saveDataLocal('sal');"/>
+						<xforms:send submission="sdateg"/>				
+					</xforms:action>
+				</xforms:trigger>  -->   			
+				<xforms:submit submission="sdateg">
+						<xforms:label  class="medium button orange">&#164; Salvează &#164;</xforms:label> 
+
+				</xforms:submit> 
+				
+				<xforms:trigger appearance="minimal" ev:event="DOMActivate"> 									 
+					<xforms:label class="medium button white">&#171; Înapoi la pagina principală &#171;</xforms:label> 
+					<xforms:hint>Înapoi la pagina principală</xforms:hint>
+					<xforms:load resource="index01.xhtml" ev:event="DOMActivate"/>
+				</xforms:trigger>  
+ 
+	<br/>
+
+	<xforms:dialog id="addCF"> 
+		<div align="left" style="width:95%"> 
+			<table id="denob" border="0" cellspacing="0" cellpadding="0" width="100%" >
+				<tr class="Fond4">
+					<td colspan="2">	Adăugare </td>
+				</tr>
+				<tr class="Fond1">
+					<td  colspan="2" width="100%" align="center">
+
+					<label><h3><i>Alege cod creanţă fiscală AAAAA</i></h3></label>
+					</td>
+				</tr>
+				<tr class="Fond">
+				<td  colspan="0" width="7%" align="center">
+				<!--<label><i>Alege cod creanţă </i></label>
+					<hr align="center" color="#D7D5D8" width="100%"/>-->
+				<xforms:select1 appearance="minimal" class="selection-open" ref="instance('NCsablon')/NC/@A_codOblig">
+					<!--<xforms:choices></xforms:choices>
+					<xforms:item>
+						<xforms:label id="SobpN">Alege din listă</xforms:label>
+						<xforms:value>"''"</xforms:value> 
+					</xforms:item>-->
+					<xforms:itemset nodeset="instance('dategen')/Creante/Den[not(@A_codOblig = instance('sal')/NCsal/NC/@A_codOblig)]">
+						<xforms:label ref="@A_codOblig"/>
+						<xforms:value  ref="@A_codOblig"/>
+						<xforms:hint class="afisare" ref="instance('dategen')/Creante/Den"></xforms:hint>
+					</xforms:itemset>	
+					
+					<xforms:action ev:event="xforms-value-changed">
+						<xforms:setvalue ref="instance('NCsablon')/NC/@A_codBugetar" value="instance('dategen')/Creante/Den[@A_codOblig=instance('NCsablon')/NC/@A_codOblig]/@A_codBugetar"/> 
+						<xforms:setvalue ref="instance('NCsablon')/NC/@tip" value="instance('dategen')/Creante/Den[@A_codOblig=instance('NCsablon')/NC/@A_codOblig]/@tip"/> 
+						<xforms:setvalue ref="instance('NCsablon')/NC/@DenA_codOblig" value="instance('dategen')/Creante/Den[@A_codOblig=instance('NCsablon')/NC/@A_codOblig]"/> 
+					</xforms:action>
+					
+				</xforms:select1>
+				</td>
+				<td  colspan="0" width="100%" align="left">
+					<b><xforms:output  ref="instance('NCsablon')/NC/@DenA_codOblig"/></b>
+				</td>	
+			</tr> 
+		</table>
+																	
+			<table  border="0" cellspacing="5" cellpadding="0" width="100%">
+			<tr class="Fondt">
+				<td colspan="1" width="30%" align="left">Cod creanta fiscala . <b><xforms:output ref="instance('NCsablon')/NC/@A_codOblig"/></b></td>
+				<td width="40%" align="left">Cod bugetar <b><xforms:output class="bcod" ref="instance('NCsablon')/NC/@A_codBugetar"/></b>   </td>						
+				<td width="30%" align="left">Tip creanta <b><xforms:output class="bcod" ref="instance('NCsablon')/NC/@tip"/></b></td>
+			</tr>   
+			</table> 	
+			<table border="0" cellspacing="5" cellpadding="0" width="100%">
+			<tr class="Fondt"> 
+				<td align="center" width="16%">Cont debit  </td>
+				<td class="d1"><b><xforms:input class="df2" ref="instance('NCsablon')/NC/Debit_Cont"/></b></td>
+				<td align="center" width="12%">Den.Cont D </td> 
+				<td class="d2"><xforms:input class="df3" ref="instance('NCsablon')/NC/Den_ContD"/></td>   
+				<td align="center" width="13%">De plata : </td> 
+			</tr>
+			</table>	
+			<table border="0" cellspacing="5" cellpadding="0" width="100%">
+			<tr class="Fondt"> 
+				<td align="center" width="16%">Cont credit </td> 
+				<td class="c1"><b><xforms:input class="df2" ref="instance('NCsablon')/NC/Credit_Cont"/></b></td>
+				<td align="center" width="12%">Den.Cont C </td>
+				<td class="c2"><xforms:input class="df3" ref="instance('NCsablon')/NC/Den_ContC"/></td>   
+				<td align="center" width="13%"><b><xforms:output class="df2" ref="instance('NCsablon')/NC/@obp"/></b></td>
+			</tr>
+			</table>
+			<!--<hr align="center" color="#E3E3E3" width="100%"/>-->
+			<table border="0" cellspacing="5" cellpadding="0" width="100%">
+			<tr class="Fondt">
+				<td align="center" width="16%">Procent obligatie </td>
+				<td align="left" class="c1" ><b><xforms:input  class="df2" ref="instance('NCsablon')/NC/Procent"/> %</b></td>
+				<td align="center" width="12%">Explicatii </td> 
+				<td class="c2"><b><xforms:input class="df3" ref="instance('NCsablon')/NC/Explicatie"/></b></td>   
+				<td width="13%" align="right">
+				<xforms:select1 class="dfpl" ref="instance('NCsablon')/NC/@obp">
+					<xforms:item>
+						<xforms:label>(DA) Obl. plată</xforms:label>
+						<xforms:value>da</xforms:value> 
+					</xforms:item>
+					<xforms:item>
+						<xforms:label>(NU) Obl. plată</xforms:label>
+						<xforms:value>nu</xforms:value>
+					</xforms:item>
+				</xforms:select1>
+				</td>   
+			</tr>                           
+			</table>
+	
+		<div align="center">
+			<!--	<style type="text/css">
+				.afisare {background: #ffffff url(images/exclamation.png) no-repeat 0px;
+				padding-left: 5px;font-size:16px;font-weight:bold;height: 8em; width: 1000px;padding:5mm;
+				border:solid 4px #C2CCD0;}
+			</style>-->
+			
+			<table align="center" width="100%" border="0">				
+				<tr  align="center" class="Fond">
+					<td>
+						<xforms:trigger id="trig" appearance="minimal"> 
+							<xforms:label class="medium button orange">&#187; Adaugă &#171;</xforms:label>
+							<xforms:action ev:event="DOMActivate">
+								<xforms:insert origin="instance('NCsablon')/NC" context="instance('sal')/NCsal" nodeset="NC"  ev:event="DOMActivate"/>
+								<xforms:hide dialog="addCF"/>
+								<!--<xforms:setvalue ref="instance('sal')/NCsal/NC[index('repeatRow')]/@DenA_codOblig" value="instance('dategen')/Creante/Den[@A_codOblig=instance('sal')/NCsal/NC[index('repeatRow')]/@A_codOblig]"/> 
+								<xforms:toggle case="listasal" />-->
+							</xforms:action>
+						</xforms:trigger>
+						<!--<a href="accnou.xhtml" > </a>-->
+						<xforms:trigger id="renunta" appearance="minimal"> 
+							<xforms:label class="medium button green">&#164; Renunță &#164;</xforms:label> 
+							<xforms:hint>Înapoi </xforms:hint>   
+							<xforms:action ev:event="DOMActivate">		
+								<xforms:hide dialog="addCF"/>
+							</xforms:action>
+						</xforms:trigger>
+					</td>
+						<br/><br/>	
+				</tr>
+			</table> 
+		</div>
+
+</div>	
+</xforms:dialog>	<!-- End dialog "addCF" -->
+ 
+		<xforms:dialog id="editCF"> 
+		<div align="left" style="width:95%"> 
+
+
+<!--<table  border="5" cellspacing="0" cellpadding="0" width="50%" >
+<tr>
+<td>-->
+		<table  border="0" cellspacing="5" cellpadding="0" width="100%">
+					<tr class="Fond1xxx">
+					<td  colspan="0" width="100%" align="center">
+					<label class="df0xxxx"><h3><i>Creanţe fiscale din impozit pe venitul din salarii şi contribuţii sociale  </i></h3></label>
+				</td>
+				</tr>
+				<tr class="Fondxxx">
+					<td  colspan="0" width="100%" align="left">
+					<b><xforms:output ref="instance('sal')/NCsal/NC[index('repeatRow')]/@DenA_codOblig"/></b>
+					</td>
+				</tr> 
+				<tr id="Fondxxx">
+
+	<td colspan="0" width="100%" align="left">
+		<label>Editare : <i>Alege - Creanţa fiscala  : </i></label>
+
+		<hr align="center" color="#C2CCD0" width="70%"/>
+
+		<xforms:select1 appearance="compact" ref="instance('sal')/NCsal/NC[index('repeatRow')]/@A_codOblig">			
+					<xforms:itemset nodeset="instance('dategen')/Creante/Den">
+					<xforms:label ref="."/>
+					<xforms:value ref="@A_codOblig"/>
+					
+				</xforms:itemset>
+				
+				<xforms:action ev:event="xforms-value-changed">
+					<xforms:setvalue ref="instance('sal')/NCsal/NC[index('repeatRow')]/@A_codBugetar" 
+					value="instance('dategen')/Creante/Den[@A_codOblig=instance('sal')/NCsal/NC[index('repeatRow')]/@A_codOblig]/@A_codBugetar"/> 				
+					<xforms:setvalue ref="instance('sal')/NCsal/NC[index('repeatRow')]/@tip" 
+					value="instance('dategen')/Creante/Den[@A_codOblig=instance('sal')/NCsal/NC[index('repeatRow')]/@A_codOblig]/@tip"/> 							
+					<xforms:setvalue ref="instance('sal')/NCsal/NC[index('repeatRow')]/@DenA_codOblig" 
+					value="instance('dategen')/Creante/Den[@A_codOblig=instance('sal')/NCsal/NC[index('repeatRow')]/@A_codOblig]"/>
+				</xforms:action>
+			</xforms:select1>
+
+		<hr align="center" color="#C2CCD0" width="70%"/>
+                                	</td>
+				</tr>	
+			</table>
+
+			<table  border="0" cellspacing="5" cellpadding="0" width="100%">
+				<tr class="Fondxxx">
+					<td colspan="1" width="30%" align="left">Cod creanta fiscala . <b><xforms:output ref="instance('sal')/NCsal/NC[index('repeatRow')]/@A_codOblig"/></b></td>
+					<td width="40%" align="left">Cod bugetar . <b><xforms:output class="bcod" ref="instance('sal')/NCsal/NC[index('repeatRow')]/@A_codBugetar"/></b>   </td>						
+					<td width="30%" align="left">Tip creanta . <b><xforms:output class="bcod" ref="instance('sal')/NCsal/NC[index('repeatRow')]/@tip"/></b></td>
+				</tr>   
+			</table> 
+			<table  border="0" cellspacing="5" cellpadding="0" width="100%">
+				<tr> 
+					<td align="center" width="16%">Cont debit . </td>
+					<td class="d1"><b><xforms:input class="df2" ref="instance('sal')/NCsal/NC[index('repeatRow')]/Debit_Cont"/></b></td>
+					<td align="center" width="12%">Den.Cont D . </td> 
+					<td class="d2"><xforms:input class="df3" ref="instance('sal')/NCsal/NC[index('repeatRow')]/Den_ContD"/></td>   
+					<td align="center" width="13%">De plata . </td> 
+				</tr>
+			</table>
+			<table  border="0" cellspacing="5" cellpadding="0" width="100%">
+				<tr> 
+					<td align="center" width="16%">Cont credit . </td> 
+					<td class="c1"><b><xforms:input class="df2" ref="instance('sal')/NCsal/NC[index('repeatRow')]/Credit_Cont"/></b></td>
+					<td align="center" width="12%">Den.Cont C . </td>
+					<td class="c2"><xforms:input class="df3" ref="instance('sal')/NCsal/NC[index('repeatRow')]/Den_ContC"/></td>
+					<td align="center" width="13%"><b><xforms:output class="df2" ref="instance('sal')/NCsal/NC[index('repeatRow')]/@obp"/></b></td>
+					
+				</tr>
+			</table>
+			<table  border="0" cellspacing="5" cellpadding="0" width="100%">
+				<tr>
+					<td align="center" width="16%">Procent obligatie . </td>
+					<td align="left" class="c1" ><b><xforms:input  class="df2" ref="instance('sal')/NCsal/NC[index('repeatRow')]/Procent"/>%</b></td>
+					<td align="center" width="12%">Explicatii . </td> 
+					<td class="c2"><b><xforms:input class="df3" ref="instance('sal')/NCsal/NC[index('repeatRow')]/Explicatie"/></b></td>
+					<td width="13%" align="right">
+					<xforms:select1 class="dfpl" ref="instance('sal')/NCsal/NC[index('repeatRow')]/@obp"> 
+						<xforms:item>
+						<xforms:label>(DA) Ob. Plată</xforms:label>
+						<xforms:value>da</xforms:value> 
+						</xforms:item>
+						<xforms:item>
+						<xforms:label>(NU) Ob. Plată</xforms:label>
+						<xforms:value>nu</xforms:value>
+						</xforms:item>
+					</xforms:select1>
+					</td>   
+				</tr>
+			</table>
+<br/>
+			<div align="center">
+				
+			<table align="center" width="100%" border="0">
+				
+				<tr align="center" class="Fond"><td>
+					
+					<xforms:trigger appearance="minimal"> 
+					<xforms:label class="medium button orange">&#187; Modifică &#171;</xforms:label>
+					<xforms:action ev:event="DOMActivate">
+						<xforms:setvalue ref="instance('sal')/NCsal/NC[index('repeatRow')]/@DenA_codOblig" value="instance('dategen')/Creante/Den[@A_codOblig=instance('sal')/NCsal/NC[index('repeatRow')]/@A_codOblig]"/> 
+						<xforms:hide dialog="editCF"/>
+					</xforms:action>
+					</xforms:trigger>
+					<xforms:trigger>
+						<xforms:label> ^ Renunță</xforms:label>
+						<xforms:action ev:event="DOMActivate">
+							<xforms:hide dialog="editCF"/>
+						</xforms:action>
+					</xforms:trigger>
+				</td></tr>
+				</table> 
+			</div>
+
+		</div>	
+		</xforms:dialog>	<!-- End dialog "editCF" -->	
+		
+		<xforms:dialog id="ConfirmDelete">	
+			
+			<div class="background2" align="center" style="width:100%">
+				<!--<div id="delete-confirm-box">-->
+
+					<p>
+						ATENTIE !!!<br />
+						<i> Datele sterse nu se mai pot recupera !</i>
+					</p>
+					<b>Vrei sa stergi obligatia ? <xforms:output ref="@A_codOblig"/></b>
+					
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+					</svg>    
+					<div class="delete-option-triggers">
+						<xforms:trigger>
+							<xforms:label> ^ Șterge</xforms:label>
+							<xforms:action ev:event="DOMActivate">
+								<xforms:delete nodeset="instance('sal')/NCsal/NC" at="index('repeatRow')" ev:event="DOMActivate" />
+								<xforms:hide dialog="ConfirmDelete"/>
+							</xforms:action>
+						</xforms:trigger>
+						
+						<xforms:trigger>
+							<xforms:label> ^ Renunță</xforms:label>
+							<xforms:action ev:event="DOMActivate">
+								<xforms:hide dialog="ConfirmDelete"/>
+							</xforms:action>
+						</xforms:trigger>
+					</div>
+				
+			</div>
+		</xforms:dialog>	<!-- End dialog "ConfirmDelete" -->	
+		
+		<xforms:dialog id="ConfirmReset">	
+			<div class="background2" align="center" style="width:100%">
+			Număr creanțe = 	<xforms:output value="count(instance('sal')/NCsal/NC)"/>
+			<div id="delete-confirm-box">
+				
+					<p>
+					ATENTIE !!!<br /><br />
+					<i> Sigur vreți asta?</i>
+					</p>
+				
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+				
+					</svg>     
+				
+				<div class="delete-option-triggers">
+				<xforms:trigger>
+					<xforms:label id="res"> Da</xforms:label>
+					<xforms:action ev:event="DOMActivate">
+						<xforms:delete nodeset="instance('sal')/NCsal/NC" />
+						<xforms:insert origin="instance('salsablonfix')/NCsal/NC" context="instance('sal')/NCsal" nodeset="NC"/>
+						<xforms:hide dialog="ConfirmReset"/>
+					</xforms:action>
+				</xforms:trigger>
+				
+				<xforms:trigger>
+					<xforms:label id="nu"> Nu</xforms:label>
+					<xforms:action ev:event="DOMActivate">
+						<xforms:hide dialog="ConfirmReset"/>
+					</xforms:action>
+				</xforms:trigger>
+				</div>
+			</div>
+			</div>
+		</xforms:dialog>	<!-- End dialog "ConfirmReset" -->	
+		
+		<xforms:dialog id="AdaugaSarbatoare">
+		<!--<xforms:group nodeset="Ziua" ref="instance('dategen')/ZileLibere/Anul[@nr=instance('tmp')/anulSelectat]/Luna/Ziua[index('repeatzl')]">
+		<xforms:group nodeset="Ziua" ref="instance('dategen')/ZileLibere/Anul[@nr=instance('tmp')/anulSelectat]/Ziua[index('repeatzl')]">	-->
+			<legend><i>Adaugă o sărbatoare: </i></legend>
+				<br/>
+				<table cellspacing="4" >
+					<tr>
+						<td>Data</td>
+						<td><xforms:input ref="instance('tmp')/DataSel"/></td>
+					</tr>
+					<tr>
+						<td>Nume sărbătoare </td>
+						<td><xforms:input ref="instance('tmp')/Ziua/@nume" class="inpst2"/></td>
+					</tr>					
+				</table><br/>
+
+			<hr align="center" color="#C2CCD0" width="90%"/>
+			 <xforms:trigger appearance="minimal">  
+				<xforms:label class="medium button orange">&#164; Salvează &#164;</xforms:label>
+				<xforms:action ev:event="DOMActivate" if="not(not(instance('tmp')/Ziua/@nume = instance('dategen')/ZileLibere/Anul[@nr=instance('tmp')/anulSelectat]/Ziua/@nume))">
+					<xforms:message>Sărbătoarea există deja</xforms:message>
+				</xforms:action>				
+				<xforms:action ev:event="DOMActivate" if="not(instance('tmp')/Ziua/@nume = instance('dategen')/ZileLibere/Anul[@nr=instance('tmp')/anulSelectat]/Ziua/@nume)">
+					<!--<xforms:action ev:event="DOMActivate">
+						<xforms:setvalue ref="instance('tmp')/Luna/@nr" value="substring(instance('tmp')/DataSel,6,2)"/>
+						<xforms:setvalue ref="instance('tmp')/Luna/@nume" value="instance('dategen')/Luni/Luna[@nr=instance('tmp')/Luna/@nr]"/>
+						<xforms:setvalue ref="instance('tmp')/Ziua/@nr" value="substring(instance('tmp')/DataSel,9,2)"/>
+						<xforms:setvalue ref="instance('tmp')/Ziua/@luna" value="substring(instance('tmp')/DataSel,6,2)"/>
+						
+						<xforms:setvalue ref="instance('tmp')/ZiuaAnte/@luna" value="max(instance('dategen')/ZileLibere/Anul[@nr=instance('tmp')/anulSelectat]/Luna/Ziua/@luna)"/>
+					</xforms:action>				
+					<xforms:action ev:event="DOMActivate" if="not(instance('dategen')/ZileLibere/Anul[@nr=instance('tmp')/anulSelectat]/Luna[@nr=instance('tmp')/Luna/@nr])">
+						<xforms:insert origin="instance('tmp')/Luna" context="instance('dategen')/ZileLibere/Anul[@nr=instance('tmp')/anulSelectat]" nodeset="/Luna" ev:event="DOMActivate"/>
+					</xforms:action>
+					<xforms:insert origin="instance('tmp')/Ziua" context="instance('dategen')/ZileLibere/Anul[@nr=instance('tmp')/anulSelectat]/Luna[@nr=instance('tmp')/Luna/@nr]" nodeset="/Ziua" ev:event="DOMActivate"/>-->
+
+					<xforms:setvalue ref="instance('tmp')/Ziua/@nr" value="substring(instance('tmp')/DataSel,9,2)"/>
+					<xforms:setvalue ref="instance('tmp')/Ziua/@luna" value="substring(instance('tmp')/DataSel,6,2)"/>
+					<xforms:setvalue ref="instance('tmp')/ZiuaAnte/@luna" value="max(instance('dategen')/ZileLibere/Anul[@nr=instance('tmp')/anulSelectat]/Ziua[@luna &lt; instance('tmp')/Ziua/@luna + 1]/@luna)"/>	
+					<xforms:setvalue ref="instance('tmp')/ZiuaAnte/@nr" value="max(instance('dategen')/ZileLibere/Anul[@nr=instance('tmp')/anulSelectat]/Ziua[@luna = instance('tmp')/ZiuaAnte/@luna]/@nr)"/>	
+					<xforms:setvalue ref="instance('tmp')/ZiuaAnte/@nume" value="instance('dategen')/ZileLibere/Anul[@nr=instance('tmp')/anulSelectat]/Ziua[@luna = instance('tmp')/ZiuaAnte/@luna][@nr = instance('tmp')/ZiuaAnte/@nr]/@nume"/>		
+					<xforms:setvalue ref="instance('tmp')/ZiuaAnte/@poz" value="count(instance('dategen')/ZileLibere/Anul[@nr=instance('tmp')/anulSelectat]/Ziua[@luna = instance('tmp')/ZiuaAnte/@luna][@nr = instance('tmp')/ZiuaAnte/@nr]/preceding-sibling::*) + 1"/><!--	-->		
+					<xforms:insert origin="instance('tmp')/Ziua" nodeset="instance('dategen')/ZileLibere/Anul[@nr=instance('tmp')/anulSelectat]/Ziua" at="instance('tmp')/ZiuaAnte/@poz" ev:event="DOMActivate"/>
+					<xforms:hide dialog="AdaugaSarbatoare"/>
+				</xforms:action>
+				
+			</xforms:trigger> 
+	  		<xforms:trigger appearance="minimal">   
+				<xforms:label class="medium button teal">&#164; Renunță &#164;</xforms:label>
+				<xforms:action ev:event="DOMActivate">
+					<xforms:hide dialog="AdaugaSarbatoare"/>
+				</xforms:action>
+			</xforms:trigger>
+		<!--</xforms:group>	-->
+		</xforms:dialog>		
+
+		<xforms:dialog id="ModificaSarbatoare">
+			
+			<legend><i>Modifică data pentru sărbatoarea: <div style="padding-left:3em"><xforms:output ref="@nume" class="inpst3"/></div></i></legend>
+				<br/>
+				<table cellspacing="4" >
+					<tr>
+						<td>Data</td>
+						<td><xforms:input ref="instance('tmp')/DataSel"/></td>
+					</tr>			
+				</table><br/>
+
+			<hr align="center" color="#C2CCD0" width="90%"/>
+			 <xforms:trigger appearance="minimal">  
+				<xforms:label class="medium button orange">&#164; Salvează &#164;</xforms:label>
+					<xforms:action ev:event="DOMActivate">
+						<xforms:setvalue ref="instance('dategen')/ZileLibere/Anul[@nr=instance('tmp')/anulSelectat]/Ziua[@nume=instance('tmp')/Ziua/@nume]/@nr" value="substring(instance('tmp')/DataSel,9,2)"/>
+						<xforms:setvalue ref="instance('dategen')/ZileLibere/Anul[@nr=instance('tmp')/anulSelectat]/Ziua[@nume=instance('tmp')/Ziua/@nume]/@luna" value="substring(instance('tmp')/DataSel,6,2)"/>			
+						<xforms:hide dialog="ModificaSarbatoare"/>
+					</xforms:action>	
+			</xforms:trigger> 
+	  		<xforms:trigger appearance="minimal">   
+				<xforms:label class="medium button teal">&#164; Renunță &#164;</xforms:label>
+				<xforms:action ev:event="DOMActivate">
+					<xforms:hide dialog="ModificaSarbatoare"/>
+				</xforms:action>
+			</xforms:trigger>
+		
+		</xforms:dialog>
+
+		<xforms:dialog id="ConfirmDelZiSarb">				
+			<div class="background2" align="center" style="width:100%">
+				<!--<div id="delete-confirm-box">-->
+					<div>
+						<p>
+							ATENTIE !!!<br />
+							<i> Datele sterse nu se mai pot recupera !</i>
+						</p>
+					
+						<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+						</svg> 
+					</div> 
+					<br/>  
+					<div class="delete-option-triggers">
+						<xforms:trigger>
+							<xforms:label> ^ Șterge</xforms:label>
+							<xforms:action ev:event="DOMActivate">
+								<xforms:delete nodeset="instance('dategen')/ZileLibere/Anul[@nr=instance('tmp')/anulSelectat]/Ziua" at="index('repeatzl')" ev:event="DOMActivate" />
+								<xforms:hide dialog="ConfirmDelZiSarb"/>
+							</xforms:action>
+						</xforms:trigger>
+						
+						<xforms:trigger>
+							<xforms:label> ^ Renunță</xforms:label>
+							<xforms:action ev:event="DOMActivate">
+								<xforms:hide dialog="ConfirmDelZiSarb"/>
+							</xforms:action>
+						</xforms:trigger>
+					</div>
+				
+			</div>
+		</xforms:dialog>	<!-- End dialog "ConfirmDelZiSarb" -->											
+		
+	</body>
+</html>
+

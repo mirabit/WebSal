@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="../xsltforms/xsltforms.xsl" type="text/xsl"?>
+<!--<?xsltforms-options lang="ro" debug="yes"?>-->
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:xforms="http://www.w3.org/2002/xforms"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ev="http://www.w3.org/2001/xml-events"
+ xml:lang="en">
+	<head>
+	
+		<title> Editare pontaj salariat/lună</title>  
+		<link rel="stylesheet" href="selekt.css"></link>
+		<style type="text/css">
+
+			@namespace xforms url("http://www.w3.org/2002/xforms");
+			.inp1 .xforms-value {width:50px; height:5.5mm; font-size:16px; border-width:0.1mm; border-style: solid; border-color:#666;text-align:right;}
+			.inpVal .xforms-value {width:80px; height:5.5mm; font-size:16px; border-width:0.1mm; border-style: solid; border-color:#666;text-align:right;}
+
+		</style>
+		<style type="text/css">
+    		#editPontaj { width: 80em;height: 43em;}
+    		.row * {
+			   display:inline;			  
+			}
+
+		#OreZiNoi { width: 20em;height: 5em;}
+    		.row * {
+			   display:inline;			  
+			}
+
+			.cpont {vertical-align:top;border-width:0.1mm;border-style:solid; padding:1px;
+			width:15px;font-size:16px;font-weight:bold; color:#000000;background-color:#C9C9C9;} 
+			.cpont1 {vertical-align:top;border-width:0.1mm;border-style:solid; padding:1px;
+			width:15px;font-size:14px; color:#000000;background-color:#C2CCD0;}
+			.valpont .xf-value {width:12mm;border-width:0.1mm; border-style:solid;text-align:right;background:#F6FCFF;}
+            .tdziles {width:10.9em;height:3.4em;border-width:0.1mm; border-style:solid;text-align:right;background:#F6FCFF;} 
+            .orezidr .xf-value {text-align:right;}  
+		</style>
+				
+		<xforms:model id="SAL" version="1.1">
+            <xforms:instance id="sal"  src="opener://sal"/>
+            <xforms:instance id="tmp"  src="opener://tmp"/>
+			<xforms:instance id="ore">
+				<DATE xmlns="">
+					<Ore tip="Lucru" simbol="L">1</Ore>
+					<Ore tip="COdihna" simbol="CO">2</Ore>
+					<Ore tip="CMedical" simbol="CM">0</Ore>
+					<Ore tip="Invoire" simbol="I">0</Ore>
+					<Ore tip="Nemotivat" simbol="N">5</Ore>
+					<Ore tip="S50" simbol="S50">0</Ore>
+					<Ore tip="CMatern" simbol="CMat">0</Ore>
+				</DATE>
+			</xforms:instance> 
+		</xforms:model>	
+			
+		<script type="text/javascript">
+			
+			function creCTP() {
+				//citesc luna an din instanta 
+				var model = document.getElementById("SAL").xfElement;
+				var inst = model.getInstanceDocument("sal");
+				//var year=inst.getElementsByTagName("An")[0].childNodes[0].nodeValue;
+				//var month=inst.getElementsByTagName("Luna")[0].getAttribute("nr");
+				var yearmonth=inst.getElementsByTagName("LunaLucru")[0].childNodes[0].nodeValue;
+				var year=yearmonth.substr(0,4);
+				var month=yearmonth.substr(4);
+				//alert(month);
+				//creez array cu primele 7 zile din luna ( ca si nr zi din saptamana) 
+				var l1=new Array();
+				for(var i=1; i &lt; 8; i++){
+					d = new Date(year,month-1,i);
+					l1[i-1]=d.getDay();
+				}				
+				//creere cap tabel pontaj
+				var zilesapt=["Duminică","Luni","Marți","Miercuri","Joi","Vineri","Sâmbătă"];
+				var lct=document.getElementById("ctpontaj");
+				if ( lct.hasChildNodes() )
+				{
+					while ( lct.childNodes.length >= 1 )
+					{
+						lct.removeChild( lct.firstChild );       
+					} 
+				}				
+				for(var i=0; i &lt; 7; i++){
+					var col=document.createElement("td");
+					var idx=l1[i];
+					var nume=zilesapt[idx];
+					col.appendChild(document.createTextNode(nume));
+					lct.appendChild(col);
+				}
+			}
+		
+		</script>			
+	</head>
+
+	<body bgcolor="#E9E9E9" text="#000000" rightmargin="80" topmargin="40" onload="creCTP()">
+		<div style="width:100%">	
+			<xforms:output value="instance('sal')/LunaLucru" class="val1"/>	
+			<br/>
+			<xforms:output value="instance('tmp')/marca" class="val1"/>	 	
+		</div>
+		
+	<xforms:group nodeset="Salariat" ref="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=instance('tmp')/marca]">   
+
+	<div id="foaiep" width="100%">
+       		 
+        <table align="left" border="0">
+            <tr>
+            	<td colspan="5" align="center" >	 
+            		<xforms:output value="instance('sal')/Personal/Salariat[@id=instance('tmp')/marca]/@Nume" class="valdf2"/>
+            		<xforms:label> </xforms:label>
+            		<xforms:output value="instance('sal')/Personal/Salariat[@id=instance('tmp')/marca]/@Prenume" class="valdf2"/>
+					<label>Luna :</label>
+					<b><xforms:output value="substring(instance('sal')/LunaLucru,5,2)" class="val1"/></b>            						<label>An :</label>
+					<b><xforms:output value="substring(instance('sal')/LunaLucru,1,4)" class="val1"/></b>		
+            		 
+        		 	Norma<xforms:output value="NormaOre" class="valdf2"/> ore/zi 
+					<xforms:output  value="instance('sal')/Luna/@NrZlucruL" class="valdf3"/> Zile /
+					<xforms:output  value="instance('sal')/Luna/@NrZlucruL * NormaOre" class="valdf3"/> Ore            		
+            	</td>            	
+        	</tr>
+            <tr><td>
+
+		
+		<table style="width:100%; border:0 solid red;"> 
+        	<tr id="ctpontaj" class="tdziles"></tr>  
+        	<tr><td colspan="7" align="center" >
+        	<!--<tr><td><table>  -->   
+        	
+				<xforms:repeat nodeset="Sapt" id="repeatSapt" >
+			<table align="left">	
+				<tr align="center">			
+			
+					<!--<xforms:output ref="@nr" /> -->
+				<xforms:repeat nodeset="Zile/Ziua" id="repeatZis" >
+
+				
+
+						<table class="tdziles" ><tr align="center">
+						<td>
+					<xforms:trigger >										
+						<xforms:label><xforms:output ref="@nr" /></xforms:label> 	
+					        <xforms:action ev:event="DOMActivate">					        	
+					        	<xforms:show dialog="alege"/>
+					        </xforms:action>                
+						    <xforms:hint> Modifică </xforms:hint>
+				        </xforms:trigger>	
+				        </td>
+				        <td>			  
+								<table>
+								<xforms:repeat nodeset="OreZi" id="repeatOre">
+									<tr><td>									
+										<xforms:output ref="@tip" /><xforms:label>: </xforms:label>
+										<xforms:output class="df2" ref="." />
+									</td></tr>					
+					    		</xforms:repeat>
+					    		</table>
+					    </td>			        		
+					    </tr></table>		
+				 
+
+				</xforms:repeat>
+				</tr>
+			</table>	       				
+				</xforms:repeat>
+				
+			</td></tr>							   					
+			<!--</table></td></tr>-->
+
+        </table>
+        
+        
+        <table class="tab" border="0" cellspacing="5" cellpadding="0" width="100%"> 
+
+        <tr><td>
+        <table>
+        	<tr>
+        		<td>
+    				<xforms:group nodeset="Salariat" ref="instance('sal')/Personal/Salariat[@id=instance('tmp')/marca]">   
+
+		    			Salariu: <xforms:output value="Contract/Salariu"/>
+		    			Tarif orar: <xforms:output value="if(Contract/Salariu/@fix='da', Contract/TarifSalOra, Contract/Salariu div (Contract/TimpMuncaNorma * instance('sal')/Luna/@NrZlucruL))"/>
+		    			<!--<xforms:output value="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@Marca=instance('sal')/Personal/Salariat[index('repeatRow')]/@Marca]/TarifSalOraLC"/>-->
+        			</xforms:group>
+        		</td>
+    		</tr>        
+        	<tr>	
+        		<td> Total ore lucrate 1-15: </td>
+        		<!--<td> <xforms:output  value="sum(instance('sal')/DateLunare/Luna/Salariat[@Marca=instance('sal')/Personal/Salariat[index('repeatRow')]/@Marca]/Sapt/Zile/Ziua[@nr &lt; '16']/OreZi[@tip='Lucru'])" class="valdf2"/> </td>
+        		<td> <xforms:output ref="instance('sal')/DateLunare/Luna/Salariat[@Marca=instance('sal')/Personal/Salariat[index('repeatRow')]/@Marca]/TotalSalariat/OreLucrate_1_15" class="valdf2"/> </td>-->
+        	<td> <xforms:output  value="sum(Sapt/Zile/Ziua[@nr &lt; '16']/OreZi[@tip='Lucru'])" class="valdf2"/> </td>	
+        	</tr>
+        	<tr>	
+        		<td> Total ore lucrate/lună: </td>
+        		<td> <xforms:output  value="sum(Sapt/Zile/Ziua/OreZi[@tip='Lucru'])" class="valdf2"/> </td>
+        	</tr> 
+
+        	<tr>	
+        		<td> Totaluri alte ore: </td>        		
+        		<td>
+					<xforms:repeat nodeset="distinct-values(Sapt/Zile/Ziua/OreZi[@tip != 'Lucru']/@tip)" id="repeatOreAlte">						
+						<xforms:output value="." /><xforms:label> -  </xforms:label>
+						<xforms:output value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=instance('tmp')/marca]/Sapt/Zile/Ziua/OreZi[@tip=current()])" />
+		    		</xforms:repeat>  
+
+        		</td>
+        	</tr> 
+    	</table>
+    	</td>
+		<td>
+			<table>
+				<tr> 
+					<td> Coeficienți </td>
+					<td> Indice </td>
+					<td> Valoare </td>										
+				</tr> 
+
+		        <tr>
+		            <td class="Ttd4">Concediu odihna </td>
+		            <td class="inp1"><xforms:input type="text" name="text" ref="CoefCO" class="valdf1"/></td>
+		            <td class="inpVal"><xforms:output value="CoefCO * sum(Sapt/Zile/Ziua/OreZi[@tip='COdihna']) * TarifSalOraLC"/></td>
+		            <!--<td class="inpVal">
+		            	<xforms:group nodeset="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@Marca=instance('sal')/Personal/Salariat[index('repeatRow')]/@Marca]">
+		            		<xforms:output value="CoefCO * sum(Sapt/Zile/Ziua/OreZi[@tip='COdihna']) * TarifSalOraLC"/>
+		            	</xforms:group>
+		            </td>-->		            
+		        </tr>
+		        <tr>
+		            <td class="Ttd4">Concediu medical </td>
+		            <td class="inp1"><xforms:input type="text" name="text" ref="CoefCM" class="valdf1"/></td>
+		            <td class="inpVal"><xforms:output value="CoefCM * sum(Sapt/Zile/Ziua/OreZi[@tip='CMedical']) * TarifSalOraLC"/></td>		            
+		        </tr>	  
+		        <tr>
+		            <td class="Ttd4">Concediu maternitate </td>
+		            <td class="inp1"><xforms:input type="text" name="text" ref="CoefCMat" class="valdf1"/></td>
+		            <td class="inpVal"><xforms:output value="CoefCO * sum(Sapt/Zile/Ziua/OreZi[@tip='CMatern']) * TarifSalOraLC"/></td>		            
+		        </tr>	                      			           
+		    </table>
+        </td>
+		<td>
+			<table>
+				<tr> 
+					<td> Sporuri - deduceri valorice </td>
+				</tr> 
+
+		        <tr>
+		            <td class="Ttd4">Spor vechime: </td>
+		            <td class="inpVal"><xforms:input type="text" name="text" ref="Spor" class="valdf1"/></td>
+		        </tr>
+		        <tr>
+		            <td class="Ttd4">Rețineri: </td>
+		            <td class="inpVal"><xforms:input type="text" name="text" ref="Retineri" class="valdf1"/></td>
+		        </tr>	  
+		        <tr>
+		            <td class="Ttd4">Deduceri: </td>
+		            <td class="inpVal"><xforms:input type="text" name="text" ref="Deduceri" class="valdf1"/></td>
+		        </tr>	                      			           
+		    </table>
+        </td>        
+        </tr>	       	
+        </table>
+                   
+            <table class="tab" border="0" cellspacing="5" cellpadding="0" width="100%">
+           
+                    <tr>
+                            <td class="Ttd4" id="Ant2">Consultă tabelul pentru deduceri in funcţie de venit brut şi nr.copii în întreţinere:</td>
+                            <td class="Ttd4" id="Save"><a href="omfp1016_2005.pdf">
+                                            <!--<xforms:trigger id="insertbutton">
+                                                    <xforms:label><b> ^ DEDUCERI PERSONALE VEZI LEGISLAŢIA </b></xforms:label>
+                                                    <xforms:hint>Calculator_Deduceri</xforms:hint>
+                                            </xforms:trigger>-->
+                                                    </a>
+                            </td>                      
+                      		<td class="Ttd4">Copii în întreţinere = <b><xforms:output ref="@Copii_intretinere" class="valdf3"/></b></td>
+                            <td class="Ttd4">Venitul brut lunar(VBL) = <b><xforms:output ref="Salariu_Incadrare" class="valdf3"/></b></td>
+                    </tr>
+            </table>
+
+               
+            <table class="tab" border="0" cellspacing="3" cellpadding="2" width="100%">
+                <tr id="Fond">
+                    <xforms:trigger id="corectie">
+                            <xforms:label>&#164; Modifică &#164;</xforms:label>
+                            <xforms:insert nodeset="/SAL/Personal/Salariat" at="index('repeatRow')" replace="true"/>
+                            <xforms:action ev:event="DOMActivate">
+                            	<!--<xforms:toggle case="listapont" />-->
+                            	<xforms:hide dialog="editPontaj"/>
+                            </xforms:action>
+                    </xforms:trigger>
+
+                <a hhref="calculCM.xhtml">
+                        <xforms:trigger>
+                                <xforms:label>&#164; CalcularorCM &#164;</xforms:label>
+                                <xforms:hint>Vezi Stat Plată final</xforms:hint>      
+                        </xforms:trigger>
+                </a>
+                <a hhref="calculCO.xhtml">
+                        <xforms:trigger>
+                                <xforms:label>&#164; CalcularorCO &#164;</xforms:label>
+                                <xforms:hint>Vezi Stat Plată final</xforms:hint>      
+                        </xforms:trigger>
+                </a>
+                    <xforms:trigger>
+                            <xforms:label>&#164; Renunță &#164;</xforms:label>
+                            <xforms:action ev:event="DOMActivate">
+                            	<xforms:hide dialog="editPontaj"/>
+                            </xforms:action>
+                    </xforms:trigger>                
+                </tr>
+            </table>
+            </td></tr>
+        </table>
+		</div>
+		</xforms:group>	
+		
+        
+		<xforms:dialog id="alege"> 
+			<xforms:group nodeset="Ziua" ref="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=instance('tmp')/marca]/Sapt[index('repeatSapt')]/Zile/Ziua[index('repeatZis')]"> 		
+			<div>					
+				<div>
+					<xforms:output ref="@nr">
+						<xforms:label> Ziua </xforms:label>
+					</xforms:output>
+					<xforms:repeat nodeset="OreZi" id="repeatOreD">										
+            			<xforms:select1 class="Ztd1" ref="@tip" >
+				    		<xforms:itemset nodeset="instance('ore')/Ore/@tip">
+				        		<xforms:label ref="."/>
+								<xforms:value ref="."/>
+							</xforms:itemset>                         
+             			</xforms:select1>
+						<!--<input type="number" name="points" min="0" max="8" />	-->    
+						<xforms:input ref="." />
+					    <xforms:trigger appearance="minimal">
+							<xforms:label class="medium button red"> X </xforms:label>  	
+						    <xforms:action ev:event="DOMActivate">
+						    	<xforms:delete nodeset="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=instance('tmp')/marca]/Sapt[index('repeatSapt')]/Zile/Ziua[index('repeatZis')]/OreZi" at="index('repeatOreD')"/>
+						    </xforms:action>                
+							<xforms:hint> Șterge </xforms:hint>
+						 </xforms:trigger>    				
+					</xforms:repeat>
+			        <xforms:trigger appearance="minimal">
+					    <xforms:label class="medium button green"> + </xforms:label>  	
+				        <xforms:action ev:event="DOMActivate">
+				        	<!--<xforms:insert context="instance('sal')/DateLunare/Luna/Salariat[@Marca=instance('sal')/Personal/Salariat[index('repeatRow')]/@Marca]/Sapt[index('repeatSapt')]/Zile/Ziua[index('repeatZis')]" nodeset="OreZi"/>-->
+				        	<xforms:show dialog="OreZiNoi"/>
+				        </xforms:action>                
+					    <xforms:hint> Adaugă </xforms:hint>
+			        </xforms:trigger>	
+		        </div>		        	   
+				<hr/>       
+            </div>		
+			<xforms:trigger appearance="minimal">
+				<xforms:label class="medium button teal"> OK </xforms:label>
+		        <!--<xforms:action ev:event="DOMActivate">
+		        	<xforms:setvalue calculate="sum(instance('sal')/DateLunare/Luna/Salariat[@Marca=instance('sal')/Personal/Salariat[index('repeatRow')]/@Marca]/Sapt/Zile/Ziua[@nr &lt; '16']/OreZi[@tip='Lucru'])"/>
+		        </xforms:action> -->				
+		        <xforms:action ev:event="DOMActivate">
+		        	<xforms:hide dialog="alege"/>
+		        </xforms:action> 
+            </xforms:trigger>
+            </xforms:group>   		
+		</xforms:dialog> 
+		
+		
+		<xforms:dialog id="OreZiNoi"> 
+			<div>	
+            	<xforms:select1 class="Ztd1" ref="instance('ore')/Ore/@tip">
+				    <xforms:itemset nodeset="instance('ore')/Ore/@tip[not(.=instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=instance('tmp')/marca]/Sapt[index('repeatSapt')]/Zile/Ziua[index('repeatZis')]/OreZi/@tip)]">
+				        <xforms:label ref="."/>
+				        <xforms:value ref="."/>
+				    </xforms:itemset>                         
+             	</xforms:select1>		
+				<xforms:input id="inp1" ref="instance('ore')/Ore" />	
+				<xforms:trigger appearance="minimal">
+					<xforms:label class="medium button teal"> OK </xforms:label>				
+				    <xforms:action ev:event="DOMActivate">
+					<xforms:insert context="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=instance('tmp')/marca]/Sapt[index('repeatSapt')]/Zile/Ziua[index('repeatZis')]" nodeset="OreZi" at="1" position="before"/>
+					<xforms:setvalue ref="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=instance('tmp')/marca]/Sapt[index('repeatSapt')]/Zile/Ziua[index('repeatZis')]/OreZi/@tip" value="instance('ore')/Ore/@tip"/>
+					<xforms:setvalue ref="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=instance('tmp')/marca]/Sapt[index('repeatSapt')]/Zile/Ziua[index('repeatZis')]/OreZi" value="instance('ore')/Ore"/>
+				    	<xforms:hide dialog="OreZiNoi"/>
+				    </xforms:action> 
+		        </xforms:trigger>   		            	
+            </div>		        			
+		</xforms:dialog> 			
+		    <xforms:trigger appearance="minimal">
+				<xforms:label class="small button greenn">X</xforms:label>										
+				<xforms:action ev:event="DOMActivate">						
+					<xforms:load resource="javascript:self.close()"/>
+		        </xforms:action>
+            </xforms:trigger>		
+    </body>
+</html>		

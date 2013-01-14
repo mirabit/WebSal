@@ -1,0 +1,1038 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="../webgestext/xsltforms/xsltforms.xsl" type="text/xsl"?>
+<?css-conversion no?>
+
+<html
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:xforms="http://www.w3.org/2002/xforms"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+xmlns:ev="http://www.w3.org/2001/xml-events"
+xml:lang="en">
+	<head>
+		<link rel="stylesheet" href="index.css"></link>	
+
+		<style type="text/css">
+	input {width: 160px; height:6.5mm; font-size:16px; border-width:1.0mm; border-style:solid;font-weight:bold; border-color:#676;}
+    		#CoodCaeen { width: 65em;height: 30em;background:#E3E3E3;}
+    	
+			.ui-autocomplete {
+				max-height: 20em;
+				overflow-y: auto;
+				/* prevent horizontal scrollbar */
+				overflow-x: hidden;
+				/* add padding to account for vertical scrollbar */
+				padding-right: 20px;
+				z-index: 999999;
+			}
+			
+		 	
+			.ui-accordion .ui-accordion-content-active { padding-left: 2em; padding-right: 0.2; padding-top: 0.2; padding-bottom: 0.2; border:none;}
+			.ui-accordion .ui-accordion-header { padding: .2em; background-color: white; border:none;}
+			.ui-accordion .ui-accordion-header-active {border:none; padding: .2em;}
+			.ui-accordion .ui-accordion-header:hover { background-color: #DCE1DC; }
+			
+			.ui-accordion p:hover { background-color: #DCE1DC; }
+			.ui-accordion p { padding-left: 2em; padding-right: 0; padding-top: 0; padding-bottom: 0; }
+			.ui-accordion .ui-accordion-header a { display: block; padding: .3em .2em .2em .2em; }			      				.ui-accordion .ui-accordion-content { padding-left: 2em;padding-right: 0;padding-top: 0;padding-bottom: 0; border-top: 0; margin-top: -1px; position: relative; top: 1px; margin-bottom: 1px; overflow: auto; display: none; zoom: 0; }  /* */
+		</style>
+					
+		<link href="../webgestext/jq/jquery-ui.css" rel="stylesheet"/>
+		<script src="../webgestext/jq/jquery.min.js"></script>
+		<script src="../webgestext/jq/jquery-ui.min.js"></script>
+		<!--<script src="js/jquery.ui.tooltip.js"></script>
+		<script src="js/jquery.ui.position.js"></script>-->
+		
+		<script type="text/javascript" src="loadSal.js"/>
+		<script>
+		
+		/////////////////   SIRUTA    /////////////		
+			var sirutaxml;
+			var judArr = [];
+			var locArr = [];
+			var instsal;		
+			//var myArr = [];
+			var codjudales;
+			
+			//sortare array
+			function dynamicSort(property) {
+				return function (a,b) {
+					return (a[property] &lt; b[property]) ? -1 : (a[property] &gt; b[property]) ? 1 : 0;
+				}
+			}
+			//definire startsWith pt.String
+			String.prototype.startsWith = function (str){return this.toUpperCase().indexOf(str.toUpperCase()) == 0;	};
+			
+			var timpSiruta;
+			var startLoadSiruta;			
+			function loadXMLsiruta() {
+				//startLoadSiruta = new Date();
+				$.ajax({
+					type: "GET",
+					url: "../webgestext/xml/siruta.xml", // change to full path of file on server
+					dataType: "xml",
+					async: false,
+					success: parseXml,
+					//complete: setupAC,
+					//complete: selJud,
+					failure: function(data) {
+						alert("XML File could not be found");
+						}
+				});	
+				function parseXml(xml) {
+					sirutaxml = xml;
+					judArrA = [];
+					$(xml).find("NIVEL2").each(function()
+					{
+						var nume=$(this).attr("den").substr($(this).attr("den").indexOf(" ")+1);
+						var codj=$(this).attr("cod").substr(0,$(this).attr("cod").length-1);					
+						judArrA.push({ label : nume, cod : codj });
+					});
+					judArrB = judArrA.sort(dynamicSort("label"));
+					$.each(judArrB, function(index,obj) {   
+						judArr.push('&lt;option title="" label="'+ obj.label +'" value="'+ obj.cod +'" &gt;'+ obj.label +'&lt;/option &gt;');
+					});
+				}
+
+			}
+
+			function selJud() {
+				$('#seljudet option').remove();
+				$('#seljudet').append(judArr.join(' '));
+			
+				var model = document.getElementById("SAL").xfElement;
+				instsal = model.getInstanceDocument("sal");	
+				var codJudInDF = $(instsal).find("Date_firma").find("Judet").attr("Cj");
+				var LocInDF = $(instsal).find("Date_firma").find("Localitatea").text();
+				var caenInDF = $(instsal).find("Date_firma").find("CodCAEN").text();   // preluare cod caen din instanța sal
+				$('#seljudet').val(Number(codJudInDF));
+				document.getElementById("codjud").value = Number(codJudInDF);
+				document.getElementById("searchBoxL").value = LocInDF;
+				document.getElementById("inpCAEN").value = caenInDF;
+				$('input#searchBoxL').val(LocInDF);
+			}
+
+			function selJudCAS() {
+				$('#seljudetCAS option').remove();
+				$('#seljudetCAS').append(judArr.join(' '));
+				var JudInCAS = $(instsal).find("Date_firma").find("Casa_Asigurari").text();
+				$('#seljudetCAS option').val(JudInCAS); ////////////////  trebuie adăugat cod județ în Casa_Asigurari
+			}
+					
+			function setACLoc() {
+				locArr =[];
+				codjudales = document.getElementById("seljudet").value;
+				document.getElementById("codjud").value = codjudales;
+				$(sirutaxml).find("LOCALITATE[codjud = '"+codjudales+"']").each(function(){
+						var nume=$(this).text();
+						var codl=$(this).attr("cod");
+						locArr.push({ label : nume, cod : codl });					
+				});	
+				locArr = locArr.sort(dynamicSort("label"));
+				$("input#searchBoxL").autocomplete({
+					//	source: locArr, 
+						source:function(request, response) {
+						    var filteredArray = $.map(locArr, function(item) {
+							    if(item.label.startsWith(request.term)){
+							    //	return accent_fold (item.label);
+							    	return item;
+						        }else{
+						            return null;
+						        }
+						    });
+						    response(filteredArray);
+						},
+						minLength: 1,
+						autoFocus: true,
+					//	position:{my: "left top", at: "left bottom",  collision: "flip" },
+					//	disabled: true,
+					/*	focus: function(event, ui) {
+							var so = ui.item;
+							var codloc = so.cod;
+							//tlt(codloc);
+						},*/
+
+						select: function(event, ui) {
+							var so = ui.item;
+					//		alert("nume:"+so.label+" cod:"+so.cod);
+							$("input#searchBoxL").val(so.label);
+							$("input#codloc").val(so.cod);
+						}
+				});
+				//var sfACLoc = new Date();
+				//timpSiruta = sfACLoc - startLoadSiruta;		
+			}
+			
+		/*	function tlt(str){
+				$("a #ui-menu-0-0 .ui-corner-all .ui-state-focus").tooltip(
+						{content:str
+						//	content: function() {
+						//		return str;
+						//	}
+						}						
+				);
+			}	*/		
+			function setJLinInst() {
+					var judales = $('#seljudet option:selected').text();
+					$(instsal).find("Date_firma").find("Judet").attr("Cj", codjudales);
+					$(instsal).find("Date_firma").find("Judet").text(judales);
+					var localeasa = $('input#searchBoxL').val();
+					var codlocales = $('input#codloc').val();
+					$(instsal).find("Date_firma").find("Localitatea").attr("codloc", codlocales);
+					$(instsal).find("Date_firma").find("Localitatea").text(localeasa);
+					$(instsal).find("Date_firma").find("Casa_Asigurari").text($('#seljudetCAS option:selected').text());
+					var codCAENales = $('input#inpCAEN').val();                      //////////  CAEN
+					$(instsal).find("Date_firma").find("CodCAEN").text(codCAENales);
+					//alert('judalesCAS= ' + $('#seljudetCAS option:selected').text() + 'localeasa= ' + localeasa + 'codCAENales= ' + codCAENales);
+				
+					//var model = document.getElementById("SAL").xfElement;
+					//var instsal = model.getInstanceDocument("sal");
+					//var codjudin = $(instsal).find("Firma").text();	
+					var codjudin = $(instsal).find("Date_firma").find("Judet").attr("Cj");
+					var judins = $(instsal).find("Date_firma").find("Judet").text();
+					//alert('codjudin= ' + codjudin + 'judin= ' + judins);		
+			}
+		
+			function golesteInputLoc() {
+				document.getElementById('searchBoxL').value = "";
+			}
+					
+			function setSource(){
+				if(!document.getElementById("tipserchLoc").checked){
+					$("input#searchBoxL").autocomplete( "option", "source", function(request, response) {
+						var filteredArray = $.map(locArr, function(item) {
+						    if(item.label.startsWith(request.term)){
+					        return item;
+					    }else{
+					        return null;
+					    }
+					});
+					response(filteredArray);
+				});
+				}else{
+					$("input#searchBoxL").autocomplete( "option", "source", locArr);
+				}
+
+			}
+			
+		/////////////////   CAEN    /////////////
+			
+			var caenxml;
+			function loadXMLcaen() {
+				
+			//	alert("begin load xml");
+				$.ajax({
+					type: "GET",
+					url: "../webgestext/xml/caen.xml",
+					dataType: "xml",
+					async: false,
+					success: parseXml,
+					error:function (jqXHR, textStatus, errorThrown){
+						alert("status:"+textStatus+"- -"+errorThrown);
+					},
+					failure: function(data) {
+						alert("XML File could not be found");
+					}
+				});	
+				function parseXml(xml) {
+					caenxml = xml;
+				//	alert("end parse xml");
+				}
+				buildAcco();
+			}
+			
+			var time;
+			function dialogCAEN() {
+				var start = new Date();
+				$('#accdcaen').contents().remove();
+				//$( "#dialog:ui-dialog" ).dialog( "destroy" );	
+				$( "#accdcaen" ).dialog({
+					height: 580,
+					width: 800, 
+					title: " Lista CAEN -- Alegeți o Activitate",
+					//width: 70%,
+					modal: true,
+					//buttons: { "Ok": function() { $(this).dialog("close"); } }					
+				});
+				//loadXMLcaen()
+				time = new Date() - start;
+				
+				$( "#accdcaen" ).append(divacc.join(' '));
+				$( ".accordion" ).accordion({ clearStyle: true, active: false, collapsible: true, animated: false});
+				//alert("time dialog= " + time);
+						
+			}			
+		
+			var divacc = [];
+			function buildAcco() {
+				var start = new Date();
+			//	$('#accdcaen').contents().remove();
+				
+				//alert("divacc2= " + divacc);
+				divacc.push('&lt;div class="accordion"&gt;');
+				$(caenxml).find("Sectiune").each(function(){
+					divacc.push('&lt;h3&gt;&lt;a href="#"&gt;'+ $(this).attr("cod") + ' - ' + $(this).attr("den") +'&lt;/a&gt;&lt;/h3&gt;');
+					divacc.push('&lt;div&gt;&lt;div class="accordion"&gt;');
+					$(this).find("Level1").each(function(){
+						divacc.push('&lt;h3&gt;&lt;a href="#"&gt;'+ $(this).attr("cod") + ' - ' + $(this).attr("den") +'&lt;/a&gt;&lt;/h3&gt;');
+						divacc.push('&lt;div&gt;&lt;div class="accordion"&gt;');
+						$(this).find("Level2").each(function(){
+							divacc.push('&lt;h3&gt;&lt;a href="#"&gt;'+ $(this).attr("cod") + ' - ' + $(this).attr("den") +'&lt;/a&gt;&lt;/h3&gt;');
+							divacc.push('&lt;div&gt;');
+							$(this).find("Activitate").each(function(){
+								//divacc.push('&lt;div style="padding-left:2em;" onclick=\'setDecompl('+$(this).attr("cod")+');\'&gt;'+ $(this).attr("cod") + ' - ' + $(this).text() +'&lt;/div&gt;');
+								divacc.push('&lt;p style="padding-left:2em;" onclick=\'setDecompl('+$(this).attr("cod")+');\'&gt;'+ $(this).attr("cod") + ' - ' + $(this).text() +'&lt;/p&gt;');
+							});
+							divacc.push('&lt;/div&gt;');
+						});
+						divacc.push('&lt;/div&gt;&lt;/div&gt;');
+					});	
+					divacc.push('&lt;/div&gt;&lt;/div&gt;');
+				});
+				divacc.push('&lt;/div&gt;');
+				var timepush = new Date() - start;
+			//	alert(divacc.join(' '));
+			//	$( "#accdcaen" ).append(divacc.join(' '));
+			//	$( ".accordion" ).accordion({ autoHeight: false, active: false, animated: false});
+			//	$( ".accordion" ).accordion({ animated: false});
+				
+				var timeacc = new Date() - start;
+			//	alert("time dialog= " + time + "timepush= " + timepush + "timeacc= " + timeacc);
+			//	return false; 
+				var startLXC = new Date();
+				var timpjs = startLXC - startLS;
+				//alert("timpjs= " + timpjs + "timpSiruta= " +  timpSiruta);	
+			}
+			function setDecompl(id){
+				$('#inpCAEN').val(id);
+				$( "#accdcaen:ui-dialog" ).dialog( "close" );
+				$( ".accordion" ).accordion( "destroy" );
+			}	
+			
+		/*	$(function() {
+				$( "#inpCAEN" ).tooltip();
+			});	*/
+			//tooltip input cod caen 
+			$(function() {
+				$( "#inpCAEN" ).tooltip(
+						{
+							content: function() {
+								return $(caenxml).find("Activitate[cod ="+$(this).val()+"]").text();
+							}
+						}						
+				);
+			});	
+			//tooltip ac localitate 
+			$(function() {
+				$("li").tooltip(
+						{
+							content: function() {return "tooltip"}
+						/*	content: function() {
+								$.map(locArr, function(item) {
+								    if(item.label==$(this).label){
+								    	return item.cod;
+							        }else{
+							            return null;
+							        }
+							    });
+							//	return $(caenxml).find("Activitate[cod ="+$(this).val()+"]").text();
+							}*/
+						}						
+				);
+			});	
+			
+			//tooltip lista prefix 
+			$(function() {
+				$( "#seljudet option" ).tooltip(
+						{
+							content: function() {
+								return $('#seljudet').val();
+							}
+						}						
+				);
+			});				
+		</script>						
+		<title>DATE SOCIETATE ads01</title>  
+	
+
+			<xforms:model id="SAL" version="1.1">
+				<!--<xforms:instance id="sal"  resource="salsablon.xml"/>
+					<xforms:instance id="sablon" resource="salsablon.xml"/>-->
+					<xforms:instance id="sal">
+						<DATE xmlns="">
+				   			<d/>																						
+						</DATE> 
+				 	</xforms:instance> 					
+					<!--<xforms:instance id="salsablon" resource="salsablon.xml"/>-->
+					<xforms:instance id="sablon" resource="salsablon.xml"/>
+					<!--<xforms:instance id="caen" resource="CAEN.xml"/>
+					<xforms:instance id="siruta" resource="ext/siruta.xml"/>
+					<xforms:bind nodeset="instance('sal')/SAL/Date_firma/RvsalID/@AngDataSTARE" type="xsd:date" />-->
+				<!--<xforms:submission id="s01" method="put" replace="none" action="file://" ref="instance('sal')"/>-->
+			</xforms:model>
+		</head>
+
+		<body bgcolor="#E9E9E9" text="#080808" rightmargin="0" topmargin="0" onload="loadSal();loadXMLsiruta();selJud();selJudCAS();setACLoc();loadXMLcaen();">
+		<div id="tooltip"><p></p></div>
+		
+						<br/><br/>
+						<div style="padding-left:5em;">
+							<span style="font-size:2.6em;color:#008080;padding:0.5em;">WebSal</span>
+							<span style="font-size:1.8em;color:#008080;padding:0.2em;">v.</span>
+							<span style="font-size:1.8em;color:#008080;padding:0.2em;">
+							<xforms:output ref="instance('sablon')/@vers"/></span>
+							<span style="padding-left:2em;" id="adsoc">Administrare date Societate</span>
+						</div>
+
+						<hr align="center" color="#D7D5D8" width="90%"/>
+
+				<div align="center" style="width:95%;padding-left:2em;"> 
+
+				<br/>
+
+	<fieldset class="dvtxt3">
+		<legend><i>Date Firma - Adresa</i></legend> 
+
+		<br/>
+		<table border="0" align="center" cellspacing="7" cellpadding="0" width="100%" class="">
+			<tr class="lab">
+				<td class="dn">Denumire angajator : *</td> 
+				<td colspan="3" id="denfirma" title=""><xforms:input ref="/SAL/Date_firma/Firma" class="inpns"/></td>
+				<td class="dn">Domeniu principal de activitate : </td> 
+ 
+                                <td>
+                                    <xforms:trigger appearance="minimal">
+                                        <xforms:label class="small button blue">ALEGE COD CAEN</xforms:label>
+                                        <xforms:action ev:event="DOMActivate">
+                                        	<!--<xforms:toggle case="editpont" />
+											<xforms:show dialog="CoodCaeen"/>-->
+											<xforms:load resource="javascript:dialogCAEN()"/>
+                                        </xforms:action>
+                                    </xforms:trigger>
+                                </td>
+			</tr>
+			<tr class="lab">
+				<td colspan="6" class="dn"> 
+				<hr align="center" color="#D7D5D8" width="98%"/>
+				</td>
+			</tr>
+			<tr class="lab">
+				<td class="dn">Prefix soc : *</td> 
+				<td><xforms:select1 ref="/SAL/Date_firma/Prefix/@coditm">  
+								<xforms:item>
+									<xforms:label>SC</xforms:label>
+									<xforms:value>1</xforms:value> 
+								</xforms:item>
+
+								<xforms:item>
+									<xforms:label>PF</xforms:label>
+									<xforms:value>2</xforms:value>
+								</xforms:item>
+					<xforms:item>
+									<xforms:label>PFA</xforms:label>
+									<xforms:value>3</xforms:value>
+								</xforms:item>
+					<xforms:item>
+									<xforms:label>AF</xforms:label>
+									<xforms:value>4</xforms:value>
+								</xforms:item>
+					<xforms:item>
+									<xforms:label>ONG/Asociatie</xforms:label>
+									<xforms:value>5</xforms:value>
+								</xforms:item>
+					<xforms:item>
+									<xforms:label>ONG/Fundatie</xforms:label>
+									<xforms:value>6</xforms:value>
+								</xforms:item>
+					<xforms:item>
+									<xforms:label>Asoc.Locatari</xforms:label>
+									<xforms:value>7</xforms:value>
+								</xforms:item>
+					<xforms:item>
+									<xforms:label>Asoc.Proprietari</xforms:label>
+									<xforms:value>8</xforms:value>
+								</xforms:item>
+					<xforms:item>
+									<xforms:label>Cab.Individual</xforms:label>
+									<xforms:value>9</xforms:value>
+								</xforms:item>
+					<xforms:item>
+									<xforms:label>SCA</xforms:label>
+									<xforms:value>10</xforms:value>
+								</xforms:item>
+					<xforms:item>
+									<xforms:label>Asoc.Agricola</xforms:label>
+									<xforms:value>11</xforms:value>
+								</xforms:item>
+					<xforms:item>
+									<xforms:label>Asoc.Cooperatista</xforms:label>
+									<xforms:value>12</xforms:value>
+								</xforms:item>
+					<xforms:item>
+									<xforms:label>Banca</xforms:label>
+									<xforms:value>13</xforms:value>
+								</xforms:item>
+					<xforms:item>
+									<xforms:label>Altele</xforms:label>
+									<xforms:value>0</xforms:value>
+								</xforms:item>
+						</xforms:select1>
+				</td>
+				<td class="dn">Sufix soc : *</td> 
+				<td><xforms:select1 class="dfa0" ref="/SAL/Date_firma/Sufix/@coditm" >  
+								<xforms:item>
+									<xforms:label>SRL</xforms:label>
+									<xforms:value>1</xforms:value> 
+								</xforms:item>
+								<xforms:item>
+									<xforms:label>SA</xforms:label>
+									<xforms:value>2</xforms:value>
+								</xforms:item>
+								<xforms:item>
+									<xforms:label>SNC</xforms:label>
+									<xforms:value>3</xforms:value>
+								</xforms:item>
+								<xforms:item>
+									<xforms:label>SCS</xforms:label>
+									<xforms:value>4</xforms:value>
+								</xforms:item>
+								<xforms:item>
+									<xforms:label>SCA</xforms:label>
+									<xforms:value>5</xforms:value>
+								</xforms:item>
+								<xforms:item>
+									<xforms:label>Altele</xforms:label>
+									<xforms:value>0</xforms:value>
+								</xforms:item>
+						</xforms:select1>
+				</td>
+
+				<td class="dn">Cod caen : </td>
+				<td><input class="inpbs" type="text" value="" id="inpCAEN" title="That's what this widget is"/></td>
+				<!--<td><xforms:input ref="/SAL/Date_firma/CodCAEN" class="inpbs"/></td>
+		
+				<td>
+					<xforms:select1 ref="instance('sal')/Date_firma/CodCAEN">  
+					     <xforms:itemset
+							    nodeset="instance('caen')/Sectiune[@cod='G']/Level1/Level2/Activitate">
+						    <xforms:label ref="@cod"/>
+						    <xforms:value ref="@cod"/>
+					     </xforms:itemset> 
+				     </xforms:select1>						
+				</td>-->
+			</tr>
+			<tr class="lab">
+				<td class="dn">Atribut_fiscal: </td> 
+				<td><xforms:input ref="/SAL/Date_firma/Atribut_Fiscal" class="inpbs"/></td>
+				<td class="dn">CUI/CIF : *</td> 
+				<td><xforms:input ref="/SAL/Date_firma/CISTVA" class="inpcnp"/></td>
+				<td class="dn">Cod reg.com. : </td> 
+				<td><xforms:input ref="/SAL/Date_firma/Cod_Reg_Comertului" class="inpcnp"/></td>
+			</tr>
+
+			<tr class="lab">
+				<td class="dn">Nr.inrg.ITM : </td> 
+				<td><xforms:input ref="/SAL/Date_firma/Numar_ITM" class="inpbs"/></td>
+				<td class="dn">Cap.social : </td> 
+				<td><xforms:input ref="/SAL/Date_firma/Capital" class="inpbs"/></td>
+				<td class="dn">Casa asig.sanatate : </td> 
+				<td>
+					<select name="seljudetCAS" id="seljudetCAS"/>
+
+				</td>
+			</tr>
+
+			<tr class="lab">
+				<td colspan="6" class="dn"> 
+				<hr align="center" color="#D7D5D8" width="98%"/>
+				</td>
+			</tr>
+			<tr class="lab">
+				<td class="dn">Judet : *</td>
+				<td>
+       				<select name="seljudet" id="seljudet" title="" onchange="setACLoc(); golesteInputLoc();"/> 
+       				<label for="codjud">Cod= </label> 
+					<output id="codjud"></output>
+            	</td>						
+				<td class="dn">Localitate/Sector <input type="checkbox" name="tipserchLoc" id="tipserchLoc" value="true" title=" Căutare oriunde în text " checked="checked" onclick="setSource();" /> </td> 
+				<!--<td><xforms:input type="text" ref="/SAL/Date_firma/Localitatea" class="inpnp"/></td>-->
+                <td class="Ttd2">
+                    <input type="text" id="searchBoxL" name="searchBoxL" value="" class="inpnp"/>
+                </td>
+				<td class="dn">Cod localitate </td> 
+				<!--<td><xforms:input type="text" name="text" ref="/SAL/Date_firma/Sectors" class="inpcnp"/></td>-->
+				<td><input id="codloc"></input></td>
+			</tr>
+			<tr class="lab">
+				<td class="dn">Strada : *</td> 
+				<td><xforms:input type="text" name="text" ref="/SAL/Date_firma/Strada" class="inpnp"/></td>
+				<td class="dn">Nr. : *</td> 
+				<td><xforms:input type="text" name="text" ref="/SAL/Date_firma/Nr" class="inpbs"/></td>			
+				<td class="dn">Bloc : </td> 
+				<td><xforms:input type="text" name="text" ref="/SAL/Date_firma/Bloc" class="inpbs"/></td>
+			</tr>
+			<tr class="lab">
+				<td class="dn">Scara : </td> 
+				<td><xforms:input type="text" name="text" ref="/SAL/Date_firma/Scara" class="inpbs"/></td>
+				<td class="dn">Etaj : </td> 
+				<td><xforms:input type="text" name="text" ref="/SAL/Date_firma/Etaj" class="inpbs"/></td>			
+				<td class="dn">Apartament : </td> 
+				<td><xforms:input type="text" name="text" ref="/SAL/Date_firma/Apartament" class="inpcnp"/></td>
+			</tr>
+			<tr class="lab">
+				<td colspan="6" class="dn"> 
+					<hr align="center" color="#D7D5D8" width="98%"/>
+				</td>
+			</tr>
+			<tr class="lab">
+				<td class="dn">Cod postal : </td> 
+				<td><xforms:input type="text" name="text" ref="/SAL/Date_firma/Cod_postal" class="inpcnp"/></td>
+				<td class="dn">Telefon : *</td> 
+				<td><xforms:input type="text" name="text" ref="/SAL/Date_firma/Tel" class="inpnp"/></td>
+				<td class="dn">Fax : *</td> 
+				<td><xforms:input type="text" name="text" ref="/SAL/Date_firma/Fax" class="inpnp"/></td>
+			</tr>
+			<tr class="lab">
+				<td class="dn">E-mail : *</td> 
+				<td colspan="2"><xforms:input type="text" name="text" ref="/SAL/Date_firma/Mail" class="inpweb"/></td>
+				<td class="dn">Adresa web : </td> 
+				<td colspan="2"><xforms:input type="text" name="text" ref="/SAL/Date_firma/Adresa_www" class="inpweb"/></td> 
+			</tr>
+		</table>
+	</fieldset>
+
+	<br/>
+
+	<fieldset class="dvtxt3">
+		<legend><i>Conturi banca - Reprezentantii legali</i></legend>
+
+			<br/>
+
+			<table border="0" align="center" cellspacing="7" cellpadding="0" width="100%" class="">
+			<tr class="lab">
+			<td class="dn">Den.banca_1: </td> 
+			<td><xforms:input type="text" name="text" ref="/SAL/Date_firma/Banca1" class="inpnp"/></td>
+			<td class="dn">Suc.B_1: </td> 
+			<td><xforms:input type="text" name="text" ref="/SAL/Date_firma/Sucursala1" class="inpnp"/></td>
+			<td class="dn">Cod iban1: </td> 
+			<td><xforms:input type="text" name="text" ref="/SAL/Date_firma/Cod_IBAN1" class="inpnp"/></td>
+			</tr> 
+
+
+			<tr class="lab">
+			<td class="dn">Den.banca_2: </td> 
+			<td><xforms:input type="text" name="text" ref="/SAL/Date_firma/Banca2" class="inpnp"/></td>
+			<td class="dn">Suc.B_2: </td> 
+			<td><xforms:input type="text" name="text" ref="/SAL/Date_firma/Sucursala2" class="inpnp"/></td>
+			<td class="dn">Cod iban2: </td> 
+			<td><xforms:input type="text" name="text" ref="/SAL/Date_firma/Cod_IBAN2" class="inpnp"/></td>
+			</tr>
+			<tr class="lab">
+			<td colspan="6" class="dn"> 
+			<hr align="center" color="#D7D5D8" width="98%"/>
+			</td>
+			</tr>
+			<tr class="lab">
+			<td class="dn">Nume rep.legal: </td> 
+			<td><xforms:input type="text" name="text" ref="/SAL/Date_operare/NumeO" class="inpnp"/></td>
+			<td class="dn">Pren.rep: </td> 
+			<td><xforms:input type="text" name="text" ref="/SAL/Date_operare/PrenumeO" class="inpnp"/></td>
+			<td class="dn">Functia: </td> 
+			<td><xforms:input type="text" name="text" ref="/SAL/Date_operare/Functia" class="inpnp"/></td>
+			</tr>
+
+			<tr class="lab">
+			<td class="dn">Nume op: </td> 
+			<td><xforms:input type="text" name="text" ref="/SAL/Date_operare/NumeO" class="inpnp"/></td>
+			<td class="dn">Pren.op: </td> 
+			<td><xforms:input type="text" name="text" ref="/SAL/Date_operare/PrenumeO" class="inpnp"/></td>
+			<td class="dn">Functia: </td> 
+			<td><xforms:input type="text" name="text" ref="/SAL/Date_operare/Functia" class="inpnp"/></td>
+			</tr>
+
+			</table>
+			</fieldset>
+
+			<br/>
+
+
+			<fieldset class="dvtxt3">
+				<legend><i>Date suplimentare - Revisal</i></legend>
+
+			<br/>
+			<table border="0" align="center" cellspacing="7" cellpadding="0" class="" width="100%">
+<!--			<tr class="lab">
+			<td class="dn">Cetatenie_ID :</td> 
+			<td>
+			<xforms:select1 class="dfa0" ref="/SAL/Date_firma/RvsalID/@CetatenieID">
+							<xforms:item>
+								<xforms:label>P.Juridica(NU)</xforms:label>
+								<xforms:value></xforms:value> 
+							</xforms:item> 
+							<xforms:item>
+								<xforms:label>Romana</xforms:label>
+								<xforms:value>1</xforms:value> 
+							</xforms:item>
+							<xforms:item>
+								<xforms:label>U.E.</xforms:label>
+								<xforms:value>2</xforms:value>
+							</xforms:item>
+							<xforms:item>
+								<xforms:label>Non.U.E.</xforms:label>
+								<xforms:value>3</xforms:value>
+							</xforms:item>
+					</xforms:select1>
+			<xforms:hint>Acest_camp_nu_se_completeaza_decat_pentru_angajatori_persoane_fizice. 
+			Pentru_angajatori–persoane juridice,_acest_camp_nu_se_completeaza.(REVISAL)</xforms:hint></td>
+			
+			<td class="dn">Nationalitate_ID :</td> 
+			<td> 
+			<xforms:input ref="/SAL/Date_firma/RvsalID/@NationalitID" class="dfa3"/>
+			<xforms:hint>Cod_aferente_tarii_Angajatorului, conform_Coduri_Tari_Romania_(RO).(REVISAL)</xforms:hint></td>
+			</tr
+
+			<tr class="lab">
+			<td class="dn">Localitate_ID :</td> 
+			<td> 
+			<xforms:input ref="/SAL/Date_firma/RvsalID/@LocalitID" class="dfa7"/></td>
+			<td class="dn">Angajator_CIF :</td> 
+			<td> 
+			<xforms:input ref="/SAL/Date_firma/RvsalID" class="dfa3"/></td>
+			</tr>
+
+			<tr class="lab">
+			<td colspan="6" class="dn"> 
+			<hr align="center" color="#D7D5D8" width="98%"/>
+			</td>
+			</tr>>-->
+
+			<tr class="lab">
+			<td class="dn">Angajator_Den._Parinte : *</td> 
+			<td> 
+			<xforms:input ref="/SAL/Date_firma/RvsalID" class="inpnp"/></td>
+			<td class="dn">Angajator_CUI_Parinte : *</td> 
+			<td>
+			<xforms:input ref="/SAL/Date_firma/RvsalID" class="inpnp"/></td>
+
+			</tr>
+
+			<tr class="lab">
+			<td class="dn">Forma juridica : *</td> 
+			<td> 
+			<xforms:select1 ref="/SAL/Date_firma/RvsalID/@FormJuridID">  
+					<xforms:item>
+								<xforms:label>Societate Comerciala</xforms:label>
+								<xforms:value>SocietateComerciala </xforms:value> 
+							</xforms:item>
+					<xforms:item>
+								<xforms:label>Regie Autonoma</xforms:label>
+								<xforms:value>RegieAutonoma </xforms:value>
+							</xforms:item>
+					<xforms:item>
+								<xforms:label>Companie Nationala</xforms:label>
+								<xforms:value>CompanieNationala </xforms:value>
+							</xforms:item>
+					<xforms:item>
+								<xforms:label>Societate Nationala</xforms:label>
+								<xforms:value>SocietateNationala </xforms:value>
+							</xforms:item>
+					<xforms:item>
+								<xforms:label>Autoritate sau Inst.Publica</xforms:label>
+								<xforms:value>AutoritateInstitutiePublica </xforms:value>
+							</xforms:item>
+					<xforms:item>
+								<xforms:label>Institutie de Credit</xforms:label>
+								<xforms:value>InstitutieDeCredit </xforms:value>
+							</xforms:item>
+					<xforms:item>
+								<xforms:label>Societate Cooperativa</xforms:label>
+								<xforms:value>SocietateCooperativa </xforms:value>
+							</xforms:item>
+					<xforms:item>
+								<xforms:label>Organizatie Sindicala</xforms:label>
+								<xforms:value>OrganizatieSindicala </xforms:value>
+							</xforms:item>
+					<xforms:item>
+								<xforms:label>Fundatie</xforms:label>
+								<xforms:value>Fundatie</xforms:value>
+							</xforms:item>
+					<xforms:item>
+								<xforms:label>Alte persoane juridice</xforms:label>
+								<xforms:value>AltePersoaneJuridice </xforms:value>
+							</xforms:item>
+					<xforms:item>
+								<xforms:label>Organizatie patronala</xforms:label>
+								<xforms:value>OrganizatiePatronala </xforms:value>
+							</xforms:item>
+					<xforms:item>
+								<xforms:label>Org.sau asoc.cu pers.juridica</xforms:label>
+								<xforms:value>OrganizatieAsociatieCuPersonalitateJuridica</xforms:value>
+							</xforms:item>
+			</xforms:select1></td>
+
+			<td class="dn">Forma organizare : *</td> 
+			<td>
+			<xforms:select1 ref="/SAL/Date_firma/RvsalID/@FormOrgID">  
+					<xforms:item>
+								<xforms:label>Soc.In Nume Colectiv</xforms:label>
+								<xforms:value>SocietateInNumeColectiv</xforms:value> 
+							</xforms:item>
+					<xforms:item>
+								<xforms:label>Soc.In Comandita Simpla</xforms:label>
+								<xforms:value>SocietateInComanditaSimpla</xforms:value>
+							</xforms:item>
+					<xforms:item>
+								<xforms:label>Soc.Pe Actiuni</xforms:label>
+								<xforms:value>SocietatePeActiuni</xforms:value>
+							</xforms:item>
+					<xforms:item>
+								<xforms:label>Soc.În Comandită Pe Acţiuni</xforms:label>
+								<xforms:value>SocietateInComanditaPeActiuni</xforms:value>
+							</xforms:item>
+					<xforms:item>
+								<xforms:label>Soc.Cu Răspundere Limitată</xforms:label>
+								<xforms:value>Societate cu raspundere limitata</xforms:value>
+							</xforms:item>
+					<xforms:item>
+								<xforms:label>Avocat</xforms:label>
+								<xforms:value>Avocat</xforms:value>
+							</xforms:item>
+					<xforms:item>
+								<xforms:label>Consultant fiscal</xforms:label>
+								<xforms:value>ConsultantFiscal</xforms:value>
+							</xforms:item>
+					<xforms:item>
+								<xforms:label>Expert contabil</xforms:label>
+								<xforms:value>ExpertContabil</xforms:value>
+							</xforms:item>
+					<xforms:item>
+								<xforms:label>Farmacist</xforms:label>
+								<xforms:value>Farmacist</xforms:value>
+							</xforms:item>
+					<xforms:item>
+								<xforms:label>Medic</xforms:label>
+								<xforms:value>Medic</xforms:value>
+							</xforms:item>
+					<xforms:item>
+								<xforms:label>Psiholog</xforms:label>
+								<xforms:value>Psiholog</xforms:value>
+							</xforms:item>
+					<xforms:item>
+								<xforms:label>Traducător autorizat</xforms:label>
+								<xforms:value>TraducatorAutorizat</xforms:value>
+							</xforms:item>
+			</xforms:select1></td>
+			</tr>
+
+			<tr class="lab">
+			<td colspan="6" class="dn"> 
+			<hr align="center" color="#D7D5D8" width="98%"/>
+			</td>
+			</tr>
+
+			<tr class="lab">
+			<td class="dn">Forma de proprietate : *</td> 
+			<td>
+			<xforms:select1 ref="/SAL/Date_firma/RvsalID/@FormPropID">  
+							<xforms:item>
+								<xforms:label>Stat</xforms:label>
+								<xforms:value>Stat</xforms:value> 
+							</xforms:item>
+							<xforms:item>
+								<xforms:label>Privată</xforms:label>
+								<xforms:value>Privata</xforms:value>
+							</xforms:item>
+							<xforms:item>
+								<xforms:label>Mixtă</xforms:label>
+								<xforms:value>Mixta</xforms:value>
+							</xforms:item>
+					</xforms:select1>
+			<!--<xforms:hint>Forma_de_proprietate, se_completeaza_cu codul_corespondent(REVISAL)</xforms:hint>-->
+			</td>
+
+			<td class="dn">Forma juridica : *</td> 
+			<td>
+			<xforms:select1 ref="/SAL/Date_firma/RvsalID/@StareSocID">  
+							<xforms:item>
+								<xforms:label>Persoană Juridică</xforms:label>
+								<xforms:value>PersoanaJuridica</xforms:value> 
+							</xforms:item>
+							<xforms:item>
+								<xforms:label>Persoană Fizică</xforms:label>
+								<xforms:value>PersoanaFizica</xforms:value>
+							</xforms:item>
+					</xforms:select1>
+			<!--<xforms:hint>In_functie_de-starea_societatii, se_completeaza_cu codul_corespondent(REVISAL)</xforms:hint>-->
+			</td>
+			</tr>
+
+			<tr class="lab">
+			<td class="dn">Nivel infiintare : *</td> 
+			<td>
+			<xforms:select1 ref="/SAL/Date_firma/RvsalID/@TipSocID">  
+							<xforms:item>
+								<xforms:label>Sediu Social</xforms:label>
+								<xforms:value>SediuSocial</xforms:value> 
+							</xforms:item>
+
+							<xforms:item>
+								<xforms:label>Filială</xforms:label>
+								<xforms:value>Filiala</xforms:value>
+							</xforms:item>
+							<xforms:item>
+								<xforms:label>Sucursală</xforms:label>
+								<xforms:value>Sucursala</xforms:value>
+							</xforms:item>
+							<!--<xforms:item>
+								<xforms:label>n/a.</xforms:label>
+								<xforms:value>n/a.</xforms:value>
+							</xforms:item>-->
+					</xforms:select1></td>
+			<td class="dn">Domeniu principal activitate : *</td> 
+			<td>
+			<xforms:select1 ref="/SAL/Date_firma/RvsalID/@DomActivID">  
+							<xforms:item>
+								<xforms:label>4711</xforms:label>
+								<xforms:value>4711</xforms:value>
+							</xforms:item>
+							<xforms:item>
+								<xforms:label>Rev1#CAEN vechi</xforms:label>
+								<xforms:value>Rev1#</xforms:value> 
+							</xforms:item>
+					</xforms:select1>
+			<!--<xforms:hint>Separarea_celor_2_informatii_din_interiorul tag-ului_va_fi_facuta_doar_prin_intermediul 
+			marcajului_#,(REVISAL)</xforms:hint>-->
+			</td>
+
+			</tr>
+
+			<tr class="lab">
+			<td colspan="6" class="dn"> 
+			<hr align="center" color="#D7D5D8" width="98%"/>
+			</td>
+			</tr>
+
+			<tr class="lab">
+			<td class="dn">Angajator_Data_INF zz/ll/aaaa: </td> 
+			<td>
+			<xforms:input ref="/SAL/Date_firma/RvsalID/@AngDataINF" class="inpbs"/>?</td>
+			<td class="dn"><xforms:trigger appearance="minimal">
+			<xforms:hint id="">Campul se va completa cu data la care se genereaza fisierul XML din aplicatia proprie.
+			Formatul campului trebuie sa fie de forma: zz/ll/aaaa(REVISAL)</xforms:hint>
+			</xforms:trigger>Ang_Data_Stare_Soc zz/ll/aaaa : </td> 
+			<td>
+			<xforms:input type="text" name="text" ref="/SAL/Date_firma/RvsalID/@AngDataSTARE" class="inpbs"/>
+
+			
+			</td>
+
+			</tr>
+
+<!--	<tr class="lab">
+			<td class="dn">Angajator_GUID: </td> 
+			<td>
+			<xforms:input type="text" name="text" ref="/SAL/Date_firma/CISTVA" class="dfa3"/></td>
+
+			<td class="dn">Tip_Operatie : </td> 
+			<td>
+			<xforms:select1 class="dfa0" ref="/SAL/Date_firma/RvsalID/@TipOperID">    
+							<xforms:item>
+								<xforms:label>Adaugata/Actuala</xforms:label>
+								<xforms:value>A</xforms:value> 
+							</xforms:item>
+							<xforms:item>
+								<xforms:label>Modificata</xforms:label>
+								<xforms:value>M</xforms:value> 
+							</xforms:item>
+							<xforms:item>
+								<xforms:label>Corectata</xforms:label>
+								<xforms:value>C</xforms:value>
+							</xforms:item>
+					</xforms:select1>
+			<xforms:hint>In_functie_de_tipul_operatiei efectuate_si_de_natura inregistrarii,_se_completeaza cu_codul_asociat(REVISAL)</xforms:hint></td>
+			</tr>-->
+
+			<tr class="lab">
+			<td colspan="6" class="dn">
+			<hr align="center" color="#D7D5D8" width="98%"/>
+			- NOTA  * Campuri obligatorii
+			</td>
+			</tr>
+
+			</table>
+			</fieldset>
+
+	<xforms:dialog id="CoodCaeen">
+		<!--<xforms:group nodeset="instance('caen')/Sectiune[@cod='G']/Level1/Level2/Activitate" ref="instance('sal')/Date_firma/CodCAEN">-->	
+			<div id="foaiep">
+				<table align="left" border="0">
+
+					<!--<tr class="Fond"><td>
+							<label >
+								<i> Alege cod CAEN : -</i>
+							</label>
+								<xforms:select1 ref="instance('sal')/Date_firma/CodCAEN">  
+									<xforms:itemset
+								nodeset="instance('caen')/Sectiune[@cod='G']/Level1/Level2/Activitate">
+										<xforms:label ref="@cod"/>
+										<xforms:value ref="@cod"/>
+									</xforms:itemset> 
+								</xforms:select1>						
+							</td></tr>
+					<tr class="Fond">
+						<td>
+						<label ><i> Alege cod CAEN : </i></label>
+							<xforms:select1 ref="instance('sal')/Date_firma/CodCAEN">  
+								<xforms:itemset nodeset="instance('caen')/Sectiune/Level1/Level2/Activitate">
+									<xforms:label ref="."/>
+									<xforms:value ref="@cod"/>
+								</xforms:itemset> 
+							</xforms:select1>						
+						</td>
+	`				</tr>-->
+
+					<table align="left" border="0">
+							<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>				         
+						<tr class="Fond">
+							<td>
+							<xforms:trigger appearance="minimal">  
+									<xforms:label class="medium button greenn">&#164; Adauga &#164;</xforms:label>
+									<xforms:insert nodeset="/SAL/Personal/Salariat" at="index('repeatRow')" replace="true"/>
+									<xforms:action ev:event="DOMActivate">
+										<!--<xforms:toggle case="listasal" />-->
+										<xforms:hide dialog="CoodCaeen"/>
+									</xforms:action>			
+								</xforms:trigger>
+							</td>
+						</tr>
+					</table>
+				</table> 	
+			</div>
+		<!--</xforms:group> -->
+	</xforms:dialog>
+
+
+			<br/>
+			<xforms:trigger appearance="minimal" id="intr">
+				<xforms:label  class="medium button orange"><i>&#164; Salvează &#164;</i></xforms:label>
+				<xforms:hint>Salvează datele introduse sau modificate</xforms:hint>
+				<xforms:action ev:event="DOMActivate">	
+					<xforms:load resource="javascript:setJLinInst()"/>				
+					<xforms:load resource="javascript:saveDataLocal('sal')"/>	
+					<xforms:load resource="javascript:location='index01.xhtml'"/>			
+				</xforms:action>
+			</xforms:trigger>     
+
+			<xforms:trigger appearance="minimal" ev:event="DOMActivate"> 									 
+				<xforms:label class="medium button white">&#171; Înapoi la pagina principală &#171;</xforms:label> 
+				<xforms:hint>Înapoi la pagina principală</xforms:hint>
+				<xforms:load resource="index01.xhtml" ev:event="DOMActivate"/>
+			</xforms:trigger>
+
+						
+		</div>
+		<br/><br/>
+		
+		<div id="accdcaen"></div>
+	</body>
+</html>
+

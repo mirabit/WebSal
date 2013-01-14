@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="../webgestext/xsltforms/xsltforms.xsl" type="text/xsl"?>
+<!--<?xml-stylesheet href="../xsltforms/xsltforms.xsl" type="text/xsl"?>-->
+<?css-conversion no?>
+
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:xforms="http://www.w3.org/2002/xforms"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ev="http://www.w3.org/2001/xml-events"
+ xml:lang="en">
+	<head>
+    
+		<title>STAT SALARII sal01 - 2010</title>  
+		<link rel="stylesheet" href="sal.css"></link> 
+
+		<style type="text/css">
+
+			@namespace xforms url("http://www.w3.org/2002/xforms");
+			.xforms-value {text-align:center}
+			
+
+		</style>
+ 
+<!--		<script type="text/javascript">	
+		function ChangePath() {
+			//var cale=GetCookie('cale'); 		
+			var theCookie=""+document.cookie;
+			var ind=theCookie.indexOf("cale=");
+			if (ind==-1){//
+			alert("Nu am găsit cookie");
+			}else{
+				var ind1=theCookie.indexOf(";",ind);
+				if (ind1==-1) ind1=theCookie.length; 
+				//return unescape(theCookie.substring(ind+cale.length+1,ind1));
+				var cale= unescape(theCookie.substring(ind+5,ind1));	
+				//alert("cale:"+cale);
+				var model=document.getElementById("SAL");
+			
+				var instanceElement = document.getElementById('sal');               
+				instanceElement.setAttribute('resource', cale); 
+				//alert("file:"+instanceElement.getAttribute('resource'));	
+				var submitsal = document.getElementById('s01');               
+				submitsal.setAttribute('action', cale);								
+				model.refresh();					
+			}	
+		}
+		</script> -->   
+		<script type="text/javascript" src="loadSal.js"/>
+
+		<xforms:model id="SAL" version="1.1">
+            <xforms:instance id="sal" xmlns="">
+				<DATE/>			
+		 	</xforms:instance> 			
+			<!--<xforms:instance id="sal" resource="salsablon.xml"/>-->
+			<xforms:submission id="s01" method="put" action="sal.xml" ref="/SAL"/>
+			<xforms:submission id="s_xml" method="get" mediatype="application/zip" resource="sal.xml"/>     
+		</xforms:model>
+
+	</head>
+	<body bgcolor="#E3E3E3" text="#080808" leftmargin="80" topmargin="40" onload="loadSal();">
+		<a href="index01.xhtml">Home</a>-<a href="d112.xhtml">D112</a>-<a href="revisal.xhtml">Revisal</a>
+
+		<table align="center">
+				<tr>
+					<td><h3>STAT PLATĂ SALARII  </h3></td> 
+				</tr>			
+		</table>
+
+		<div style="width:100%">
+			<table>	
+				<tr><td>
+					<table align="center">							
+						<tr>
+							<td><label>Soc : </label> <b>
+								<xforms:output ref="instance('sal')/Date_firma/Prefix" class="val3"/>.
+								<xforms:output ref="instance('sal')/Date_firma/Firma" class="val2"/>.
+								<xforms:output ref="instance('sal')/Date_firma/Sufix" class="val3"/></b>
+							</td>
+						<td><label> - An : </label><b><xforms:output value="substring(instance('sal')/LunaLucru,1,4)" class="Fval1"/></b></td>
+						<td><label> - Luna : </label><b><xforms:output value="substring(instance('sal')/LunaLucru,5,2)" class="Fval1"/></b></td>	
+						<td>
+							<label>Alege altă lună </label>
+							<xforms:select1 class="Ztd1" ref="instance('sal')/LunaLucru">
+								<xforms:itemset nodeset="instance('sal')/DateLunare/Luna/@AnLuna">
+									<xforms:label ref="."/>
+									<xforms:value ref="."/>
+								</xforms:itemset>                         
+						 	</xforms:select1>
+						</td>	
+							<td><label> - Nr Zile Lucrătoare : </label><b><xforms:output ref="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/@NrZlucruL" class="val1"/></b></td>
+							<td><label>Ore în C/N : </label><b><xforms:output ref="Luna/@OreNl" class="val1"/></b></td>
+						</tr>						
+					</table>  
+				</td></tr>		
+			</table>
+		</div>
+
+        <br/>
+		<div>
+			<fieldset>
+			<legend>LISTE SALARIAŢI</legend>
+<table class="Tmaresal">
+<tr><td>
+			<xforms:group nodeset="DateLunare" ref="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]">
+				<table class="tab" border="0" cellspacing="3" cellpadding="1" width="100%"> 
+					<tr>
+                        <th class="tnrt">Nr. Crt</th>
+                        <!--<th class="trmf">Nume</th>
+                        <th class="trmf">Prenume</th>-->
+                        <th class="trmf">Nume / Prenume</th>
+                        <th class="trmt">CNP</th>
+                        <th class="trmr">Funcţia</th> 
+                        <th class="trmp">Salariu Înca- drare</th>
+                        <th class="trmp">Zile Lucrate</th>
+                        <th class="trmp">Ore Lucrate</th>
+                        <th class="trmp">Con. Odihnă</th>
+                        <th class="trmp">Con. Medical</th>    
+                        <th class="trmp">Sporuri</th>
+                        <th class="trmb">Venit Salarial</th>
+                        <th class="trmb">Venit Brut</th>
+                        <th class="trmb">CAS 10.5%</th>
+                        <th class="trmp">Şomaj 0.5%</th>
+                        <th class="trmp">CASS 5.5%</th>
+                        <th class="trmb">Dedu- ceri</th>
+                        <th class="trmb">Venit Bază Calcul</th>
+                        <th class="trmp">Impozit Reţinut</th>
+                        <th class="trmp">Reţineri</th>
+						<th class="trmp">Plată avans</th>
+                        <th class="trmp">Total de Plată</th>       
+					</tr>
+				</table>
+
+				<table class="tab" border="0" cellspacing="3" cellpadding="2" width="100%" > 
+				
+						<xforms:repeat nodeset="Salariat" id="repeatRow">  
+	  						<tr>
+								<td class="tnrc"><xforms:output class="T1val2" value="position()"/></td>
+								<td class="trme"><xforms:output class="T1val3"
+								value="concat(instance('sal')/Personal/Salariat[@id=current()/@id]/@Nume,' ', instance('sal')/Personal/Salariat[@id=current()/@id]/@Prenume)"/></td>
+								<td class="trme"><xforms:output class="T1val3" ref="instance('sal')/Personal/Salariat[@id=current()/@id]/@CNP"/></td>			
+								<td class="trme"><xforms:output class="T1val3" ref="instance('sal')/Personal/Salariat[@id=current()/@id]/@Functia"/></td>
+								<td class="trmk"><xforms:output class="T1val1" ref="instance('sal')/Personal/Salariat[@id=current()/@id]/Contract/Salariu"/></td>								
+								<td class="trms"><xforms:output class="T1val4" value="count(Sapt/Zile/Ziua/OreZi[@tip='Lucru'][.!=0])"/></td>
+								<td class="trms"><xforms:output class="T1val4" value="sum(Sapt/Zile/Ziua/OreZi[@tip='Lucru'])"/></td>
+								<td class="trms"><xforms:output class="T1val4" value="sum(Sapt/Zile/Ziua/OreZi[@tip='COdihna'])"/></td>
+								<td class="trms"><xforms:output class="T1val4" value="sum(Sapt/Zile/Ziua/OreZi[@tip='CMedical'])"/></td>
+								<td class="trms"><xforms:output class="T1val4" value="Spor"/></td>
+								<td class="trmk"><xforms:output class="T1val1" value="VenitSalarial"/></td>
+								<td class="trmk"><xforms:output class="T1val1" value="Venit_Brut"/></td>
+								<td class="trms"><xforms:output class="T1val4" value="CAS"/></td>
+								<td class="trms"><xforms:output class="T1val4" value="Somaj"/></td>
+								<td class="trms"><xforms:output class="T1val4" value="CASS"/></td>
+								<td class="trmk"><xforms:output class="T1val1" value="Deduceri"/></td>
+								<td class="trmk"><xforms:output class="T1val1" value="Venit_Baza_Calcul"/></td>   
+								<td class="trms"><xforms:output class="T1val4" value="Impozit_Retinut"/></td>
+								<td class="trmc"><xforms:output class="T1val6" value="Retineri"/></td>
+								<td class="trmc"><xforms:output class="T1val6" value="Avans"/></td>
+								<td class="trmh"><xforms:output class="T1val5" value="Total_de_Plata"/></td>       
+							</tr>
+						</xforms:repeat>				
+				</table>
+
+
+				<hr align="center" color="#C2CCD0" width="100%"/>
+				<table class="tab" border="0" cellspacing="0" cellpadding="0" width="100%"> 		
+					<tr>
+						<th class="Thma">TOTAL</th> 
+						<th class="Ttrmb"><xforms:output class="T2val1" value="sum(instance('sal')/Personal/Salariat/Contract/Salariu)"/></th>
+						<th class="Ttrmz"><xforms:output class="T2val6" value="count(Salariat/Sapt/Zile/Ziua/OreZi[@tip='Lucru'][.!=0])"/></th>
+						<th class="Ttrmz"><xforms:output class="T2val6" value="sum(Salariat/Sapt/Zile/Ziua/OreZi[@tip='Lucru'])"/></th>
+						<th class="Ttrmz"><xforms:output class="T2val6" value="sum(Salariat/Sapt/Zile/Ziua/OreZi[@tip='COdihna'])"/></th>
+						<th class="Ttrmz"><xforms:output class="T2val6" value="sum(Salariat/Sapt/Zile/Ziua/OreZi[@tip='CMedical'])"/></th>
+						<th class="Ttrmz"><xforms:output class="T2val6" value="sum(Salariat/Spor)"/></th>
+						<th class="Ttrmb"><xforms:output class="T2val1" value="sum(Salariat/VenitSalarial)"/></th>
+						<th class="Ttrmb"><xforms:output class="T2val1" value="sum(Salariat/Venit_Brut)"/></th>
+						<th class="Ttrms"><xforms:output class="T2val4" value="sum(Salariat/CAS)"/></th>
+						<th class="Ttrmz"><xforms:output class="T2val6" value="sum(Salariat/Somaj)"/></th>
+						<th class="Ttrms"><xforms:output class="T2val4" value="sum(Salariat/CASS)"/></th>
+						<th class="Ttrmb"><xforms:output class="T2val1" value="sum(Salariat/Deduceri)"/></th>
+						<th class="Ttrms"><xforms:output class="T2val4" value="sum(Salariat/Venit_Baza_Calcul)"/></th>  
+						<th class="Ttrms"><xforms:output class="T2val4" value="sum(Salariat/Impozit_Retinut)"/></th>
+						<th class="Ttrmz"><xforms:output class="T2val6" value="sum(Salariat/Retineri)"/></th>
+						<th class="Ttrmz"><xforms:output class="T1val6" value="sum(Salariat/Avans)"/></th>
+						<th class="Ttrms"><xforms:output class="T2val5" value="sum(Salariat/Total_de_Plata)"/></th>       
+					</tr>
+				</table>
+			</xforms:group>	
+				</td>
+			</tr>
+		</table>
+			</fieldset>
+		</div>
+
+		<br/><br/>   
+		<div>
+			<fieldset>
+		    <legend>REŢINERI DIN SALARIU PENTRU PLATA OBLIGAŢIILOR SALARIAŢILOR LA FONDURILE SPECIALE</legend>
+			<table class="Tmarsal">
+				<tr>
+					<td>
+				<table class="tab" border="0" cellspacing="3" cellpadding="3" width="100%">  
+					<tr>
+						<th class="T3nrc">Nr. Crt</th>
+						<th class="T3exp">Explicaţie</th>
+						<th class="T3bzc">Bază de calcul
+				<xforms:trigger appearance="minimal">
+					<xforms:hint class="afisare">
+					<p>Baza de calcul este doar orientativa - pentru retinerile salariale calculul se face la nivel de salariat la care
+					se aplica operatiunea de rotunjire, iar valoarea totala este egala cu suma pe fiecare tip de retinere</p>
+				</xforms:hint>
+				</xforms:trigger></th>
+						<th class="T3pro">Procent</th> 
+						<th class="T3pro">Valoare</th>
+						<th class="T3pro">Număr Cont</th>
+						<th class="T3exp1">Denumire Cont</th>
+					</tr>
+				</table>
+					<xforms:group ref="/SAL/NCsal/NC[@id='CoAtCAS']">
+				<table class="tab" border="0" cellspacing="2" cellpadding="2" width="100%">    
+						<tr>
+							<td class="T3trma"><xforms:output class="T3val1" ref="Nr_Doc"/></td>
+							<td class="T3trmd"><xforms:output class="T3val" ref="Explicatie"/></td>
+							<td class="T3trbc"><xforms:output class="T3val4" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut)"/></td>
+							<td class="T3trbc"><xforms:output class="T3val4" ref="Procent"/></td>       
+							<td class="T3trbc"><xforms:output class="T3val4" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/CAS)"/></td>    
+							<td class="T3trmc"><xforms:output class="T3val2" ref="Credit_Cont"/></td>
+							<td class="T3trme"><xforms:output class="T3val3" ref="Den_ContC"/></td>
+						</tr>
+				</table>
+					</xforms:group>
+					<xforms:group ref="/SAL/NCsal/NC[@id='CoAtFS']">
+				<table class="tab" border="0" cellspacing="2" cellpadding="2" width="100%"> 
+						<tr>
+							<td class="T3trma"><xforms:output class="T3val1" ref="Nr_Doc"/></td>
+							<td class="T3trmd"><xforms:output class="T3val" ref="Explicatie"/></td>
+<!--<td class="T3trbc"><xforms:output class="T3val4" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut)"/></td>-->
+
+<td class="T3trbc"><xforms:output class="T3val4" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Baza_CVenitSO)"/></td>
+							<!--<td class="T3trbc"><xforms:output class="T3val4" ref="/SAL/Totaluri/TotalBCVBrutSO"/></td>-->
+							<td class="T3trbc"><xforms:output class="T3val4" ref="Procent"/></td>       
+							<td class="T3trbc"><xforms:output class="T3val4" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Somaj)"/></td>     
+							<td class="T3trmc"><xforms:output class="T3val2" ref="Credit_Cont"/></td>
+							<td class="T3trme"><xforms:output class="T3val3" ref="Den_ContC"/></td>
+						</tr>
+				</table>
+					</xforms:group> 
+					<xforms:group ref="/SAL/NCsal/NC[@id='CoAtCASS']">
+				<table class="tab" border="0" cellspacing="2" cellpadding="2" width="100%">    
+						<tr>
+							<td class="T3trma"><xforms:output class="T3val1" ref="Nr_Doc"/></td>
+							<td class="T3trmd"><xforms:output class="T3val" ref="Explicatie"/></td>
+							<td class="T3trbc"><xforms:output class="T3val4" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Baza_CVenitCI)"/></td>
+							<!--<td class="T3trbc"><xforms:output class="T3val4" ref="/SAL/Totaluri/TotalBCVBrutCI"/></td>-->
+							<td class="T3trbc"><xforms:output class="T3val4" ref="Procent"/></td>       
+							<td class="T3trbc"><xforms:output class="T3val4" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/CASS)"/></td>    
+							<td class="T3trmc"><xforms:output class="T3val2" ref="Credit_Cont"/></td>
+							<td class="T3trme"><xforms:output class="T3val3" ref="Den_ContC"/></td>
+						</tr>					
+				</table>
+					</xforms:group>
+				<hr align="center" color="#C2CCD0" width="97%"/>
+				<table class="tab" border="0" cellspacing="0" cellpadding="0" width="100%"> 
+					<tr>
+						<th class="Thma1">TOTAL REŢINERI DIN SALARIU PENTRU FS</th> 
+						<th class="Ttdop3">
+						<xforms:output class="T2val8"
+						value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/CAS)
+						+ sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Somaj)
+						+ sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/CASS)"/>Lei
+						</th>
+						<th class="Ttdop4"></th>       
+					</tr>
+				</table>
+				</td></tr>
+			</table>
+			</fieldset>
+		</div>
+
+<!--< 2011....CALCUL VENIT BAZA CALCUL SOMAJ 2011 NEW>
+			<xforms:bind nodeset="/SAL/Personal/Salariat/Baza_CVenitSO" 
+			calculate="if(../AsigSO = '2','0',round (../Spor + ../VenitSalarialCO + (../Total_ore_1_31 * ../TarifSalOra)))"/>-->
+<!--< 2011....CALCUL VENIT BAZA CALCUL CONCEDII SI INDEMNIZATII 2011 NEW>
+			<xforms:bind nodeset="/SAL/Personal/Salariat/Baza_CVenitCI" 
+			calculate="if(../AsigCI = '2','0',round (../Spor + ../VenitSalarialCO + (../Total_ore_1_31 * ../TarifSalOra)))"/>-->
+		<br/><br/>
+		<div>
+			<fieldset>
+			<legend>OBLIGAŢII DE PLATĂ ANGAJATOR LA FONDURILE SPECIALE</legend>
+			<table class="Tmarsal">
+				<tr><td>
+				<table class="tab" border="0" cellspacing="3" cellpadding="3" width="100%">    
+					<tr>
+                        <th class="T3nrc">Nr. Crt</th>
+                        <th class="T3exp">Explicaţie</th>
+                        <th class="T3bzc">Bază de calcul</th>
+                        <th class="T3pro">Procent</th> 
+                        <th class="T3pro">Valoare</th>
+                        <th class="T3pro">Număr Cont</th>
+                        <th class="T3exp1">Denumire Cont</th>
+					</tr> 
+				</table>
+					<xforms:group ref="/SAL/NCsal/NC[@id='ChArCAS']">
+				<table class="tab" border="0" cellspacing="2" cellpadding="2" width="100%">    
+						<tr>
+							<td class="T3trma"><xforms:output class="T3val1" ref="Nr_Doc"/></td>
+							<td class="T3trmd"><xforms:output class="T3val" ref="Explicatie"/></td>
+							<td class="T3trbc"><xforms:output class="T3val4" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut)"/></td>
+							<!--<td class="T3trbc"><xforms:output class="T3val4" ref="/SAL/Totaluri/TotalBCVBrut"/></td>-->
+							<td class="T3trbc"><xforms:output class="T3val4" ref="Procent"/></td>       							  
+							<td class="T3trbc"><xforms:output class="T3val4" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * Procent  div 100)"/></td>   
+							<td class="T3trmc"><xforms:output class="T3val2" ref="Credit_Cont"/></td>
+							<td class="T3trme"><xforms:output class="T3val3" ref="Den_ContC"/></td>
+						</tr>
+				</table>
+					</xforms:group>
+					<xforms:group ref="/SAL/NCsal/NC[@id='ChArFA']"> 
+				<table class="tab" border="0" cellspacing="2" cellpadding="2" width="100%">    
+						<tr>
+							<td class="T3trma"><xforms:output class="T3val1" ref="Nr_Doc"/></td>
+							<td class="T3trmd"><xforms:output class="T3val" ref="Explicatie"/></td>
+							<td class="T3trbc"><xforms:output class="T3val4" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut)"/></td>
+							<!--<td class="T3trbc"><xforms:output class="T3val4" ref="/SAL/Totaluri/TotalBCVBrut"/></td>-->
+							<td class="T3trbc"><xforms:output class="T3val4" ref="Procent"/></td>       
+					  		<td class="T3trbc"><xforms:output class="T3val4" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * Procent  div 100)"/></td>   
+						  	<td class="T3trmc"><xforms:output class="T3val2" ref="Credit_Cont"/></td>
+							<td class="T3trme"><xforms:output class="T3val3" ref="Den_ContC"/></td>
+						</tr>
+				</table>
+					</xforms:group>
+					<xforms:group ref="/SAL/NCsal/NC[@id='ChArFS']">
+				<table class="tab" border="0" cellspacing="2" cellpadding="2" width="100%">    
+						<tr>
+							<td class="T3trma"><xforms:output class="T3val1" ref="Nr_Doc"/></td>
+							<td class="T3trmd"><xforms:output class="T3val" ref="Explicatie"/></td>
+<td class="T3trbc"><xforms:output class="T3val4" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Baza_CVenitSO)"/></td>
+							<!--<td class="T3trbc"><xforms:output class="T3val4" ref="/SAL/Totaluri/TotalBCVBrutSO"/></td>-->
+							<td class="T3trbc"><xforms:output class="T3val4" ref="Procent"/></td>       
+<td class="T3trbc"><xforms:output class="T3val4" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Baza_CVenitSO) * Procent  div 100)"/></td>    
+							<td class="T3trmc"><xforms:output class="T3val2" ref="Credit_Cont"/></td>
+							<td class="T3trme"><xforms:output class="T3val3" ref="Den_ContC"/></td>
+						</tr>
+				</table>
+					</xforms:group>
+					<xforms:group ref="/SAL/NCsal/NC[@id='ChArFG']">
+				<table class="tab" border="0" cellspacing="2" cellpadding="2" width="100%">   
+						<tr>
+							<td class="T3trma"><xforms:output class="T3val1" ref="Nr_Doc"/></td>
+							<td class="T3trmd"><xforms:output class="T3val" ref="Explicatie"/></td>
+							<td class="T3trbc"><xforms:output class="T3val4" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut)"/></td>
+							<!--<td class="T3trbc"><xforms:output class="T3val4" ref="/SAL/Totaluri/TotalBCVBrut"/></td>-->
+							<td class="T3trbc"><xforms:output class="T3val4" ref="Procent"/></td>       
+							<td class="T3trbc"><xforms:output class="T3val4" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * Procent  div 100)"/></td>    
+							<td class="T3trmc"><xforms:output class="T3val2" ref="Credit_Cont"/></td>
+							<td class="T3trme"><xforms:output class="T3val3" ref="Den_ContC"/></td>
+						</tr>					
+				</table>
+					</xforms:group>
+					<xforms:group ref="/SAL/NCsal/NC[@id='ChArCASS']"> 
+				<table class="tab" border="0" cellspacing="2" cellpadding="2" width="100%">   
+						<tr> 
+							<td class="T3trma"><xforms:output class="T3val1" ref="Nr_Doc"/></td>
+							<td class="T3trmd"><xforms:output class="T3val" ref="Explicatie"/></td>
+<td class="T3trbc"><xforms:output class="T3val4" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Baza_CVenitCI)"/></td>
+					       <!--<td class="T3trbc"><xforms:output class="T3val4" ref="/SAL/Totaluri/TotalBCVBrutCI"/></td>-->
+							<td class="T3trbc"><xforms:output class="T3val4" ref="Procent"/></td>       
+<td class="T3trbc"><xforms:output class="T3val4" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Baza_CVenitCI) * Procent  div 100)"/></td>    
+							<td class="T3trmc"><xforms:output class="T3val2" ref="Credit_Cont"/></td>
+							<td class="T3trme"><xforms:output class="T3val3" ref="Den_ContC"/></td>
+						</tr>					
+				</table>
+					</xforms:group>
+					<xforms:group ref="/SAL/NCsal/NC[@id='ChArCM']"> 
+				<table class="tab" border="0" cellspacing="2" cellpadding="2" width="100%">  
+						<tr>
+							<td class="T3trma"><xforms:output class="T3val1" ref="Nr_Doc"/></td>
+							<td class="T3trmd"><xforms:output class="T3val" ref="Explicatie"/></td>
+							<td class="T3trbc"><xforms:output class="T3val4" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut)"/></td>
+							<!--<td class="T3trbc"><xforms:output class="T3val4" ref="/SAL/Totaluri/TotalBCVBrut"/></td>-->
+							<td class="T3trbc"><xforms:output class="T3val4" ref="Procent"/></td>       
+							<td class="T3trbc"><xforms:output class="T3val4" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * Procent  div 100)"/></td>    
+							<td class="T3trmc"><xforms:output class="T3val2" ref="Credit_Cont"/></td>
+							<td class="T3trme"><xforms:output class="T3val3" ref="Den_ContC"/></td>
+						</tr>
+				</table>
+					</xforms:group>
+				<hr align="center" color="#C2CCD0" width="97%"/>
+				<table class="tab" border="0" cellspacing="0" cellpadding="0" width="100%"> 
+					<tr>
+						<th class="Thma1">TOTAL OBLIGAŢII DE PLATĂ ANGAJATOR LA FS</th> 
+							<th class="Ttdop3">
+								<xforms:output class="T2val8" value="round(/SAL/NCsal/NC[@id='ChArCAS']/Procent * sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut)  div 100) +
+								round(/SAL/NCsal/NC[@id='ChArFA']/Procent * sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut)  div 100) + 
+								round(/SAL/NCsal/NC[@id='ChArFS']/Procent * sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Baza_CVenitSO)  div 100) +
+								round(/SAL/NCsal/NC[@id='ChArCASS']/Procent * sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Baza_CVenitCI)  div 100) +
+								round(/SAL/NCsal/NC[@id='ChArCM']/Procent * sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut)  div 100) +
+								round(/SAL/NCsal/NC[@id='ChArFG']/Procent * sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut)  div 100)"/>Lei
+							</th>							
+						<th class="Ttdop4"></th>       
+					</tr>
+				</table>
+			</td></tr>
+			</table>
+			</fieldset>
+		</div>
+		<br/><br/>
+
+			<fieldset>
+			<legend>REPARTIZAREA PLĂŢILOR PE BUGETE</legend>
+				<table class="Tmarsal">
+					<tr><td>
+					<table class="tab" border="0" cellspacing="3" cellpadding="5" width="100%"> 
+						<tr>
+							<th class="T4nrc"> Nr. Crt</th>
+							<th class="T4exp">Ordin de plată</th>
+							<th class="T4exp1" >Explicaţii</th>
+							<th class="T4pro" >Valoare</th>
+							<th class="T4exp2" >Nr.Cont Buget</th>
+						</tr>
+					</table>
+						<!--<xforms:group ref="/SAL/NCsal/NC">-->
+					<table class="tab" border="0" cellspacing="2" cellpadding="2" width="100%"> 					
+							<tr>
+								<td class="T4trma"><xforms:label class="T4val1"/>1</td>
+								<td class="T4trmd"><xforms:label class="T4val"/>Ordin de Plata Trezorerie</td>
+								<!--<td class="T4trmd"><xforms:output ref="Ordin_de_plata" class="T4val"/></td>-->
+								<td class="T4trmb"><xforms:label  class="T4val4"/>Disponibil al bugetelor asigurărilor sociale şi fondurilor speciale</td>
+								<td class="T4trmc"><xforms:output class="T4val2"	
+						value="round(/SAL/NCsal/NC[@id='ChArCAS']/Procent * sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut)  div 100) +
+							round(/SAL/NCsal/NC[@id='ChArFA']/Procent * sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut)  div 100) + 
+							round(/SAL/NCsal/NC[@id='ChArFS']/Procent * sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Baza_CVenitSO)  div 100) +
+							round(/SAL/NCsal/NC[@id='ChArCASS']/Procent * sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Baza_CVenitCI)  div 100) +
+							round(/SAL/NCsal/NC[@id='ChArCM']/Procent * sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut)  div 100) +
+							round(/SAL/NCsal/NC[@id='ChArFG']/Procent * sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut)  div 100) +
+							sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/CAS)
+							+ sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Somaj)
+							+ sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/CASS)"/></td>       
+								<td class="T4trme"><xforms:label class="T4val"/>5502</td>
+							</tr>					 
+					</table>
+						<!--</xforms:group>-->
+						<xforms:group ref="/SAL/NCsal/NC">
+					<table class="tab" border="0" cellspacing="2" cellpadding="2" width="100%"> 						
+							<tr>
+								<td class="T4trma"><xforms:label class="T4val1"/>2</td>
+								<td class="T4trmd"><xforms:label class="T4val"/>Ordin de Plata Trezorerie</td>
+								<td class="T4trmb"><xforms:label  class="T4val4"/>Venituri ale bugetului de stat în contul unic</td>
+								<td class="T4trmc"><xforms:output value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Impozit_Retinut)" class="T4val2"/></td>       
+								<td class="T4trme"><xforms:label class="T4val"/>20470101</td>
+							</tr>						 
+					</table>
+						</xforms:group>
+					<hr align="center" color="#C2CCD0" width="100%"/>
+					<table class="tab"  border="0" cellspacing="0" cellpadding="0" width="100%"> 
+						<tr>
+							<th class="Thma2">TOTAL DE PLATĂ/OP : </th> 
+							<th class="Ttdop1"><xforms:output class="T2val7" 
+							value="round(/SAL/NCsal/NC[@id='ChArCAS']/Procent * sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut)  div 100) +
+							round(/SAL/NCsal/NC[@id='ChArFA']/Procent * sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut)  div 100) + 
+							round(/SAL/NCsal/NC[@id='ChArFS']/Procent * sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Baza_CVenitSO)  div 100) +
+							round(/SAL/NCsal/NC[@id='ChArCASS']/Procent * sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Baza_CVenitCI)  div 100) +
+							round(/SAL/NCsal/NC[@id='ChArCM']/Procent * sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut)  div 100) +
+							round(/SAL/NCsal/NC[@id='ChArFG']/Procent * sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut)  div 100) +
+							sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/CAS)
+							+ sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Somaj)
+							+ sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/CASS) 
+							+ sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Impozit_Retinut)"/>Lei</th>
+							<th class="Ttdop2"></th>       
+						</tr>
+					</table>
+				</td></tr>
+				</table>
+				</fieldset>
+
+				<br/>
+
+				<table>
+					
+						<tr>
+							<td>Data : 
+								<xforms:output ref="/SAL/Date_operare/Data" class="val1"/></td>
+							<td>Intocmit : 
+								<xforms:output ref="/SAL/Date_operare/Pers_intocmit" class="val1"/></td>
+							<td>Funcţia : 
+								<xforms:output ref="/SAL/Date_operare/Functia" class="val1"/></td>
+						</tr>
+					
+				</table>
+				<br/>
+
+				<hr align="center" color="#C2CCD0" width="85%"/>
+				<div class="noprint">
+
+					<xforms:trigger appearance="minimal" ev:event="DOMActivate"> 									 
+						<xforms:label class="medium button white">&#171; Înapoi la pagina principală &#171;</xforms:label> 
+						<xforms:hint>Înapoi la pagina principală</xforms:hint>
+						<xforms:load resource="index01.xhtml" ev:event="DOMActivate"/>
+					</xforms:trigger>
+
+
+
+					<xforms:trigger appearance="minimal" ev:event="DOMActivate">
+						<xforms:label class="medium button back"> &#171; Back &#171; Liste Personal &#171;</xforms:label>
+						<xforms:hint>Înapoi la Liste Personal</xforms:hint>
+						<xforms:load resource="ldpscurt.xhtml" ev:event="DOMActivate"/>	
+					</xforms:trigger>
+				
+					<xforms:trigger appearance="minimal" ev:event="DOMActivate">
+						<xforms:label class="medium button back"> &#171; Back &#171; Liste Pontaj &#171;</xforms:label>
+						<xforms:hint>Înapoi la Liste Pontaj</xforms:hint>
+						<xforms:load resource="fcpscurt.xhtml" ev:event="DOMActivate"/>	
+					</xforms:trigger>
+
+				<hr align="center" color="#C2CCD0" width="85%"/>
+
+					<xforms:trigger appearance="minimal" ev:event="DOMActivate">
+						<xforms:label class="medium button blue">&#187; Next &#187; Foaia de pontaj &#187;</xforms:label>
+						<xforms:hint>Afisare foaia de pontaj</xforms:hint>
+						<xforms:load resource="foaiepontaj.xhtml" ev:event="DOMActivate"/>	
+					</xforms:trigger>
+					<xforms:trigger appearance="minimal" ev:event="DOMActivate">
+						<xforms:label class="medium button blue">&#187; Next &#187; Stat Plata I &#187;</xforms:label>
+						<xforms:hint>Afisare stat plata simplu</xforms:hint>
+						<xforms:load resource="sal01rap.xhtml" ev:event="DOMActivate"/>	
+					</xforms:trigger>
+
+					<xforms:trigger appearance="minimal" ev:event="DOMActivate">
+						<xforms:label class="medium button blue">&#187; Next &#187; Stat Plata II &#187;</xforms:label>
+						<xforms:hint>Afisare stat plata pe doua randuri</xforms:hint>
+						<xforms:load resource="saldual.xhtml" ev:event="DOMActivate"/>	
+					</xforms:trigger>
+
+					<xforms:trigger appearance="minimal" ev:event="DOMActivate">
+						<xforms:label class="medium button blue">&#187; Next &#187; Note contabile &#187;</xforms:label>
+						<xforms:hint>Vezi raport note contabile</xforms:hint>
+						<xforms:load resource="nc01.xhtml" ev:event="DOMActivate"/>	
+					</xforms:trigger>
+
+					<xforms:trigger appearance="minimal" ev:event="DOMActivate">
+						<xforms:label class="medium button blue">&#187; Next &#187; Fluturasi &#187;</xforms:label>
+						<xforms:hint>Vezi raport fluturasi salarii</xforms:hint>
+						<xforms:load resource="flu01rap.xhtml" ev:event="DOMActivate"/>	
+					</xforms:trigger>
+
+				</div>
+				<hr align="center" color="#C2CCD0" width="85%"/>
+			<br/><br/><br/>
+		</body>
+	</html>
+

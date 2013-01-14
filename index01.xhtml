@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="../webgestext/xsltforms/xsltforms.xsl" type="text/xsl"?>
+<?css-conversion no?>
+
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:xforms="http://www.w3.org/2002/xforms"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ev="http://www.w3.org/2001/xml-events"
+ xml:lang="en">
+
+	<head>
+		<meta version="0.9.4" http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+		<title>websal2</title>
+		<link rel="stylesheet" href="index.css"/>
+		<style type="text/css">
+			@namespace xforms url("http://www.w3.org/2002/xforms");		 
+			/* The default field width for all inputs */		
+		</style>
+
+		<script type="text/javascript" src="loadSal.js"/>
+		<script type="text/javascript" src="modalwin.js"></script>
+		<script type="text/javascript">
+			function openwin(){
+				if(navigator.javaEnabled()){;
+					ShowWindow('salToFile.xhtml',400,400,1,1);
+				}else{
+					alert("Nu găsesc plugin java instalat! \nPentru salvare fișier este necesar să aveți instalat pluginul java pentru browser!");
+				}
+			}
+			
+			function loadSalTest() {
+				var doc=localStorage.getItem("salxml");
+				if (!doc){
+					
+					var r=confirm("Nu s-au găsit date memorate local! \nÎncărcați un set de date existente, salvate anterior, sau creați o firmă nouă. \n(Alegeți Cancel) \n\nPentru a încărca un set de date de test, apăsați OK");
+					if (r==true){
+					  loadInstTest();
+					}
+				//	alert("Nu s-au găsit date memorate local! Încărcați un set de date existente salvate anterior sau creați o firmă nouă.");
+				}else{
+					//alert("else -");
+					var model = document.getElementById("SAL").xfElement;
+					var inst = document.getElementById("sal").xfElement;
+					inst.setDoc(doc, false, true);
+					XsltForms_globals.addChange(model);
+					XsltForms_xmlevents.dispatch(model, "xforms-rebuild");				
+					XsltForms_globals.refresh();
+				}	
+			}
+			
+			/*function ChangePath() {
+				var cale="salproba-id.xml";
+				var model=document.getElementById("SAL");				
+				var instanceElement = document.getElementById('sal');			   
+				instanceElement.setAttribute('resource', cale); 
+				alert("resource inst. sal= "+instanceElement.getAttribute('resource'));						
+				XsltForms_globals.addChange(model);
+				XsltForms_xmlevents.dispatch(model, "xforms-rebuild");				
+				XsltForms_globals.refresh();						
+			}*/	
+			
+			function loadInstTest() {
+				var xmlfile="salproba-id.xml";
+				var xmlhttp = getXMLHttpObj();
+				xmlhttp.open("GET", xmlfile, false);
+				xmlhttp.setRequestHeader('Content-Type', 'text/xml');
+				xmlhttp.send(null);
+				var docxmlobj = xmlhttp.responseXML.documentElement;
+				var seriz= new XMLSerializer();
+				//var doc = XML(seriz.serializeToString(docxmlobj)).toXMLString();
+				var doc = seriz.serializeToString(docxmlobj);
+				var model = document.getElementById("SAL").xfElement;
+				var inst = document.getElementById("sal").xfElement;				
+				inst.setDoc(doc, false, true);
+				localStorage.setItem("salxml", doc);
+				XsltForms_globals.addChange(model);
+				XsltForms_xmlevents.dispatch(model, "xforms-rebuild");				
+				XsltForms_globals.refresh();				
+			}
+			
+			function getXMLHttpObj() {
+				  var xmlreq = false;
+				  if (window.XMLHttpRequest) {//non-Microsoft browsers
+					xmlreq = new XMLHttpRequest();
+				  } else if (window.ActiveXObject) {//Microsoft browsers
+					try {
+					  xmlreq = new ActiveXObject("Msxml2.XMLHTTP");//later versions of Internet Explorer
+					} catch (e1) {
+					  try {
+						xmlreq = new ActiveXObject("Microsoft.XMLHTTP");//older versions of Internet Explorer
+					  } catch (e2) {
+						// Unable to create an XMLHttpRequest with ActiveX
+					  }
+					}
+				  }
+				  return xmlreq;
+			};								
+		</script>
+					
+		<xforms:model id="SAL" version="1.1">
+			<!--<xforms:instance id="sal" resource="sal.xml "/>
+			<xforms:instance id="saljs" resource="javascript:getinstsal()" />	-->
+			<xforms:instance id="sal" xmlns="">
+				<data/>
+			</xforms:instance>					
+			<xforms:instance id="sablon" resource="salsablon.xml"/>
+		</xforms:model>
+	</head>
+
+	<body bgcolor="#F3F3F3" text="#000000" rightmargin="100" topmargin="100" onload="loadSalTest();">
+		<br/>
+		<table class="dvtxt0" border="0" cellpadding="0" cellspacing="15" align="center" width="100%">
+			<tr>					
+				<td> 
+					<div style="padding-left:10em;">
+						<span style="font-size:2em;color:#008080;padding:0.5em;">WebSal</span>
+						<span style="font-size:1.5em;color:#008080;padding:0.2em;">v.</span>
+						<span style="font-size:1.5em;color:#008080;padding:0.2em;">
+						<xforms:output ref="instance('sablon')/@vers"/></span>
+					</div>
+					<hr align="center" color="#D7D5D8" width="80%"/>
+					<br/>
+					<b class="dvtxt2">
+						<span style="font-size:0.8em;padding:0.2em;"><i>Firma </i></span>
+						<span style="font-size:1.2em;color:#000000;padding:0.2em;"><xforms:output ref="instance('sal')/Date_firma/Firma" class="Ldval4"/></span>
+						<span style="font-size:0.8em;color:#000000;padding:0.2em;"><xforms:output ref="instance('sal')/Date_firma/Sufix" class="Ldval4"/></span>
+					</b>
+					<span style="color:#000000;padding:0.2em; float:right;"><i>Luna de lucru </i>
+						<xforms:select1 class="Ztd1" ref="instance('sal')/LunaLucru">
+							<xforms:itemset nodeset="instance('sal')/DateLunare/Luna/@AnLuna">
+								<xforms:label ref="."/>
+								<xforms:value ref="."/>
+							</xforms:itemset>
+							<xforms:action ev:event="xforms-value-changed">
+								<xforms:load resource="javascript:saveDataLocal('sal')"/>
+							</xforms:action>								                         
+						</xforms:select1>
+					</span>					
+					<hr align="left" color="#D7D5D8" width="1%"/>
+					<br/>
+					<div style="width:100%;">
+						<span style="padding:0.5em;">
+						<xforms:trigger appearance="minimal">
+							<xforms:label class="medium button greenn" style="padding-right:0.9em; float:left;">Creere firmă nouă </xforms:label>
+									 								
+							<xforms:action ev:event="DOMActivate">
+								<xforms:message level="modal"> Atenție !!! Asigurați-vă că datele curente au fost salvate. Altfel ele se vor pierde, fiind suprascrise cu cele nou introduse, în momentul salvării datelor ce urmează a fi completate. </xforms:message>
+								<!--<xforms:send submission="firmanoua"/>-->
+								<xforms:load resource="javascript:location='adss.xhtml'"/>								
+							</xforms:action>
+						</xforms:trigger>
+						</span>
+						<span style="padding:0.5em;"> Alege altă firmă <input type="file" id="fileupl" onchange="readFile('sal',this.id)"/></span>
+						<span style="padding:0.5em;">
+						<xforms:trigger appearance="minimal">
+							<xforms:label class="medium button blue" style="padding-right:0.9em;float:right">Firmă DEMO</xforms:label>
+							<xforms:action ev:event="DOMActivate">
+								<xforms:show dialog="confirm"/>							
+							</xforms:action>
+						</xforms:trigger>
+						</span>								
+					</div>										
+					
+					<hr class="dvtxthr" align="left" color="#D7D5D8" width="100%"/>											
+				</td>	
+			</tr>
+			<tr>
+				<td>
+					<table border="0" align="center" cellpadding="15" cellspacing="3" width="100%">
+						<tr>
+							<td class="dvtxt4" bgcolor="#F3F3F3">
+								<i><b>Administrare </b></i>
+								<ul>	
+									<li class="sub1">
+										<a href="ads01.xhtml" title=" Date Firma">Date firmă</a>
+									</li>
+									<li class="sub1">
+										<a href="accnou.xhtml" title=" Date">Date generale</a>
+									</li>								   
+									<li class="sub1">
+										<a href="ldpscurt.xhtml" title="Initializare liste de personal">Liste personal</a>
+									</li>
+									<li class="sub1">
+										<a href="fcpscurt.xhtml" title="Initializare Date generale pontaj">Pontaj</a>
+								        <!--<xforms:trigger appearance="minimal">
+								            <xforms:label appearance="minimal">Pontaj</xforms:label>
+								            <xforms:action ev:event="DOMActivate">
+								                <xforms:show dialog="intrarePontaj"/>
+								            </xforms:action>
+								        </xforms:trigger>-->										
+									</li>
+								</ul>														
+								<i><b>Declaraţii </b></i>
+							
+								<ul>	
+									<li class="sub1">
+										<a href="d112.xhtml" title="Vizualizare tiparire DeclaratieUnica">D 112</a>
+									</li>
+									<li class="sub1">
+										<a href="revisal.xhtml" title="Vizualizare tiparire Revisal">Revisal</a>
+									</li>
+								</ul>
+								<hr class="dvtxthr" align="left" color="#D7D5D8" width="100%"/>	
+																																						
+							</td>												 
+							<td class="dvtxt5" bgcolor="#F3F3F3">													  
+								<i><b>Rapoarte </b></i>
+								
+								<ul type="circle">
+									<li class="sub">
+										<a href="sal01.xhtml" title="Vizualizare Salvare Stat plata salarii">Stat de plată</a>
+									</li>						
+									<li class="sub">
+										<a href="avans.xhtml" title="Vizualizare tiparire Stat plata avans">StatAvans</a>
+									</li>
+									<li class="sub">
+										<a href="sal01rap.xhtml" title="Vizualizare tiparire Stat plata">Stat Plata I</a>
+									</li>
+									<li class="sub">
+										<a href="saldual.xhtml" title="Vizualizare tiparire Stat plata">Stat Plata II</a>
+									</li>
+									<li class="sub">												
+										<a href="nc01.xhtml" title="Vizualizare tiparire Note contabile">Note contabile</a>
+									</li> 
+									<li class="sub">
+										<a href="flu01rap.xhtml" title="Vizualizare tiparire Fluturasi Salariu">Fluturaşi</a>
+									</li>
+									<li class="sub">
+										<a href="op01rap.xhtml" title="Vizualizare tiparire Ordin de plata">Ordine de plată</a>
+									</li>
+									<li class="sub">
+										<a href="foaiepontaj.xhtml" title="Foaie colectiva de pontaj salariati">Foaie pontaj</a>
+									</li>
+								</ul>
+							</td>
+								
+						</tr>
+													
+					</table>						
+					<div align="left">
+						<span style="padding:0.7em;">
+						<xforms:trigger appearance="minimal"> 
+							<xforms:label class="medium button blue">&#164; Salvează în fișier &#164; </xforms:label>
+							<!--<xforms:hint>Salvează datele în fișier extern</xforms:hint>--> 					
+							<xforms:load resource="javascript:saveToFile('sal')" ev:event="DOMActivate" />
+						</xforms:trigger> 
+						</span>
+						<span style="padding:0.7em;">
+						<xforms:trigger appearance="minimal" ev:event="DOMActivate"> 									 
+							<xforms:label class="medium button yellow">&#164; Ieșire &#164;</xforms:label>
+							<!--<xforms:hint>Înapoi la pagina principală</xforms:hint>-->
+							<xforms:load resource="index.xhtml" ev:event="DOMActivate"/>
+						</xforms:trigger>
+						</span>									
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<xforms:dialog id="confirm">	
+			<div id="background2" align="center" style="width:90%">
+				<div>
+		        <h2> ATENȚIE !!! </h2>
+		    	Dacă aveți înregistrări pe o firmă aflată în lucru, asigurați-vă că datele curente au fost salvate în fișier extern. Ele vor fi suprascrie la intrarea în demo.		
+				</div>	
+				<br/>  
+		        <div style="padding:0.7em;">
+		        	<span style="padding:0.7em;">
+		            <xforms:trigger appearance="minimal">
+		            	<xforms:label class="small button green"> Intrare DEMO </xforms:label>
+		                <xforms:action ev:event="DOMActivate">
+							<xforms:load resource="javascript:loadInstTest()"/>
+		                    <xforms:hide dialog="confirm" />
+		                </xforms:action>
+		            </xforms:trigger>
+		            </span>
+		            <span style="padding:0.7em;">
+		            <xforms:trigger appearance="minimal">
+		                <xforms:label class="small button yellow"> Renunță </xforms:label>
+		                <xforms:action ev:event="DOMActivate">
+		                	<xforms:hide dialog="confirm" />
+		                </xforms:action>	
+		            </xforms:trigger>
+		            </span>
+		        </div>
+		    </div>
+		</xforms:dialog>		
+		<!--<xforms:dialog id="intrarePontaj">	
+			<div id="background2" align="center" style="width:90%">
+				<div id="delete-confirm-box">
+					<span style="color:#000000;padding:0.2em; float:right;"><i>Luna de lucru </i>
+						<xforms:select1 class="Ztd1" ref="instance('sal')/LunaLucru">
+							<xforms:itemset nodeset="instance('sal')/DateLunare/Luna/@AnLuna">
+								<xforms:label ref="."/>
+								<xforms:value ref="."/>
+							</xforms:itemset>
+							<xforms:action ev:event="xforms-value-changed">
+								<xforms:load resource="javascript:saveDataLocal('sal')"/>
+							</xforms:action>								                         
+						</xforms:select1>
+					</span>	
+				</div>	  
+	            <div id="delete-option-triggers">
+	                        <xforms:trigger appearance="minimal">
+	                        <xforms:label class="Sterg"> Șterge </xforms:label>
+	                            <xforms:action ev:event="DOMActivate">
+	                                <xforms:delete nodeset="/SAL/Personal/Salariat" at="index('repeatRow')" ev:event="DOMActivate" />
+	                                <xforms:load resource="javascript:saveDataLocal('sal')"/>
+	                                <xforms:hide dialog="ConfirmDelete" />
+	                            </xforms:action>
+	                        </xforms:trigger>
+
+	                        <xforms:trigger appearance="minimal">
+	                            <xforms:label class="Home"> Renunță </xforms:label>
+	                            <xforms:action ev:event="DOMActivate">
+	                            	<xforms:hide dialog="ConfirmDelete" />
+	                            </xforms:action>	
+	                        </xforms:trigger>
+	            </div>
+		    </div>
+    	</xforms:dialog>	 End dialog "intrarePontaj" -->
+	</body>
+</html>
+
+
+
+

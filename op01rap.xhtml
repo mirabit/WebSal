@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="../xsltforms/xsltforms.xsl" type="text/xsl"?>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:xforms="http://www.w3.org/2002/xforms"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:my="http://commerce.example.com/payment"
+ xmlns:ev="http://www.w3.org/2001/xml-events"
+ xml:lang="en">
+  <head>
+    
+     <title>OP op01rap</title>  
+<link rel="stylesheet" href="raport.css"></link>
+<style type="text/css">
+		   @namespace xforms url("http://www.w3.org/2002/xforms");
+		 .body {font-size: 1.0em;}
+		 .xf-value {width: 100px; height:5.5mm; font-size:15px; border-width:0.1mm; border-style:solid;font-weight:bold; border-color:#676;}
+                 i {color:#07660A;}
+		   /* The default field width for all inputs */		   
+		   legend {font-weight:bold; font-size:0.8em;}	
+	           label {font-size:1.2em;}
+
+</style>
+    <style type="text/css" media="print">
+    .noprint{display: none;}
+    </style>
+	<script type="text/javascript" src="loadSal.js"/>
+
+ <xforms:model id="SAL" version="1.1">
+  <xforms:instance id="sal" />
+
+
+</xforms:model>
+
+  </head>
+<body bgcolor="#ffbbff" text="#000000" rightmargin="80" topmargin="40" onload="loadSal();">
+
+<table border="0" width="100%">
+<h3 align="center">ORDIN DE PLATA</h3>
+</table>
+
+<table align="center">
+  <tbody>
+    <tr>
+      <td>An : </td><b>
+	<xforms:output ref="/SAL/An" class="val1"/>
+      </b><td>Luna : </td><b>
+	<xforms:output ref="/SAL/Luna" class="val1"/>
+    </b></tr>
+  </tbody>
+ </table>
+<br/>
+
+<div style="width:100%">
+  <fieldset>
+    <legend>Date firma</legend>
+	<table>
+  <tbody>
+    <tr>
+
+<td>  
+<label>Societatea : </label><b>
+<xforms:output ref="/SAL/Date_firma/Prefix" class="val3"/>
+<xforms:output ref="/SAL/Date_firma/Firma" class="val3"/>
+<xforms:output ref="/SAL//Date_firma/Sufix" class="val3"/>
+
+    </b></td>   
+<td>
+<label>CUI: RO </label><b>
+<xforms:output ref="/SAL/Date_firma/CISTVA" class="val2"/>
+    </b></td>
+      <td>
+<label>Nr.Inreg.ITM :</label><b>
+<xforms:output ref="/SAL/Date_firma/Numar_ITM" class="val3"/>
+      </b></td>
+    </tr>
+ </tbody>
+  </table>
+ </fieldset>
+</div>
+
+  <fieldset>
+    <legend>REPARTIZAREA PLATILOR PE BUGETE</legend>
+  <table class="Tmarsal">
+ <table class="tab" border="0" cellspacing="2" cellpadding="3" width="100%"> 
+     <tr>
+      <th class="T4nrc"> Nr. Crt</th>
+      <th class="T4exp">Ordin de plata</th>
+      <th class="T4exp1" >Explicatii</th>
+      <th class="T4pro" >Valoare</th>
+      <th class="T4exp2" >Nr.Cont Buget</th>
+      </tr>
+</table>
+
+ <table class="tab" border="0" cellspacing="2" cellpadding="3" width="100%"> 
+   <xforms:group ref="/SAL/OPsal/OP_FS">
+    <tr id="repeatRow">
+      <td class="T4trma"><a href="pgconst.xhtml">OP_</a><xforms:output ref="NrOP" class="T4val1"></xforms:output></td>
+      <td class="T4trmd"><xforms:output ref="Ordin_de_plata" class="T4val"/></td>
+      <td class="T4trmb"><xforms:output ref="Explicatii" class="T4val4"/></td>
+      <td class="T4trmc"><xforms:output ref="Valoare" class="T4val2"/></td>       
+      <td class="T4trme"><xforms:output ref="Nr_Cont_Buget" class="T4val"/></td>
+      </tr>
+   </xforms:group> 
+ </table>
+
+ <table class="tab" border="0" cellspacing="2" cellpadding="3" width="100%"> 
+   <xforms:group ref="/SAL/OPsal/OP_IMP">
+    <tr id="repeatRow">
+      <td class="T4trma"><a href="pgconst.xhtml">OP_</a><xforms:output ref="NrOP" class="T4val1"></xforms:output></td>
+      <td class="T4trmd"><xforms:output ref="Ordin_de_plata" class="T4val"/></td>
+      <td class="T4trmb"><xforms:output ref="Explicatii" class="T4val4"/></td>
+      <td class="T4trmc"><xforms:output ref="Valoare" class="T4val2"/></td>       
+      <td class="T4trme"><xforms:output ref="Nr_Cont_Buget" class="T4val"/></td>
+      </tr>
+   </xforms:group> 
+ </table>
+
+<!-- <table class="tab" border="0" cellspacing="2" cellpadding="3" width="100%">  
+   <xforms:group ref="/SAL/OPsal/OP_ITM">
+    <tr id="repeatRow">
+      <td class="T4trma"><xforms:output ref="NrOP" class="T4val1">
+      <a href="opitm.xhtml">X</a><xforms:hint>Tipareste_OP Comision_ITM</xforms:hint></xforms:output></td>
+      <td class="T4trmd"><xforms:output ref="Ordin_de_plata" class="T4val"/></td>
+      <td class="T4trmb"><xforms:output ref="Explicatii" class="T4val4"/></td>
+      <td class="T4trmc"><xforms:output ref="Valoare" class="T4val2"/></td>       
+      <td class="T4trme"><xforms:output ref="Nr_Cont_Buget" class="T4val"/></td>
+      </tr>
+   </xforms:group> 
+ </table>-->
+</table>
+</fieldset>
+
+<br/><br/>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Data : </td>
+	<xforms:output ref="/SAL/Date_operare/Data" class="val1"/><br/>
+      <td>Intocmit : </td>
+	<xforms:output ref="/SAL/Date_operare/NumeO" class="val1"/>
+        <xforms:output ref="/SAL/Date_operare/PrenumeO" class="val1"/>
+      <td>Functia : </td>
+	<xforms:output ref="/SAL/Date_operare/Functia" class="val1"/>
+     </tr>
+  </tbody>
+</table>
+<br/>	
+				<div class="noprint">
+			
+					<a href="index01.xhtml">
+						<xforms:trigger> 									 
+							<xforms:label class="medium button green">&#171; Înapoi la pagina principală &#171;</xforms:label> 
+							<xforms:hint>Înapoi la pagina principală</xforms:hint>
+						</xforms:trigger>
+					</a>
+
+
+					<a href="#" onclick="window.print()">
+						<xforms:trigger> 
+							<xforms:label><i> ^ Tipărire</i></xforms:label> 
+							<xforms:hint>Tiparire</xforms:hint>	
+						</xforms:trigger>
+					</a>
+						
+				</div>
+		<br/>
+</body>
+</html>
+

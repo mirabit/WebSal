@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="../webgestext/xsltforms/xsltforms.xsl" type="text/xsl"?>
+<?css-conversion no?>
+
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:xforms="http://www.w3.org/2002/xforms"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xmlns:ev="http://www.w3.org/2001/xml-events"
+ xml:lang="en">
+
+	<head>
+		<meta version="0.9.3" http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+		<link rel="stylesheet" href="index.css"/>
+		
+		<style type="text/css">
+                .xf-value { height:5mm;font-size:16px; border-width:0.1mm;color:#000068;}
+                .df8 input {width:17em;font-weight:bold;text-align:left;font-size:8px;font-style:italic;text-align:center;}
+                #imp {font-weight:bold;font-style:italic;font-size:14px; border-width:0.1mm;color:red;}
+                #legendt {font-weight:bold;font-style:italic;font-size:18px;}
+                #Save {color:red;font-style:italic; font-size:1.0em;}
+                #Home {color:#005700;font-style:italic;}
+                fieldset {font-weight:bold;font-style:italic;font-size:16px;-moz-border-radius: .7em  .7em .7em .7em; 
+                border:solid 1px; padding:5mm;}
+                legend {font-style:italic;font-size:13px;}
+
+        </style>
+		
+		<script type="text/javascript" src="loadSal.js"/>
+		<script type="text/javascript" src="modalwin.js"></script>
+		<script type="text/javascript">
+			function openwin(){
+				if(navigator.javaEnabled()){;
+					ShowWindow('salToFile.xhtml',400,400,1,1);
+				}else{
+					alert("Nu găsesc plugin java instalat!\nPentru salvare fișier este necesar să aveți instalat pluginul java pentru browser!");
+				}
+			}
+		</script>
+	
+                <title>DATE SOCIETATE adsln</title>  
+                <link rel="stylesheet" href="sal.css"></link>  
+        
+            <xforms:model id="SAL" version="1.1">
+                <xforms:instance id="sal" src="opener://sal"/>
+				<xforms:instance id="sablon"  resource="salsablon.xml"/>
+                <xforms:instance id="dategen" resource="dategen.xml"/>
+    			<xforms:instance id="tmp">
+					<DATE xmlns="">
+						<contor>0</contor>
+						<Ore tip="">0</Ore>
+						<Luna AnLuna="" NrZlucruL=""/>														
+					</DATE> 
+				</xforms:instance>	    
+				<xforms:submission id="save" method="put" replace="none" action="opener://sal">
+					<xforms:message level="modeless" ev:event="xforms-submit-error">Save aborted.</xforms:message>
+				</xforms:submission>
+                <xforms:bind nodeset="instance('sal')/Date_operare/Data" type="xsd:date" />
+
+            </xforms:model>
+
+        </head>
+	
+        <body bgcolor="#E9E9E9" text="#080808" rightmargin="150" topmargin="80" onload="loadSal();">
+		<br/>
+	<table border="0" class="dvtxtin" align="center" cellspacing="0" cellpadding="25" width="50%">
+		<tr>
+			<td>
+			<br/>
+        <fieldset class="dvtxt3">
+			<legend id="legendt"><i> Inițializare lună nouă </i></legend>
+
+		<table border="0" cellspacing="10" cellpadding="0" align="center">
+			<tr>
+				<td class="df8"> Firma: 
+					<xforms:output ref="/SAL/Date_firma/Prefix" class="df8"/>
+					<xforms:output ref="/SAL/Date_firma/Firma" class="df8"/>
+					<xforms:output ref="/SAL/Date_firma/Sufix" class="df8"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+		<!-- <td> ( Locația: <xforms:output ref="instance('up')/file"/> ) 					
+				</td>-->
+			</tr>
+		</table>
+
+			<fieldset class="dvtxt3">       
+                <legend><i>Alege An/Luna pentru salvare date în luna nouă</i></legend> 
+					<table border="0" cellspacing="10" cellpadding="0" align="center">
+						    <!--<form action="">-->                    
+						<tr>
+							<td class="">( orice zi din luna dorită ):  
+									<xforms:input ref="instance('sal')/Date_operare/Data" incremental="true"></xforms:input> 
+							</td>
+							<td class="">
+								<xforms:trigger appearance="minimal"> 
+									<xforms:label class="medium button greenn">&#187; Adaugă &#171;</xforms:label>
+									<xforms:action ev:event="DOMActivate" if="not(not(concat(substring(instance('sal')/Date_operare/Data,1,4) , substring(instance('sal')/Date_operare/Data,6,2)) = instance('sal')/DateLunare/Luna/@AnLuna))">
+										<xforms:message>Luna există deja</xforms:message>
+									</xforms:action>
+
+									<xforms:action ev:event="DOMActivate" if="not(concat(substring(instance('sal')/Date_operare/Data,1,4) , substring(instance('sal')/Date_operare/Data,6,2)) = instance('sal')/DateLunare/Luna/@AnLuna)">
+										<xforms:action ev:event="DOMActivate">
+											<xforms:setvalue ref="instance('sal')/LunaLucru" value="concat(substring(instance('sal')/Date_operare/Data,1,4) , substring(instance('sal')/Date_operare/Data,6,2))"/>
+											<xforms:setvalue ref="instance('tmp')/Luna/@AnLuna" value="instance('sal')/LunaLucru"/>
+											
+											<xforms:insert origin="instance('tmp')/Luna" context="instance('sal')/DateLunare" nodeset="/Luna"/>
+											<xforms:setvalue ref="instance('tmp')/contor" value="1"/>
+										</xforms:action>
+										<xforms:action while="instance('tmp')/contor &lt; count(instance('sal')/Personal/Salariat) + 1" ev:event="DOMActivate">
+											<xforms:setvalue ref="instance('sablon')/DateLunare/Luna/Salariat/@id" value="instance('sal')/Personal/Salariat[number(instance('tmp')/contor)]/@id" />
+											<xforms:insert origin="instance('sablon')/DateLunare/Luna/Salariat" context="instance('sal')/DateLunare/Luna[@AnLuna=instance('sal')/LunaLucru]" nodeset="/Salariat"/>
+											<!--<xforms:setvalue ref="instance('sal')/DateLunare/Luna[@AnLuna=instance('sal')/LunaLucru]/Salariat[number(instance('tmp')/contor)]/@id" value="instance('sal')/Persona/Salariat[number(instance('tmp')/contor)]/@id" />-->
+											<xforms:setvalue ref="instance('tmp')/contor" value=". + 1"/>
+										</xforms:action>								
+										<xforms:action ev:event="DOMActivate" if="count(instance('sal')/Personal/Salariat) &gt; 0">	
+											<xforms:load resource="javascript:iniPontaj();" />	
+											<xforms:setvalue ref="instance('tmp')/contor" value="1"/>
+											<xforms:setvalue ref="TotalPontaj/OreL1-15" value="sum(../../Sapt/Zile/Ziua[@nr &lt; '16']/OreZi[@tip='Lucru'])"/>
+													
+										</xforms:action>
+										
+										<!-- Setări în totaluri -->
+										<xforms:action ev:event="DOMActivate" while="instance('tmp')/contor &lt; count(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat) + 1">	
+											<xforms:action ev:event="DOMActivate">
+												<xforms:setvalue ref="instance('tmp')/Ore/@tip" value="'Lucru'"/>
+												<xforms:setvalue ref="instance('tmp')/Ore" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[number(instance('tmp')/contor)]/Sapt/Zile/Ziua/OreZi[@tip = 'Lucru'])"/>
+												<xforms:insert origin="instance('tmp')/Ore" context="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[number(instance('tmp')/contor)]/TotalPontaj" nodeset="/Ore"/>
+												<xforms:setvalue ref="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[number(instance('tmp')/contor)]/Deduceri" value="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru - 1]/Salariat[number(instance('tmp')/contor)]/Deduceri"/>
+												<xforms:setvalue ref="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[number(instance('tmp')/contor)]/Retineri" value="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru - 1]/Salariat[number(instance('tmp')/contor)]/Retineri"/>
+												<xforms:setvalue ref="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[number(instance('tmp')/contor)]/Spor_vechime" value="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru - 1]/Salariat[number(instance('tmp')/contor)]/Spor_vechime"/>												
+											</xforms:action>
+											<xforms:setvalue ref="instance('tmp')/contor" value=". + 1"/>
+										</xforms:action>
+																					
+										<xforms:action ev:event="DOMActivate">
+											<xforms:setvalue ref="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/@NrZlucruL" value="count(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[1]/Sapt/Zile/Ziua/OreZi[. &gt; 0])"/>
+											<xforms:message level="modeless">Luna adăugată</xforms:message>
+										</xforms:action>
+										
+									</xforms:action>
+								</xforms:trigger>
+							</td>								
+						</tr>   
+						     <!--</form>-->
+					</table>
+				   
+					<br/>
+				</fieldset>
+			<fieldset class="dvtxt3">       
+                <legend><i> Șterge o lună </i></legend> 
+					<table border="0" cellspacing="10" cellpadding="0" align="center">
+						    <!--<form action="">-->                    
+						<tr>
+							<td class="">  
+								<xforms:select1 class="Ztd1" ref="instance('sal')/LunaLucru">
+									<xforms:itemset nodeset="instance('sal')/DateLunare/Luna/@AnLuna">
+										<xforms:label ref="."/>
+										<xforms:value ref="."/>
+									</xforms:itemset>							                         
+								</xforms:select1>		
+							</td>
+							<td class="">
+								<xforms:trigger appearance="minimal"> 
+									<xforms:label class="medium button red">&#187; Șterge &#171;</xforms:label>
+									<xforms:hint>Alege o luna pentru Ștergere </xforms:hint> 
+									<xforms:action ev:event="DOMActivate">
+										<xforms:show dialog="ConfirmDelete"/>
+									</xforms:action>
+								</xforms:trigger>							
+							</td>
+						</tr>   
+						     <!--</form>-->
+					</table>
+				   
+					
+				</fieldset>				
+			</fieldset>  
+	<br/>
+					<xforms:trigger appearance="minimal"> 
+						<xforms:label class="medium button orange">&#187; Salvează &#171;</xforms:label>
+						<xforms:hint> </xforms:hint> 
+						<xforms:send submission="save" ev:event="DOMActivate"/>
+						<xforms:load resource="javascript:saveDataLocal('sal')" ev:event="DOMActivate" />
+						<xforms:load resource="javascript:self.close()" ev:event="DOMActivate"/>
+						<!--<xforms:load resource="javascript:location='index01.xhtml'" ev:event="DOMActivate" />-->
+					</xforms:trigger>
+
+					<!--<span><a href="javascript:openwin();"> Salvează în fișier </a></span>
+					<xforms:trigger appearance="minimal"> 
+						<xforms:label class="medium button orange"> Salvează în fișier </xforms:label>
+						<xforms:load resource="javascript:saveDataLocal('sal')" ev:event="DOMActivate" />
+					</xforms:trigger>   -->
+
+					<xforms:trigger appearance="minimal" ev:event="DOMActivate"> 									 
+						<xforms:label class="medium button white">&#171; Înapoi la pagina principală &#171;</xforms:label> 
+						<xforms:hint>Înapoi la pagina principală</xforms:hint>
+						<xforms:load resource="javascript:self.close()" ev:event="DOMActivate"/> 
+						<xforms:load resource="index01.xhtml" ev:event="DOMActivate"/>
+					</xforms:trigger>
+				</td>
+			</tr>   
+		</table>
+	<br/>
+		
+	<xforms:dialog id="ConfirmDelete">	
+	<div id="background2" align="center" style="width:90%">
+        <div id="delete-confirm-box">
+            <p><i> <h2> ATENTIE !!! </h2> 
+                
+            Datele sterse nu se mai pot recupera ! </i></p>
+	  
+                <div id="delete-option-triggers">
+                            <xforms:trigger>
+                            <xforms:label id="Sterg"> Șterge </xforms:label>
+                                <xforms:action ev:event="DOMActivate">
+									<xforms:delete nodeset="instance('sal')/DateLunare/Luna[@AnLuna=instance('sal')/LunaLucru]"/>
+									<xforms:setvalue ref="instance('sal')/LunaLucru" value="instance('sal')/DateLunare/Luna[last()]/@AnLuna"/>
+                                    <xforms:hide dialog="ConfirmDelete" />
+                                </xforms:action>
+                            </xforms:trigger>
+
+                            <xforms:trigger>
+                                <xforms:label id="Home"> Renunță </xforms:label>
+                                <xforms:action ev:event="DOMActivate">
+                                	<xforms:hide dialog="ConfirmDelete" />
+                                </xforms:action>	
+                            </xforms:trigger>
+                </div>
+            </div>
+        </div>
+	<br/>
+        </xforms:dialog>
+	<!-- End dialog "ConfirmDelete" -->			
+		LunaLucru= <xforms:output ref="instance('sal')/LunaLucru" class="df8"/>
+		LL Date-op <xforms:input ref="instance('sal')/Date_operare/Data" class="df8"/>
+		LL Date-op concat=  <xforms:output value="concat(substring(instance('sal')/Date_operare/Data,1,4) , substring(instance('sal')/Date_operare/Data,6,2))" class="df8"/>
+	</body>
+</html>
+

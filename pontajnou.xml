@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DateLunare Firma="ABC">
+	<Luna AnLuna="201108">
+		<Pontaj>
+			<Salariat id="">
+				<Zile>
+					<Ziua nr="1">
+						<OreZi tip="normale">6</OreZi>
+						<OreZi tip="Învoire">2</OreZi>
+					</Ziua>
+					<Ziua nr="2">
+						<OreZi tip="normale">8</OreZi>
+					</Ziua>
+					<Ziua nr="3">
+						<OreZi tip="normale">8</OreZi>
+						<OreZi tip="S50">4</OreZi>
+					</Ziua>
+					<Ziua nr="4">
+						<OreZi tip="normale">6</OreZi>
+						<OreZi tip="Învoire">2</OreZi>
+					</Ziua>
+					<Ziua nr="5">
+						<OreZi tip="normale">8</OreZi>
+					</Ziua>
+					<Ziua nr="6">
+						<OreZi tip="normale">8</OreZi>
+						<OreZi tip="S50">4</OreZi>
+					</Ziua>
+					<Ziua nr="7">
+						<OreZi tip="normale">6</OreZi>
+						<OreZi tip="Învoire">2</OreZi>
+					</Ziua>
+					<Ziua nr="8">
+						<OreZi tip="normale">8</OreZi>
+					</Ziua>
+					<Ziua nr="9">
+						<OreZi tip="normale">8</OreZi>
+						<OreZi tip="S50">4</OreZi>
+					</Ziua>
+					<Ziua nr="10">
+						<OreZi tip="normale">6</OreZi>
+						<OreZi tip="Învoire">2</OreZi>
+					</Ziua>
+					<Ziua nr="11">
+						<OreZi tip="normale">8</OreZi>
+					</Ziua>
+					<Ziua nr="12">
+						<OreZi tip="normale">8</OreZi>
+						<OreZi tip="S50">4</OreZi>
+					</Ziua>	
+					<Ziua nr="13">
+						<OreZi tip="normale">6</OreZi>
+						<OreZi tip="Învoire">2</OreZi>
+					</Ziua>
+					<Ziua nr="14">
+						<OreZi tip="normale">8</OreZi>
+					</Ziua>
+					<Ziua nr="15">
+						<OreZi tip="normale">8</OreZi>
+						<OreZi tip="S50">4</OreZi>
+					</Ziua>
+					<Ziua nr="16">
+						<OreZi tip="normale">6</OreZi>
+						<OreZi tip="Învoire">2</OreZi>
+					</Ziua>
+					<Ziua nr="17">
+						<OreZi tip="normale">8</OreZi>
+					</Ziua>
+					<Ziua nr="18">
+						<OreZi tip="normale">8</OreZi>
+						<OreZi tip="S50">4</OreZi>
+					</Ziua>
+					<Ziua nr="19">
+						<OreZi tip="normale">6</OreZi>
+						<OreZi tip="Învoire">2</OreZi>
+					</Ziua>
+					<Ziua nr="20">
+						<OreZi tip="normale">8</OreZi>
+					</Ziua>
+					<Ziua nr="21">
+						<OreZi tip="normale">8</OreZi>
+						<OreZi tip="S50">4</OreZi>
+					</Ziua>
+					<Ziua nr="22">
+						<OreZi tip="normale">6</OreZi>
+						<OreZi tip="Învoire">2</OreZi>
+					</Ziua>
+					<Ziua nr="23">
+						<OreZi tip="normale">8</OreZi>
+					</Ziua>
+					<Ziua nr="24">
+						<OreZi tip="normale">8</OreZi>
+						<OreZi tip="S50">4</OreZi>
+					</Ziua>										
+					<Ziua nr="25">
+						<OreZi tip="normale">8</OreZi>
+						<OreZi tip="S50">4</OreZi>
+					</Ziua>
+					<Ziua nr="26">
+						<OreZi tip="normale">6</OreZi>
+						<OreZi tip="Învoire">2</OreZi>
+					</Ziua>
+					<Ziua nr="27">
+						<OreZi tip="normale">8</OreZi>
+					</Ziua>
+					<Ziua nr="28">
+						<OreZi tip="normale">8</OreZi>
+						<OreZi tip="S50">4</OreZi>
+					</Ziua>
+					<Ziua nr="29">
+						<OreZi tip="normale">6</OreZi>
+						<OreZi tip="Învoire">2</OreZi>
+					</Ziua>
+					<Ziua nr="30">
+						<OreZi tip="normale">8</OreZi>
+					</Ziua>
+					<Ziua nr="31">
+						<OreZi tip="normale">8</OreZi>
+						<OreZi tip="S50">4</OreZi>
+					</Ziua>						
+				</Zile>
+				<Total_ore_1_15/>
+				<Total_ore_luna/>
+				<Zile_Lucrate_1_15/>
+				<Zile_Lucrate_luna/>
+				<Total_ore_supli_50/>
+				...
+
+				<Retineri>						     
+					<CAS>126</CAS>
+					<Somaj>6</Somaj>
+					<CASS>66</CASS>
+					<Deduceri>230</Deduceri>
+					<Impozit_Retinut>124</Impozit_Retinut>
+					<Retineri>10</Retineri>
+					<Garantii_Materiale>10</Garantii_Materiale>
+					<Popriri>0</Popriri>
+					<Alte_retineri>0</Alte_retineri>			
+					<Total_de_Plata>868</Total_de_Plata>
+				</Retineri>					
+			</Salariat>
+			<Salariat id="">
+				<Zile>
+					<Ziua nr="1">
+						<OreZi tip="normale">6</OreZi>
+						<OreZi tip="Învoire">2</OreZi>
+					</Ziua>
+					<Ziua nr="2">
+						<OreZi tip="normale">8</OreZi>
+					</Ziua>
+					<Ziua nr="3">
+						<OreZi tip="normale">8</OreZi>
+					</Ziua>
+					...
+
+						
+				</Zile>
+				<Total_ore_1_15/>
+				<Total_ore_luna/>
+				<Zile_Lucrate_1_15/>
+				<Zile_Lucrate_luna/>
+				<Total_ore_supli_50/>
+				...
+
+				<Retineri>						     
+					<CAS>126</CAS>
+					<Somaj>6</Somaj>
+					<CASS>66</CASS>
+					<Deduceri>230</Deduceri>
+					<Impozit_Retinut>124</Impozit_Retinut>
+					<Retineri>10</Retineri>
+					<Garantii_Materiale>10</Garantii_Materiale>
+					<Popriri>0</Popriri>
+					<Alte_retineri>0</Alte_retineri>			
+					<Total_de_Plata>868</Total_de_Plata>
+				</Retineri>				
+			</Salariat>			
+		</Pontaj>	
+
+		<Totaluri>
+			<TotalVenitSal>5600</TotalVenitSal>
+			<TotalFSBaza>5600</TotalFSBaza>		
+			<TotalBCVBrut>5600</TotalBCVBrut>
+			<TotalBCVBrutSO>5400</TotalBCVBrutSO>
+			<TotalBCVBrutCI>5600</TotalBCVBrutCI>
+			<TotalBCVBImpoz>2570</TotalBCVBImpoz>		
+			<TotalZiLucru>176</TotalZiLucru>
+			<TotalOreLucru>1276</TotalOreLucru>
+			<TotalZCO>0</TotalZCO>
+			<TotalZCM>0</TotalZCM>
+			<TotalSpor>0</TotalSpor>
+			<TotalDeduceri>2180</TotalDeduceri>
+			<TotalRetineri>70</TotalRetineri>
+			<TotalFSPlata>4188</TotalFSPlata>
+			<TotalCAtCAS>591</TotalCAtCAS>
+			<TotalCAtFS>30</TotalCAtFS>
+			<TotalCAtCASS>311</TotalCAtCASS>
+			<TotalGrMat>70</TotalGrMat>
+			<TotalAsigSO>7</TotalAsigSO>
+			<TotalAsigCI>8</TotalAsigCI> 		
+			<NEDEFINIT>0</NEDEFINIT>
+		</Totaluri>
+		<OPsal>
+			<OP_FS>
+				<NrOP>1</NrOP>
+				<BIC>TREZROBU</BIC>
+				<Ordin_de_plata>Ordin de Plata Trezorerie </Ordin_de_plata>
+				<Explicatii>Disponibil al bugetelor asigurărilor sociale şi fondurilor speciale</Explicatii>
+				<Valoare>2487</Valoare>
+				<Nr_Cont_Buget>5502</Nr_Cont_Buget>
+			</OP_FS>
+			<OP_IMP>
+				<NrOP>2</NrOP>
+				<BIC>TREZROBU</BIC>
+				<Ordin_de_plata>Ordin de Plata Trezorerie</Ordin_de_plata>
+				<Explicatii>Venituri ale bugetului de stat în contul unic</Explicatii>
+				<Valoare>410</Valoare>
+				<Nr_Cont_Buget>20470101</Nr_Cont_Buget>  
+			</OP_IMP>
+		</OPsal>								
+	</Luna>
+</DateLunare>

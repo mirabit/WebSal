@@ -1,0 +1,2263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="../webgestext/xsltforms/xsltforms.xsl" type="text/xsl"?>
+<!--<?xml-stylesheet href="../xsltforms/xsltforms.xsl" type="text/xsl"?>-->
+<?css-conversion no?>
+
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:xforms="http://www.w3.org/2002/xforms"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:ev="http://www.w3.org/2001/xml-events">
+ 
+	<head>
+ 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	 	<title>D112</title>
+		<link rel="stylesheet" href="d112.css"></link> 
+
+		<style type="text/css">
+			 @namespace xforms url("http://www.w3.org/2002/xforms");
+			 body {font-size: 0.9em;}
+		 
+		 	/* The default field width for all inputs */
+		
+			.legend {font-weight:bold;font-size:1.1em;}
+		.dvtxtd112 {z-index:2;width:auto;position:relative;border-radius: .7em  .7em .7em .7em;padding:0mm 35mm 0mm 35mm;
+			border:solid 1px #61797B;box-shadow: 0px 0px 50px #C2CCD0;}
+		</style>
+
+		<style type="text/css" media="print">
+			.noprint{display: none;}
+		</style>
+
+		<script type="text/javascript" src="loadSal.js"/>
+		<script language="JavaScript" src="winopen.js"></script>
+
+		<xforms:model id="SAL" version="1.1">
+			
+			<xforms:instance id="112d">
+				<declaratieUnica luna_r="111" an_r="2111" d_rec="0" nume_declar="" prenume_declar="" functie_declar="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" /><!---->
+			</xforms:instance>
+			
+			<!--<xforms:instance id="sal" resource="sal.xml" />
+			<xforms:instance id="sablon" resource="salsablon.xml"/>-->
+			<xforms:instance id="sal">
+				<data xmlns=""/>
+			</xforms:instance>		
+			<xforms:instance id="temps">
+				<data xmlns="">
+				<counter>0</counter>
+				</data>
+			</xforms:instance>
+			<xforms:instance id="tempasig">
+				<data xmlns="">
+					<counter>1</counter>
+				</data>
+			</xforms:instance>
+
+			<xforms:instance id="sablon">
+				<data xmlns="">
+					<anexe xmlns="">0</anexe>
+					<angajator cif="" rgCom="" caen="" den="" adrSoc="" faxSoc="" telSoc="" mailSoc="" adrFisc="" faxFisc="" telFisc="" mailFisc="" casaAng="" tRisc="" dat="" totalPlata_A="">
+	
+					</angajator>
+					<angajatorA A_codBugetar="" A_codOblig="" A_datorat="" A_deductibil="" A_plata="" />
+					<angajatorB B_cnp="" B_sanatate="" B_pensie="" B_brutSalarii=""/>
+					<angajatorC1 C1_11="" C1_12="" C1_13="" C1_21="" C1_22="" C1_23="" C1_31="" C1_32="" C1_33="" C1_T1="" C1_T2="" C1_T="" C1_T3="" C1_5="" C1_6="" C1_7=""/>
+					<angajatorC2 C2_11="" C2_12="" C2_13="" C2_14="" C2_15="" C2_16="" C2_21="" C2_22="" C2_24="" C2_26="" C2_31="" C2_32="" C2_34="" C2_36="" C2_41="" C2_42="" C2_44="" C2_46="" C2_51="" C2_52="" C2_54="" C2_56="" C2_T6="" C2_7="" C2_8="" C2_9="" C2_10="" C2_110="" C2_120="" C2_130=""/>
+					<angajatorC3 C3_total="" C3_suma=""/>
+					<angajatorC4 C4_scutitaSo=""/>
+					<angajatorC6 C6_baza="" C6_ct=""/>
+					<angajatorC7 C7_baza="" C7_ct=""/>
+					<angajatorD D1="" D2="" D3="" D4=""/>
+					<angajatorE1 E1_venit="" E1_baza="" E1_ct=""/>
+					<angajatorE2 E2_11="" E2_12="" E2_14="" E2_16="" E2_21="" E2_22="" E2_24="" E2_26="" E2_31="" E2_32="" E2_34="" E2_36="" E2_41="" E2_42="" E2_44="" E2_46="" E2_51="" E2_52="" E2_54="" E2_56="" E2_66="" E2_7="" E2_8="" E2_9="" E2_10="" E2_110="" E2_120="" E2_130=""/>
+					<angajatorE3 E3_total="" E3_suma=""/>
+					<angajatorF1 F1_suma=""/>
+
+					<asigurat cnpAsig="" idAsig="" numeAsig="" prenAsig="" dataAng="" casaSn="" asigCI="" asigSO="">
+						<asiguratA A_1="" A_2="" A_3="" A_4="" A_5="" A_6="" A_7="" A_8="" A_9="" A_10="" A_11="" A_12="" A_13="" A_14="" A_20="" />
+					</asigurat>
+				</data>
+			</xforms:instance>
+
+	<!--			<xforms:instance id="up">
+					<d:files>
+						<d:file id="path" filename="" mediatype="" size="" xsi:type="xsd:anyURI"/>
+					</d:files>
+				</xforms:instance>
+			<xforms:instance id="up" xmlns="">
+				<data>
+					<file id="pathf" filename="aaaa" mediatype="" size="" xsi:type="xsd:anyURI">_</file>
+				</data>
+			</xforms:instance>-->
+		<!-- 	<xforms:submission id="DS112" method="put" replace="none" action="file://" ref="instance('112d')" indent="true" includenamespaceprefixes="no"/> -->
+
+
+			<xforms:submission id="DS112_1" method="put" action="d112_1.xml" ref="instance('d112f')" includenamespaceprefixes="xmlns"/>
+			<xforms:action ev:observer="DS112_1" ev:event="xforms-submit-done">
+
+
+
+				<xforms:message level="modal">Date salvate!</xforms:message>
+
+			</xforms:action>
+			<xforms:submission id="sxml" method="get" mediatype="application/zip" resource="d112.xml" />
+
+			<xforms:bind nodeset="instance('112d')/angajator/@totalPlata_A" calculate="sum(../angajatorA/@A_plata)"/>
+
+			<xforms:action ev:event="xforms-ready">
+				<xforms:setvalue ref="instance('sal')/NCsal/@cuiFirma" value="instance('sal')/Date_firma/CISTVA"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/@AnLuna" value="instance('sal')/LunaLucru"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='CoAtCAS']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/CAS)"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='CoAtFS']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Somaj)"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='CoAtCASS']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/CASS)"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='CoAtGrMat']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Retineri)"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='CoAtImpS']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Impozit_Retinut)"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArCAS']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * (instance('sal')/NCsal/NC[@id='ChArCAS']/Procent) div 100)"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArFA']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * (instance('sal')/NCsal/NC[@id='ChArFA']/Procent) div 100)"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArFS']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Baza_CVenitSO) * (instance('sal')/NCsal/NC[@id='ChArFS']/Procent) div 100)"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArCASS']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Baza_CVenitCI) * (instance('sal')/NCsal/NC[@id='ChArCASS']/Procent) div 100)"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArCM']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * (instance('sal')/NCsal/NC[@id='ChArCM']/Procent) div 100)"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArFG']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * (instance('sal')/NCsal/NC[@id='ChArFG']/Procent) div 100)"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArSal']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut)"/>												
+			</xforms:action>
+		</xforms:model>
+
+	</head>
+
+
+	<body bgcolor="#F3F3F3" text="#000000" rightmargin="800" topmargin="40" onload="loadInstFromLocal('sal');">
+			<br/><br/>
+
+		<xforms:switch>
+
+			<xforms:case id="alegefisH" class="p1H">
+
+			<table class="dvtxtd112" border="0" align="center" width="100%">
+				<tr>
+					<td>
+<br/>
+			<div style="padding-left:1em;">
+				<span style="font-size:2em;color:#008080;padding:0.5em;">WebSal</span>
+				<span style="font-size:1.5em;color:#008080;padding:0.2em;">v.</span>
+				<span style="font-size:1.5em;color:#008080;padding:0.2em;">
+				<xforms:output ref="instance('sal')/@vers"/></span>
+			</div>
+			<hr align="center" color="#D7D5D8" width="100%"/>
+
+
+				 <div align="center" class="tit1"><h1>DeclarațiaUnica D112</h1></div>
+				<span style="font-size:1.2em;color:#000000;padding:0.1em;">Generare, validare, semnare electronica fisier PDF+XML pentru transmitere ANAF</span>
+			<br/><br/>
+					Date curente: 
+					<b> Firma 
+					<xforms:output ref="instance('sal')/Date_firma/Prefix" class="TNval1"/>-
+					<xforms:output ref="instance('sal')/Date_firma/Firma" class="TNval1"/>-
+					<xforms:output ref="instance('sal')/Date_firma/Sufix" class="TNval1"/>
+					<label> An: </label><xforms:output value="substring(instance('sal')/LunaLucru,1,4)" class="TNval1"/>
+					<label> Luna: </label><xforms:output value="substring(instance('sal')/LunaLucru,5,2)" class="TNval1"/>
+					</b>						
+					<xforms:select1 class="Ztd1" ref="instance('sal')/LunaLucru">
+						<xforms:itemset nodeset="instance('sal')/DateLunare/Luna/@AnLuna">
+							<xforms:label ref="."/>
+							<xforms:value ref="."/>
+						</xforms:itemset>	
+						<xforms:action ev:event="xforms-value-changed">
+							<xforms:setvalue ref="instance('sal')/NCsal/@cuiFirma" value="instance('sal')/Date_firma/CISTVA"/>
+							<xforms:setvalue ref="instance('sal')/NCsal/@AnLuna" value="instance('sal')/LunaLucru"/>
+							<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='CoAtCAS']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/CAS)"/>
+							<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='CoAtFS']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Somaj)"/>
+							<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='CoAtCASS']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/CASS)"/>
+							<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='CoAtGrMat']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Retineri)"/>
+							<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='CoAtImpS']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Impozit_Retinut)"/>
+							<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArCAS']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * (instance('sal')/NCsal/NC[@id='ChArCAS']/Procent) div 100)"/>
+							<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArFA']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * (instance('sal')/NCsal/NC[@id='ChArFA']/Procent) div 100)"/>
+							<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArFS']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Baza_CVenitSO) * (instance('sal')/NCsal/NC[@id='ChArFS']/Procent) div 100)"/>
+							<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArCASS']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Baza_CVenitCI) * (instance('sal')/NCsal/NC[@id='ChArCASS']/Procent) div 100)"/>
+							<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArCM']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * (instance('sal')/NCsal/NC[@id='ChArCM']/Procent) div 100)"/>
+							<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArFG']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * (instance('sal')/NCsal/NC[@id='ChArFG']/Procent) div 100)"/>
+							<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArSal']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut)"/>	
+						</xforms:action>										                        
+					</xforms:select1>			
+					<br/>			
+					<table border="0" align="center" width="80%">
+						<tr>
+							<td colspan="2" class="impv"> Ce tip de declaratie doriti ?</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="tit2"><b>
+							<xforms:select1 ref="instance('112d')/@d_rec" appearance="full">
+								<xforms:item>
+									<xforms:label>Initiala</xforms:label>
+									<xforms:value>0</xforms:value>
+								</xforms:item>
+								<xforms:item>
+									<xforms:label>Rectificativa</xforms:label>
+									<xforms:value>1</xforms:value>
+								</xforms:item>
+							</xforms:select1></b>
+							</td>
+						</tr>
+					</table>
+					<br/>
+
+					<table border="0" align="center" width="80%">
+						<tr><td colspan="2" class="impv"> Afiseaza si anexele : </td></tr>
+						<tr><td colspan="2" class="tit2"><b>
+							<xforms:select ref="instance('sablon')/anexe" selection="closed" appearance="full">
+								<xforms:item>
+									<xforms:label>Anexa 1.1</xforms:label>
+									<xforms:value>1</xforms:value>
+								</xforms:item>
+								<xforms:item>
+									<xforms:label>Anexa 1.2</xforms:label>
+									<xforms:value>2</xforms:value>
+								</xforms:item>
+							</xforms:select>
+						</b></td></tr>
+					</table>
+
+					<table border="0" align="center" width="100%">
+						<tr>
+							<td>
+					<div id="fg" class="che1">
+
+					<xforms:trigger id="gend">
+
+						<xforms:action ev:event="DOMActivate">
+							
+	<!--xxxxxxxxxxxxxxxxxxxxxxxxx SECTIUNEA ANGAJATOR xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+						<xforms:delete nodeset="instance('112d')/angajator" />
+								
+						<xforms:delete nodeset="instance('112d')/asigurat"/>
+						<xforms:setvalue ref="instance('112d')/@luna_r" value="substring(instance('sal')/LunaLucru,5,2)" />
+						<!--<xforms:insert context="instance('112d')" origin="instance('sal')/Luna/@nr" nodeset="/@luna_r"/>-->
+						<xforms:setvalue ref="instance('112d')/@an_r" value="substring(instance('sal')/LunaLucru,1,4)"/>
+						<!--<xforms:setvalue ref="instance('112d')/@d_rec" value="instance('sal')/@d_rec"/>-->
+						<xforms:setvalue ref="instance('112d')/@nume_declar" value="instance('sal')/Date_operare/NumeO" />
+						<xforms:setvalue ref="instance('112d')/@prenume_declar" value="instance('sal')/Date_operare/PrenumeO" />
+						<xforms:setvalue ref="instance('112d')/@functie_declar" value="instance('sal')/Date_operare/Functia" />
+
+					<xforms:insert origin="instance('sablon')/angajator" context="instance('112d')" nodeset="/angajator" at="index('1')" position="before" />
+						<!--<xforms:setvalue ref="instance('112d')/angajator/@cif" value="concat(instance('sal')/Date_firma/Atribut_Fiscal,instance('sal')/Date_firma/CISTVA)"/>-->
+						<xforms:setvalue ref="instance('112d')/angajator/@cif" value="instance('sal')/Date_firma/CISTVA" />
+						<xforms:setvalue ref="instance('112d')/angajator/@rgCom" value="instance('sal')/Date_firma/Cod_Reg_Comertului" />
+
+						<xforms:setvalue ref="instance('112d')/angajator/@den" 
+						value="concat(instance('sal')/Date_firma/Prefix,' ',instance('sal')/Date_firma/Firma,' ',instance('sal')/Date_firma/Sufix)" />
+
+						<xforms:setvalue ref="instance('112d')/angajator/@adrSoc" value="concat('jud.',instance('sal')/Date_firma/Judet,', loc.', instance('sal')/Date_firma/Localitatea, ', str.', instance('sal')/Date_firma/Strada, ', nr.', instance('sal')/Date_firma/Nr, ', bl.', instance('sal')/Date_firma/Bloc,', sc.', instance('sal')/Date_firma/Scara,', 
+						ap.',instance('sal')/Date_firma/Apartament,', cod.',instance('sal')/Date_firma/Cod_postal)" />
+
+						<xforms:setvalue ref="instance('112d')/angajator/@adrFisc" value="concat('jud.',instance('sal')/Date_firma/Judet,', loc.', instance('sal')/Date_firma/Localitatea, ', str.', instance('sal')/Date_firma/Strada, ', nr.', instance('sal')/Date_firma/Nr, ', bl.', instance('sal')/Date_firma/Bloc,', sc.', instance('sal')/Date_firma/Scara,', 
+						ap.',instance('sal')/Date_firma/Apartament,', cod.',instance('sal')/Date_firma/Cod_postal)" />
+
+						<xforms:setvalue ref="instance('112d')/angajator/@telSoc" value="instance('sal')/Date_firma/Tel" />
+						<xforms:setvalue ref="instance('112d')/angajator/@faxSoc" value="instance('sal')/Date_firma/Fax" />
+						<xforms:setvalue ref="instance('112d')/angajator/@mailSoc" value="instance('sal')/Date_firma/Mail" />
+
+						<xforms:setvalue ref="instance('112d')/angajator/@telFisc" value="instance('sal')/Date_firma/Tel" />
+						<xforms:setvalue ref="instance('112d')/angajator/@faxFisc" value="instance('sal')/Date_firma/Fax" />
+						<xforms:setvalue ref="instance('112d')/angajator/@mailFisc" value="instance('sal')/Date_firma/Mail" />
+
+						<xforms:setvalue ref="instance('112d')/angajator/@casaAng" value="instance('sal')/Date_firma/Casa_Asigurari/@Pj" />
+						<xforms:setvalue ref="instance('112d')/angajator/@caen" value="instance('sal')/Date_firma/CodCAEN" />
+						<xforms:setvalue ref="instance('112d')/angajator/@tRisc" value="instance('sal')/NCsal/NC[@id='ChArFA']/Procent" />
+						<xforms:setvalue ref="instance('112d')/angajator/@dat" value="if(instance('sal')/NCsal/NC[@id='ChArFA']/Procent = 0, 0, 1 )"/>
+
+					
+<!--  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - ANGAJATOR - XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  -->
+
+								
+				<!-- ANGAJATOR DE TIP A-->																					
+			<xforms:delete nodeset="instance('112d')/angajator/angajatorA"/>
+				<xforms:setvalue ref="instance('temps')/counter" value="1"/>
+					<xforms:action while="instance('temps')/counter &lt; count(instance('sal')/NCsal/NC[@obp='da']) + 1">
+								
+						<xforms:insert origin="instance('sablon')/angajatorA" context="instance('112d')/angajator" nodeset="/angajatorA" at="index('last')" position="after" />
+
+						<!--<xforms:setvalue ref="instance('112d')/angajator/angajatorA/@DenA_codOblig" value="instance('sal')/NCsal/NC[number(instance('temps')/counter)]/@DenA_codOblig"/>-->
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorA[number(instance('temps')/counter)]/@A_codOblig" value="instance('sal')/NCsal/NC[@obp='da'][number(instance('temps')/counter)]/@A_codOblig" />
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorA[number(instance('temps')/counter)]/@A_codBugetar" value="instance('sal')/NCsal/NC[@obp='da'][number(instance('temps')/counter)]/@A_codBugetar" />
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorA[number(instance('temps')/counter)]/@A_datorat" value="instance('sal')/NCsal/NC[@obp='da'][number(instance('temps')/counter)]/Credit_Val" />
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorA[number(instance('temps')/counter)]/@A_deductibil" value="instance('sal')/NCsal/NC[@obp='da'][number(instance('temps')/counter)]/Debit_Val" />
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorA[number(instance('temps')/counter)]/@A_plata" value="instance('sal')/NCsal/NC[@obp='da'][number(instance('temps')/counter)]/Credit_Val"/>
+
+					<xforms:setvalue ref="instance('temps')/counter" value=". + 1"/>
+				</xforms:action>
+
+<!-- ANGAJATOR DE TIP B-->
+	<xforms:insert origin="instance('sablon')/angajatorB" context="instance('112d')/angajator" nodeset="/angajatorB" at="index('last')" position="after" />
+	<xforms:setvalue ref="instance('112d')/angajator/angajatorB/@B_cnp" value="instance('sal')/Totaluri/TotalAsigSO" />
+	<xforms:setvalue ref="instance('112d')/angajator/angajatorB/@B_sanatate" value="instance('sal')/Totaluri/TotalAsigCI" />
+	<xforms:setvalue ref="instance('112d')/angajator/angajatorB/@B_pensie" value="instance('sal')/Date_operare/NrSal" />
+	<xforms:setvalue ref="instance('112d')/angajator/angajatorB/@B_brutSalarii" value="instance('sal')/Totaluri/TotalBCVBrut" />
+
+
+									<!-- ANGAJATOR DE TIP C1-->
+						<xforms:insert origin="instance('sablon')/angajatorC1" context="instance('112d')/angajator" nodeset="/angajatorC1" at="index('last')" position="after" />
+						<!--		Varianta I		Dacă baza de calcul angajator nu depăşeşte baza de calcul plafonată:
+																	• Daca (C1_T1+C1_T2- C1_T) <= BCP
+						C1_T3= (C1_11+C1_12 – C1_13) * CotaAngN +(C1_21+C1_22–C1_23) * CotaAngD + (C1_31+ C1_32 – C1_33) * CotaAngS 
+							
+										Varianta II		Daca baza de calcul angajator depăşeşte baza de calcul plafonată:
+																	• Daca (C1_T1+C1_T2- C1_T) > BCP
+						C1_T3= ((C1_11+C1_12 – C1_13) * CotaAngN +(C1_21+C1_22–C1_23) * CotaAngD + (C1_31+ C1_32 – C1_33) * CotaAngS)* BCP/(C1_T1+C1_T2- C1_T)-->
+
+
+						<!-- 1.CONDITII DE MUNCANORMALETotal venit realiza-->
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC1/@C1_11" value="instance('sal')/Totaluri/TotalBCVBrut" />
+						<!--Total bază de calcul a contribuţiei la BASS aferentă indemnizaţiei conform O.U.G. 158/2005 Condiţii de muncăNORMALEE -->
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC1/@C1_12" value="instance('sal')/Totaluri/NEDEFINIT" />
+						<!--Scutiri angajator Condiţii de muncăNORMALE-->
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC1/@C1_13" value="instance('sal')/Totaluri/NEDEFINIT" />
+
+						<!-- 2.CONDITII DE MUNCADEOSEBITE	 Total venit realizat-->
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC1/@C1_21" value="instance('sal')/Totaluri/NEDEFINIT" /> 
+						<!--Total bază de calcul a contribuţiei la BASS aferentă indemnizaţiei conform O.U.G. 158/2005 Condiţii de muncăDEOSEBITE -->
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC1/@C1_22" value="instance('sal')/Totaluri/NEDEFINIT" />
+						<!--Scutiri angajator Condiţii de muncăDEOSEBITE-->
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC1/@C1_23" value="instance('sal')/Totaluri/NEDEFINIT" />
+
+						<!--3.CONDITII DE MUNCASPECIALETotal venit realiza -->
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC1/@C1_31" value="instance('sal')/Totaluri/NEDEFINIT" />
+						<!--Total bază de calcul a contribuţiei la BASS aferentă indemnizaţiei conform O.U.G. 158/2005 Condiţii de muncăSPECIALE -->
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC1/@C1_32" value="instance('sal')/Totaluri/NEDEFINIT" />
+						<!--Scutiri angajator Condiţii de muncăSPECIALE -->
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC1/@C1_33" value="instance('sal')/Totaluri/NEDEFINIT" />
+
+						<!-- TOTALTotal venit realizat-->
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC1/@C1_T1" value="instance('sal')/Totaluri/TotalBCVBrut" />
+						<!-- TOTALTotal bază de calcul a contribuţiei la BASS aferentă indemnizaţiei conform O.U.G. 158/2005-->
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC1/@C1_T2" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<!-- TOTALSCUTIRI - angajator-->
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC1/@C1_T" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<!-- TOTALContribuţie CAS - angajator-->
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC1/@C1_T3" value="instance('sal')/NCsal/NC[@id='ChArCAS']/Credit_Val"/>
+
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC1/@C1_5" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC1/@C1_6" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC1/@C1_7" value="instance('sal')/Totaluri/NEDEFINIT"/>
+
+					<!-- ANGAJATOR DE TIP C2-->
+						<xforms:insert origin="instance('sablon')/angajatorC2" context="instance('112d')/angajator" nodeset="/angajatorC2" at="index('last')" position="after" />
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_11" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_12" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_13" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_14" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_15" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_16" value="instance('sal')/Totaluri/NEDEFINIT"/>
+
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_21" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_22" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_24" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_26" value="instance('sal')/Totaluri/NEDEFINIT"/>
+
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_31" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_32" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_34" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_36" value="instance('sal')/Totaluri/NEDEFINIT"/>
+
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_41" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_42" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_44" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_46" value="instance('sal')/Totaluri/NEDEFINIT"/>
+
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_51" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_52" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_54" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_56" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_T6" value="instance('sal')/Totaluri/NEDEFINIT"/>
+
+<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_7" value="instance('sal')/NCsal/NC[@id='ChArCM']/Credit_Val"/>
+<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_8" value="instance('sal')/Totaluri/NEDEFINIT"/>
+<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_9" value="instance('sal')/NCsal/NC[@id='ChArCM']/Credit_Val"/>
+<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_10" value="instance('sal')/Totaluri/NEDEFINIT"/>
+<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_110" value="instance('sal')/Totaluri/NEDEFINIT"/>
+<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_120" value="instance('sal')/NCsal/NC[@id='ChArCM']/Credit_Val"/>
+<xforms:setvalue ref="instance('112d')/angajator/angajatorC2/@C2_130" value="instance('sal')/Totaluri/NEDEFINIT"/>
+
+					<!-- ANGAJATOR DE TIP C3-->
+						<xforms:insert origin="instance('sablon')/angajatorC3" context="instance('112d')/angajator" nodeset="/angajatorC3" at="index('last')" position="after" />
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC3/@C3_11" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC3/@C3_12" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC3/@C3_13" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC3/@C3_14" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC3/@C3_21" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC3/@C3_22" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC3/@C3_23" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC3/@C3_24" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC3/@C3_31" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC3/@C3_32" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC3/@C3_33" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC3/@C3_34" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC3/@C3_41" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC3/@C3_42" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC3/@C3_43" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC3/@C3_44" value="instance('sal')/Totaluri/NEDEFINIT"/>
+
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC3/@C3_total" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC3/@C3_suma" value="instance('sal')/Totaluri/NEDEFINIT"/>
+
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC3/@C3_aj_nr" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC3/@C3_aj_suma" value="instance('sal')/Totaluri/NEDEFINIT"/>
+
+					<!-- ANGAJATOR DE TIP C4-->
+						<xforms:insert origin="instance('sablon')/angajatorC4" context="instance('112d')/angajator" nodeset="/angajatorC4" at="index('last')" position="after" />
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC4/@C4_scutitaSo" value="instance('sal')/Totaluri/NEDEFINIT"/>
+	
+					<!-- ANGAJATOR DE TIP C6-->
+<xforms:insert origin="instance('sablon')/angajatorC6" context="instance('112d')/angajator" nodeset="/angajatorC6" at="index('last')" position="after" />
+<xforms:setvalue ref="instance('112d')/angajator/angajatorC6/@C6_baza" value="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=instance('112d')/asigurat[number(instance('tempasig')/counter)]/@idAsig]/Baza_CVenitSO"/>
+<xforms:setvalue ref="instance('112d')/angajator/angajatorC6/@C6_ct" value="instance('sal')/NCsal/NC[@id='ChArFS']/Credit_Val"/>
+
+<!-- ANGAJATOR DE TIP C7-->
+<xforms:insert origin="instance('sablon')/angajatorC7" context="instance('112d')/angajator" nodeset="/angajatorC7" at="index('last')" position="after" />
+<xforms:setvalue ref="instance('112d')/angajator/angajatorC7/@C7_baza" value="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=instance('112d')/asigurat[number(instance('tempasig')/counter)]/@idAsig]/Venit_Brut"/>
+<xforms:setvalue ref="instance('112d')/angajator/angajatorC7/@C7_ct" value="instance('sal')/NCsal/NC[@id='ChArFG']/Credit_Val"/>
+
+					<!-- ANGAJATOR DE TIP D-->
+						<xforms:insert origin="instance('sablon')/angajatorD" context="instance('112d')/angajator" nodeset="/angajatorD" at="index('last')" position="after" />
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorD/@D1" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorD/@D2" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorD/@D3" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorD/@D4" value="instance('sal')/Totaluri/NEDEFINIT"/>
+
+<!-- ANGAJATOR DE TIP E1 ????????????????????-->
+
+					<!-- ANGAJATOR DE TIP E2-->
+						<xforms:insert origin="instance('sablon')/angajatorE2" context="instance('112d')/angajator" nodeset="/angajatorE2" at="index('last')" position="after" />
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_11" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_12" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_13" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_16" value="instance('sal')/Totaluri/NEDEFINIT"/>
+
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_21" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_22" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_24" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_26" value="instance('sal')/Totaluri/NEDEFINIT"/>
+
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_31" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_32" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_34" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_36" value="instance('sal')/Totaluri/NEDEFINIT"/>
+
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_41" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_42" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_44" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_46" value="instance('sal')/Totaluri/NEDEFINIT"/>
+
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_51" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_52" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_54" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_56" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_66" value="instance('sal')/Totaluri/NEDEFINIT"/>
+
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_7" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_8" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_9" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_10" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_110" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_120" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_130" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE2/@E2_14" value="instance('sal')/Totaluri/NEDEFINIT"/>
+	
+					<!-- ANGAJATOR DE TIP E3-->
+						<xforms:insert origin="instance('sablon')/angajatorE3" context="instance('112d')/angajator" nodeset="/angajatorE3" at="index('last')" position="after" />
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE3/@E3_11" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE3/@E3_12" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE3/@E3_13" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE3/@E3_14" value="instance('sal')/Totaluri/NEDEFINIT"/>
+
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE3/@E3_21" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE3/@E3_22" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE3/@E3_23" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE3/@E3_24" value="instance('sal')/Totaluri/NEDEFINIT"/>
+
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE3/@E3_31" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE3/@E3_32" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE3/@E3_33" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE3/@E3_34" value="instance('sal')/Totaluri/NEDEFINIT"/>
+
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE3/@E3_41" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE3/@E3_42" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE3/@E3_43" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE3/@E3_44" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE3/@E3_total" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE3/@E3_suma" value="instance('sal')/Totaluri/NEDEFINIT"/>		
+
+					<!-- ANGAJATOR DE TIP F1-->
+						<xforms:insert origin="instance('sablon')/angajatorF1" context="instance('112d')/angajator" nodeset="/angajatorF1" at="index('last')" position="after" />
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorF1/@F1_suma" value="instance('sal')/NCsal/NC[@id='CoAtImpS']/Credit_Val"/>
+
+					<!--???? ANGAJATOR DE TIP F2-->
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorF2/@F2_cif" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorF2/@F2_id" value="instance('sal')/Totaluri/NEDEFINIT"/>
+
+<!--   ANGAJATOR END   -->
+
+
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX - ASIGURAT -XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->		
+
+					<xforms:setvalue ref="instance('tempasig')/counter" value="1"/>
+					<xforms:action while="instance('tempasig')/counter  &lt; count(instance('sal')/Personal/Salariat) + 1">
+						<xforms:insert origin="instance('sablon')/asigurat" context="instance('112d')" nodeset="/asigurat" at="index('last')" position="after"/>
+
+<!--<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/asiguratA/@A_8" value="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/@NrZlucruL" />-->
+<!--<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/@nzl" value="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/@NrZlucruL"/>
+ NU <xforms:setvalue ref="instance('112d')/asigurat/@nzl" value="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/@NrZlucruL"/>-->
+
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/@cnpAsig" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/@CNP"/>
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/@idAsig" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/@id"/>
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/@numeAsig" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/@Nume"/>
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/@prenAsig" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/@Prenume"/>
+
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/@cnpAnt" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]SalariatNa/@CNP"/>
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/@numeAnt" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/SalariatNa/@Nume"/>
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/@prenumeAnt" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/SalariatNa/@Prenume"/>
+
+						<!-- COASIGURATIITotalAsigSO
+						<xforms:setvalue ref="instance('112d')/asigurat/coAsigurati/@tip" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/CoasiguratP/@Tip"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/coAsigurati/@cnp" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/CoasiguratP/@CNP"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/coAsigurati/@nume" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/CoasiguratP/@Nume"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/coAsigurati/@prenume" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/CoasiguratP/@Prenume"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/coAsigurati/@tip" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/CoasiguratSS/@Tip"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/coAsigurati/@cnp" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/CoasiguratSS/@CNP"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/coAsigurati/@nume" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/CoasiguratSS/@Nume"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/coAsigurati/@prenume" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/CoasiguratSS/@Prenume"/>-->
+
+<!--   OK  Sectiunea A  2012 14apeilie   -->
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/@dataAng" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Contract/DataInceputContract"/>
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/@dataSf" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Contract/DataSfarsitContract"/>
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/@casaSn" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/AdresaS/@Judet"/>
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/@asigCI" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/D112date/AsigCI"/>
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/@asigSO" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/D112date/AsigSO"/>
+
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/asiguratA/@A_1" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/D112date/Tip_Asigurat"/>
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/asiguratA/@A_2" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/D112date/Tip_Angajat"/>
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/asiguratA/@A_3" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/D112date/Tip_CMdpvdTl"/>
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/asiguratA/@A_4" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/D112date/OreNZdpvdCM"/>
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/asiguratA/@A_5" value="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=instance('112d')/asigurat[number(instance('tempasig')/counter)]/@idAsig]/VenitSalarial"/>
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/asiguratA/@A_6" value="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=instance('112d')/asigurat[number(instance('tempasig')/counter)]/@idAsig]/TotalPontaj/Ore[@tip='Lucru']"/>
+										
+
+<!--NU <xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/asiguratA/@A_7" value="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=current()/@idAsig]/TotalPontaj/Ore[@tip='Nemotivat']"/>-->
+<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/asiguratA/@A_7" value="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=current()/@idAsig]/TotalPontaj/Ore[@tip='Invoire']"/>
+<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/asiguratA/@A_8" value="count(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=instance('112d')/asigurat[number(instance('tempasig')/counter)]/@idAsig]/Sapt/Zile/Ziua/OreZi[@tip='Lucru'][.!=0])" />
+<!--<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/asiguratA/@A_8" value="count(Sapt/Zile/Ziua/OreZi[@tip='Lucru'][.!=0])"/>-->
+
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/asiguratA/@A_9" value="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=instance('112d')/asigurat[number(instance('tempasig')/counter)]/@idAsig]/Baza_CVenitSO"/>
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/asiguratA/@A_10" value="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=instance('112d')/asigurat[number(instance('tempasig')/counter)]/@idAsig]/Somaj"/>
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/asiguratA/@A_11" value="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=instance('112d')/asigurat[number(instance('tempasig')/counter)]/@idAsig]/Baza_CVenitCI"/>
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/asiguratA/@A_12" value="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=instance('112d')/asigurat[number(instance('tempasig')/counter)]/@idAsig]/CASS"/>
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/asiguratA/@A_13" value="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=instance('112d')/asigurat[number(instance('tempasig')/counter)]/@idAsig]/VenitSalarial"/>
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/asiguratA/@A_14" value="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=instance('112d')/asigurat[number(instance('tempasig')/counter)]/@idAsig]/CAS"/>
+			<xforms:setvalue ref="instance('112d')/asigurat[number(instance('tempasig')/counter)]/asiguratA/@A_20" value="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=instance('112d')/asigurat[number(instance('tempasig')/counter)]/@idAsig]/Venit_Brut"/>
+<!-- END  OK  Sectiunea A  2012 14apeilie   -->
+						
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB1/@B1_1" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB1/@B1_2" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB1/@B1_3" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB1/@B1_4" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB1/@B1_5" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB1/@B1_6" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB1/@B1_7" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB1/@B1_8" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB1/@B1_9" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB1/@B1_10" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB1/@B1_15" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB2/@B2_1" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB2/@B2_2" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB2/@B2_3" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB2/@B2_4" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB2/@B2_5" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB2/@B2_6" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB2/@B2_7" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB3/@B3_1" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB3/@B3_2" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB3/@B3_3" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB3/@B3_4" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB3/@B3_5" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB3/@B3_6" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB3/@B3_7" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB3/@B3_8" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB3/@B3_9" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB3/@B3_10" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB3/@B3_11" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB3/@B3_12" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB3/@B3_13" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB4/@B4_1" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB4/@B4_2" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB4/@B4_3" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB4/@B4_4" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB4/@B4_5" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB4/@B4_6" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB4/@B4_7" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB4/@B4_8" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB4/@B4_14" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB1/asiguratB11/@B11_1" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB1/asiguratB11/@B11_2" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB1/asiguratB11/@B11_3" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB1/asiguratB11/@B11_41" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB1/asiguratB11/@B11_42" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB1/asiguratB11/@B11_43" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB1/asiguratB11/@B11_5" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB1/asiguratB11/@B11_6" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB1/asiguratB11/@B11_71" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB1/asiguratB11/@B11_72" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratB1/asiguratB11/@B11_73" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratC/@C_1" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratC/@C_2" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratC/@C_3" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratC/@C_4" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratC/@C_5" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratC/@C_6" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratC/@C_7" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratC/@C_8" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratC/@C_9" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratC/@C_10" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratC/@C_11" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratC/@C_17" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratC/@C_18" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratC/@C_19" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratD/@D_1" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratD/@D_2" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratD/@D_3" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratD/@D_4" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratD/@D_5" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratD/@D_6" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratD/@D_7" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratD/@D_8" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratD/@D_9" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratD/@D_10" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratD/@D_11" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratD/@D_12" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratD/@D_13" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratD/@D_14" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratD/@D_15" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratD/@D_16" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratD/@D_17" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratD/@D_18" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratD/@D_19" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratD/@D_20" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+						<xforms:setvalue ref="instance('112d')/asigurat/asiguratD/@D_21" value="instance('sal')/Personal/Salariat[number(instance('tempasig')/counter)]/Popriri"/>
+
+						<xforms:setvalue ref="instance('tempasig')/counter" value=". + 1"/>
+					</xforms:action> 
+
+
+						<!-- ????????????????????????????????????????-->
+
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC5/@C5_subv" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC5/@C5_recuperat" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorC5/@C5_restituit" value="instance('sal')/Totaluri/NEDEFINIT"/>
+
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE4/@E4_aj_nr" value="instance('sal')/Totaluri/NEDEFINIT"/>
+						<xforms:setvalue ref="instance('112d')/angajator/angajatorE4/@E4_aj_suma" value="instance('sal')/Totaluri/NEDEFINIT"/>
+
+					</xforms:action> 
+
+							<xforms:label class="large button orange"> GENEREAZA D112 cu date preluate din WebSal</xforms:label>
+							<!--<h2><label> ^ GENEREAZA D112 cu date preluate din WebSal</label></h2>-->
+							<xforms:refresh ev:event="DOMActivate" model="D_112"/>
+							<xforms:toggle case="d112" if="instance('sablon')/anexe='0'" ev:event="DOMActivate"/>
+							<xforms:toggle case="d112_1" if="instance('sablon')/anexe='1'" ev:event="DOMActivate"/>
+							<xforms:toggle case="d112_2" if="instance('sablon')/anexe='2'" ev:event="DOMActivate"/>
+							<xforms:toggle case="d112_12" if="instance('sablon')/anexe='1 2'" ev:event="DOMActivate"/>
+						</xforms:trigger>
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+
+				<table class="che2">
+								<tr>
+									<td class="tit2"><b>Alege un fișier cu date (tip D112) </b>					
+		 								<input type="file" id="fileupl" onchange="readFile('112d',this.id)"/>
+									
+										<xforms:trigger id="preluare">
+
+											<xforms:label class="large button yellow">Încarcă_date</xforms:label>
+											<!--<xforms:load resource="javascript:changeSrcAttribute()" ev:event="DOMActivate"/>
+											 <xforms:label class="but1">Încarcă date</xforms:label>--> 				
+
+											<xforms:action ev:event="DOMActivate">
+											 <!--	<xforms:delete nodeset="instance('112d')/angajator/angajatorA" /> 
+												<xforms:refresh ev:event="DOMActivate" model="D_112"/>
+												<xforms:toggle case="d112" if="instance('sablon')/anexe='0'" ev:event="DOMActivate"/>-->
+												<xforms:toggle case="d112"/>
+												<xforms:toggle case="d112_1" if="instance('sablon')/anexe='1'" ev:event="DOMActivate"/>
+												<xforms:toggle case="d112_2" if="instance('sablon')/anexe='2'" ev:event="DOMActivate"/>
+												<xforms:toggle case="d112_12" if="instance('sablon')/anexe='1 2'" ev:event="DOMActivate"/>
+											</xforms:action>
+										</xforms:trigger>
+									</td>
+								</tr>
+
+								<tr>
+									<td>
+										<br/>
+										<div>
+											<a href="index01.xhtml">
+												<xforms:trigger> 									 
+													<xforms:label>&#171; Înapoi la pagina principală &#171;</xforms:label> 
+													<xforms:hint>Înapoi la pagina principală</xforms:hint>
+												</xforms:trigger>
+											</a>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<br/>
+				</table>
+		<br/>
+					</td>
+				</tr>
+			</table>
+				</xforms:case>
+
+
+
+
+
+<!-- XXXXXXXXXXXXXXXXXX   ANEXA 1    IXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+
+
+
+			<xforms:case id="d112">
+				<xforms:group ref="instance('112d')">
+					<a name="anexa1"></a>
+					<a name="sus"></a>
+			<table align="center" border="1" cellspacing="5" cellpadding="0" width="100%">
+				<tr>
+					<td>
+						<a href="#jos">Bootom Anexa 1</a>
+						<xforms:output ref="instance('tempasig')/counter"/>
+			<table align="center">
+				<tr>
+					<td>
+						<table align="center">
+							<tr align="right">
+								<td align="right">Anexa nr.1</td>
+							</tr>
+							<h3><tr>
+								<td align="center">DECLARAŢIE PRIVIND OBLIGAŢIILE DE PLATĂ</td>
+							</tr></h3>
+							<h3><tr>
+								<td align="center">A CONTRIBUŢIILOR SOCIALE, A IMPOZITULUI PE VENIT ŞI EVIDENŢA NOMINALĂ</td>
+							</tr></h3>
+							<h3><tr>
+								<td align="center">A PERSOANELOR ASIGURATE</td>
+							</tr></h3>									
+						</table>
+					<br/>
+						<table align="right" border="0" cellspacing="0" cellpadding="0" style=" width:250pt; height:10pt;">
+							<tr>
+								<td class="t0r1c1" colspan="4">Perioada de raportare</td>
+							</tr>
+							<tr> 
+								<td class="t0r2c1">Luna</td>
+								<td class="t0r2c2"><xforms:output ref="@luna_r" class="vfnu1"/></td>
+								<td class="t0r2c3">An</td>
+								<td class="t0r2c4"><xforms:output ref="@an_r" class="vfnu3"/></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+					<br/>
+						<table align="center" border="0" cellspacing="5" cellpadding="0" width="95%">
+							<tr> 
+								<td class="caen">Declaratie Rectificativa</td>
+								<td class="t0r2c6"><xforms:output ref="@d_rec" class="vfnu3"/></td>
+								<td class="caen">Cod CAEN :</td>
+								<td class="t0r2c6"><xforms:output ref="angajator/@caen" class="vfnu3"/></td>
+								<td class="caen">Fond de risc :</td>
+								<td class="t0r2c6"><xforms:output ref="angajator/@tRisc" class="vfnu3"/></td>
+								<td class="caen">Datorat :</td>
+								<td class="t0r2c6"><xforms:output ref="angajator/@dat" class="vfnu3"/></td>
+							</tr>
+						</table>
+					<br/>
+
+						<div>
+					<div class="dia">DATE DE IDENTIFICARE A PLĂTITORULUI</div>
+			<table align="center" border="1" cellspacing="2" cellpadding="0" width="95%">
+				<tr>
+				<td>
+						<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+							<tr> 
+								<td class="t1r1c1"><label>Cod de identificare fiscală</label></td> 
+								<td class="t1r1c2"><xforms:output class="val3" ref="angajator/@cif"/></td>
+							</tr>
+						</table>
+						<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+							<tr> 
+								<td class="t1r2c1"><label>Denumire</label></td>	
+								<td class="t1r2c2"><xforms:output class="val1" ref="angajator/@den"/></td> 
+							</tr>
+						</table>
+						<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+							<tr> 
+								<td class="t1r3c1"><label>Adresa domiciliu<br/>fiscal</label></td> 
+								<td class="t1r3c2">
+								<xforms:output class="val1" ref="angajator/@adrSoc"/>
+								<!--<xforms:input class="val3" ref="angajator/@rgCom"/>
+								<xforms:input class="val3" ref="angajator/@caen"/>
+								<xforms:input class="val7" ref="angajator/@casaAng"/>-->
+								</td>
+							</tr>
+						</table>
+						<table frame="box" rules="all" border="0" cellspacing="0" cellpadding="3" style="width:800pt; height:20pt;"> 
+							<tr> 
+								<td class="t1r4c1"></td>
+								<td class="t1r4c2"><label>Telefon</label></td> 
+								<td class="t1r4c3"><xforms:output class="val3" ref="angajator/@telSoc" /></td>
+								<td class="t1r4c4"><label>Fax</label></td>
+								<td class="t1r4c5"><xforms:output class="val3" ref="angajator/@faxSoc" /></td>
+								<td class="t1r4c6"><label>E-mail</label></td> 
+								<td class="t1r4c7"><xforms:output class="val4" ref="angajator/@mailSoc" /></td>
+							</tr> 
+						</table>
+					</td>
+				</tr>
+			</table>
+				</div>
+				<br/><br/>
+
+				<div>
+					<div class="dia">SECŢIUNEA - Creanţe fiscale </div>
+
+			<table align="center" border="1" cellspacing="5" cellpadding="0" width="95%">
+				<xforms:repeat nodeset="instance('112d')/angajator/angajatorA" id="repeatangajator">
+					<tr>
+						<td>
+							<table border="0" cellspacing="2" cellpadding="0" width="100%">
+								<tr>
+									<td class="t2r1c1">Nr. Crt.</td>
+									<td class="t2r1c1">Denumire creanta fiscala : </td>
+									<td class="t2r1c2" colspan="2"><xforms:output class="val5" ref="@A_codOblig" /></td>
+									<td class="t2r1c3" colspan="2">Suma</td>
+								</tr>		
+								<tr>
+									<td class="t2r1c1" rowspan="3"><xforms:output class="va" value="position()" /></td>
+									<td class="t2r2c2" rowspan="3">Cod bugetar</td>
+									<td class="t2r2c3" rowspan="3"><xforms:output class="val4" ref="@A_codBugetar" /></td>
+									<td class="t2r2c5">1. Datorata</td>
+									<td class="t2r2c4"><xforms:output class="val3" ref="@A_datorat" /></td>
+								</tr>
+								<tr>
+									<td class="t2r2c5">2. Deductibila</td>
+									<td class="t2r2c4"><xforms:output class="val3" ref="@A_deductibil" /></td>
+								</tr>
+								<tr>
+									<td class="t2r2c5">3. De plata (rd.1-rd.2)</td>
+									<td class="t2r2c4"><xforms:output class="val3" ref="@A_plata" /></td>
+								</tr>
+							</table>
+						</td>
+					</tr>	
+				</xforms:repeat>
+			</table>
+						<table>
+							<tr>
+								<td class="t2r3c1" colspan="0">Total obligatii de plata</td>
+								<td class="t2r3c2"><xforms:output class="val3" ref="angajator/@totalPlata_A" /></td>
+							</tr>
+						</table>
+					</div>
+				<label style="padding:0px 0px 0px 30px">Prezenta declaraţie reprezintă titlu de creanţă şi produce efectele juridice ale înştiinţării de plată de la data depunerii acesteia, în
+							condiţiile legii.</label>
+					<br/><br/><br/><br/>
+				<label style="padding:0px 0px 0px 30px">Sub sancţiunile aplicate faptei de fals în acte publice, declar că datele din această declaraţie sunt corecte şi complete.</label>
+
+					<table align="center" border="1" cellspacing="5" cellpadding="0" width="95%">
+						<tr>
+							<td rowspan="1" class="t3r1c1">Nume</td>
+							<td rowspan="1" class="t3r1c2"><xforms:output ref="@nume_declar" class="val3" /></td>
+							<td colspan="2" class="t3r1c3">Prenume</td>
+							<td colspan="1" class="t3r1c4"><xforms:output ref="@prenume_declar" class="val3" /></td>
+							<td rowspan="2" class="t3r1c5">Semnatura si stamplia</td>
+						</tr>
+						<tr>
+							<td rowspan="1" class="t3r2c1">Functia/calitatea</td>
+							<td colspan="4" class="t3r2c2"><xforms:output ref="@functie_declar" class="val4" /></td>
+						</tr>
+					</table>
+					<br/><br/>
+					<label class="caent" style="padding:0px 20px 0px 20px"><b>Loc rezervat autorităţii competente</b></label>
+					<table align="center" border="1" cellspacing="5" cellpadding="0" width="95%">
+						<tr>
+							<td class="t4r1c1"><label>Număr de înregistrar</label></td> 	
+							<!--<td class="t4r1c2"><xforms:output ref=""/></td>
+							<td class="t4r1c3"><label>Din data</label></td>
+							<td class="t4r1c4"><xforms:output ref=""/></td>-->
+						</tr>
+					</table>
+					<br/><br/><br/>
+				</td>
+			</tr>
+		</table>
+
+				<a name="jos"></a>
+				<br/>
+
+				<div class="noprint">
+					<div> 
+						<a href="#sus">Top Anexa 1</a>
+
+		<!-- 				<xforms:submit submission="DS112">
+							<xforms:label><i> ^ SALVARE Fisier d112 XML</i></xforms:label>
+			 			 	<xforms:hint>Click pentru a alege unde sa se salveze fisierul XML</xforms:hint>
+						</xforms:submit>
+		 -->	
+					<xforms:trigger appearance="minimall"> 
+						<xforms:label class="medium button orange"> Salvează în fișier </xforms:label>					
+						<xforms:load resource="javascript:saveToFile('112d')" ev:event="DOMActivate" />
+					</xforms:trigger> 	
+
+						<xforms:submit submission="sxml">
+							<xforms:label><i> ^ Vizualizare fisier d112 XML</i></xforms:label>
+							<xforms:load resource="javascript:viewXml('112d')" ev:event="DOMActivate" />
+							<xforms:hint> Vizualizare locală </xforms:hint>
+						</xforms:submit>
+
+						<br/><hr color="#D5E2EA"/>
+
+			<a href="index01.xhtml">
+						<xforms:trigger> 
+						<xforms:label class="medium button green">&#164; Înapoi la pagina principala &#164;</xforms:label>         
+						</xforms:trigger></a>
+
+						<xforms:trigger id="pagaleg">
+							<xforms:label class="large button orange">Revenire la pagina alegere</xforms:label>
+							<xforms:toggle case="alegefisH" ev:event="DOMActivate"/>
+						</xforms:trigger>         
+				<!-- 	<xforms:submit id="wsd" submission="DS112">
+							<xforms:label class="small button orange"> ^ D112-Generare / validare / semnare electronica fisier PDF+XML pentru transmitere ANAF</xforms:label>
+							<xforms:hint>Genereaza PDF pentru ANAF</xforms:hint>
+							<xforms:load resource="javascript:winopen('apl.xhtml',620,270,200,200)" ev:event="DOMActivate" />
+						</xforms:submit>
+			 -->
+			 			<xforms:trigger id="wsd" >
+							<xforms:label class="small button orange"> ^ D112-Generare / validare / semnare electronica fisier PDF+XML pentru transmitere ANAF</xforms:label>
+							<xforms:hint>Genereaza PDF pentru ANAF</xforms:hint>
+							<xforms:load resource="javascript:saveDataLocal('112d')" ev:event="DOMActivate" />
+							<xforms:load resource="javascript:winopen('apl.xhtml',620,270,200,200)" ev:event="DOMActivate" />
+						</xforms:trigger>
+					</div>
+				</div>
+			</xforms:group>
+		</xforms:case>
+
+
+<br/>
+
+<!-- XXXXXXXXXXXXXXXXXX ANEXA 1 III Anexa nr.1 + Anexa nr.1.2 XXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+
+			<xforms:case id="d112_2">
+
+				<xforms:group ref="instance('112d')">
+					<a name="anexa1"></a>
+					<a name="sus2"></a>
+				<table align="center" border="1" cellspacing="5" cellpadding="0" width="100%">
+					<tr>
+						<td>
+						<a href="#jos2">Bootom Anexa 1</a>
+					<table align="center">
+						<tr>
+							<td>
+							<br/>
+							<table align="center">
+								<tr align="right">
+									<td>Anexa nr.1 + Anexa nr.1.2</td>
+								</tr>
+								<tr align="center">
+									<td align="center">
+									<!--<h3><tr>DECLARAŢIE PRIVIND OBLIGAŢIILE DE PLATĂ</tr>
+									<tr>A CONTRIBUŢIILOR SOCIALE, A IMPOZITULUI PE VENIT ŞI EVIDENŢA NOMINALĂ</tr>
+									<tr>A PERSOANELOR ASIGURATE</tr></h3>
+									</tr>	-->
+									<h3>DECLARAŢIE PRIVIND OBLIGAŢIILE DE PLATĂ A CONTRIBUŢIILOR SOCIALE, A IMPOZITULUI PE VENIT ŞI EVIDENŢA NOMINALĂ A PERSOANELOR ASIGURATE</h3>
+									</td>
+								</tr>	
+							</table>
+
+							<table frame="box" rules="all" align="right" border="2" cellspacing="0" cellpadding="0" style=" width:250pt; height:10pt;">
+								<tr>
+									<td class="t0r1c1" colspan="4">Perioada de raportare</td>
+								</tr>
+								<tr> 
+									<td class="t0r2c1">Luna</td>
+									<td class="t0r2c2"><xforms:output ref="@luna_r" class="vfnu1"/></td>
+									<td class="t0r2c3">An</td>
+									<td class="t0r2c4"><xforms:output ref="@an_r" class="vfnu3"/></td>
+								</tr>
+							</table>
+						</td>
+					</tr>  
+				</table>
+						<br/>
+
+						<table align="center" border="0" cellspacing="5" cellpadding="0" width="95%">
+							<tr> 
+								<td class="caen">Declaratie Rectificativa</td>
+								<td class="t0r2c6"><xforms:output ref="@d_rec" class="vfnu3"/></td>
+								<td class="caen">Cod CAEN :</td>
+								<td class="t0r2c6"><xforms:output ref="angajator/@caen" class="vfnu3"/></td>
+								<td class="caen">Fond de risc :</td>
+								<td class="t0r2c6"><xforms:output ref="angajator/@tRisc" class="vfnu3"/></td>
+								<td class="caen">Datorat :</td>
+								<td class="t0r2c6"><xforms:output ref="angajator/@dat" class="vfnu3"/></td>
+							</tr>
+						</table>
+						<br/>
+
+						<div>
+							<div class="dia">DATE DE IDENTIFICARE A PLĂTITORULUI</div>
+<table align="center" border="1" cellspacing="2" cellpadding="0" width="95%">
+<tr>
+<td>
+								<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+									<tr> 
+										<td class="t1r1c1"><label>Cod de identificare fiscală</label></td> 
+										<td class="t1r1c2"><xforms:output class="val3" ref="angajator/@cif"/></td>
+									</tr>
+								</table>
+								<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+									<tr> 
+										<td class="t1r2c1"><label>Denumire</label></td>	
+										<td class="t1r2c2"><xforms:output class="val1" ref="angajator/@den"/></td> 
+									</tr>
+								</table>
+								<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+									<tr> 
+										<td class="t1r3c1"><label>Adresa domiciliu<br/>fiscal</label></td> 
+										<td class="t1r3c2">
+										<xforms:output class="val1" ref="angajator/@adrSoc"/>
+										<!--<xforms:input class="val3" ref="angajator/@rgCom"/>
+										<xforms:input class="val3" ref="angajator/@caen"/>
+										<xforms:input class="val7" ref="angajator/@casaAng"/>-->
+										</td>
+									</tr>
+								</table>
+							<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%"> 
+								<tr> 
+									<td class="t1r4c1"></td>
+									<td class="t1r4c2"><label>Telefon</label></td> 
+									<td class="t1r4c3"><xforms:output class="val3" ref="angajator/@telSoc" /></td>
+									<td class="t1r4c4"><label>Fax</label></td>
+									<td class="t1r4c5"><xforms:output class="val3" ref="angajator/@faxSoc" /></td>
+									<td class="t1r4c6"><label>E-mail</label></td> 
+									<td class="t1r4c7"><xforms:output class="val4" ref="angajator/@mailSoc" /></td>
+								</tr> 
+							</table>
+</td>
+</tr>
+</table>
+					</div>
+
+					<br/><br/>
+
+					<div>
+						<div class="dia">SECŢIUNEA - Creanţe fiscale</div>
+<table align="center" border="1" cellspacing="5" cellpadding="0" width="95%">
+<tr>
+<td>	
+<!--
+								<xforms:repeat nodeset="/declaratieUnica/angajator/angajatorA" id="repeatangajator">
+									<tr>
+										<td class="t2r1c1">Nr. Crt.</td>
+										<td class="t2r1c1">Denumire creanta fiscala : </td>
+										<td class="t2r1c2" colspan="2"><xforms:output class="val5" ref="@A_codOblig" /></td>
+										<td class="t2r1c3" colspan="2">Suma</td>
+									</tr>
+
+									<tr>
+										<td class="t2r2c1" rowspan="3"><xforms:output class="va" value="position()" /></td>
+										<td class="t2r2c2" rowspan="3">Cod bugetar</td>
+										<td class="t2r2c3" rowspan="3"><xforms:output class="val4" ref="@A_codBugetar" /></td>
+										<td class="t2r2c5">1. Datorata</td>
+										<td class="t2r2c4"><xforms:output class="val3" ref="@A_datorat" /></td>
+									</tr>
+
+									<tr>
+										<td class="t2r2c5">2. Deductibila</td>
+										<td class="t2r2c4"><xforms:output class="val3" ref="@A_deductibil" /></td>
+									</tr>
+
+									<tr>
+										<td class="t2r2c5">3. De plata (rd.1-rd.2)</td>
+										<td class="t2r2c4"><xforms:output class="val3" ref="@A_plata" /></td>
+									</tr>
+								</xforms:repeat>-->
+
+								<a name="jos2"></a>
+
+								<table>
+									<tr>
+										<td class="t2r3c1" colspan="0">Total obligatii de plata</td>
+										<td class="t2r3c2"><xforms:output class="val3" ref="angajator/@totalPlata_A" /></td>
+									</tr>
+								</table>
+</td>
+</tr>
+</table>
+					</div>
+
+					<label style="padding:0px 0px 0px 30px">Prezenta declaraţie reprezintă titlu de creanţă şi produce efectele juridice ale înştiinţării de plată de la data depunerii acesteia, în
+condiţiile legii.</label>
+					<br/><br/><br/><br/>
+
+					<label style="padding:0px 0px 0px 30px">Sub sancţiunile aplicate faptei de fals în acte publice, declar că datele din această declaraţie sunt corecte şi complete.</label>
+
+					<table align="center" border="1" cellspacing="5" cellpadding="0" width="95%">
+						<tr>
+							<td rowspan="1" class="t3r1c1">Nume</td>
+							<td rowspan="1" class="t3r1c2"><xforms:output ref="@nume_declar" class="val3" /></td>
+							<td colspan="2" class="t3r1c3">Prenume</td>
+							<td colspan="1" class="t3r1c4"><xforms:output ref="@prenume_declar" class="val3" /></td>
+							<td rowspan="2" class="t3r1c5">Semnatura si stamplia</td>
+						</tr>
+
+						<tr>
+							<td rowspan="1" class="t3r2c1">Functia/calitatea</td>
+							<td colspan="4" class="t3r2c2"><xforms:output ref="@functie_declar" class="val4" /></td>
+						</tr>
+					</table>
+
+					<br/><br/>
+					<label class="caent" style="padding:0px 20px 0px 20px"><b>Loc rezervat autorităţii competente</b></label>
+					<table align="center" border="1" cellspacing="5" cellpadding="0" width="95%">
+						<tr>
+							<td class="t4r1c1"><label>Număr de înregistrar</label></td> 	
+							<!--<td class="t4r1c2"><xforms:output ref=""/></td>
+								<td class="t4r1c3"><label>Din data</label></td>
+							<td class="t4r1c4"><xforms:output ref=""/></td>-->
+						</tr>
+					</table>
+					<br/><br/><br/>
+</td>
+</tr>
+</table>
+
+					<br/>
+
+					<div class="noprint">
+						 <div> 
+
+							<a href="#sus2">Top Anexa 1</a>
+<!-- 
+							<xforms:submit submission="DS112">
+								<xforms:label><i> ^ SALVARE Fisier d112 XML</i></xforms:label>
+				 			 	<xforms:hint>Click pentru a alege unde sa se salveze fisierul XML</xforms:hint>
+							</xforms:submit>
+ -->
+							<xforms:trigger>
+								<xforms:label class="large button orange">Revenire la pagina alegere A-1</xforms:label>
+								<xforms:toggle case="alegefisH" ev:event="DOMActivate"/>
+							</xforms:trigger>  
+							<xforms:submit submission="sxml">
+								<xforms:label><i> ^ Vizualizare fisier d112 XML</i></xforms:label>
+								<xforms:hint>Click pentru a alege unde sa se salveze fisierul XML</xforms:hint>
+							</xforms:submit>
+
+							<br/><hr color="#D5E2EA"/>
+
+							<a href="index01.xhtml"> Home</a>
+				<!-- 			<xforms:submit id="wsd2" submission="DS112">
+								<xforms:label class="small button orange"> ^ D112-Generare / validare / semnare electronica fisier PDF+XML pentru transmitere ANAF</xforms:label>
+								<xforms:hint>Genereaza PDF pentru ANAF</xforms:hint>
+								<xforms:load resource="javascript:winopen('apl.xhtml',620,270,200,200)" ev:event="DOMActivate" />
+							</xforms:submit> -->
+							<xforms:trigger id="wsd2">
+								<xforms:label class="small button orange"> ^ D112-Generare / validare / semnare electronica fisier PDF+XML pentru transmitere ANAF</xforms:label>
+								<xforms:hint>Genereaza PDF pentru ANAF</xforms:hint>
+								<xforms:load resource="javascript:saveDataLocal('112d')" ev:event="DOMActivate" />
+								<xforms:load resource="javascript:winopen('apl.xhtml',620,270,200,200)" ev:event="DOMActivate" />
+							</xforms:trigger>
+							<br/>
+
+						</div>
+					</div>
+					<br/>
+
+					<a href="#anexa_1.2B">Anexa 1.2_Bootom</a>
+										
+<!-- 1785 ? XXXXXXXXXXXXXXXXXX  Anexa nr.1.2 (din 1 + 1.2)     25.04.2012  XXXXXXXXXXXXXXXXXX -->					
+				
+					<table align="center">
+						<tr align="right">Anexa nr 1.2</tr>
+						<td align="center">
+
+						<h3><tr>DECLARAŢIE PRIVIND OBLIGAŢIILE DE PLATĂ</tr>
+						<tr>A CONTRIBUŢIILOR SOCIALE, A IMPOZITULUI PE VENIT ŞI EVIDENŢA NOMINALĂ</tr>
+						<tr>A PERSOANELOR ASIGURATE</tr></h3>
+						</td>
+					</table>
+				<br/>
+
+	<table border="0" cellspacing="0" cellpadding="0" width="100%"> 
+		<tr>						
+			<td>
+
+				<xforms:repeat nodeset="instance('112d')/asigurat" id="repeatasigurat">
+                  <!--<xforms:repeat nodeset="/declaratieUnica/angajator/angajatorA" id="repeatangajator">--> 
+				<br/>
+					<table align="center" border="0" cellspacing="0" cellpadding="0" width="95%">
+						<tr>
+							<td class="ddia"> DATE DE IDENTIFICARE ASIGURAT</td>
+							<td class="ddia">Nr.crt.<xforms:output class="T" value="position()"/></td>
+							<td class="ddia">Asigurat Tip:A</td> 
+							<td class="ddia">Numar zile lucratoare :<xforms:output class="T1val0" ref="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/@NrZlucruL"/></td>
+						</tr>
+					</table>
+
+				<table align="center" border="1" cellspacing="5" cellpadding="0" width="95%"> 
+					<td>
+						<tr>
+						<tr>
+							<td class="t7r1c4">CNP/NIF</td>
+							<td class="t7r1c3"><xforms:output class="T1val0" ref="@cnpAsig"/></td>
+							<td class="t7r1c4">CNP/NIF_Anterior</td>
+							<td class="t7r1c3"><xforms:output class="T1val0" ref="@cnpAnt"/></td>
+						</tr>
+						<tr>
+							<td class="t7r1c4">Nume</td>
+							<td class="t7r1c3"><xforms:output class="T1val0" ref="@numeAsig"/></td>
+							<td class="t7r1c4">Nume Anterior</td>
+							<td class="t7r1c3"><xforms:output class="T1val0" ref="@numeAnt"/></td>
+						</tr>	
+						<tr>
+							<td class="t7r1c4">Prenume</td>
+							<td class="t7r1c3"><xforms:output class="T1val0" ref="@prenAsig"/></td>
+							<td class="t7r1c4">Prenume Anterior</td>
+							<td class="t7r1c3"><xforms:output class="T1val0" ref="@prenAnt"/></td>
+						</tr>
+						<tr>
+							<td class="t7r1c4">Data angajării (început contract)</td>
+							<td class="t7r1c3"><xforms:output class="T1val4" ref="@dataAng"/></td>
+							<td class="t7r1c4">Data sfârșit contract</td>
+							<td class="t7r1c3"><xforms:output class="T1val4" ref="@dataSf"/></td>
+						</tr>
+						<tr>
+							<td colspan='2' class="t7r1c5">Casa_de_asigurari_de_sanatate</td>
+							<td class="t7r1c3"><xforms:output class="T1val4" ref="@casaSn"/></td>
+						</tr>
+						<tr>
+							<td colspan='2' class="t7r1c5">Asigurat/Neasigurat_pentru_concedii_si_indemnizatii</td>
+							<td class="t7r1c4"></td>
+							<td class="t7r1c3"><xforms:output class="T1val1" ref="@asigCI"/></td>
+						</tr>
+						<tr>
+							<td colspan='2' class="t7r1c5">Asigurat in sistemul de asigurari pentru somaj<!--<xforms:output class="T1val1"/>--></td>
+							<td class="t7r1c4"></td>
+							<td class="t7r1c3"><xforms:output class="T1val1" ref="@asigSO"/></td>
+						</tr>		
+					</tr>
+				</td>
+			</table>
+
+<!--.........XXXXXXXXXXXXXXXXX...........COASIGURATI............XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX............-->
+
+				<div class="dia1">COASIGURATI</div> 
+					<table align="center" border="1" cellspacing="0" cellpadding="5" width="95%"> 
+						<tr>
+							<td class="t7r1c1">Tip Asigurat</td>
+							<td class="t7r1c2">CNP CoAsigurat</td>
+							<td class="t7r1c3">Nume</td>
+							<td class="t7r1c3">Prenume</td>
+						</tr>
+						<tr>
+							<td class="t7r1c1"><xforms:output class="T1val0" ref="coAsigurati/@tip"/></td>
+							<td class="t7r1c2"><xforms:output class="T1val0" ref="coAsigurati/@cnp"/></td>
+							<td class="t7r1c3"><xforms:output class="T1val0" ref="coAsigurati/@nume"/></td>
+							<td class="t7r1c3"><xforms:output class="T1val0" ref="coAsigurati/@prenume"/></td>
+						</tr>
+						<tr>
+							<td class="t7r1c1"><xforms:output class="T1val0" ref="coAsigurati/@tip"/></td>
+							<td class="t7r1c2"><xforms:output class="T1val0" ref="coAsigurati/@cnp"/></td>
+							<td class="t7r1c3"><xforms:output class="T1val0" ref="coAsigurati/@nume"/></td>
+							<td class="t7r1c3"><xforms:output class="T1val0" ref="coAsigurati/@prenume"/></td>
+						</tr>
+						<tr>
+							<td class="t7r1c1"><xforms:output class="T1val0" ref="coAsigurati/@tip"/></td>
+							<td class="t7r1c2"><xforms:output class="T1val0" ref="coAsigurati/@cnp"/></td>
+							<td class="t7r1c3"><xforms:output class="T1val0" ref="coAsigurati/@nume"/></td>
+							<td class="t7r1c3"><xforms:output class="T1val0" ref="coAsigurati/@prenume"/></td>
+						</tr>
+					</table>
+				<br/>
+
+					<div> Alege secțiunea   
+						<xforms:trigger appearance="minimal" id="S-A">
+							<xforms:label  class="medium button teal"><i>Secțiunea A </i></xforms:label>
+							<xforms:toggle case="Sect-A" ev:event="DOMActivate"/>				
+						</xforms:trigger>     	
+						<xforms:trigger appearance="minimal" id="S-B">
+							<xforms:label  class="medium button teal"><i>Secțiunea B </i></xforms:label>
+							<xforms:toggle case="Sect-B" ev:event="DOMActivate"/>				
+						</xforms:trigger>     	
+						<xforms:trigger appearance="minimal" id="S-C">
+							<xforms:label  class="medium button teal"><i>Secțiunea C </i></xforms:label>
+							<xforms:toggle case="Sect-C" ev:event="DOMActivate"/>				
+						</xforms:trigger>  
+						<xforms:trigger appearance="minimal" id="S-D">
+							<xforms:label  class="medium button teal"><i>Secțiunea D </i></xforms:label>
+							<xforms:toggle case="Sect-D" ev:event="DOMActivate"/>				
+						</xforms:trigger>     				   	
+						<xforms:trigger appearance="minimal" id="S-N">
+							<xforms:label  class="medium button teal"><i> Niciuna </i></xforms:label>
+							<xforms:toggle case="Sect-N" ev:event="DOMActivate"/>				
+						</xforms:trigger>  
+			<hr align="center" size="10" color="#D1D1D1" width="95%"/>											
+					</div>
+		<br/>
+
+<!--.........XXXXXXXXXXXXXXXXX...........SECTIUNEA A............XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX............-->
+
+		<xforms:switch>
+			<xforms:case id="Sect-A">
+				<div class="dia">SECTIUNEA A</div> 
+					<table align="center" border="1" cellspacing="0" cellpadding="5" width="95%"> 
+						<tr>
+							<td>1.Tip asigurat dpdv contract de munca</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratA/@A_1"/></td>
+						</tr>
+						<tr>
+							<td>2.Pensionar</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratA/@A_2"/></td>
+						</tr>
+						<tr>
+							<td>3.Tip contract de muncă dpdv timp de lucru</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratA/@A_3"/></td>
+						</tr>
+						<tr>
+							<td>4.Ore norma zilnica contract</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratA/@A_4"/></td>
+						</tr>
+						<tr>
+							<td>5.Ore lucrate efectiv in luna</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratA/@A_6"/></td>
+						</tr>
+						<tr>
+							<td>6.Ore suspendate în luna (învoire)</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratA/@A_7"/></td>
+						</tr>
+						<tr>
+							<td>7.Total zile lucrate</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratA/@A_8"/></td>
+						</tr>
+						<tr>
+							<td>8.Venit brut realizat</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratA/@A_20"/></td>
+						</tr>
+						<tr>
+							<td>9.Baza Contributie Individuala SOMAJ neplafonata</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratA/@A_9"/></td>
+						</tr>
+						<tr>
+							<td>10.Contributie Individuala SOMAJ</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratA/@A_10"/></td>
+						</tr>
+						<tr>
+							<td>11.Baza Contributie Individuala SANATATE plafonata</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratA/@A_11"/></td>
+						</tr>
+						<tr>
+							<td>12.Contributie Individuala SANATATE</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratA/@A_12"/></td>
+						</tr>
+						<tr>
+							<td>13.Baza Contributie Individuala ASIGURARI SOCIALE plafonata</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratA/@A_13"/></td>
+						</tr>
+						<tr>
+							<td>14.Contributie Individuala ASIGURARI SOCIALE</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratA/@A_14"/></td>
+						</tr>
+						<tr>
+							<td>15.Baza de calcul pentru plata fondului de garantare</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratA/@A_5"/></td>
+						</tr>
+					</table>
+				<br/>
+					<hr align="center" size="12" color="#9D082A" width="95%"/> 
+				<br/>
+			</xforms:case>
+
+<!--.........XXXXXXXXXXXXXXXXX...........SECTIUNEA B............XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX............-->
+
+			<xforms:case id="Sect-B">
+				<div class="dia1">SECTIUNEA B</div> 
+				<div class="dia">B.1. Contract - Contracte de muncă sau / şi şomaj tehnic beneficiar de scutire</div> 
+
+
+					<table align="center" border="1" cellspacing="0" cellpadding="5" width="95%"> 
+						<tr>
+							<td>1.Tip asigurat dpdv contract de munca</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratB1/@B1_1"/></td>
+						</tr>
+						<tr>
+							<td>2.Pensionar</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratB1/@B1_2"/></td>
+						</tr>
+						<tr>
+							<td>3.Tip Contract Munca dpdv timp de lucru</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratB1/@B1_3"/></td>
+						</tr>
+						<tr>
+							<td>4.Ore norma zilnica contract</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratB1/@B1_4"/></td>
+						</tr>
+						<tr>
+							<td>5.Baza de calcul pentru plata fondului de garantare</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratB1/@B1_5"/></td>
+						</tr>
+						<tr>
+							<td>6.Ore lucrate efectiv in luna</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratB1/@B1_6"/></td>
+						</tr>
+						<tr>
+							<td>7.Ore suspendate luna (NOS)</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratB1/@B1_7"/></td>
+						</tr>
+						<tr>
+							<td>8.Din care ore somaj tehnic in luna beneficiare de scutire</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratB1/@B1_8"/></td>
+						</tr>
+						<tr>
+							<td>9.Zile somaj tehnic beneficiare de scutire</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratB1/@B1_9"/></td>
+						</tr>
+						<tr>
+							<td>10.Baza de calcul la contributie individuala SOMAJ neplafonata</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratB1/@B1_10"/></td>
+						</tr>
+						<tr>
+							<td>11.Total zile lucrate</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asiguratB1/@B1_15"/></td>
+						</tr>
+					</table>
+						<br/>
+							<hr align="center"  width="90%"/> 
+						<br/>
+			</xforms:case>
+
+<!--.........XXXXXXXXXXXXXXXXX...........SECTIUNEA C............XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX............-->
+
+			<xforms:case id="Sect-C">
+				<div class="dia">SECTIUNEA C</div> 
+					<table align="center" border="1" cellspacing="0" cellpadding="5" width="95%"> 
+						<tr>
+							<td>1.Tip asigurat alte entitati asimililate</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratC/@C_1"/></td>
+						</tr>
+						<tr>
+							<td>2.Zile</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratC/@C_2"/></td>
+						</tr>
+						<tr>
+							<td>3.Zile concediu medical pentru accidente de munca</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratC/@C_3"/></td>
+						</tr>
+						<tr>
+							<td>4.Indemnizatie pentru accidente de munca</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratC/@C_4"/></td>
+						</tr>
+						<tr>
+							<td>5.Total zile concediu medical (cf OUG 158/2005)</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratC/@C_6"/></td>
+						</tr>
+						<tr>
+							<td>6.Baza Contributie Individuala SOMAJ neplafonata</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratC/@C_7"/></td>
+						</tr>
+						<tr>
+							<td>7.Contributie Individuala SOMAJ</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratC/@C_20"/></td>
+						</tr>
+						<tr>
+							<td>8.Baza Contributie Individuala SANATATE plafonata</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratC/@C_8"/></td>
+						</tr>
+						<tr>
+							<td>9.Contributie Individuala SANATATE</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratC/@C_9"/></td>
+						</tr>
+						<tr>
+							<td>10.Baza Contributie Individuala ASIGURARI SOCIALE plafonata</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratC/@C_10"/></td>
+						</tr>
+						<tr>
+							<td>11.Contributie Individuala ASIGURARI SOCIALE</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratC/@C_11"/></td>
+						</tr>
+						<tr>
+							<td>12.Zile prestatii suportate din FAAMBP</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratC/@C_12"/></td>
+						</tr>
+						<tr>
+							<td>13.Suma prestatii de asigurari sociale suportate din FAAMBP</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratC/@C_13"/></td>
+						</tr>
+						<tr>
+							<td>14.Venit brut realizat</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratC/@C_14"/></td>
+						</tr>
+					</table>
+						<br/>
+							<hr align="center"  width="90%"/> 
+						<br/>
+			</xforms:case>
+
+<!--.........XXXXXXXXXXXXXXXXX...........SECTIUNEA D............XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX............-->
+
+			<xforms:case id="Sect-D">
+				<div class="dia">SECTIUNEA D</div> 
+					<table align="center" border="1" cellspacing="0" cellpadding="5" width="95%"> 
+						<tr>
+							<td>1.Seria cetificatului de concediu medical</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratD/@D_1"/></td>
+						</tr>
+						<tr>
+							<td>2.Numarul certificatului de concediu medical</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratD/@D_2"/></td>
+						</tr>
+						<tr>
+							<td>3.Seria cetificatului de concediu medical initial</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratD/@D_3"/></td>
+						</tr>
+						<tr>
+							<td>4.Numarul certificatului de concediu medical initial</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratD/@D_4"/></td>
+						</tr>
+						<tr>
+							<td>5.Data acordarii certificatului medical (zz.ll.aaaa)</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratD/@D_5"/></td>
+						</tr>
+						<tr>
+							<td>6.Data inceput valabilitate CM</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratD/@D_6"/></td>
+						</tr>
+						<tr>
+							<td>7.Data incetare valabilitate CM</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratD/@D_7"/></td>
+						</tr>
+						<tr>
+							<td>8.Codul numeric personal al copilului</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratD/@D_8"/></td>
+						</tr>
+						<tr>
+							<td>9.Codul indemnizatiei notat pe certificatul de concediu medical</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratD/@D_9"/></td>
+						</tr>
+						<tr>
+							<td>10.Locul de prescriere a certificatului medical</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratD/@D_10"/></td>
+						</tr>
+						<tr>
+							<td>11.Cod urgenta medicochirurgicala</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratD/@D_11"/></td>
+						</tr>
+						<tr>
+							<td>12.Cod boala infectocontagioasa grupa A</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratD/@D_12"/></td>
+						</tr>
+						<tr>
+							<td>13.Numarul avizului medicului expert</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratD/@D_13"/></td>
+						</tr>
+						<tr>
+							<td>14.Zile prestatii (zile lucratoare) suportate de angajator</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratD/@D_14"/></td>
+						</tr>
+						<tr>
+							<td>15.Zile prestatii (zile lucratoare) suportate de FNUASS</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratD/@D_15"/></td>
+						</tr>
+						<tr>
+							<td>16.Total Zile prestatii (zile lucratoare) aferente concediului medical</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratD/@D_16"/></td>
+						</tr>
+						<tr>
+							<td>17.Suma venituri ultimile 6 luni</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratD/@D_17"/></td>
+						</tr>
+						<tr>
+							<td>18.Numar de zile aferente veniturilor din ultimile 6 luni</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratD/@D_18"/></td>
+						</tr>
+						<tr>
+							<td>19.Media zilnica a bazei de calcul</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratD/@D_19"/></td>
+						</tr>
+						<tr>
+							<td>20.Indemnizatie sanatate suportata de angajator</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratD/@D_20"/></td>
+						</tr>
+						<tr>
+							<td>21.Indemnizatie sanatate suportata din FNUASS</td>
+							<td class="trma"><xforms:output class="T1val0" ref="asigurat/asiguratD/@D_21"/></td>
+						</tr>
+					</table>
+				<br/><br/>
+			</xforms:case>
+
+			<xforms:case id="Sect-N" selected="true">
+			</xforms:case>
+		</xforms:switch>
+
+        <!-- XXXXXXXXXXX  End  Secțiuni XXXXXXXXX  -->
+
+			</xforms:repeat>
+			</td>
+		</tr>
+	</table>
+</xforms:group>
+
+<div> 
+<!--<a href="index01.xhtml"> Home</a>
+<a href="#jos2"> ^ Anexa 1.2_Top </a>
+<a href="#sus2"> ^ Anexa 1_Top</a>-->
+		<xforms:trigger>
+			<xforms:label class="large button orange">Revenire la pagina alegere -A-1.2</xforms:label>
+			<xforms:toggle case="alegefisH" ev:event="DOMActivate"/>
+		</xforms:trigger>  
+</div>
+<!--<a name="anexa_1.2B"></a>-->
+
+</xforms:case>
+<br/><br/>
+
+
+
+
+
+
+
+
+
+<!-- XXXXXXXXXXXXX    Inceput     Anexa 1.1 25 apr 2012        XXXXXXXXXXXXXXXXXXXXXXX-->
+
+
+
+
+
+
+
+<xforms:case id="d112_1">
+<xforms:group ref="instance('112d')">
+
+
+			<!--	<a href="#anexa_1.1jos">Anexa 1.1_Bootom</a>
+					<table align="center">
+						<tr align="right">Anexa nr 1.1</tr>
+						<td align="center">
+
+						<h3><tr>DECLARAŢIE PRIVIND OBLIGAŢIILE DE PLATĂ</tr>
+						<tr>A CONTRIBUŢIILOR SOCIALE, A IMPOZITULUI PE VENIT ŞI EVIDENŢA NOMINALĂ</tr>
+						<tr>A PERSOANELOR ASIGURATE</tr></h3>
+						</td>
+					</table>-->
+
+					<div class="dia">SECTIUNEA B - indicatori statici</div> 
+
+					<table align="center" border="1" cellspacing="0" cellpadding="5" width="95%"> 
+						<tr>
+							<td>1.</td>
+							<td>Număr de asigurati somaj (CNP-uri unice)</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorB/@B_cnp"/></td>
+						</tr>
+						<tr>
+							<td>2.</td>
+							<td>Număr de asigurati concedii si indemnizatii</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorB/@B_sanatate"/></td>
+						</tr>
+						<tr>
+							<td>3.</td>
+							<td>Număr de asiguraţi pentru care angajatorul datorează contribuţii de asigurări sociale</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorB/@B_pensie"/></td>
+						</tr>
+						<tr>
+							<td>4.</td>
+							<td>Total fond de salarii brute</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorB/@B_brutSalarii"/></td>
+						</tr>
+					</table><hr/>
+
+					<div class="dia1">SECTIUNEA C</div> 
+					<br/>
+					<div class="dia">C.1 conditii de munca</div>
+
+					<table align="center" border="1" cellspacing="0" cellpadding="5" width="95%">
+						<tr>
+							<th>Nr.Crt</th>
+							<th>Conditii de munca</th>
+							<th>Total venit realizat</th>
+							<th>Total bază de calcul a contribuţiei la BASS aferentă indemnizaţiei conform O.U.G. 158/2005</th>
+							<th>Scutiri angajator</th>
+							<th>Contributie CAS- angajator</th>
+						</tr>
+
+						<tr>
+							<td>1.</td>
+							<td class="t">normale</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC1/@C1_11"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC1/@C1_12"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC1/@C1_13"/></td>
+							<td rowspan="3" class="trma"></td>
+						</tr>
+						<tr>
+							<td>2.</td>
+							<td class="t">deosebite</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC1/@C1_21"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC1/@C1_22"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC1/@C1_23"/></td>
+
+						</tr>
+						<tr>
+							<td>3.</td>
+							<td class="t">speciale</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC1/@C1_31"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC1/@C1_32"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC1/@C1_33"/></td>
+
+						</tr>
+						<tr>
+							<td>4.</td>
+							<td class="t">Total</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC1/@C1_T1"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC1/@C1_T2"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC1/@C1_T"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC1/@C1_T3"/></td>
+						</tr>
+					</table>
+					<br/>
+
+					<table align="center" border="1" cellspacing="0" cellpadding="5" width="95%">
+						<tr>
+							<td>5.</td>
+							<td>Bază calcul punctaj şomaj tehnic beneficiare de scutire C1_5</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC1/@C1_5"/></td>
+						</tr>
+						<tr>
+							<td>6.</td>
+							<td>Total sumă de recuperat de angajator de la BASS, aferentă lunii de raportare C1_6</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC1/@C1_6"/></td>
+						</tr>
+						<tr>
+							<td>7.</td>
+							<td>Total sumă de recuperat de angajator de la FAAMBP, aferentă lunii de raportare C1_7</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC1/@C1_7"/></td>
+						</tr>
+					</table>
+					<br/><hr/>
+
+					<div class="dia">C.2 Indemnizatii sanatate (cunform OG 158/2005</div> 
+					<table align="center" border="1" cellspacing="0" cellpadding="5" width="95%">
+						<tr>
+							<th>Nr.Crt</th>
+							<th>Tip indemnizaţie</th>
+							<th>Nr.cazuri</th>
+							<th>Total zile prestaţii</th>
+							<th>Zile prestaţii suportate de angajator</th>
+							<th>Zile prestaţii suportate din FNUASS</th>
+							<th>Suma suportată de angajator</th>
+							<th>Suma suportată din FNUASS</th>
+						</tr>
+
+						<tr>
+							<td>1.</td>
+							<td>Incapacitate temporară de muncă</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_11"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_12"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_13"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_14"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_15"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_16"/></td>
+						</tr>
+						<tr>
+							<td>2.</td>
+							<td>Prevenire_îmbolnăvire</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_21"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_22"/></td>
+							<td rowspan="4" class="trma"><xforms:output class="T1val0" value="angajator/angajatorC2/@C2_23"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_24"/></td>
+							<td rowspan="4" class="trma"><xforms:output class="T1val0" value="angajator/angajatorC2/@C2_25"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_26"/></td>
+						</tr>
+						<tr>
+							<td>3.</td>
+							<td>Sarcină şi lăuzie</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_31"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_32"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_34"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_36"/></td>
+						</tr>
+						<tr>
+							<td>4.</td>
+							<td>Îngrijire copil bolnav</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_41"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_42"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_44"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_46"/></td>
+						</tr>
+						<tr>
+							<td>5.</td>
+							<td>Risc maternal</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_51"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_52"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_54"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_56"/></td>
+						</tr>
+						<tr>
+							<td>6.</td>
+							<td colspan="6" >Total</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_T6"/></td>
+						</tr>
+					</table>
+
+					<table align="center" border="1" cellspacing="0" cellpadding="5" width="95%">
+					<br/>
+						<tr>
+							<td>7.</td>
+							<td>Total contributii pentru concedii, indemnizatii calculate la fond salarii C2_7</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_7"/></td>
+						</tr>
+						<tr>
+							<td>8.</td>
+							<td>Total contributii concedii si indemnizatii datorate pentru indemnizatiile suportate de FAAMBP C2_8</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_8"/></td>
+						</tr>
+						<tr>
+							<td>9.</td>
+							<td>Total contributii datorate pentru concedii si indemnizatii C2_9</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_9"/></td>
+						</tr>
+						<tr>
+							<td>10.</td>
+							<td>Total cuantum prestatii de suportat din bugetul FNUASS pentru concedii si indemnizatii C2_10</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_10"/></td>
+						</tr>
+						<tr>
+							<td>11.</td>
+							<td>Total sumă recuperată de angajator din contribuţia lunii curente C2_110</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_110"/></td>
+						</tr>
+						<tr>
+							<td>12.</td>
+							<td>Total sumă de virat la FNUASS pentru concedii şi indemnizaţii C2_120</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_120"/></td>
+						</tr>
+						<tr>
+							<td>13.</td>
+							<td>Total sumă rămasă de recuperat de la FNUASS pentru concedii şi indemnizaţii C2_130</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC2/@C2_130"/></td>
+						</tr>
+					</table>
+					<br/><hr/>
+
+				<div class="dia">C.3. Indemnizaţii pentru accidente de muncă şi boli profesionale</div>
+					<table align="center" border="1" cellspacing="0" cellpadding="5" width="95%">
+						<tr>
+							<th>Nr.Crt</th>
+							<th>Tip indemnizaţie</th>
+							<th>Număr cazuri</th>
+							<th>Zile prestaţii</th>
+							<th>Sumă totală accidente de muncă</th>
+							<th>Sumă suportată din FAAMPB</th>
+						</tr>
+
+						<tr>
+							<td>1.</td>
+							<td class="t">Incapacitate temporară de muncă</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC3/@C3_11"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC3/@C3_12"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC3/@C3_13"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC3/@C3_14"/></td>
+						</tr>
+						<tr>
+							<td>2.</td>
+							<td class="t">Trecerea temporară la alt loc de muncă</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC3/@C3_21"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC3/@C3_22"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC3/@C3_23"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC3/@C3_24"/></td>
+						</tr>
+						<tr>
+							<td>3.</td>
+							<td class="t">Reducerea timpului de lucru</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC3/@C3_31"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC3/@C3_32"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC3/@C3_33"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC3/@C3_34"/></td>
+						</tr>
+						<tr>
+							<td>4.</td>
+							<td class="t">Cursuri de calificare şi reconversie profesinală</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC3/@C3_41"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC3/@C3_41"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC3/@C3_41"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC3/@C3_41"/></td>
+						</tr>
+						<tr>
+							<td>5.</td>
+							<td colspan="3" class="t">Total</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC3/@C3_total"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorC3/@C3_suma"/></td>
+						</tr>
+					</table>
+				<br/>
+					<table align="left" border="0" cellspacing="0" cellpadding="2" width="60%">
+						<tr>
+							<td class="ajd1">
+							<label>Ajutoare de deces</label></td>
+							<td class="ajd2">Număr cazuri</td>
+							<td class="ajd2"><xforms:output class="T" ref="angajator/angajatorC3/C3_aj_nr"/></td>
+							<td class="ajd2">Sumă</td>
+							<td class="ajd2"><xforms:output class="T" ref="angajator/angajatorC3/C3_aj_suma"/></td>
+						</tr>
+					</table>
+				<br/><br/><br/>
+					<table align="center" border="0" cellspacing="0" cellpadding="10" width="95%">
+						<tr class="sscs">
+							<label>C.4. Sumă scutită din contribuţia la şomaj a angajatorului</label><br/>
+							<label>potrivit prevederilor legale în vigoare</label>
+							<td class="sscsa"><xforms:output class="T1val0" ref="angajator/angajatorC4/C4_scutitaSo"/></td>
+						</tr>
+					</table>
+
+				<br/><br/>
+
+				<div class="dia">C.5. Subvenţii/ scutiri/ reduceri (conform Legii 76/2002)</div> 
+					<table align="center" border="1" cellspacing="0" cellpadding="5" width="95%"> 
+						<tr>
+							<th>Nr.Crt</th>
+							<th>Subvenţie/scutire/reducere</th>
+							<th>Sumă de recuperat din contribuţia datorată</th>
+							<th>Sumă de restituit de la AJOFM/ AMOFM</th>
+						</tr>
+						<tr>
+							<td>1.</td>
+							<td class="t"><xforms:output class="T1val0" ref="angajator/angajatorC5/@C5_subv"/></td>
+							<td class="t"><xforms:output class="T1val0" ref="angajator/angajatorC5/@C5_recuperat"/></td>
+							<td class="t"><xforms:output class="T1val0" ref="angajator/angajatorC5/@C5_restituit"/></td>
+						</tr>
+					</table>
+				<br/><hr/><br/>
+
+					<table align="center" border="1" cellspacing="0" cellpadding="8" width="95%"> 
+						<tr>
+							<th class="cdang" rowspan="2">C.6. Contribuţie şomaj datorată de angajator</th>
+							<td class="cdang1">Bază de calcul neplafonată</td>
+							<td class="cdang1">Contribuţie</td>
+						</tr>
+						<tr>
+
+							<td class="cdang2"><xforms:output class="T1val0" ref="angajator/angajatorC6/@C6_baza"/></td>
+							<td class="cdang2"><xforms:output class="T1val0" ref="angajator/angajatorC6/@C6_ct"/></td>
+						</tr>
+					</table>
+					<hr/><br/><hr/><br/>
+ 
+					<table align="center" border="1" cellspacing="0" cellpadding="8" width="95%"> 
+						<tr>
+							<th class="cdang" rowspan="2">C.7. Contribuţie fond de garantare datorată de Bază de calcul<br/> Contribuţie angajator</th>
+							<td class="cdang1">Bază de calcul</td>
+							<td class="cdang1">Contribuţie</td>
+						</tr>
+						<tr>
+							<td class="cdang2"><xforms:output class="T1val0" ref="angajator/angajatorC7/@C7_baza"/></td>
+							<td class="cdang2"><xforms:output class="T1val0" ref="angajator/angajatorC7/@C7_ct"/></td>
+						</tr>
+					</table>
+					<br/><hr/><hr/>
+
+
+					<div class="dia" align="center">Secţiunile D şi E se completează numai de instituţii asimilate angajatorilor</div> 
+					<div class="dia">SECTIUNEA D - indicatori statici</div> 
+
+					<table align="center" border="1" cellspacing="0" cellpadding="5" width="95%"> 
+						<tr>
+							<td>1.</td>
+							<td>Număr de asigurati somaj (CNP-uri unice)</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorD/@D1"/></td>
+						</tr>
+						<tr>
+							<td>2.</td>
+							<td>Număr de asigurati (concedii si indemnizatii)</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorD/@D2"/></td>
+						</tr>
+						<tr>
+							<td>3.</td>
+							<td>Număr de asiguraţi pentru care angajatorul datorează contribuţii de asigurări sociale</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorD/@D3"/></td>
+						</tr>
+						<tr>
+							<td>4.</td>
+							<td>Total fond de salarii brute (somaj)</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorD/@D4"/></td>
+						</tr>
+					</table>
+					<br/><br/><br/>
+
+					<div class="dia">SECŢIUNEA E
+					E.1. Condiţii de muncă</div> 
+					<table align="center" border="1" cellspacing="0" cellpadding="5" width="95%"> 
+						<tr>
+							<th>Condiţii de muncă</th>
+							<th>Total venit realizat</th>
+							<th>Total bază de calcul a contribuţiei la BASS aferentă indemnizaţiei cf. O.U.G. 158/2005</th>
+							<th>Contribuţie CAS - angajator</th>
+						</tr>
+						<tr>
+							<td>normale</td>
+							<td class="t"><xforms:output class="T1val0" ref="angajator/angajatorE1/@E1_venit"/></td>
+							<td class="t"><xforms:output class="T1val0" ref="angajator/angajatorE1/@E1_baza"/></td>
+							<td class="t"><xforms:output class="T1val0" ref="angajator/angajatorE1/E1_ct"/></td>
+						</tr>
+					</table><br/>
+
+					<div class="dia">E.2. Indemnizaţii sănătate (conform O.U.G. 158/2005)</div> 
+
+					<table align="center" border="1" cellspacing="0" cellpadding="5" width="95%">
+						<tr>
+							<th>Nr.Crt</th>
+							<th>Tip indemnizaţie</th>
+							<th>Nr. cazuri</th>
+							<th>Total zile prestaţii</th>
+							<th>Zile prestaţii suportate din FNUASS</th>
+							<th>Sumă suportată din FNUASS</th>
+						</tr>
+
+						<tr>
+							<td>1.</td>
+							<td class="t">Incapacitate temporară de muncă</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_11"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_12"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_14"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_16"/></td>
+						</tr>
+						<tr>
+							<td>2.</td>
+							<td class="t">Prevenire îmbolnăvire</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_21"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_22"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_26"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_26"/></td>
+						</tr>
+						<tr>
+							<td>3.</td>
+							<td class="t">Sarcină şi lăuzie</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_31"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_32"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_34"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_36"/></td>
+						</tr>
+						<tr>
+							<td>4.</td>
+							<td class="t">Îngrijire copil bolnav</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_41"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_42"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_44"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_46"/></td>
+						</tr>
+						<tr>
+							<td>5.</td>
+							<td class="t">Risc maternal</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_51"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_52"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_54"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_56"/></td>
+						</tr>
+						<tr>
+							<td>6.</td>
+							<td colspan="4" class="t">Total</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_66"/></td>
+						</tr>
+					</table>
+
+					<br/>
+					<table align="center" border="1" cellspacing="0" cellpadding="5" width="95%"> 
+						<tr>
+							<td>7.</td>
+							<td>Total contribuţii pentru concedii şi indemnizatii calculate la total indemnizaţii</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_7"/></td>
+						</tr>
+						<tr>
+							<td>8.</td>
+							<td>Total contribuţii concedii şi indemnizatii datorate pentru indemnizaţiile suportate din FAAMBP</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_8"/></td>
+						</tr>
+						<tr>
+							<td>9.</td>
+							<td>Total contribuţii datorate pentru concedii şi indemnizaţii</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_9"/></td>
+						</tr>
+						<tr>
+							<td>10.</td>
+							<td>Total cuantum prestaţii de suportat din bugetul FNUASS pentru concedii şi indemnizaţii</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_10"/></td>
+						</tr>
+						<tr>
+							<td>11.</td>
+							<td>Total sumă recuperată de instituţia asimilată angajatorului din contribuţia lunii curente</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_110"/></td>
+						</tr>
+						<tr>
+							<td>12.</td>
+							<td>Total sumă de virat la FNUASS pentru concedii şi indemnizaţii</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_120"/></td>
+						</tr>
+						<tr>
+							<td>13.</td>
+							<td>Total sumă rămasă de recuperat de la FNUASS pentru concedii şi indemnizaţii</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE2/@E2_130"/></td>
+						</tr>
+					</table>
+					<br/>
+
+					<div class="dia">E.3. Indemnizaţii pentru accidente de muncă şi boli profesionale</div>
+
+					<table align="center" border="1" cellspacing="0" cellpadding="5" width="95%">
+						<tr>
+							<th>Nr.Crt</th>
+							<th>Tip indemnizaţie</th>
+							<th>Număr cazuri</th>
+							<th>Zile prestaţii</th>
+							<th>Sumă totală accidente de muncă</th>
+							<th>Sumă suportată din FAAMPB</th>
+						</tr>
+
+						<tr>
+							<td>1.</td>
+							<td class="t">Incapacitate temporară de muncă</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE3/@E3_11"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE3/@E3_12"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE3/@E3_13"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE3/@E3_14"/></td>
+						</tr>
+						<tr>
+							<td>2.</td>
+							<td class="t">Trecerea temporară la alt loc de muncă</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE3/@E3_21"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE3/@E3_22"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE3/@E3_23"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE3/@E3_24"/></td>
+						</tr>
+						<tr>
+							<td>3.</td>
+							<td class="t">Reducerea timpului de lucru</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE3/@E3_31"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE3/@E3_32"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE3/@E3_33"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE3/@E3_34"/></td>
+						</tr>
+						<tr>
+							<td>4.</td>
+							<td class="t">Cursuri de calificare şi reconversie profesinală</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE3/@E3_41"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE3/@E3_41"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE3/@E3_41"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE3/@E3_41"/></td>
+						</tr>
+						<tr>
+							<td>5.</td>
+							<td colspan="3" class="t">Total</td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE3/@E3_total"/></td>
+							<td class="trma"><xforms:output class="T1val0" ref="angajator/angajatorE3/@E3_suma"/></td>
+						</tr>
+					</table>
+
+					<br/>
+					<table align="left" border="0" cellspacing="0" cellpadding="2" width="60%">
+						<td class="ajd1">
+						<label>Ajutoare de deces</label></td>
+						<td class="ajd2">Număr cazuri</td>
+						<td class="ajd2"><xforms:output class="T" ref="angajator/angajatorE4/E4_aj_nr"/></td>
+						<td class="ajd2">Sumă</td>
+						<td class="ajd2"><xforms:output class="T" ref="angajator/angajatorE4/E4_aj_suma"/></td>
+					</table>
+
+					<br/><br/>
+					<div class="dia">SECŢIUNEA F - Impozit pe venitul din salarii, defalcat pe sediul principal şi sediile secundare</div>
+					<br/>
+
+					<div class="dia1">F.1. Sediu principal</div>
+					<table class="f1sp" align="left" border="1" cellspacing="0" cellpadding="8" width="40%"> 
+						<tr>
+							<td>Suma de plată sediu principal (impozit pe venit)</td>
+							<td class="cdang2"><xforms:output class="T" ref="angajator/angajatorF1/@F1_suma"/></td>
+						</tr>
+					</table>
+
+					<br/><br/><br/><br/>
+					<div class="dia1">F.2. Sedii secundare</div>
+					<table class="f1ss" align="left" border="1" cellspacing="0" cellpadding="8" width="65%"> 
+						<tr>
+							<td>Nr.cr. sediu secundar</td>
+							<td>Cod de înregistrare fiscală sediu secundarl</td>
+							<td>Suma de plată sediu secundar (impozit pe venit)</td>
+						</tr>
+						<tr>
+							<td class="t"><xforms:output class="T" ref="angajator/angajatorF2/F2_id"/></td>
+							<td class="t"><xforms:output class="T" ref="angajator/angajatorF2/F2_cif"/></td>
+							<td class="t"><xforms:output class="T" ref="angajator/angajatorF2/F2_suma"/></td>
+						</tr>
+						<tr>
+							<td class="t"><xforms:output class="T" ref="angajator/angajatorF2/F2_id"/></td>
+							<td class="t"><xforms:output class="T" ref="angajator/angajatorF2/F2_cif"/></td>
+							<td class="t"><xforms:output class="T" ref="angajator/angajatorF2/F2_suma"/></td>
+						</tr>
+					</table>
+					<br/>
+					<table align="center" border="0" cellspacing="0" cellpadding="0" width="95%"></table> 
+					<br/>
+					 <div> 
+							<xforms:trigger>
+								<xforms:label class="large button orange">Revenire la pagina alegere</xforms:label>
+								<xforms:toggle case="alegefisH" ev:event="DOMActivate"/>
+							</xforms:trigger>
+
+				<!--		<a href="index01.xhtml">
+									<xforms:trigger id="" appearance="minimal"> 
+									<xforms:label class="medium button green">&#164; Home &#164;</xforms:label>
+								<xforms:hint>Inapoi_la Pagina_Principala</xforms:hint>		
+							</xforms:trigger>
+						</a>
+						<a href="#jos1">
+							<xforms:trigger> 
+								<xforms:label> ^ Anexa 1.1_Top</xforms:label> 
+								<xforms:hint>Inapoi_la Pagina_Principala</xforms:hint>		
+							</xforms:trigger>
+						</a>
+						<a href="#sus1">
+						<xforms:trigger> 
+							<xforms:label> ^ Anexa 1_Top</xforms:label> 
+							<xforms:hint>Inapoi_la Pagina_Principala</xforms:hint>		
+						</xforms:trigger>
+						</a>
+						<a name="anexa_1.1jos"></a>-->
+					</div>
+</xforms:group> 
+</xforms:case>
+</xforms:switch>
+
+<!-- XXXXXXXXXXXXX            END Anexa 1.1 25 Apr2012            XXXXXXXXXXXXXXXXXXXXXXX-->
+
+</body>
+</html>

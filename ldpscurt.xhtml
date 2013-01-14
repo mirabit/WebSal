@@ -1,0 +1,1455 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<?xml-stylesheet href="../webgestext/xsltforms/xsltforms.xsl" type="text/xsl"?>
+<?css-conversion no?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xforms="http://www.w3.org/2002/xforms"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+xmlns:ev="http://www.w3.org/2001/xml-events"
+xml:lang="en">
+    <head>
+		<title>LISTA PERSONAL ldp01</title>
+		<link rel="stylesheet" href="selekt.css"/>
+        <style type="text/css">
+input {width: 160px; height:6.5mm; font-size:16px; border-width:1.0mm; border-style:solid;font-weight:bold; border-color:#676;}
+            @namespace xforms url("http://www.w3.org/2002/xforms");
+            xxf-value {width:80px; height:5.5mm; font-size:16px; border-width:1.0px; border-style: solid;font-weight:bold; border-color:#666;}
+	.inpnps .xforms-value {width:180px; height:5.5mm; font-size:16px; font-weight:bold; border-width:1.0px; border-style: ridge; border-color:#666;text-align:left;}
+	.inpnp .xforms-value {width:180px; height:5.5mm; font-size:16px; border-width:1.0px; border-style: solid; border-color:#666;text-align:left;}
+	.inpcnp .xforms-value {width:180px; height:5.5mm; font-size:16px; border-width:1.0px; border-style: solid; border-color:#666;text-align:right;}
+    .inpbs .xforms-value {width:60px; height:5.5mm; font-size:16px; border-width:1.0px; border-style: solid; border-color:#666;text-align:right;}
+	.inpst .xforms-value {width:60px; height:5.5mm; font-size:16px;font-weight:bold;border-width:1.0px; border-style: solid; border-color:#666;text-align:right;}
+	.inpdat .xforms-value {width:100px; height:5.5mm; font-size:16px; border-width:1.0px; border-style: solid; border-color:#666;text-align:center;}
+	.dvtxt4 {z-index:2;width:59%;position:relative;border-radius: .7em  .7em .7em .7em;padding:15px 15px 15px 15px;
+			border:solid 3px #61797B;box-shadow: 0px 0px 50px #C2CCD0; width:300mm;height:auto;}
+	.Home {color:#005700;font-style:italic;}
+
+		.dn2{font-style:italic;font-size:14px;text-align:left;padding:5px 0px 5px 10px; background-color:#D7D5D8;}
+		.out2{font-style:italic;font-size:16px;text-align:left;font-weight:bold;color:#000000;padding:5px 0px 5px 10px; background-color:#D7D5D8;}
+
+   		xxxafisare {background: #ffffff url(images/exclamation.png) no-repeat 0px;padding-left: 5px;font-size:16px;
+				font-weight:bold; height: 25em; width:1000em;padding:5mm;border:solid 4px #C2CCD0;}
+
+ </style>
+	<style type="text/css">
+    		#sfc {width: 18em;height: 5em;background:#FDFFE0;}
+			#dtc {width: 18em;height: 5em;background:#FDFFE0;}
+			#dic {width: 18em;height: 5em;background:#FDFFE0;}
+			#nrc {width: 18em;height: 5em;background:#FDFFE0;}
+			#tcm {width: 20em;height: 7em;background:#FDFFE0;}
+			#tdc {width: 20em;height: 7em;background:#FDFFE0;}
+			#tnc {width: 20em;height: 7em;background:#FDFFE0;}
+
+    		#DetaliiSalariat {width: 78em;height: 53em;background:#E3E3E3;z-index:10;}
+
+    		#ConfirmDelete {width: 33em; height:16em;background:#E3E3E3; }
+    		
+		.ui-autocomplete {
+			max-height: 20em;
+			overflow-y: auto;
+			/* prevent horizontal scrollbar */
+			overflow-x: hidden;
+			/* add padding to account for vertical scrollbar */
+			padding-right: 20px;
+			z-index: 999999;
+			
+			.accp:hover { background-color: #DCE1DC; }
+			.ui-accordion .ui-accordion-content-active { padding-left: 2em; padding-right: 0.2; padding-top: 0.2; padding-bottom: 0.2; border:none;}
+			.ui-accordion .ui-accordion-header { padding: .2em; background-color: white; border:none;}
+			.ui-accordion .ui-accordion-header-active {border:none; padding: .2em;}
+			.ui-accordion .ui-accordion-header:hover { background-color: #DCE1DC; }
+			
+			.ui-accordion p:hover { background-color: #DCE1DC; }
+			.ui-accordion p { padding-left: 2em; padding-right: 0; padding-top: 0; padding-bottom: 0; }
+			.ui-accordion .ui-accordion-header a { display: block; padding: .3em .2em .2em .2em; }			      				.ui-accordion .ui-accordion-content { padding-left: 2em;padding-right: 0;padding-top: 0;padding-bottom: 0; border-top: 0; margin-top: -1px; position: relative; top: 1px; margin-bottom: 1px; overflow: auto; display: none; zoom: 0; }  /* */			
+		}    		
+	</style>
+	
+	<link href="../webgestext/jq/jquery-ui.css" rel="stylesheet"/>
+	<script src="../webgestext/jq/jquery.min.js"></script>
+	<script src="../webgestext/jq/jquery-ui.min.js"></script>
+		  
+	<script type="text/javascript" src="loadSal.js"/>
+		
+	<script>	
+
+		var instsal;
+		var insttmp;
+		var sirutaxml;
+		var judArr = [];
+		var locArr = [];		
+		//var myArr = [];
+		//var judales;
+		//var codjudales;
+		var marca;
+		
+		//sortare array
+		function dynamicSort(property) {
+			return function (a,b) {
+				return (a[property] &lt; b[property]) ? -1 : (a[property] &gt; b[property]) ? 1 : 0;
+			}
+		}
+		//definire startsWith pt.String
+		String.prototype.startsWith = function (str){return this.toUpperCase().indexOf(str.toUpperCase()) == 0;	};
+					
+		function loadXMLsiruta() {
+		
+		//$(document).ready(function() {	
+			//alert("1");
+			$.ajax({
+				type: "GET",
+				url: "../webgestext/xml/siruta.xml", // change to full path of file on server
+				dataType: "xml",
+				async: false,
+				success: parseXml,
+				//complete: setupAC,
+				//complete: selJud,
+				failure: function(data) {
+					alert("XML File could not be found");
+					}
+			});	
+			function parseXml(xml) {
+				sirutaxml = xml;
+				judArrA = [];
+				$(xml).find("NIVEL2").each(function()
+				{
+					var nume=$(this).attr("den").substr($(this).attr("den").indexOf(" ")+1);
+					var codj=$(this).attr("cod").substr(0,$(this).attr("cod").length-1);					
+					//myArr.push($(this).attr("cod"));
+					judArrA.push({ label : nume, cod : codj });
+					//judArr.push('&lt;option value="'+ codj +'" label="'+ nume +'"&gt;' + nume +'&lt;/option&gt;');	
+				});
+				judArrB = judArrA.sort(dynamicSort("label"));
+				$.each(judArrB, function(index,obj) {   
+					judArr.push('&lt;option label="'+ obj.label +'" value="'+ obj.cod +'" &gt;'+ obj.label +'&lt;/option &gt;');
+				});	
+			}
+		//});	
+		}
+
+		function selJud() {
+			//alert('judArr = ' + judArr);
+			$('#seljudet option').remove();	
+			$('#seljudet').append(judArr.join(' '));
+			
+			var model = document.getElementById("SAL").xfElement;
+			instsal = model.getInstanceDocument("sal");
+			insttmp = model.getInstanceDocument("tmp");
+			marca = $(insttmp).find("marca").text();
+			//alert('marca= ' + marca);	
+			//var codJudInSal = $(instsal).find("Salariat[id = '"+marca+"']").find("AdresaS").attr("Judet");
+			var JudInSal = $(instsal).find("Personal").find("Salariat[id = '"+marca+"']").find("AdresaS").attr("Judet");
+			var CodJudInSal = $(instsal).find("Personal").find("Salariat[id = '"+marca+"']").find("AdresaS").attr("codjud");
+			var LocInSal = $(instsal).find("Personal").find("Salariat[id = '"+marca+"']").find("AdresaS").attr("Localitatea");
+			var CodLocInSal = $(instsal).find("Personal").find("Salariat[id = '"+marca+"']").find("AdresaS").attr("codloc");
+			var CorInSal = $(instsal).find("Personal").find("Salariat[id = '"+marca+"']").find("Contract").find("CorId").text();   // preluare cod cor din instanța sal/Salariat
+			$('#seljudet').val(CodJudInSal);
+			$('output#codjud').val(CodJudInSal);
+			//document.getElementById("codjud").value = Number(codJudInDF);
+			//document.getElementById("searchBoxL").value = LocInSal;
+			document.getElementById("inpCOR").value = CorInSal;
+			$('input#searchBoxL').val(LocInSal);
+			$('output#codloc').val(CodLocInSal);			
+			//alert('marca= ' + marca + 'LocInSal= ' + LocInSal + 'CorInSal= ' + CorInSal);
+		}
+		
+		function golesteInputLoc() {
+			document.getElementById('searchBoxL').value = "";
+		}		
+
+		function setJLCorInInst() {
+			var marca = $(insttmp).find("marca").text();
+			var judales = $('#seljudet option:selected').text();
+			var codjudales = document.getElementById("seljudet").value;
+			$(instsal).find("Personal").find("Salariat[id = '"+marca+"']").find("AdresaS").attr("Judet", judales);
+			$(instsal).find("Personal").find("Salariat[id = '"+marca+"']").find("AdresaS").attr("codjud", codjudales);
+			//$(instsal).find("Date_firma").find("Judet").text(judales);
+			var localeasa = $('input#searchBoxL').val();
+			var codlocales = $('#codloc').val();
+			$(instsal).find("Personal").find("Salariat[id = '"+marca+"']").find("AdresaS").attr("Localitatea", localeasa);
+			$(instsal).find("Personal").find("Salariat[id = '"+marca+"']").find("AdresaS").attr("codloc", codlocales);
+
+			var codCORales = $('input#inpCOR').val();                      //////////  COR
+			
+			//var judcitit = $(instsal).find("Personal").find("Salariat[id = '"+marca+"']").find("AdresaS").attr("Judet");
+			//var numesalcitit = $(instsal).find("Personal").find("Salariat[id = '"+marca+"']").attr("Nume");
+			$(instsal).find("Personal").find("Salariat[id = '"+marca+"']").find("Contract").find("CorId").text(codCORales);
+			//var correcitit = $(instsal).find("Personal").find("Salariat[id = '"+marca+"']").find("Contract").find("CorId").text();
+	
+			//var model = document.getElementById("SAL").xfElement;
+			//XsltForms_globals.addChange(model);
+			//XsltForms_xmlevents.dispatch(model, "xforms-rebuild");				
+			//XsltForms_globals.refresh();
+			//alert(' marca= ' + marca + ' judales= ' + $('#seljudet option:selected').text() + ' judcitit= ' + judcitit + ' numesalcitit= ' + numesalcitit + ' localeasa= ' + localeasa + ' codCORales= ' + codCORales + ' correcitit= ' + correcitit);								
+		}		
+
+		function setACLoc() {
+			locArr =[];
+			codjudales = document.getElementById("seljudet").value;
+			document.getElementById("codjud").value = codjudales;
+			$(sirutaxml).find("LOCALITATE[codjud = '"+codjudales+"']").each(function(){
+					var nume=$(this).text();
+					var codl=$(this).attr("cod");
+					locArr.push({ label : nume, cod : codl });					
+			});	
+			//document.getElementById('searchBoxL').focus();
+			locArr = locArr.sort(dynamicSort("label"));
+			$("input#searchBoxL").autocomplete({
+				//	source: locArr, 
+					appendTo: "#DetaliiSalariat",
+					source:function(request, response) {
+					    var filteredArray = $.map(locArr, function(item) {
+						    if(item.label.startsWith(request.term)){
+						    //	return accent_fold (item.label);
+						    	return item;
+					        }else{
+					            return null;
+					        }
+					    });
+					    response(filteredArray);
+					},
+					minLength: 1,
+					autoFocus: true,
+					position:{my: "left top", at: "left bottom",  collision: "flip" },
+				//	disabled: true,
+				/*	focus: function(event, ui) {
+						var so = ui.item;
+						var codloc = so.cod;
+						//tlt(codloc);
+					},*/
+
+					select: function(event, ui) {
+						var so = ui.item;
+				//		alert("nume:"+so.label+" cod:"+so.cod);
+						$("input#searchBoxL").val(so.label);
+						$("#codloc").val(so.cod);
+					}
+			});
+		//	var sfACLoc = new Date();
+		//	timpSiruta = sfACLoc - startLoadSiruta;		
+		}
+			
+		function setSource(){
+			if(!document.getElementById("tipserchLoc").checked){
+				$("input#searchBoxL").autocomplete( "option", "source", function(request, response) {
+					var filteredArray = $.map(locArr, function(item) {
+					    if(item.label.startsWith(request.term)){
+				        return item;
+				    }else{
+				        return null;
+				    }
+				});
+				response(filteredArray);
+			});
+			}else{
+				$("input#searchBoxL").autocomplete( "option", "source", locArr);
+			}
+
+		}			
+			
+		function dialogS() {
+			var start = new Date();
+			//$('#accdcaen').contents().remove();
+			//$( "#dialog:ui-dialog" ).dialog( "destroy" );	
+			$( "#DetaliiSalariat" ).dialog({
+				height: 580,
+				width: 900, 
+				title: " Date generale salariat ",
+				//width: 70%,
+				modal: true,
+				//buttons: { "Ok": function() { $(this).dialog("close"); } }					
+			});	
+		}
+	
+	/////////////////   COR    /////////////
+		
+		var corxml;
+		function loadXMLcor() {
+			
+		//	alert("begin load xml");
+			$.ajax({
+				type: "GET",
+				url: "../webgestext/xml/cor.xml",
+				dataType: "xml",
+				async: false,
+				success: parseXml,
+				error:function (jqXHR, textStatus, errorThrown){
+					alert("status:"+textStatus+"- -"+errorThrown);
+				},
+				failure: function(data) {
+					alert("XML File could not be found");
+				}
+			});	
+			function parseXml(xml) {
+				corxml = xml;
+			//	alert("end parse xml");
+			}
+			buildAccocor();
+		}
+		
+		function dialogCOR() {
+			//var start = new Date();
+			$('#accdcor').contents().remove();
+			//$( "#dialog:ui-dialog" ).dialog( "destroy" );	
+			$( "#accdcor" ).dialog({
+				height: 580,
+				width: 800, 
+				title: " Lista COR -- Alegeți o Ocupatie",
+				//width: 70%,
+				modal: true,
+				//buttons: { "Ok": function() { $(this).dialog("close"); } }					
+			});
+			//loadXMLcaen()
+			//time = new Date() - start;
+			
+			$( "#accdcor" ).append(divacccor.join(' '));
+			$( ".accordion" ).accordion({ clearStyle: true, active: false, collapsible: true, animated: false});
+			//alert("time dialog= " + time);
+					
+		}			
+	
+		var divacccor = [];
+		function buildAccocor() {
+			var start = new Date();
+		//	$('#accdcaen').contents().remove();
+			
+			//alert("divacc2= " + divacc);
+			divacccor.push('&lt;div class="accordion"&gt;');
+			$(corxml).find("GrupaMajora").each(function(){
+				divacccor.push('&lt;h3&gt;&lt;a href="#"&gt;'+ $(this).attr("cod") + ' - ' + $(this).attr("den") +'&lt;/a&gt;&lt;/h3&gt;');
+				divacccor.push('&lt;div&gt;&lt;div class="accordion"&gt;');
+				$(this).find("SubGrupaMajora").each(function(){
+					divacccor.push('&lt;h3&gt;&lt;a href="#"&gt;'+ $(this).attr("cod") + ' - ' + $(this).attr("den") +'&lt;/a&gt;&lt;/h3&gt;');
+					divacccor.push('&lt;div&gt;&lt;div class="accordion"&gt;');
+					$(this).find("GrupaMinora").each(function(){
+						divacccor.push('&lt;h3&gt;&lt;a href="#"&gt;'+ $(this).attr("cod") + ' - ' + $(this).attr("den") +'&lt;/a&gt;&lt;/h3&gt;');
+						divacccor.push('&lt;div&gt;&lt;div class="accordion"&gt;');
+						$(this).find("GrupaDeBaza").each(function(){
+							divacccor.push('&lt;h3&gt;&lt;a href="#"&gt;'+ $(this).attr("cod") + ' - ' + $(this).attr("den") +'&lt;/a&gt;&lt;/h3&gt;');						
+							divacccor.push('&lt;div class="accp"&gt;');
+							$(this).find("Ocupatia").each(function(){
+								divacccor.push('&lt;p style="padding-left:2em;" onclick=\'setDecompl('+$(this).attr("cod")+');\'&gt;'+ $(this).attr("cod") + ' - ' + $(this).text() +'&lt;/p&gt;');
+							});
+							divacccor.push('&lt;/div&gt;');
+						});
+						divacccor.push('&lt;/div&gt;&lt;/div&gt;');
+					});							
+					divacccor.push('&lt;/div&gt;&lt;/div&gt;');
+				});	
+				divacccor.push('&lt;/div&gt;&lt;/div&gt;');
+			});
+			divacccor.push('&lt;/div&gt;');
+			var timepush = new Date() - start;
+		//	alert(divacc.join(' '));
+		//	$( "#accdcaen" ).append(divacc.join(' '));
+		//	$( ".accordion" ).accordion({ autoHeight: false, active: false, animated: false});
+		//	$( ".accordion" ).accordion({ animated: false});
+			
+			var timeacc = new Date() - start;
+		//	alert("time dialog= " + time + "timepush= " + timepush + "timeacc= " + timeacc);
+		//	return false; 
+			var startLXC = new Date();
+			var timpjs = startLXC - startLS;
+			//alert("timpjs= " + timpjs + "timpSiruta= " +  timpSiruta);	
+		}
+		function setDecompl(id){
+			$('#inpCOR').val(id);
+			$( "#accdcor:ui-dialog" ).dialog( "close" );
+			$( ".accordion" ).accordion( "destroy" );
+		}	
+		
+		//  tooltip input cod caen 
+		$(function() {
+			$( "#inpCOR" ).tooltip(
+					{
+						content: function() {
+							return $(corxml).find("Ocupatia[cod ="+$(this).val()+"]").text();
+						}
+					}						
+			);
+		});	
+		//tooltip ac localitate 
+		$(function() {
+			$("li").tooltip(
+					{
+						content: function() {return "tooltip"}
+					/*	content: function() {
+							$.map(locArr, function(item) {
+							    if(item.label==$(this).label){
+							    	return item.cod;
+						        }else{
+						            return null;
+						        }
+						    });
+						//	return $(caenxml).find("Activitate[cod ="+$(this).val()+"]").text();
+						}*/
+					}						
+			);
+		});																										
+	</script>		
+					                     
+        <xforms:model id="SAL" version="1.1">   
+            <!--<xforms:instance id="salfile" resource="salsablon.xml" />-->
+			<xforms:instance id="sal" >
+				<DATE xmlns="">
+		   			<tipform>edit</tipform>
+		   			<marca/>																						
+				</DATE> 
+			</xforms:instance>				
+			<xforms:instance id="tmp">
+				<DATE xmlns="">
+		   			<tipform>edit</tipform>
+		   			<marca/>																						
+				</DATE> 
+			</xforms:instance>	    			
+			<!--<xforms:submission id="s01" method="put" replace="none" action="file://" ref="instance('salfile')" includenamespaceprefixes="my"> 
+			<xforms:action ev:observer="s01" ev:event="xforms-submit-error">
+			<xforms:message level="modal">Nu pot salva datele! - Nu s-a completat câmpul Nume <xforms:output value="event('error-type')"/>
+			</xforms:message>
+			</xforms:action> 
+			</xforms:submission>
+			<xforms:instance id="salsablon" resource="salsablon.xml"/>-->
+            <xforms:instance id="salsablon" resource="salsablon.xml"/>
+            <xforms:bind nodeset="/SAL/Date_operare/NrSal" calculate="count(/SAL/Personal/Salariat)"/>
+            <!--<xforms:bind nodeset="/SAL/Personal/Salariat/@Nume" required="true()"/>-->
+			<xforms:bind nodeset="instance('sal')/Personal/Salariat/Contract/DataContract" type="xsd:date" />
+            <xforms:bind nodeset="instance('sal')/Personal/Salariat/Contract/DataInceputContract" type="xsd:date" />
+            <xforms:bind nodeset="instance('sal')/Personal/Salariat/Contract/DataSfarsitContract" type="xsd:date" />            
+            <xforms:bind nodeset="instance('sal')/Personal/Salariat/Contract/DateContractVechi" type="xsd:date" />
+			<xforms:bind nodeset="instance('sal')/Personal/Salariat/Contract/DataConsemnare" type="xsd:date" />
+			<xforms:bind nodeset="instance('sal')/Personal/Salariat/@Data_Nasteri" type="xsd:date" />
+			<xforms:bind nodeset="instance('sal')/Personal/Salariat/@Copii_intretinere" type="xsd:nonNegativeInteger"/>
+			<xforms:bind nodeset="instance('sal')/Personal/Salariat/@CNP" type="xsd:nonNegativeInteger" required="true()" />
+			<xforms:bind nodeset="instance('sal')/Personal/Salariat/@id" type="xsd:nonNegativeInteger" required="true()" />
+			<xforms:bind nodeset="instance('sal')/Personal/Salariat/Contract/DataInceputContract" required="true()" />
+        </xforms:model>
+    </head> 
+    
+    <body bgcolor="#F3F3F3" text="#080808" onload="loadInstFromLocal('sal');loadXMLsiruta();loadXMLcor();">
+                <div style="width:100%">
+                <table class="tabldp" border="0" width="100%">
+					<tr>
+						<td>
+							<h3 align="center"> Lista salariați</h3>
+						</td>
+					</tr>
+				<table align="left">
+					<tr>
+						<td>
+							<i><label>Firma </label></i>
+							<b class="nzo1">							
+							<xforms:output value="instance('sal')/Date_firma/Prefix" class="val3"/>
+							<xforms:output value="instance('sal')/Date_firma/Firma" class="val2"/>
+							<xforms:output value="instance('sal')/Date_firma/Sufix" class="val3"/></b>
+						</td>
+						<!--<td>
+							<label>An :</label>
+							<b class="nzo1"><xforms:output value="substring(instance('sal')/LunaLucru,1,4)" class="val1"/></b>
+						</td>
+						<td>
+							<label>Luna :</label>
+							<b class="nzo1"><xforms:output value="substring(instance('sal')/LunaLucru,5,2)" class="val1"/></b>
+						</td>
+						<td>
+							<label>Nr Zile Lucrătoare :</label><b>
+							<xforms:output ref="Luna/@NrZlucruL" class="val1"/></b>
+						</td>
+						<td>
+							<label>Ore in C/N :</label><b>
+							<xforms:output ref="Luna/@OreNl" class="val1"/></b>	
+						</td>-->
+					</tr>
+				</table>
+                </table>
+            </div>
+            
+            <div align="left" style="width:100%">        
+                <div align="center" style="width:90%">
+        <table>
+        <hr align="center" color="#D7D5D8" width="100%"/> 
+            <table class="tabldp" border="1" cellspacing="6" cellpadding="10" width="100%"> 
+                <tr>     
+                    <th class="Ldtnr1">Nr. Crt</th>
+                    <th class="Ldtrm1s">Modifică
+						<xforms:trigger appearance="minimal">
+							<xforms:hint class="afisare">
+								<p>Click pentru modificare pe butonul ( Modifica )</p>
+							</xforms:hint>
+						</xforms:trigger>
+					</th>
+                    <th class="Ldtrm2s">Nume</th>
+                    <th class="Ldtrm2s">Prenume</th>
+                    <th class="Ldtrm3s">CNP</th>
+                    <th class="Ldtrm2s">Functia</th> 
+                    <th class="Ldtrm6s">Salariu Incadrare</th>
+                    <th class="Ldtrm1s">Sterge
+						<xforms:trigger appearance="minimal">
+							<xforms:hint class="afisare">
+								<p>Click pentru ştergere pe butonul ( Şterge ) ATENŢIE!!! datele şterse nu se mai pot recupera</p>
+							</xforms:hint>
+						</xforms:trigger>
+					</th>
+                </tr>
+            </table>
+            
+        <table class="tabldp" border="0" cellspacing="3" cellpadding="0" width="100%"> 
+         
+                        <xforms:repeat nodeset="/SAL/Personal/Salariat" id="repeatRow">  
+                <tr id="repeatRow">
+                    <td class="Ldtnrc">
+                        <xforms:output class="Ldvalx" value="position()"/></td>
+					<td class="Ldtrms" align="center">
+                        <xforms:trigger appearance="minimal">
+							<!--<xforms:label class="small button blue">X</xforms:label>-->
+                            <xforms:label class="small button greenn">Modifică</xforms:label>							
+							<!--<xforms:hint>Clik pentru modificare</xforms:hint>-->
+                            <xforms:action ev:event="DOMActivate">
+                            	<xforms:setvalue ref="instance('tmp')/tipform" value="'edit'"/>
+                            	<xforms:setvalue ref="instance('tmp')/marca" value="current()/@id"/>
+								<xforms:show dialog="DetaliiSalariat"/>
+								<xforms:load resource="javascript:selJud(); setACLoc();setSource();"/>
+								<!--<xforms:load resource="javascript:dialogS()"/>	-->
+                            </xforms:action>
+                        </xforms:trigger>
+                    </td>
+                    <td class="Ldtrmns">
+                        <xforms:output class="Ldvals" ref="@Nume"/>
+                    </td>
+                    <td class="Ldtrmns">
+                        <xforms:output class="Ldvals" ref="@Prenume"/>
+                    </td>
+                    <td class="Ldtrmes">
+                        <xforms:output class="Ldval1s" ref="@CNP"/>
+                    </td>
+                    <td class="Ldtrmns">
+                        <xforms:output class="Ldvals" ref="@Functia"/>
+                    </td>
+                    <td class="Ldtrmks">
+                        <xforms:output class="Ldval4s" ref="Contract/Salariu"/>
+                    </td>
+                    <td class="Ldtrmt" align="center">
+                        <xforms:trigger appearance="minimal">
+                            <xforms:label class="small button red">Șterge</xforms:label>
+							<!--<xforms:label class="small button red">X</xforms:label>-->
+							<!--<xforms:hint>Clik pentru stergere</xforms:hint>-->
+                            <xforms:action ev:event="DOMActivate">
+                                <xforms:setvalue ref="instance('tmp')/marca" value="current()/@id"/>
+                                <xforms:show dialog="ConfirmDelete"/>
+                            </xforms:action>
+                        </xforms:trigger>
+                    </td>                    
+            
+				</tr>
+					</xforms:repeat>
+<!--  ...............................................................................................................  -->
+
+</table>
+
+    <hr align="center" color="#D7D5D8" width="100%" />
+    </table>
+</div>  
+                    <xforms:group>
+                        <xforms:trigger appearance="minimal" id="insertbutton" >
+                            <xforms:label class="medium button greenn"><b>&#164; Adaugă salariat nou &#164;</b></xforms:label>
+							<xforms:hint>Adauga salariat nou</xforms:hint>
+                            <xforms:insert origin="instance('salsablon')/Personal/Salariat" context="instance('sal')/Personal" nodeset="Salariat" at="1" position="before" ev:event="DOMActivate"/>
+                            <!--<xforms:toggle case="editsal" ev:event="DOMActivate"/>-->
+                            <xforms:action ev:event="DOMActivate">
+                            	<!--<xforms:toggle case="editsal" />-->
+                            	<xforms:setvalue ref="instance('tmp')/tipform" value="'add'"/>
+                            	<!--<xforms:load resource="javascript:selJud(); setACLoc();setSource();"/>-->
+                            	<xforms:load resource="javascript:selJud(); setACLoc();setSource();"/>
+                            	<xforms:show dialog="DetaliiSalariat"/>	
+                            </xforms:action>
+                        </xforms:trigger>
+    
+                    </xforms:group>
+<br/>
+
+        
+        <div align="center" style="width:90%">
+        <table id="Fond" class="tabldp" border="0" cellspacing="2" cellpadding="0" width="90%"> 
+            <tr class="Foond">
+				<td>
+					<xforms:trigger appearance="minimal" ev:event="DOMActivate"> 									 
+						<xforms:label class="medium button white">&#171; Înapoi la pagina principală &#171;</xforms:label> 
+						<xforms:hint>Înapoi la pagina principală</xforms:hint>
+						<xforms:load resource="index01.xhtml" ev:event="DOMActivate"/>
+					</xforms:trigger>
+               
+    			<!--<xforms:trigger appearance="minimal" id="intr">
+					<xforms:label  class="medium button orange">
+						<i>&#164; Salvează &#164;</i>
+					</xforms:label> 
+					<xforms:hint>Salvează datele introduse/modificate</xforms:hint>	
+					<xforms:action ev:event="DOMActivate">										
+						<xforms:load resource="javascript:saveDataLocal('sal')"/>					
+					</xforms:action>
+				</xforms:trigger>  -->   
+
+				<xforms:trigger appearance="minimal" ev:event="DOMActivate">
+					<xforms:label class="medium button blue">&#187; Next &#187; Pontaj &#187;</xforms:label>
+					<xforms:hint>Înainte la foaie pontaj</xforms:hint>
+					<xforms:load resource="fcpscurt.xhtml" ev:event="DOMActivate"/>	
+				</xforms:trigger>
+
+              <!--   <a href="pgconst.xhtml"> ???</a>
+                <a href="ldp01.xhtml">&#164; Vizualizare detailata liste de personal &#164; </a>
+                   
+                        <xforms:label id="Vizual">&#164; Vizualizare detailata liste de personal &#164;</xforms:label>
+                       
+                    </xforms:trigger>-->
+
+            </td></tr>
+        </table>
+        <br/></div>
+	</div>
+			
+
+
+
+<!--  .......................... Fereastra de dialog id="modific".................................  -->
+
+
+
+
+	<xforms:dialog id="DetaliiSalariat">
+	<xforms:group nodeset="Salariat" ref="instance('sal')/Personal/Salariat[index('repeatRow')]">	
+    <div id="modific" align="center" style="width:95%"> 
+
+<table align="center" border="0" width="98%">
+<tr>
+<td>
+
+		<fieldset class="dvtxt4">
+			<legend><i>Date Salariat </i></legend>
+				<table border="0" align="center" cellspacing="5" cellpadding="0" width="100%">
+
+				<tr>
+                    <td class="Ttd1">Marca : </td>
+                    <td class="Ttd2">
+                        <xforms:input ref="@id" class="inpst"/>                   
+                    </td>
+                    <td class="Ttd1">Nume : </td>
+                    <td class="Ttd2"><i>
+						<xforms:input ref="@Nume" class="inpnps"/></i>                      
+                    </td>
+                    <td class="Ttd1">Prenume : </td>
+                    <td class="Ttd2"><i>
+						<xforms:input ref="@Prenume" class="inpnps"/></i>                       
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Ttd1">Tip act : </td>
+                    <td class="Ttd2">
+                        <xforms:select1  ref="SalRvsal/@TipActID">  
+                            <xforms:item>
+                                <xforms:label>Carte De Identitate</xforms:label>
+                                <xforms:value>CarteIdentitate</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>Paşaport</xforms:label>
+                                <xforms:value>Pasaport</xforms:value>
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>Buletin De Identitate</xforms:label>
+                                <xforms:value>BuletinIdentitate</xforms:value>
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>Alt Tip Act Identitate</xforms:label>
+                                <xforms:value>Alt</xforms:value>
+                            </xforms:item>
+							<xforms:item>
+                                <xforms:label>Carte de rezidenţă</xforms:label>
+                                <xforms:value>CarteDeRezidenta</xforms:value>
+                            </xforms:item>
+                        </xforms:select1>
+                    </td>
+                    <td class="Ttd1">CNP : </td>
+                    <td class="Ttd2">
+                        <xforms:input ref="@CNP" class="inpcnp"/>                  
+                    </td>
+                    <td class="Ttd1">BI Nr.Serie : </td>
+                    <td class="Ttd2">
+                        <xforms:input type="text" name="text" ref="@BI_NR_Serie" class="inpcnp"/>
+                   </td>
+                </tr>
+                <tr>
+                    <td class="Ttd1">Data Naşteri : </td>
+                    <td class="Ttd2">
+                        <xforms:input type="text" name="text" ref="@Data_Nasteri" class="inpdat"/>                        
+                    </td>
+                    <td class="Ttd1">Naţionalitate : </td>
+                    <td class="Ttd2">
+                        <xforms:input type="text" ref="SalRvsal/@Nationalitate" class="inpnp"/>                
+                    </td>
+                    <td class="Ttd1">Cetăţeinie : </td>
+                    <td class="Ttd2">
+                        <xforms:select1 ref="SalRvsal/@Cetatenie">  
+                            <xforms:item>
+                                <xforms:label>Română</xforms:label>
+                                <xforms:value>Romana</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>Strâin-U.E.</xforms:label>
+                                <xforms:value>UESEE</xforms:value>
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>Străin-Non.U.E.</xforms:label>
+                                <xforms:value>Alta</xforms:value>
+                            </xforms:item>
+                        </xforms:select1>                        
+                    </td>  
+                </tr>
+			<tr class="lab">
+				<td colspan="6" class="dn"> 
+					<hr align="center" color="#D7D5D8" width="98%"/>
+				</td>
+			</tr>
+                <tr>
+                    <td class="Ttd1">Judeţ : </td>
+                    <td class="Ttd2">
+           				<select name="seljudet" id="seljudet" onchange="setACLoc(); golesteInputLoc();"></select> 
+		   				<b><label for="codjud"> Cod=</label> 
+						<output id="codjud"></output></b>                           
+                    </td>                
+                    <td class="Ttd1">Localitate/Sector <input type="checkbox" name="tipserchLoc" id="tipserchLoc" value="true" title=" Căutare oriunde în text " checked="checked" onclick="setSource();" /></td>
+                    <!--<td class="Ttd2">
+                        <xforms:input type="text" name="text" ref="AdresaS/@Localitatea" class="inpnp"/>
+                    </td>-->
+                    <td class="Ttd2">
+                        <input type="text" id="searchBoxL" name="searchBoxL" value="" class="inpnp"/>
+                        <b><label for="codloc">Cod=</label>  
+                        <output id="codloc"></output></b>                     
+                    </td>                    
+
+                    <td class="Ttd1">Nr :</td>
+                    <td class="Ttd2">
+                        <xforms:input ref="AdresaS/@Nr" class="inpbs"/>                      
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Ttd1">Bloc : </td>
+                    <td class="Ttd2">
+                        <xforms:input type="text" name="text" ref="AdresaS/@Bloc" class="inpbs"/>                   
+                    </td>
+                    <td class="Ttd1">Scara : </td>
+                    <td class="Ttd2">
+                        <xforms:input type="text" ref="AdresaS/@Scara" class="inpbs"/>                      
+                    </td>
+                    <td class="Ttd1">Apartament :</td>
+                    <td class="Ttd2">
+                        <xforms:input ref="AdresaS/@Apartament" class="inpbs"/>                     
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Ttd1">Strada : </td>
+                    <td class="Ttd2">
+                        <xforms:input type="text" ref="AdresaS/@Strada" class="inpnp"/>                      
+                    </td>
+                    <td class="Ttd1">Cod poştal : </td>
+                    <td class="Ttd2">
+                        <xforms:input type="text" ref="AdresaS/@Cod_Postal" class="inpcnp"/>                       
+                    </td>
+                    <td class="Ttd1">Telefon : </td>
+                    <td class="Ttd2">
+                        <xforms:input type="text" name="text" ref="AdresaS/@Telefon" class="inpnp"/>                      
+                    </td>
+                </tr>
+			<tr class="lab">
+				<td colspan="6" class="dn"> 
+					<hr align="center" color="#D7D5D8" width="98%"/>
+				</td>
+			</tr>
+                <tr>
+                    <td class="Ttd1">E-Mail : </td>
+                    <td class="Ttd2">
+                        <xforms:input type="text" name="text" ref="AdresaS/@E_Mail" class="inpnp"/>
+                    </td>
+                    <td class="Ttd1">Invaliditate : </td>
+                    <td class="Ttd2">
+                        <xforms:input type="text" name="text" ref="@Invaliditate" class="inpnp"/>
+                        
+                    </td>
+                    <td class="Ttd1">Copii-întretinere : </td>
+                    <td class="Ttd2">
+                        <xforms:input type="text" name="text" ref="@Copii_intretinere" class="inpbs"/>                        
+                    </td>
+				</tr>
+                <tr>
+                    <td class="Ttd1">Cnp Anterior : </td>
+                    <td class="Ttd2">
+                        <xforms:input ref="SalariatNa/@CNP" class="inpcnp"/>                      
+                    </td>
+                    <td class="Ttd1">Nume Ant. : </td>
+                    <td class="Ttd2">
+                        <xforms:input ref="SalariatNa/@Nume" class="inpnp"/>
+					</td>
+                    <td class="Ttd1">Prenume Ant.: </td>
+                    <td class="Ttd2">
+                        <xforms:input ref="SalariatNa/@Prenume" class="inpnp"/>                       
+                    </td>                
+				</tr>
+			</table>
+		</fieldset>
+
+<hr size="10" align="center" color="#ffffff" width="98%"/>
+
+	<fieldset class="dvtxt4">
+		<legend><i>Date Contract </i></legend>
+			<table border="0" align="center" cellspacing="5" cellpadding="0" width="100%">
+                <tr>
+                  <td class="Ttd1">
+						<xforms:trigger appearance="minimal">
+							<xforms:hint id="nrc">
+							<p>Elementul va conţine numărul de identificare atribuit contractului decătre angajator</p>
+						</xforms:hint>
+						</xforms:trigger>Nr.Contract Munca : </td>
+                    <td class="Ttd2">
+                        <xforms:input type="text" name="text" ref="Contract/@NumarContract" class="inpcnp"/>                        
+                    </td>
+                    <td class="Ttd1">
+						<xforms:trigger appearance="minimal">
+							<xforms:hint id="dtc">
+							<p>Data încheierii valabile a contractului de muncă, prin semnarea acestuia de ambele părţi</p>
+						</xforms:hint>
+						</xforms:trigger>Data contract : </td>
+                    <td class="Ttd2">
+                        <xforms:input type="text" name="text" ref="Contract/DataContract" class="inpdat"/>                        
+                    </td>
+					<td class="Ttd1">
+						<xforms:trigger appearance="minimal">
+							<xforms:hint id="dic">
+							<p>Data de la care Salariatul şi-a început activitatea pentru şi sub autoritatea unui angajator conform contractului individual de muncă</p>
+						</xforms:hint>
+						</xforms:trigger>Data început contract : </td>
+                    <td class="Ttd2">
+                        <xforms:input type="text" name="text" ref="Contract/DataInceputContract" class="inpdat"/>                  
+                    </td>
+                </tr>
+			<tr class="lab">
+				<td colspan="6" class="dn"> 
+					<hr align="center" color="#D7D5D8" width="98%"/>
+				</td>
+			</tr>	
+				<tr>
+					<td class="Ttd1">
+						<xforms:trigger appearance="minimal">
+							<xforms:hint id="tcm">
+							<p>(A8)Elementul va conţine codul corespunzător tipului de contract al
+							salariatului, conform nomenclatorului de tipuri de contracte de muncă,detaliat în anexa 8 la prezentul document</p>
+						</xforms:hint>
+						</xforms:trigger>Tip contract : </td>
+                    <td class="Ttd2">
+                        <xforms:select1 ref="Contract/TipContract" >  
+                            <xforms:item>
+                                <xforms:label>C.Individual munca</xforms:label>
+                                <xforms:value>ContractIndividualMunca</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>C.Ucenicie l.munca</xforms:label>
+                                <xforms:value>ContractUcenicie</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>CM la domiciliu</xforms:label>
+                                <xforms:value>ContractMuncaLaDomiciliu</xforms:value>
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>CM Temporara</xforms:label>
+                                <xforms:value>ContractMuncaTemporara</xforms:value>
+                            </xforms:item>
+                        </xforms:select1>                        
+                    </td>
+					<td class="Ttd1">
+						<xforms:trigger appearance="minimal">
+							<xforms:hint id="tdc">
+							<p>(A9)Elementul va conţine codul corespunzător tipului de durată a contractului de muncă al salariatului,
+							conform nomenclatorului de tipuri de durată ale contractelor de muncă,</p>
+						</xforms:hint>
+						</xforms:trigger>Tip durata contract : </td>
+                    <td class="Ttd2">
+                        <xforms:select1 ref="Contract/TipDurata" >  
+                            <xforms:item>
+                                <xforms:label>Nedeterminată</xforms:label>
+                                <xforms:value>Nedeterminata</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>Determinată</xforms:label>
+                                <xforms:value>Determinata</xforms:value>
+                            </xforms:item>
+                        </xforms:select1>                                          
+                    </td>
+                    <td class="Ttd1">
+						<xforms:trigger appearance="minimal">
+							<xforms:hint id="tnc">
+							<p>(A10)Elementul va conţine codul corespunzător tipului de normă a salariatului, conform nomenclatorului
+                               de tipuri de normă, detaliat în anexa 10 la prezentul document</p>
+						</xforms:hint>
+						</xforms:trigger>Tip normă : </td>
+                    <td class="Ttd2">
+                        <xforms:select1 ref="Contract/TipNorma" >  
+                            <xforms:item>
+                                <xforms:label>Norma intreaga</xforms:label>
+                                <xforms:value>NormaIntreaga</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>Cu timp partial</xforms:label>
+                                <xforms:value>TimpPartial</xforms:value>
+                            </xforms:item>
+                        </xforms:select1>                      
+                    </td>
+                </tr>
+			<tr class="lab">
+				<td colspan="6" class="dn"> 
+					<hr align="center" color="#D7D5D8" width="98%"/>
+				</td>
+			</tr>
+				<tr>
+                    <td class="Ttd1">Salariu : </td>
+                    <td class="Ttd2"><b>
+                        <xforms:input ref="Contract/Salariu" class="inpst"/></b> Lei                        
+                    </td>
+                    <td class="Ttd1">Tip tarif fix : </td>
+                    <td class="Ttd2">
+                        <xforms:select1 ref="Contract/Salariu/@fix" >  
+                            <xforms:item>
+                                <xforms:label>Salariu lunar</xforms:label>
+                                <xforms:value>da</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>Tarif orar</xforms:label>
+                                <xforms:value>nu</xforms:value>
+                            </xforms:item>
+                        </xforms:select1>                       
+                    </td>
+                    <td class="Ttd1">Tarif orar : </td>
+                    <td class="Ttd2">
+                        <xforms:input ref="Contract/TarifSalOra" required="true()" class="inpst"/> Lei
+					</td>
+                </tr>
+			<tr class="lab">
+				<td colspan="6" class="dn"> 
+					<hr align="center" color="#D7D5D8" width="98%"/>
+				</td>
+			</tr>
+                <tr>
+                    <td class="Ttd1">Cod COR : </td>
+                    <td class="Ttd2">
+                        <!--<xforms:input type="text" name="text" ref="Contract/CorId" class="inpnp"/> -->
+						<input type="text" value="" id="inpCOR" class="inpst" title="Ocupatia ..."/> 
+						<input type="button" value="> Alege cod >" id="butCOR" onclick="dialogCOR()" title="Alege din lista COR "/>                 
+                    </td>
+                    <td class="Ttd1">Timp normă Ore/zi : </td>
+                    <td class="Ttd2">
+                        <xforms:select1 ref="Contract/TimpMuncaNorma" >  
+                            <xforms:item>
+                                <xforms:label>(8) Norma intreaga</xforms:label>
+                                <xforms:value>8</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>(2) Prog.redus lucru</xforms:label>
+                                <xforms:value>2</xforms:value>
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>(4) Prog.redus lucru</xforms:label>
+                                <xforms:value>4</xforms:value>
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>(6) Prog.redus lucru</xforms:label>
+                                <xforms:value>6</xforms:value>
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>(7) Prog.redus lucru</xforms:label>
+                                <xforms:value>7</xforms:value>
+                            </xforms:item>
+                        </xforms:select1>                   
+                    </td>
+                    <td class="Ttd1">Timp muncă normă : </td>
+                    <td class="Ttd2"><b>
+                        <xforms:output ref="Contract/TimpMuncaNorma" required="true()" class="inpbs"/> Ore/zi</b>                     
+                    </td>
+				</tr> 
+			<tr class="lab">
+				<td colspan="6" class="dn"> 
+					<hr align="center" color="#D7D5D8" width="98%"/>
+				</td>
+			</tr>
+				<tr>
+					<td class="Ttd1">
+						<xforms:trigger appearance="minimal">
+							<xforms:hint id="xxxx">
+							<p>(A19 ??????????? durata,cod.norma)</p>
+						</xforms:hint>
+						</xforms:trigger>Timp muncă durată : </td>
+                    <td class="Ttd2">
+                        <xforms:select1 ref="Contract/TimpMuncaDurata">  
+                            <xforms:item>
+                                <xforms:label>Norma intreaga 8/40</xforms:label>
+                                <xforms:value>NormaIntreaga840</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>Norma intreaga 6/30</xforms:label>
+                                <xforms:value>NormaIntreaga630</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>Norma intreaga legi spec.</xforms:label>
+                                <xforms:value>NormaIntreagaLegiSpeciale</xforms:value>
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>Cu timp partial</xforms:label>
+                                <xforms:value>TimpPartial</xforms:value>
+                            </xforms:item>
+                        </xforms:select1>                        
+                    </td>
+					<td class="Ttd1">
+						<xforms:trigger appearance="minimal">
+							<xforms:hint id="xxxxx">
+							<p>(A22)</p>
+						</xforms:hint>
+						</xforms:trigger>Timp muncă int.timp : </td>
+                    <td class="Ttd2">
+                        <xforms:select1 ref="Contract/TimpMuncaIntervalTimp">  
+                            <xforms:item>
+                                <xforms:label>Nr.de ore pe zi</xforms:label>
+                                <xforms:value>OrePeZi</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>Nr.ore pe saptamana</xforms:label>
+                                <xforms:value>OrePeSaptamana</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>Nr.de ore pe luna</xforms:label>
+                                <xforms:value>OrePeLuna</xforms:value>
+                            </xforms:item>
+                        </xforms:select1>                        
+                    </td>
+					<td class="Ttd1">
+						<xforms:trigger appearance="minimal">
+							<xforms:hint id="xxxxxx">
+							<p>(A20)</p>
+						</xforms:hint>
+						</xforms:trigger>Timp muncă repartizare : </td>
+                    <td class="Ttd2">
+                        <xforms:select1 ref="Contract/TimpMuncaRepartizare">  
+                            <xforms:item>
+                                <xforms:label>Ore de zi</xforms:label>
+                                <xforms:value>OreDeZi</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>Ore de noapte</xforms:label>
+                                <xforms:value>OreDeNoapte</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>Inegal</xforms:label>
+                                <xforms:value>Inegal</xforms:value>
+                            </xforms:item>
+                        </xforms:select1>                        
+                    </td>
+				</tr>  
+			<tr class="lab">
+				<td colspan="6" class="dn"> 
+					<hr align="center" color="#D7D5D8" width="98%"/>
+				</td>
+			</tr>                           
+				<tr>
+					<td class="Ttd1">Studii : </td>
+                    <td class="Ttd2">
+                        <xforms:input type="text" name="text" ref="@Studii" class="inpnp"/>                      
+                    </td>
+                    <td class="Ttd1">Funcţia : </td>
+                    <td class="Ttd2">
+                        <xforms:input type="text" ref="@Functia" class="inpnp"/>                     
+                    </td>
+					<td class="Ttd1">Meseria : </td>
+                    <td class="Ttd2">
+                        <xforms:input ref="Contract/CorId" class="inpnp"/>                       
+                    </td>
+				</tr>
+			<tr class="lab">
+				<td colspan="6" class="dn"> 
+					<hr align="center" color="#D7D5D8" width="98%"/>
+				</td>
+			</tr>
+				<tr>
+                    <td class="Ttd1">Stare Contract : </td>
+                    <td class="Ttd2">
+                        <xforms:select1 ref="Contract/StareCurentaId" >  
+                            <xforms:item>
+                                <xforms:label>Activ</xforms:label>
+                                <xforms:value>ContractStareActiv</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>Suspendat</xforms:label>
+                                <xforms:value>ContractStareSuspendare</xforms:value>
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>Detasare</xforms:label>
+                                <xforms:value>ContractStareDetasare</xforms:value>
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>Incetat</xforms:label>
+                                <xforms:value>ContractStareIncetare</xforms:value>
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>Reactivat</xforms:label>
+                                <xforms:value>ContractStareReactivare</xforms:value>
+                            </xforms:item>
+                        </xforms:select1>                   
+                    </td>
+					<td class="Ttd1">Xxxxxxxx : </td>
+                    <td class="Ttd2">-                                              
+                    </td>
+					<td class="Ttd1">Rețineri (garanții...): </td>
+                    <td class="Ttd2">
+                    	<xforms:input ref="Contract/Retineri" class="inpst"/> lei
+                    </td>
+				</tr>	
+			<tr class="lab">
+				<td colspan="6" class="dn"> 
+					<hr align="center" color="#D7D5D8" width="98%"/>
+				</td>
+			</tr>
+				<tr>	  
+                    <td class="Ttd1">
+						<xforms:trigger appearance="minimal">
+						<xforms:hint id="sfc">
+						<p>Data de la care Salariatul îşi încetează activitatea pentru şi sub autoritatea
+							unui angajator conform înscrisului din decizia de încetare</p>
+						</xforms:hint>
+						</xforms:trigger>Data sfîrşit contract : </td>
+                    <td class="Ttd2">
+                        <xforms:input type="text" name="text" ref="Contract/DataSfarsitContract" class="inpdat"/>
+                    </td>
+                    <td class="Ttd1">
+						<xforms:trigger appearance="minimal">
+						<xforms:hint id="sssss">
+						<p>(?????)Data de sfârşit a perioadei de derulare a contractului conform duratei
+						stabilite la semnarea contractului pe perioadă determinată</p>
+						</xforms:hint>
+						</xforms:trigger>Data sfîrşit activitate : </td>
+                    <td class="Ttd2">
+                        <xforms:input type="text" name="text" ref="Contract/DataSfarsitActivitate" class="inpdat"/>
+                    </td>
+                    <td class="Ttd1">Excepţie data sfârşit : </td>
+                    <td class="Ttd2">
+                        <xforms:input type="text" name="text" ref="Contract/ExceptieDataSfarsit" class="inpnp"/>            
+                    </td>
+                </tr> 
+			<tr class="lab">
+				<td colspan="6" class="dn"> 
+					<hr align="center" color="#D7D5D8" width="98%"/>
+				</td>
+			</tr>
+ 				<tr>
+                    <td class="Ttd1">Numar contract vechi : </td>
+                    <td class="Ttd2">
+                        <xforms:input type="text" name="text" ref="Contract/NumereContractVechi" class="inpcnp"/>                  
+                    </td>	  
+                    <td class="Ttd1">Date contract vechi : </td>
+                    <td class="Ttd2">
+                        <xforms:input type="text" name="text" ref="Contract/DateContractVechi" class="inpdat"/>
+                    </td>
+                    <td class="Ttd1">Data consemnare : </td>
+                    <td class="Ttd2">
+                        <xforms:input type="text" name="text" ref="Contract/DataConsemnare" class="inpdat"/>            
+                    </td>
+                </tr>                
+			</table>
+		</fieldset>
+
+	<hr size="10" align="center" color="#ffffff" width="98%"/>
+
+	<fieldset class="dvtxt4">
+		<legend><i>Date declaratie unica D112 </i></legend>
+			<table border="0" align="center" cellspacing="5" cellpadding="0" width="100%">
+				<tr>
+                    <td class="Ttd1">Tip asigurat dpdv contract de muncă  : </td>
+                    <td class="Ttd2"><xforms:select1 class="df2" ref="D112date/Tip_Asigurat" >  
+                            <xforms:item>
+                                <xforms:label>(S) SALARIAT</xforms:label>
+                                <xforms:value>1</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>(SM) SALARIAT MILITAR</xforms:label>
+                                <xforms:value>2</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>(AC) ALTE CATEGORII NU E SALARIAT</xforms:label>
+                                <xforms:value>3</xforms:value>
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>(CA) CENZORI COMISIE ADMINISTRATIE</xforms:label>
+                                <xforms:value>4</xforms:value>
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>(PD) PERSOANE DISPONIBILIZATE</xforms:label>
+                                <xforms:value>5</xforms:value>
+                            </xforms:item>
+                        </xforms:select1>                   
+                    </td>
+                    <td class="Ttd1">Tip angajat : </td>
+                    <td class="Ttd2">
+                        <xforms:select1 class="df2" ref="D112date/Tip_Angajat" >  
+                            <xforms:item>
+                                <xforms:label>(0) NU E PENSIONAR</xforms:label>
+                                <xforms:value>0</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>(1) PENSIONAR</xforms:label>
+                                <xforms:value>1</xforms:value>
+                            </xforms:item>
+                        </xforms:select1>
+					</td>
+				</tr>
+                <tr>
+                    <td class="Ttd1">Tip contract de muncă dpdv timp de lucru  : </td>
+                    <td class="Ttd2"><xforms:select1 ref="D112date/Tip_CMdpvdTl" >  
+                            <xforms:item>
+                                <xforms:label>(N8) Normă întreagă</xforms:label>
+                                <xforms:value>N</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>(P1) Prog.redus lucru</xforms:label>
+                                <xforms:value>P1</xforms:value>
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>(P2) Prog.redus lucru</xforms:label>
+                                <xforms:value>P2</xforms:value>
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>(P3) Prog.redus lucru</xforms:label>
+                                <xforms:value>P3</xforms:value>
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>(P4) Prog.redus lucru</xforms:label>
+                                <xforms:value>P4</xforms:value>
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>(P5) Prog.redus lucru</xforms:label>
+                                <xforms:value>P5</xforms:value>
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>(P6) Prog.redus lucru</xforms:label>
+                                <xforms:value>P6</xforms:value>
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>(P7) Prog.redus lucru</xforms:label>
+                                <xforms:value>P7</xforms:value>
+                            </xforms:item>
+                        </xforms:select1>      
+                    </td>
+                    <td class="Ttd1">Ore normă zilnică contract : </td>
+                    <td class="Ttd2"><xforms:select1 ref="D112date/OreNZdpvdCM" >  
+                            <xforms:item>
+                                <xforms:label>(8) ORE</xforms:label>
+                                <xforms:value>8</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>(7) ORE</xforms:label>
+                                <xforms:value>7</xforms:value>
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>(6) ORE</xforms:label>
+                                <xforms:value>6</xforms:value>
+                            </xforms:item>
+                        </xforms:select1>
+                    </td> 
+                </tr>
+                <tr>
+                    <td class="Ttd1">Asig.concedii,indemnizaţii,asig.soc.de sănătate.: </td>
+                    <td class="Ttd2">
+                            <xforms:select1 ref="D112date/AsigCI">  
+                            <xforms:item>
+                                <xforms:label>(1) ASIGURAT</xforms:label>
+                                <xforms:value>1</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>(2) NEASIGURAT</xforms:label>
+                                <xforms:value>2</xforms:value>
+                            </xforms:item>
+                        </xforms:select1>
+                    
+                    </td>
+                    <td class="Ttd1">Asig.în sistemul de asigurari pentru şomaj : </td>
+                    <td class="Ttd2">
+                        <xforms:select1 ref="D112date/AsigSO">  
+                            <xforms:item>
+                                <xforms:label>(1) ASIGURAT</xforms:label>
+                                <xforms:value>1</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>(2) NEASIGURAT</xforms:label>
+                                <xforms:value>2</xforms:value>
+                            </xforms:item>
+                        </xforms:select1>                       
+                    </td>
+                </tr>
+			</table>
+
+		<hr size="1" align="center" color="#D7D5D8" width="98%"/>
+
+			<table border="0" align="center" cellspacing="5" cellpadding="0" width="100%">
+				<tr>
+                    <td class="Ttd1">Tip CoAsig1 : </td>
+                    <td class="Ttd2">
+                        <xforms:select1 ref="CoasiguratP/@Tip">
+                            <xforms:item>
+                                <xforms:label>Parinte</xforms:label>
+                                <xforms:value>Parinte</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>Sot/Sotie</xforms:label>
+                                <xforms:value>Sot/Sotie</xforms:value>
+                            </xforms:item>
+                        </xforms:select1>                       
+                    </td>
+                    <td class="Ttd1">CNP Co1 : </td>
+                    <td class="Ttd2">
+                        <xforms:input ref="CoasiguratP/@CNP" class="inpcnp"/>
+                    </td>   
+                    <td class="Ttd1">Nume Co1 : </td>
+                    <td class="Ttd2">
+                        <xforms:input ref="CoasiguratP/@Nume" class="inpnp"/>
+              
+                    </td>
+                    <td class="Ttd1">Prenume Co1 : </td>
+                    <td class="Ttd2">
+                        <xforms:input ref="CoasiguratP/@Prenume" class="inpnp"/>                      
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Ttd1">Tip CoAsig2 : </td>
+                    <td class="Ttd2"><xforms:select1 ref="CoasiguratSS/@Tip" >  
+                            <xforms:item>
+                                <xforms:label>Parinte</xforms:label>
+                                <xforms:value>Parinte</xforms:value> 
+                            </xforms:item>
+                            <xforms:item>
+                                <xforms:label>Sot/Sotie</xforms:label>
+                                <xforms:value>Sot/Sotie</xforms:value>
+                            </xforms:item>
+                        </xforms:select1>                  
+                    </td>
+                    <td class="Ttd1">CNP Co2 : </td>
+                    <td class="Ttd2">
+                        <xforms:input ref="CoasiguratSS/@CNP" class="inpcnp"/>                      
+                    </td>
+                    <td class="Ttd1">Nume Co2 : </td>
+                    <td class="Ttd2">
+                        <xforms:input ref="CoasiguratSS/@Nume" class="inpnp"/>
+                        
+                    </td>
+                    <td class="Ttd1">Prenume Co2 : </td>
+                    <td class="Ttd2">
+                        <xforms:input ref="CoasiguratSS/@Prenume" class="inpnp"/>                        
+                    </td>
+                </tr>
+        </table> 
+</fieldset>
+
+<hr size="10" align="center" color="#ffffff" width="98%"/>
+
+		<fieldset class="dvtxt4">
+			<legend><i> Sporuri salariu </i></legend> 
+
+			<table border="0" align="center" cellspacing="5" cellpadding="5" width="100%">
+				<tr>
+					<td class="dn2">Tip spor : </td>
+					<td class="dn2">Cuantum : </td>
+				</tr>
+<!--			<tr class="labs">
+					<td class="out2"><xforms:output type="text" name="text" ref="Salariati/Salariat/Contracte/Contract/SporuriSalariu" class="dfa3"/></td> 
+					<td class="out2"><xforms:output type="text" name="text" ref="Salariati/Salariat/Contracte/Contract/SporuriSalariu" class="dfa3"/></td> 
+				</tr>	-->
+			</table>
+		</fieldset>                          
+			</td>
+		</tr>
+    </table>  
+                        <xforms:trigger appearance="minimal">  
+							<xforms:label class="medium button orange">&#164; Salvează &#164;</xforms:label>
+							<xforms:hint>Salvează</xforms:hint>
+                            <!--<xforms:action ev:event="DOMActivate" if="not(concat(substring(Contract/DataInceputContract,1,4), substring(Contract/DataInceputContract,6,2)) = instance('sal')/DateLunare/Luna/@AnLuna)">
+                                <xforms:message level="modal">Luna nu există </xforms:message>
+                            </xforms:action>								
+                            <xforms:insert nodeset="instance('sal')/Personal/Salariat" at="index('repeatRow')" replace="true"/>-->
+                            <xforms:action ev:event="DOMActivate" if="instance('tmp')/tipform = 'add'">
+                            	<!--<xforms:setvalue ref="instance('salsablon')/Personal/Salariat/Contract/DataInceputContract" value="instance('sal')/Personal/Salariat[index('repeatRow')]/Contract/DataInceputContract"/>
+                            	<xforms:setvalue ref="instance('salsablon')/Personal/Salariat/Contract/TimpMuncaNorma" value="instance('sal')/Personal/Salariat[index('repeatRow')]/Contract/TimpMuncaNorma"/>                            	
+                            	      - Din vers. 0.4.2 nu se mai introduce nimic în DateLunare -
+                            	<xforms:setvalue ref="instance('salsablon')/DateLunare/Luna/Salariat/@id" value="instance('sal')/Personal/Salariat[index('repeatRow')]/@id"/>
+                            	<xforms:load resource="javascript:iniPontajSalariatNou();" />
+                            	<xforms:insert origin="instance('salsablon')/DateLunare/Luna/Salariat" context="instance('sal')/DateLunare/Luna[@AnLuna = concat(substring(instance('salsablon')/Personal/Salariat/Contract/DataInceputContract,1,4), substring(instance('salsablon')/Personal/Salariat/Contract/DataInceputContract,6,2))]" nodeset="Salariat" at="1" position="before"/>-->
+                            	<xforms:setvalue ref="instance('tmp')/marca" value="instance('sal')/Personal/Salariat[index('repeatRow')]/@id"/>
+                            	<xforms:load resource="javascript:setJLCorInInst()"/>
+                            	<xforms:load resource="javascript:saveDataLocal('sal')"/>
+                            	<xforms:hide dialog="DetaliiSalariat"/>                                
+                                
+                            </xforms:action>		                            
+                            <xforms:action ev:event="DOMActivate" if="instance('tmp')/tipform = 'edit'">
+                            	<!--<xforms:setvalue ref="instance('tmp')/marca" value="instance('salsablon')/DateLunare/Luna/Salariat/@id"/>
+                            	<xforms:setvalue ref="instance('tmp')/marca" value="instance('sal')/Personal/Salariat[index('repeatRow')]/@id"/>-->
+                                <xforms:load resource="javascript:setJLCorInInst()"/>
+                                <xforms:load resource="javascript:saveDataLocal('sal')"/>
+                                <xforms:hide dialog="DetaliiSalariat"/>
+                            </xforms:action>		
+                        </xforms:trigger> 
+   
+                        <xforms:trigger appearance="minimal">   
+							<xforms:label class="medium button teal">&#164; Renunță &#164;</xforms:label>
+							<xforms:hint>Renunță</xforms:hint>
+                            <xforms:action ev:event="DOMActivate" if="instance('tmp')/tipform = 'add'">
+                            	<xforms:delete nodeset="/SAL/Personal/Salariat" at="index('repeatRow')" />
+                                <xforms:hide dialog="DetaliiSalariat"/>
+                            </xforms:action>
+                            <xforms:action ev:event="DOMActivate">
+                                <xforms:hide dialog="DetaliiSalariat"/>
+                            </xforms:action>		                            			
+                        </xforms:trigger>                            
+    </div>	
+	</xforms:group>		
+	</xforms:dialog>	<!-- End dialog "DetaliiSalariat" -->
+	
+	<xforms:dialog id="ConfirmDelete">	
+	<div id="background2" align="center" style="width:90%">
+        <div id="delete-confirm-box">
+        	<p><i>
+        	<!-- Esti sigur ca vrei sa stergi acest salariat din baza de date ! -->
+            <h2> ATENTIE !!! </h2>
+        	Vor fi șterse toate înregistrările legate de acest salariat. Datele șterse nu se mai pot recupera ! </i></p>
+    
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <radialGradient id="alert-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                    <stop offset="0" style="stop-color:#f92500; stop-opacity:0.7" />
+                    <stop offset="1" style="stop-color:#f92500; stop-opacity:1" />
+                </radialGradient>
+            </svg>		  
+            <div id="delete-option-triggers">
+                <xforms:trigger appearance="minimal">
+                <xforms:label class="small button red"> Șterge </xforms:label>
+                    <xforms:action ev:event="DOMActivate">
+                        <xforms:delete nodeset="instance('sal')/Personal/Salariat" at="index('repeatRow')" ev:event="DOMActivate"/>
+                        <xforms:delete nodeset="instance('sal')/DateLunare/Luna/Salariat[@id = instance('tmp')/marca]" ev:event="DOMActivate"/>                        
+                        <xforms:setvalue ref="instance('tmp')/marca" value="current()/@id"/>
+                        <xforms:load resource="javascript:saveDataLocal('sal')"/>
+                        <xforms:hide dialog="ConfirmDelete" />
+                    </xforms:action>
+                </xforms:trigger>
+                <xforms:trigger>
+                    <xforms:label class="Home"> Renunță </xforms:label>
+                    <xforms:action ev:event="DOMActivate">
+                    	<xforms:hide dialog="ConfirmDelete" />
+                    </xforms:action>	
+                </xforms:trigger>
+            </div>
+        </div>
+    </div>
+    </xforms:dialog>	<!-- End dialog "ConfirmDelete"         
+        SablonNorma= <xforms:output  ref="instance('salsablon')/Personal/Salariat/Contract/TimpMuncaNorma" class="df1"/>
+        SablonDataIn= <xforms:output  ref="instance('salsablon')/Personal/Salariat/Contract/DataInceputContract" class="df1"/>
+        marca= <xforms:output  ref="instance('tmp')/marca" class="df1"/>-->
+        
+        <div id="accdcor"></div>	
+    </body>
+</html>
+
+

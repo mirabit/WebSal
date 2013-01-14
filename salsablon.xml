@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAL vers=" 0.4.6 " data="2013-01-13" primavscompat="0.3">
+	<LunaLucru></LunaLucru>	
+	<Date_firma>
+		<Firma></Firma>
+		<RvsalID CetatenieID="" NationalitID="" LocalitID="" FormJuridID="" FormOrgID="" FormPropID="" StareSocID="" TipSocID="" DomActivID="" TipOperID="" AngDataINF="" AngDataSTARE="" xmlns=""/>
+		<Numar_ITM></Numar_ITM>
+		<Adresa_ITM Pj="BH"></Adresa_ITM>
+		<Atribut_Fiscal></Atribut_Fiscal>
+		<CISTVA></CISTVA>
+		<Cod_Reg_Comertului></Cod_Reg_Comertului>
+		<CodCAEN></CodCAEN>
+		<Prefix coditm="1"></Prefix>
+		<Sufix coditm="1"></Sufix>
+		<Capital></Capital>   
+		<Localitatea></Localitatea>
+		<Strada></Strada>		
+		<Nr></Nr>
+		<Bloc></Bloc>
+		<Scara></Scara>
+		<Etaj></Etaj>
+		<Apartament></Apartament>
+		<Sectors></Sectors>		
+		<Judet Cj="05" Pj="BH"></Judet>
+		<Cod_postal></Cod_postal>
+		<Casa_Asigurari Pj="BH"></Casa_Asigurari>
+		<Banca1></Banca1>
+		<Sucursala1></Sucursala1>
+		<Cod_IBAN1></Cod_IBAN1>
+		<Banca2></Banca2>
+		<Sucursala2></Sucursala2>
+		<Cod_IBAN2></Cod_IBAN2>
+		<Tel></Tel>
+		<Fax></Fax>      
+		<Mail></Mail>
+		<Adresa_www></Adresa_www>
+	</Date_firma>
+   	<Date_operare>
+		<Data></Data>
+		<DataOP></DataOP>
+		<DataP></DataP>
+		<NumeO></NumeO>
+		<PrenumeO></PrenumeO>
+		<Functia></Functia>		
+		<Fel_Docu></Fel_Docu>
+		<NrSal></NrSal>
+		<NrOP></NrOP>
+		<IASSSuAr></IASSSuAr>
+		<IASSSuFNUASS></IASSSuFNUASS>		
+		<NrZlucruL></NrZlucruL>
+		<Ziua></Ziua>	
+		<Rezervat>0</Rezervat>
+	</Date_operare>	
+	<Personal>
+		<Salariat id="" CNP="" Nume="" Prenume="" Functia="" Studii="" Meseria="" Data_Nasteri="" BI_NR_Serie="" Copii_intretinere="0" Data_Angajari="" Invaliditate="" Data_Lichidari="" xmlns="">
+			<AdresaS Localitatea="" Strada="" Nr="" Bloc="" Scara="" Apartament="" Cod_Postal="" Judet="" Telefon="" E_Mail="" xmlns=""/>
+			<SalRvsal Cetatenie="" Nationalitate="" LocalitateID="" CorID="" TipActID="" SerieNrCM="" DataOperari=""
+			Activ="" DurataID="" NormaID="" TipContract="" TipOperatie="" IncetContract="" MotivModif="" xmlns=""/>
+			<SalariatNa CNP="" Nume="" Prenume="" xmlns=""/>
+			<CoasiguratP CNP="" Nume="" Prenume="" Tip="" xmlns=""/>
+			<CoasiguratSS CNP="" Nume="" Prenume="" Tip="" xmlns=""/>			
+			<D112date>
+				<OreNZdpvdCM>8</OreNZdpvdCM>
+				<Tip_Angajat>1</Tip_Angajat>
+				<Tip_Asigurat>S</Tip_Asigurat>
+				<Tip_CMdpvdTl>N</Tip_CMdpvdTl>
+				<AsigCI>1</AsigCI>
+				<AsigSO>1</AsigSO>
+			</D112date>	
+			<Contract id="" NumarContract="">
+				<TarifSalOra>11</TarifSalOra>
+				<TipActualizare/>
+				<DataConsemnare/>
+				<TipDurata>Determinata</TipDurata>
+				<TipNorma>TimpPartial</TipNorma>
+				<TipContract>ContractIndividualMunca</TipContract>	
+				<NumereContractVechi></NumereContractVechi>
+				<DataContract></DataContract>
+				<DateContractVechi></DateContractVechi>	
+				<DataInceputContract></DataInceputContract>
+				<DataSfarsitContract></DataSfarsitContract>												
+				<Salariu fix="da">1000</Salariu>	      
+				<ExceptieDataSfarsit></ExceptieDataSfarsit>
+				<Detalii></Detalii>
+				<CorId></CorId>
+				<StareCurentaId>ContractStareActiv</StareCurentaId>	
+				<SalariatId></SalariatId>
+				<TimpMuncaNorma>8</TimpMuncaNorma>
+				<TimpMuncaRepartizare></TimpMuncaRepartizare>												
+				<TimpMuncaIntervalTimp></TimpMuncaIntervalTimp>	      
+				<TimpMuncaDurata></TimpMuncaDurata>	
+				<Retineri>0</Retineri>
+			</Contract>	
+		</Salariat>  
+	</Personal>	
+   <NCsal AnLuna="" cuiFirma="">
+		<NC id="ChArSal" obp="nu" tip="Firma" A_codOblig="001" DenA_codOblig="50-Fond de salarii" A_codBugetar="0">
+			<Nr_Doc>1</Nr_Doc>
+			<Procent>0</Procent>
+			<Explicatie>Inreg.Ch.cu Salarii Personal</Explicatie>
+			<Den_ContD>Cheltuieli cu Salarii Personal</Den_ContD>       
+			<Den_ContC>Personal Salarii Datorate</Den_ContC>
+			<Debit_Cont>641</Debit_Cont>
+			<Credit_Cont>421</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>0</Credit_Val>	
+		</NC>
+		<NC id="ChArCAS" obp="da" tip="Angajator" A_codOblig="411" DenA_codOblig="(411)-Contributia de asigurari sociale datorata de angajator" A_codBugetar="5502XXXXXX">
+			<Nr_Doc>2</Nr_Doc>
+			<Procent>20.8</Procent>
+			<Explicatie>Contrib.Soc. Asig.Sociale 20.8% </Explicatie>
+			<Den_ContD>Ch.Contrib.Soc. la asigurarile sociale</Den_ContD>       
+			<Den_ContC>Contrib Soc. Asig.Soc.de Sanatate</Den_ContC>
+			<Debit_Cont>6451</Debit_Cont>
+			<Credit_Cont>4311</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>0</Credit_Val>	
+		</NC>				
+		<NC id="ChArCASS" obp="da" tip="Angajator" A_codOblig="431" DenA_codOblig="(431)-Contributia pentru asigurari sociale de sanatate datorata de angajator" A_codBugetar="5502XXXXXX">
+			<Nr_Doc>3</Nr_Doc>
+			<Procent>5.2</Procent>
+			<Explicatie>Contrib.Soc. cu CASS 5.2% </Explicatie>
+			<Den_ContD>Ch.Contrib.Soc. ptr.Asig.Soc.de Sanatate</Den_ContD>       
+			<Den_ContC>Contrib Soc. Asig. Soc. de Sanatate</Den_ContC>
+			<Debit_Cont>6453</Debit_Cont>
+			<Credit_Cont>4313</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>0</Credit_Val>	
+		</NC>
+		<NC id="ChArFS" obp="da" tip="Angajator" A_codOblig="421" DenA_codOblig="(421)-Contributia de asigurari pentru somaj datorata de angajator" A_codBugetar="5502XXXXXX">
+			<Nr_Doc>4</Nr_Doc>
+			<Procent>0.5</Procent>
+			<Explicatie>Contrib.Soc.Ajutorul de Somaj 0.5% </Explicatie>
+			<Den_ContD>Ch.Contrib.Soc.ptr.Ajutorul de Somaj</Den_ContD>       
+			<Den_ContC>Contrib Soc.la Ajutorul de Somaj</Den_ContC>
+			<Debit_Cont>6452</Debit_Cont>
+			<Credit_Cont>4371</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>0</Credit_Val>	
+		</NC>	
+		<NC id="ChArCM" obp="da" tip="Angajator" A_codOblig="439" DenA_codOblig="(439)-Contributia pentru concedii si indemnizatii de la persoanele juridice sau fizice care au calitatea de angajator" A_codBugetar="5502XXXXXX">
+			<Nr_Doc>5</Nr_Doc>
+			<Procent>0.85</Procent>
+			<Explicatie>Contrib.Soc.Concedii,Indemnizatii 0.85% </Explicatie>
+			<Den_ContD>Ch.Contrib.Soc.Concedii si Indemnizatii</Den_ContD>       
+			<Den_ContC>Contrib Soc.Concedii si Indemnizatii</Den_ContC>
+			<Debit_Cont>6454</Debit_Cont>
+			<Credit_Cont>43111</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>0</Credit_Val>	
+		</NC>			
+		<NC id="ChArFG" obp="da" tip="Angajator" A_codOblig="423" DenA_codOblig="(423)-Contributia angajatorilor la Fondul de garantare pentru plata creantelor salariale" A_codBugetar="5502XXXXXX">
+			<Nr_Doc>6</Nr_Doc>
+			<Procent>0.25</Procent>			
+			<Explicatie>Contrib.Soc.la F.Gr.Salariale 0.25% </Explicatie>
+			<Den_ContD>Ch.Contrib.Soc. la asigurarile sociale</Den_ContD>       
+			<Den_ContC>Contrib Soc. Fond Garant Sal</Den_ContC>
+			<Debit_Cont>6452</Debit_Cont>
+			<Credit_Cont>4373</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>0</Credit_Val>
+		</NC>
+		<NC id="ChArFA" obp="da" tip="Angajator" A_codOblig="416" DenA_codOblig="(416)-Contributia de asigurare pentru accidente de munca si boli profesionale datorata de angajator" A_codBugetar="5502XXXXXX">
+			<Nr_Doc>7</Nr_Doc>
+			<Procent>0.168</Procent>
+			<Explicatie>Contrib.Soc. Fondul de Acc. 0.168%</Explicatie>
+			<Den_ContD>Ch.Contrib.Soc. la asigurarile sociale</Den_ContD>       
+			<Den_ContC>Contrib Soc.ptr.acc.munca si boli prof.</Den_ContC>
+			<Debit_Cont>6451</Debit_Cont>
+			<Credit_Cont>4315</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>0</Credit_Val>	
+		</NC>		
+		<NC id="CoAtCAS" obp="da" tip="Angajat" A_codOblig="412" DenA_codOblig="(412)-Contributia individuala de asigurari sociale retinuta de la asigurati" A_codBugetar="5502XXXXXX">
+			<Nr_Doc>8</Nr_Doc>
+			<Procent>10.5</Procent>
+			<Explicatie>Inreg.Contrib.Angajati la CAS 10.5% </Explicatie>
+			<Den_ContD>Personal Salarii Datorate</Den_ContD>       
+			<Den_ContC>Contrib Salariati Asig  Soc</Den_ContC>
+			<Debit_Cont>421</Debit_Cont>
+			<Credit_Cont>4312</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>0</Credit_Val>                        	
+		</NC>		
+		<NC id="CoAtCASS" obp="da" tip="Angajat" A_codOblig="432" DenA_codOblig="(432)-Contributia pentru asigurari sociale de sanatate retinuta de la asigurati" A_codBugetar="5502XXXXXX">
+			<Nr_Doc>9</Nr_Doc>
+			<Procent>5.5</Procent>
+			<Explicatie>Inreg.Contrib.Angajati la CASS 5.5% </Explicatie>
+			<Den_ContD>Personal Salarii Datorate</Den_ContD>       
+			<Den_ContC>Contrib Salariati Asig Soc de Sanatate</Den_ContC>
+			<Debit_Cont>421</Debit_Cont>
+			<Credit_Cont>4314</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>0</Credit_Val>	
+		</NC>
+		<NC id="CoAtFS" obp="da" tip="Angajat" A_codOblig="422" DenA_codOblig="(422)-Contributia individuala de asigurari pentru somaj retinuta de la asigurati" A_codBugetar="5502XXXXXX">
+			<Nr_Doc>10</Nr_Doc>
+			<Procent>0.5</Procent>			
+			<Explicatie>Inreg.Contrib.Angajati la F.de Somaj 0.5% </Explicatie>
+			<Den_ContD>Personal Salarii Datorate</Den_ContD>       
+			<Den_ContC>Contrib Salariati la Fondul de Somaj</Den_ContC>
+			<Debit_Cont>421</Debit_Cont>
+			<Credit_Cont>4372</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>0</Credit_Val>	
+		</NC>
+		<NC id="CoAtGrMat" obp="nu" tip="Angajat" A_codOblig="002" DenA_codOblig="51-Garantii materiale retinute de la angajati" A_codBugetar="0">
+			<Nr_Doc>11</Nr_Doc>
+			<Procent>0</Procent>
+			<Explicatie>Inreg.Retineri Garantii Materiale</Explicatie>
+			<Den_ContD>Personal Salarii Datorate</Den_ContD>       
+			<Den_ContC>Retineri Garantii Materiale</Den_ContC>
+			<Debit_Cont>421</Debit_Cont>
+			<Credit_Cont>4281</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>0</Credit_Val>	
+		</NC>
+		<NC id="CoAtImpS" obp="da" tip="Angajat" A_codOblig="602" DenA_codOblig="(602)-Impozit pe veniturile din salarii" A_codBugetar="20470101XX">
+			<Nr_Doc>12</Nr_Doc>
+			<Procent>16</Procent>
+			<Explicatie>Inreg.Impozit pe salarii </Explicatie>
+			<Den_ContD>Personal Salarii Datorate</Den_ContD>       
+			<Den_ContC>Impozit pe Salarii Datorat</Den_ContC>
+			<Debit_Cont>421</Debit_Cont>
+			<Credit_Cont>444</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>0</Credit_Val>	
+		</NC>
+</NCsal>	
+	<Totaluri>
+		<TotalVenitSal>0</TotalVenitSal>
+		<TotalFSBaza>0</TotalFSBaza>		
+		<TotalBCVBrut>0</TotalBCVBrut>
+		<TotalBCVBrutSO>0</TotalBCVBrutSO>
+		<TotalBCVBrutCI>0</TotalBCVBrutCI>
+		<TotalBCVBImpoz>0</TotalBCVBImpoz>		
+		<TotalZiLucru>0</TotalZiLucru>
+		<TotalOreLucru>0</TotalOreLucru>
+		<TotalZCO>0</TotalZCO>
+		<TotalZCM>0</TotalZCM>
+		<TotalSpor>0</TotalSpor>
+		<TotalDeduceri>0</TotalDeduceri>
+		<TotalRetineri>0</TotalRetineri>
+		<TotalFSPlata>0</TotalFSPlata>
+		<TotalCAtCAS>0</TotalCAtCAS>
+		<TotalCAtFS>0</TotalCAtFS>
+		<TotalCAtCASS>0</TotalCAtCASS>
+		<TotalGrMat>0</TotalGrMat>
+		<TotalAsigSO>0</TotalAsigSO>
+		<TotalAsigCI>0</TotalAsigCI> 		
+		<NEDEFINIT>0</NEDEFINIT>
+	</Totaluri>
+	<OPsal>
+		<OP_FS>
+			<NrOP>1</NrOP>
+			<BIC>TREZROBU</BIC>
+			<Ordin_de_plata>Ordin de Plata Trezorerie </Ordin_de_plata>
+			<Explicatii>Disponibil al bugetelor asigurărilor sociale şi fondurilor speciale</Explicatii>
+			<Valoare>0</Valoare>
+			<Nr_Cont_Buget>5502</Nr_Cont_Buget>
+		</OP_FS>
+		<OP_IMP>
+			<NrOP>2</NrOP>
+			<BIC>TREZROBU</BIC>
+			<Ordin_de_plata>Ordin de Plata Trezorerie</Ordin_de_plata>
+			<Explicatii>Venituri ale bugetului de stat în contul unic</Explicatii>
+			<Valoare>0</Valoare>
+			<Nr_Cont_Buget>20470101</Nr_Cont_Buget>  
+		</OP_IMP>
+	</OPsal>	
+	<DateLunare>
+		<Luna AnLuna="" NrZlucruL="">
+			<Salariat id="0">
+				<Venit_Brut>0</Venit_Brut>
+				<Venit_Baza_Calcul>0</Venit_Baza_Calcul>
+				<VenitSalarial>0</VenitSalarial>
+				<VenitSalarialCO>0</VenitSalarialCO>	
+				<TarifSalOraLC>0</TarifSalOraLC>			
+				<Baza_CVenitSO>0</Baza_CVenitSO>
+				<Baza_CVenitCI>0</Baza_CVenitCI>	 					     			
+				<Retineri>0</Retineri>
+				<Alte_retineri>0</Alte_retineri>
+				<Spor_vechime>0</Spor_vechime>
+				<Spor_noapte>0</Spor_noapte>
+				<Spor_conducere>0</Spor_conducere>				
+	 			<Spor>0</Spor>
+				<CAS>0</CAS>
+				<Somaj>0</Somaj>
+				<CASS>0</CASS>
+				<Deduceri_Personale>0</Deduceri_Personale>
+				<Alte_deduceri>0</Alte_deduceri>				
+				<Deduceri>250</Deduceri>
+				<Garantii_Materiale>0</Garantii_Materiale>
+				<Popriri>0</Popriri>
+				<Impozit_Retinut>0</Impozit_Retinut>
+				<Avans>0</Avans>
+				<Total_de_Plata>0</Total_de_Plata>					
+				<CoefCO>1</CoefCO>	
+				<CoefCM>1</CoefCM>				
+				<CoefCMat>1</CoefCMat>																					
+				<TotalPontaj>
+					<OreL1-15/>
+					<ZileL/>					
+				</TotalPontaj>										
+				<Sapt nr="1">
+					<Zile>
+						<Ziua nr="1" sapt="1">
+							<OreZi tip="Lucru">0</OreZi>						
+						</Ziua>
+						<Ziua nr="2" sapt="1">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+						<Ziua nr="3" sapt="1">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+						<Ziua nr="4" sapt="1">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+						<Ziua nr="5" sapt="1">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+						<Ziua nr="6" sapt="1">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+						<Ziua nr="7" sapt="1">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>	
+					</Zile>			
+				</Sapt>
+				<Sapt nr="2">
+					<Zile>
+						<Ziua nr="8">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+						<Ziua nr="9">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+						<Ziua nr="10">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+						<Ziua nr="11">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+						<Ziua nr="12">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>	
+						<Ziua nr="13">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+						<Ziua nr="14">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+					</Zile>								
+				</Sapt>	
+				<Sapt nr="3">
+					<Zile>
+						<Ziua nr="15">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+						<Ziua nr="16">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+						<Ziua nr="17">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+						<Ziua nr="18">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+						<Ziua nr="19">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+						<Ziua nr="20">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+						<Ziua nr="21">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>							
+					</Zile>			
+				</Sapt>
+				<Sapt nr="4">
+					<Zile>
+						<Ziua nr="22">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+						<Ziua nr="23">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+						<Ziua nr="24">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>										
+						<Ziua nr="25">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+						<Ziua nr="26">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+						<Ziua nr="27">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+						<Ziua nr="28">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>							
+					</Zile>			
+				</Sapt>
+				<Sapt nr="5">
+					<Zile>
+						<Ziua nr="29">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+						<Ziua nr="30">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>
+						<Ziua nr="31">
+							<OreZi tip="Lucru">0</OreZi>
+						</Ziua>									
+					</Zile>			
+				</Sapt>	
+			</Salariat>		
+		</Luna>																					
+	</DateLunare><!-- -->
+ </SAL>	

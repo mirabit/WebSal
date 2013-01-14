@@ -1,0 +1,22 @@
+<Root>
+	<Nrs nr="1">
+		<zimin>0</zimin>
+		<zimax>8</zimax>
+	</Nrs>
+	<Nrs nr="2">
+		<zimin>7</zimin>
+		<zimax>15</zimax>
+	</Nrs>
+		<Nrs nr="3">
+		<zimin>14</zimin>
+		<zimax>22</zimax>
+	</Nrs>
+		<Nrs nr="4">
+		<zimin>21</zimin>
+		<zimax>29</zimax>
+	</Nrs>
+		<Nrs nr="5">
+		<zimin>28</zimin>
+		<zimax>32</zimax>
+	</Nrs>
+ </Root>

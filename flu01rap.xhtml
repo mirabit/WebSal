@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="../webgestext/xsltforms/xsltforms.xsl" type="text/xsl"?>
+<?css-conversion no?>
+<!--<?xml-stylesheet href="../xsltforms/xsltforms.xsl" type="text/xsl"?>-->
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:xforms="http://www.w3.org/2002/xforms"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:my="http://commerce.example.com/payment"
+ xmlns:ev="http://www.w3.org/2001/xml-events"
+ xml:lang="en">
+<head>
+    
+	<title>FLUTURAS flu01rap</title>  
+ 
+	<style type="text/css">
+		   @namespace xforms url("http://www.w3.org/2002/xforms");
+		   .body {font-size: 0.5em;}
+		 
+		   /* The default field width for all inputs */
+		   
+		.legend {font-weight:bold; font-size:0.5em;}	
+		.label {font-style:italic; font-size:0.5em;}
+		 
+		   /* custom field width overrides relative to current font size */
+		   /* ex is the size of the current lowercase 'x' in pixels */
+		   /* em is the size of the current "M" character in pixels */
+		.den input {width:13em;text-align:left}
+		.val input {width:5em;text-align:right}
+		.nrc input {width:3em;text-align:right}
+		.df1 input {width:25em;text-align:left}
+		.df2 input {width:6em;text-align:left}
+
+	.ln {line:dashed;}
+	.sp {padding:0mm 10mm 0mm 0mm;}
+	.trf1 {border-top: 1px outset;width:80mm;font-size:12px;text-align:left;}
+	.trf2 {border-top: 1px outset;width:80mm;font-size:12px;text-align:left;}
+	.trf3 {border-bottom: 2px outset;width:80mm;font-size:14px;text-align:center; font-weight:bold;}
+	.trf4 {border-bottom: 2px outset;width:80mm;font-size:14px;text-align:left; font-weight:bold;}
+	.trf5 {border-top: 1px outset;width:80mm;font-size:12px;text-align:left; padding:1mm 1mm 1mm 1mm;}
+
+	.valf1 .xf-value {width:20mm; border-style:none;text-align:right;font-weight:bold;font-size:17px; padding:1mm 1mm 1mm 20mm;}
+	.valf2 .xf-value {width:20mm; border-style:solid;}
+	.valf5 .xf-value {width:25mm; border-style:none;}
+   	</style>
+
+    <style type="text/css" media="print">
+    .noprint{display: none;}
+    </style>
+
+<!--   	<script type="text/javascript">	
+	function ChangePath() {
+		//var cale=GetCookie('cale'); 		
+		var theCookie=""+document.cookie;
+		var ind=theCookie.indexOf("cale=");
+		if (ind==-1){//
+		alert("Nu am găsit cookie");
+		}else{
+			var ind1=theCookie.indexOf(";",ind);
+			if (ind1==-1) ind1=theCookie.length; 
+			//return unescape(theCookie.substring(ind+cale.length+1,ind1));
+			var cale= unescape(theCookie.substring(ind+5,ind1));	
+			//alert("cale:"+cale);
+			var model=document.getElementById("SAL");
+			
+			var instanceElement = document.getElementById('sal');               
+			instanceElement.setAttribute('resource', cale); 
+			//alert("file:"+instanceElement.getAttribute('resource'));	
+			var submitsal = document.getElementById('s01');               
+			submitsal.setAttribute('action', cale);								
+			model.refresh();					
+		}	
+	}
+	</script> -->
+	<script type="text/javascript" src="loadSal.js"/>
+
+		<xforms:model id="SAL" version="1.1">
+            <xforms:instance id="sal">
+				<DATE xmlns="">																						
+				</DATE> 
+		 	</xforms:instance>
+		</xforms:model>
+	</head>
+	<body bgcolor="#ffffff" text="#000000" onload="loadSal();">
+	<xforms:group nodeset="DateLunare" ref="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]">
+		<table border="0" cellspacing="0" cellpadding="0" width="100%">
+			<xforms:repeat nodeset="Salariat" id="repeatRow">
+			<!--<xforms:repeat nodeset="/SAL/Personal/Salariat" id="repeatRow">-->
+				<tr>
+					<td>
+						<table border="0" cellspacing="2" cellpadding="1" width="100%">
+							<tr>
+							<td class="trf3"><label>Drepturi Banesti Chenzina a II-a</label></td>
+							<td class="trf4">
+							<label>Luna : </label><xforms:output value="substring(instance('sal')/LunaLucru,5,2)" class="T3val2"/>			
+							<label> - An : </label><xforms:output value="substring(instance('sal')/LunaLucru,1,4)" class="T3val2"/></td>
+						</tr>
+
+							<tr>
+							<td class="trf2"><b><label class="sp">Marca :</label></b>
+						<b><xforms:output ref="instance('sal')/Personal/Salariat[@id=current()/@id]/@id" class="valf1"/></b></td>
+							<td class="trf1"><label class="sp">Sume neimpozabile :</label>
+						<b><xforms:output type="text" name="text" ref="Popriri" class="valf1"/></b></td>
+							</tr>
+							<tr>
+							<td class="trf2"><b><label class="sp">Nume : </label></b>
+						<b><xforms:output ref="instance('sal')/Personal/Salariat[@id=current()/@id]/@Nume" class="valf1"/></b></td>
+							<td class="trf1"><label class="sp">Alte drepturi : </label>
+						<b><xforms:output type="text" name="text" ref="Prog_redus_boala" class="valf1"/></b></td>
+							</tr>
+							<tr>
+							<td class="trf2"><b><label class="sp">Prenume : </label></b>
+						<b><xforms:output ref="instance('sal')/Personal/Salariat[@id=current()/@id]/@Prenume" class="valf1"/></b></td>
+							<td class="trf1"><label class="sp">C.Odihna : </label>
+						<b><xforms:output type="text" name="text" ref="Concediu_Odihna" class="valf1"/></b></td>
+							</tr>
+							<tr>
+							<td class="trf2"><label class="sp">Meserie  Functia : </label>
+						<b><xforms:output ref="instance('sal')/Personal/Salariat[@id=current()/@id]/@Functia" class="valf1"/></b></td>
+							<td class="trf1"><label class="sp">C.Boala : </label>
+						<b><xforms:output type="text" name="text" ref="Concediu_Boala" class="valf1"/></b></td>
+							</tr>
+							<tr>
+							<td class="trf2"><label class="sp">Salariu de incadrare : </label>
+						<b><xforms:output ref="instance('sal')/Personal/Salariat[@id=current()/@id]/Contract/Salariu" class="valf1"/></b> lei</td>
+							<td class="trf1"><label class="sp">Penalitati : </label>
+						<b><xforms:output type="text" name="text" ref="Spor_noapte" class="valf1"/></b></td>
+							</tr>
+							<tr>
+							<td class="trf2"><label class="sp">Salariu tatifar.ore lucrate : </label>
+						<b><xforms:output type="text" name="text" ref="Total_ore_1_31" class="valf1"/></b></td>
+							<td class="trf1"><label class="sp">Total salariu brut : </label>
+						<b><xforms:output type="text" name="text" ref="Venit_Brut" class="valf1"/></b></td>
+							</tr>
+							<tr>
+							<td class="trf2"><label class="sp">Salariu/Gradatie de merit : </label>
+						<b><xforms:output type="text" ref="Spor_conducere" class="valf1"/></b></td>
+							<td class="trf1"><label class="sp">CAS % : </label>
+						<b><xforms:output type="text" name="text" ref="CAS" class="valf1"/></b></td>
+							</tr>
+							<tr>
+							<td class="trf2"><label class="sp">a)indemnizatie de conducere : </label>
+						<b><xforms:output type="text" name="text" ref="Spor_conducere" class="valf1"/></b></td>
+							<td class="trf1"><label class="sp">Somaj %: </label>
+						<b><xforms:output type="text" name="text" ref="Somaj" class="valf1"/></b></td>
+							</tr>
+							<tr>
+							<td class="trf2"><label class="sp">b)vechime : </label>
+						<b><xforms:output type="text" ref="Spor_vechime" class="valf1"/></b></td>
+							<td class="trf1"><label class="sp">CASS : </label>
+						<b><xforms:output type="text" name="text" ref="CASS" class="valf1"/></b></td>
+							</tr>
+							<tr>
+							<td class="trf2"><label class="sp">e)noapte: </label>
+						<b><xforms:output type="text" name="text" ref="Spor_noapte" class="valf1"/></b></td>
+							<td class="trf1"><label class="sp">V.Net : </label>
+						<b><xforms:output type="text" name="text" ref="Popriri" class="valf1"/></b> lei</td>
+							</tr>
+							<tr>
+							<td class="trf2"><label class="sp">d)c.d. : </label>
+						<b><xforms:output type="text" name="text" ref="Ore_supli_50" class="valf1"/></b></td>
+							<td class="trf1"><label class="sp">Deduceri : </label>
+						<b><xforms:output type="text" name="text" ref="Deduceri" class="valf1"/></b></td>
+							</tr>
+							<tr>
+							<td class="trf2"><label class="sp">f)supl : </label>
+						<b><xforms:output type="text" name="text" ref="Ore_noapte" class="valf1"/></b></td>
+							<td class="trf1"><label class="sp">Impozit Calculat : </label>
+						<b><xforms:output type="text" name="text" ref="Impozit_Retinut" class="valf1"/></b></td>
+							</tr>
+							<tr>
+							<td class="trf2"><label class="sp">g)spec : </label>
+						<b><xforms:output type="text" name="text" ref="Concediu_Odihna" class="valf1"/></b></td>
+							<td class="trf1"><label class="sp">Salariu Net : </label>
+						<b><xforms:output type="text" name="text" ref="Total_de_Plata" class="valf1"/></b> lei</td>
+							</tr>
+							<tr>
+							<td class="trf2"><label class="sp">h)doct : </label>
+						<b><xforms:output type="text" name="text" ref="Concediu_Boala" class="valf1"/></b></td>
+							<td class="trf1"><label class="sp">Alte Retineri(Chir,Popr,Rate.etc) : </label>
+						<b><xforms:output type="text" name="text" ref="Retineri" class="valf1"/></b></td>
+							</tr>
+							<tr>
+							<td class="trf2"><label class="sp">i)stab : </label>
+						<b><xforms:output type="text" name="text" ref="Accident_Munca" class="valf1"/></b></td>
+							<td class="trf1"><label class="sp">Avans Chenz.I+Avans CO : </label>
+						<b><xforms:output type="text" name="text" value="Avans" class="valf1"/></b> lei</td>
+							</tr>
+							<tr>
+							<td class="trf2"><label class="sp">j)sprs : </label>
+						<b><xforms:output type="text" name="text" ref="Maternitate" class="valf1"/></b></td>
+							<td class="trf1"><label class="sp">Rest de plata Chenz.a II-a : </label>
+						<b><xforms:output type="text" name="text" ref="Total_de_Plata" class="valf1"/></b> lei</td>
+							</tr>
+
+							<tr>
+							<td class="trf2"></td>
+							<td class="trf1"><b><label class="sp">Total de Plata : </label></b> 
+						<b><xforms:output type="text" name="text" value="Total_de_Plata" class="valf1"/></b> lei</td>
+							</tr>
+						<tr>
+							<td class="trf4"></td>
+							<td class="trf4"></td>
+						</tr>
+					</table><br/><hr line-style="dashed"/>		
+						</td>
+				</tr>
+			</xforms:repeat>
+		</table>
+	</xforms:group>
+			<br/>
+				<div class="noprint">
+					<a href="index01.xhtml">
+						<xforms:trigger> 									 
+							<xforms:label class="medium button green">&#171; Înapoi la pagina principală &#171;</xforms:label> 
+							<xforms:hint>Înapoi la pagina principală</xforms:hint>
+						</xforms:trigger>
+					</a>
+					<a href="#" onclick="window.print()">
+						<xforms:trigger> 
+							<xforms:label><i> ^ Tipărire</i></xforms:label> 
+							<xforms:hint>Tiparire</xforms:hint>	
+						</xforms:trigger>
+					</a>				
+				</div>
+			<br/>
+	</body>
+</html>
+

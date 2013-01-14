@@ -1,0 +1,1973 @@
+
+<SAL vers=" 0.9.5 " data="2011-10-25" primavscompat="0.9">
+	<An>2011</An>
+	<Luna ultima="true" nr="11" NrZlucruL="22" OreNl="176">NOIEMBRIE</Luna>
+	<LunaLucru>201111</LunaLucru>
+	<Date_firma>
+		<RvsalID xmlns="" CetatenieID="" NationalitID="" LocalitID="" FormJuridID="Societate Comerciala" FormOrgID="Societate cu raspundere limitata" FormPropID="2" StareSocID="1" TipSocID="Sediu Social" DomActivID="" TipOperID="" AngDataINF="" AngDataSTARE=""/>
+		<Numar_ITM>34343</Numar_ITM>
+		<Adresa_ITM Pj="BH"/>
+		<Atribut_Fiscal>RO</Atribut_Fiscal>
+		<CISTVA>1234</CISTVA>
+		<Cod_Reg_Comertului>343344E</Cod_Reg_Comertului>
+		<CodCAEN>0129</CodCAEN>
+		<Prefix coditm="1"/>
+		<Firma>DEMO - ABC ++</Firma>
+		<Sufix coditm="1"/>
+		<Capital>999</Capital>   
+		<Localitatea>BÂRGĂUȚ</Localitatea>
+		<Strada>Șeptelului</Strada>		
+		<Nr>77</Nr>
+		<Bloc/>
+		<Scara/>
+		<Etaj/>
+		<Apartament/>
+		<Sectors/>		
+		<Judet Cj="05" Pj="BH">07 BOTOSANI</Judet>
+		<Cod_postal>3434343</Cod_postal>
+		<Casa_Asigurari Pj="BH">ARAD</Casa_Asigurari>
+		<Banca1/>
+		<Sucursala1/>
+		<Cod_IBAN1/>
+		<Banca2/>
+		<Sucursala2/>
+		<Cod_IBAN2/>
+		<Tel>44444444444</Tel>
+		<Fax>454544</Fax>      
+		<Mail/>
+		<Adresa_www/>
+	</Date_firma>
+   	<Date_operare>
+		<Data>2011-11-11</Data>
+		<DataOP/>
+		<DataP/>
+		<NumeO/>
+		<PrenumeO/>
+		<Functia/>		
+		<Fel_Docu/>
+		<NrSal>3</NrSal>
+		<NrOP/>
+		<IASSSuAr/>
+		<IASSSuFNUASS/>		
+		<NrZlucruL/>
+		<Ziua/>	
+		<Rezervat>0</Rezervat>
+	</Date_operare>
+	
+	<Personal>
+		<Salariat xmlns="" id="1" CNP="54544545" Nume="AȚÂȚATU" Prenume="ÎNCURCAT" Functia="MEȘTER" Studii="4" Meseria="CĂLDĂRAR" Data_Nasteri="" BI_NR_Serie="767676767" Copii_intretinere="" Data_Angajari="" Invaliditate="" Data_Lichidari="">
+			<AdresaS Localitatea="ȘEPREUȘ" Strada="SÂRMEI" Nr="66" Bloc="" Scara="" Apartament="" Cod_Postal="" Judet="AG" Telefon="" E_Mail=""/>
+			<SalRvsal Cetatenie="1" Nationalitate="AAAAAAAAAAA" LocalitateID="" CorID="" TipActID="1" SerieNrCM="1" DataOperari="" Activ="" DurataID="1" NormaID="" TipContract="" TipOperatie="" IncetContract="" MotivModif=""/>
+			<SalariatNa CNP="" Nume="" Prenume=""/>
+			<CoasiguratP CNP="" Nume="" Prenume="" Tip=""/>
+			<CoasiguratSS CNP="" Nume="" Prenume="" Tip=""/>
+				
+			<D112date>
+				<OreNZdpvdCM>8</OreNZdpvdCM>
+				<Tip_Angajat>1</Tip_Angajat>
+				<Tip_Asigurat>S</Tip_Asigurat>
+				<Tip_CMdpvdTl>N</Tip_CMdpvdTl>
+				<AsigCI>1</AsigCI>
+				<AsigSO>1</AsigSO>
+			</D112date>
+			
+				<!-- -->
+			<Contract id="" NumarContract="">
+				<TarifSalOra fix="da">11</TarifSalOra>
+				<TipActualizare/>
+				<DataConsemnare/>
+				<TipDurata>Determinata</TipDurata>
+				<TipNorma>TimpPartial</TipNorma>
+				<TipContract>ContractIndividualMunca</TipContract>	
+				<NumereContractVechi></NumereContractVechi>
+				<DataContract>1999-03-15T00:00:0</DataContract>
+				<DateContractVechi></DateContractVechi>	
+				<DataInceputContract>1999-03-15T00:00:0</DataInceputContract>
+				<DataSfarsitContract>2060</DataSfarsitContract>												
+				<Salariu fix="da">1000</Salariu>	      
+				<ExceptieDataSfarsit></ExceptieDataSfarsit>
+				<Detalii></Detalii>
+				<CorId>512101</CorId>
+				<StareCurentaId></StareCurentaId>	
+				<SalariatId></SalariatId>
+				<TimpMuncaNorma>8</TimpMuncaNorma>
+				<TimpMuncaRepartizare></TimpMuncaRepartizare>												
+				<TimpMuncaIntervalTimp></TimpMuncaIntervalTimp>	      
+				<TimpMuncaDurata></TimpMuncaDurata>	
+			</Contract>			
+				
+		<!--				
+			<VenitSalarial>0</VenitSalarial>
+			<VenitSalarialCO>0</VenitSalarialCO>
+			<TarifSalOra>0</TarifSalOra>
+			<Spor_vechime>0</Spor_vechime>
+			<Spor_noapte>0</Spor_noapte>
+			<Spor_conducere>0</Spor_conducere>
+			<Deduceri_Personale>0</Deduceri_Personale>
+			<Alte_deduceri>0</Alte_deduceri>
+			<Garantii_Materiale>0</Garantii_Materiale>
+			<Popriri>0</Popriri>
+			<Alte_retineri>0</Alte_retineri>
+ 			<Spor>0</Spor>
+			<Venit_Brut>0</Venit_Brut>     
+			<CAS>0</CAS>
+			<Somaj>0</Somaj>
+			<CASS>0</CASS>
+			<Deduceri>250</Deduceri>
+			<Venit_Baza_Calcul>0</Venit_Baza_Calcul>
+			<Baza_CVenitSO>0</Baza_CVenitSO>
+			<Baza_CVenitCI>0</Baza_CVenitCI>	 	
+			<Impozit_Retinut>0</Impozit_Retinut>
+			<Retineri>0</Retineri>
+			<Total_de_Plata>0</Total_de_Plata>
+			<NormaOre>8</NormaOre>-->
+		</Salariat>		
+		<Salariat xmlns="" id="2" CNP="45444" Nume="BISTRIȚEANU" Prenume="PRUNĂ" Functia="CĂPRAR " Studii="HHHH" Meseria="MULGĂTOR" Data_Nasteri="" BI_NR_Serie="565656" Copii_intretinere="" Data_Angajari="" Invaliditate="" Data_Lichidari="">
+			<AdresaS Localitatea="ȘTEI" Strada="ȘINDRILEI" Nr="22" Bloc="" Scara="" Apartament="" Cod_Postal="" Judet="" Telefon="" E_Mail=""/>
+			<SalRvsal Cetatenie="1" Nationalitate="YFGF" LocalitateID="" CorID="" TipActID="1" SerieNrCM="2" DataOperari="" Activ="" DurataID="" NormaID="" TipContract="" TipOperatie="" IncetContract="" MotivModif=""/>
+			<SalariatNa CNP="" Nume="" Prenume=""/>
+			<CoasiguratP CNP="" Nume="" Prenume="" Tip=""/>
+			<CoasiguratSS CNP="" Nume="" Prenume="" Tip=""/>
+				
+			<D112date>
+				<OreNZdpvdCM>8</OreNZdpvdCM>
+				<Tip_Angajat>0</Tip_Angajat>
+				<Tip_Asigurat>S</Tip_Asigurat>
+				<Tip_CMdpvdTl>N</Tip_CMdpvdTl>
+				<AsigCI>1</AsigCI>
+				<AsigSO>1</AsigSO>
+			</D112date>			
+				<!-- -->
+			<Contract id="">
+				<NumarContract>123</NumarContract>
+				<TarifSalOra fix="da">22</TarifSalOra>
+				<TipActualizare/>
+				<DataConsemnare/>
+				<TipDurata>Determinata</TipDurata>
+				<TipNorma>TimpPartial</TipNorma>
+				<TipContract>ContractIndividualMunca</TipContract>	
+				<NumereContractVechi></NumereContractVechi>
+				<DataContract></DataContract>
+				<DateContractVechi></DateContractVechi>	
+				<DataInceputContract></DataInceputContract>
+				<DataSfarsitContract></DataSfarsitContract>												
+				<Salariu fix="nu">2000</Salariu>	      
+				<ExceptieDataSfarsit></ExceptieDataSfarsit>
+				<Detalii></Detalii>
+				<CorId>512102</CorId>
+				<StareCurentaId></StareCurentaId>	
+				<SalariatId></SalariatId>
+				<TimpMuncaNorma>4</TimpMuncaNorma>
+				<TimpMuncaRepartizare></TimpMuncaRepartizare>												
+				<TimpMuncaIntervalTimp></TimpMuncaIntervalTimp>	      
+				<TimpMuncaDurata></TimpMuncaDurata>	
+			</Contract>			
+				
+		<!--	
+
+			
+			<VenitSalarial>0</VenitSalarial>
+			<VenitSalarialCO>0</VenitSalarialCO>
+			<TarifSalOra>0</TarifSalOra>
+			<Spor_vechime>0</Spor_vechime>
+			<Spor_noapte>0</Spor_noapte>
+			<Spor_conducere>0</Spor_conducere>
+			<Deduceri_Personale>0</Deduceri_Personale>
+			<Alte_deduceri>0</Alte_deduceri>
+			<Garantii_Materiale>0</Garantii_Materiale>
+			<Popriri>0</Popriri>
+			<Alte_retineri>0</Alte_retineri>
+ 			<Spor>0</Spor>
+			<Venit_Brut>0</Venit_Brut>     
+			<CAS>0</CAS>
+			<Somaj>0</Somaj>
+			<CASS>0</CASS>
+			<Deduceri>250</Deduceri>
+			<Venit_Baza_Calcul>0</Venit_Baza_Calcul>
+			<Baza_CVenitSO>0</Baza_CVenitSO>
+			<Baza_CVenitCI>0</Baza_CVenitCI>	 	
+			<Impozit_Retinut>0</Impozit_Retinut>
+			<Retineri>0</Retineri>
+			<Total_de_Plata>0</Total_de_Plata>
+			<NormaOre>8</NormaOre>-->
+		</Salariat>
+		<Salariat xmlns="" id="3" CNP="12345678" Nume="CRĂCĂNEL" Prenume="CÂRLIONȚATU" Functia="ȘEF" Studii="IOP" Meseria="VĂCAR" Data_Nasteri="" BI_NR_Serie="23232323" Copii_intretinere="4" Data_Angajari="" Invaliditate="" Data_Lichidari="">
+			<AdresaS Localitatea="Șopârlița" Strada="Îngustă" Nr="234" Bloc="" Scara="" Apartament="" Cod_Postal="" Judet="CS" Telefon="" E_Mail=""/>
+			<SalRvsal Cetatenie="1" Nationalitate="CCCCC" LocalitateID="" CorID="" TipActID="1" SerieNrCM="3" DataOperari="" Activ="" DurataID="1" NormaID="2" TipContract="1" TipOperatie="" IncetContract="" MotivModif=""/>
+			<SalariatNa CNP="" Nume="" Prenume=""/>
+			<CoasiguratP CNP="" Nume="" Prenume="" Tip=""/>
+			<CoasiguratSS CNP="" Nume="" Prenume="" Tip=""/>
+				
+			<D112date>
+				<OreNZdpvdCM>8</OreNZdpvdCM>
+				<Tip_Angajat>0</Tip_Angajat>
+				<Tip_Asigurat>S</Tip_Asigurat>
+				<Tip_CMdpvdTl>N</Tip_CMdpvdTl>
+				<AsigCI>1</AsigCI>
+				<AsigSO>1</AsigSO>
+			</D112date>
+				<!-- -->
+			<Contract id="" NumarContract="">
+				<TarifSalOra fix="da">33</TarifSalOra>
+				<TipActualizare/>
+				<DataConsemnare/>
+				<TipDurata>Determinata</TipDurata>
+				<TipNorma>TimpPartial</TipNorma>
+				<TipContract>ContractIndividualMunca</TipContract>	
+				<NumereContractVechi></NumereContractVechi>
+				<DataContract></DataContract>
+				<DateContractVechi></DateContractVechi>	
+				<DataInceputContract></DataInceputContract>
+				<DataSfarsitContract></DataSfarsitContract>												
+				<Salariu fix="da">3000</Salariu>	      
+				<ExceptieDataSfarsit></ExceptieDataSfarsit>
+				<Detalii></Detalii>
+				<CorId>512103</CorId>
+				<StareCurentaId></StareCurentaId>	
+				<SalariatId></SalariatId>
+				<TimpMuncaNorma>6</TimpMuncaNorma>
+				<TimpMuncaRepartizare></TimpMuncaRepartizare>												
+				<TimpMuncaIntervalTimp></TimpMuncaIntervalTimp>	      
+				<TimpMuncaDurata></TimpMuncaDurata>	
+			</Contract>			
+				
+		<!--	
+			<VenitSalarial>0</VenitSalarial>
+			<VenitSalarialCO>0</VenitSalarialCO>
+			<TarifSalOra>0</TarifSalOra>
+			<Spor_vechime>0</Spor_vechime>
+			<Spor_noapte>0</Spor_noapte>
+			<Spor_conducere>0</Spor_conducere>
+			<Deduceri_Personale>0</Deduceri_Personale>
+			<Alte_deduceri>0</Alte_deduceri>
+			<Garantii_Materiale>0</Garantii_Materiale>
+			<Popriri>0</Popriri>
+			<Alte_retineri>0</Alte_retineri>
+ 			<Spor>0</Spor>
+			<Venit_Brut>0</Venit_Brut>     
+			<CAS>0</CAS>
+			<Somaj>0</Somaj>
+			<CASS>0</CASS>
+			<Deduceri>250</Deduceri>
+			<Venit_Baza_Calcul>0</Venit_Baza_Calcul>
+			<Baza_CVenitSO>0</Baza_CVenitSO>
+			<Baza_CVenitCI>0</Baza_CVenitCI>	 	
+			<Impozit_Retinut>0</Impozit_Retinut>
+			<Retineri>0</Retineri>
+			<Total_de_Plata>0</Total_de_Plata>
+			<NormaOre>8</NormaOre>-->
+		</Salariat>  
+	</Personal>
+	
+   <NCsal>
+		<NC id="ChArSal" obp="nu" tip="Firma" A_codOblig="001" DenA_codOblig="50-Fond de salarii" A_codBugetar="0">
+			<Nr_Doc>1</Nr_Doc>
+			<Procent>0</Procent>
+			<Explicatie>Inreg.Ch.cu Salarii Personal</Explicatie>
+			<Den_ContD>Cheltuieli cu Salarii Personal</Den_ContD>       
+			<Den_ContC>Personal Salarii Datorate</Den_ContC>
+			<Debit_Cont>641</Debit_Cont>
+			<Credit_Cont>421</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>1200</Credit_Val>	
+		</NC>
+		<NC id="ChArCAS" obp="da" tip="Angajator" A_codOblig="411" DenA_codOblig="(411)-Contributia de asigurari sociale datorata de angajator" A_codBugetar="5502XXXXXX">
+			<Nr_Doc>2</Nr_Doc>
+			<Procent>20.8</Procent>
+			<Explicatie>Contrib.Soc. Asig.Sociale 20.8% </Explicatie>
+			<Den_ContD>Ch.Contrib.Soc. la asigurarile sociale</Den_ContD>       
+			<Den_ContC>Contrib Soc. Asig.Soc.de Sanatate</Den_ContC>
+			<Debit_Cont>6451</Debit_Cont>
+			<Credit_Cont>4311</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>250</Credit_Val>	
+		</NC>				
+		<NC id="ChArCASS" obp="da" tip="Angajator" A_codOblig="431" DenA_codOblig="(431)-Contributia pentru asigurari sociale de sanatate datorata de angajator" A_codBugetar="5502XXXXXX">
+			<Nr_Doc>3</Nr_Doc>
+			<Procent>5.2</Procent>
+			<Explicatie>Contrib.Soc. cu CASS 5.2% </Explicatie>
+			<Den_ContD>Ch.Contrib.Soc. ptr.Asig.Soc.de Sanatate</Den_ContD>       
+			<Den_ContC>Contrib Soc. Asig. Soc. de Sanatate</Den_ContC>
+			<Debit_Cont>6453</Debit_Cont>
+			<Credit_Cont>4313</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>62</Credit_Val>	
+		</NC>
+		<NC id="ChArFS" obp="da" tip="Angajator" A_codOblig="421" DenA_codOblig="(421)-Contributia de asigurari pentru somaj datorata de angajator" A_codBugetar="5502XXXXXX">
+			<Nr_Doc>4</Nr_Doc>
+			<Procent>0.5</Procent>
+			<Explicatie>Contrib.Soc.Ajutorul de Somaj 0.5% </Explicatie>
+			<Den_ContD>Ch.Contrib.Soc.ptr.Ajutorul de Somaj</Den_ContD>       
+			<Den_ContC>Contrib Soc.la Ajutorul de Somaj</Den_ContC>
+			<Debit_Cont>6452</Debit_Cont>
+			<Credit_Cont>4371</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>6</Credit_Val>	
+		</NC>	
+		<NC id="ChArCM" obp="da" tip="Angajator" A_codOblig="439" DenA_codOblig="(439)-Contributia pentru concedii si indemnizatii de la persoanele juridice sau fizice care au calitatea de angajator" A_codBugetar="5502XXXXXX">
+			<Nr_Doc>5</Nr_Doc>
+			<Procent>0.85</Procent>
+			<Explicatie>Contrib.Soc.Concedii,Indemnizatii 0.85% </Explicatie>
+			<Den_ContD>Ch.Contrib.Soc.Concedii si Indemnizatii</Den_ContD>       
+			<Den_ContC>Contrib Soc.Concedii si Indemnizatii</Den_ContC>
+			<Debit_Cont>6454</Debit_Cont>
+			<Credit_Cont>43111</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>10</Credit_Val>	
+		</NC>			
+		<NC id="ChArFG" obp="da" tip="Angajator" A_codOblig="423" DenA_codOblig="(423)-Contributia angajatorilor la Fondul de garantare pentru plata creantelor salariale" A_codBugetar="5502XXXXXX">
+			<Nr_Doc>6</Nr_Doc>
+			<Procent>0.25</Procent>			
+			<Explicatie>Contrib.Soc.la F.Gr.Salariale 0.25% </Explicatie>
+			<Den_ContD>Ch.Contrib.Soc. la asigurarile sociale</Den_ContD>       
+			<Den_ContC>Contrib Soc. Fond Garant Sal</Den_ContC>
+			<Debit_Cont>6452</Debit_Cont>
+			<Credit_Cont>4373</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>3</Credit_Val>
+		</NC>
+		<NC id="ChArFA" obp="da" tip="Angajator" A_codOblig="416" DenA_codOblig="(416)-Contributia de asigurare pentru accidente de munca si boli profesionale datorata de angajator" A_codBugetar="5502XXXXXX">
+			<Nr_Doc>7</Nr_Doc>
+			<Procent>0.168</Procent>
+			<Explicatie>Contrib.Soc. Fondul de Acc. 0.168%</Explicatie>
+			<Den_ContD>Ch.Contrib.Soc. la asigurarile sociale</Den_ContD>       
+			<Den_ContC>Contrib Soc.ptr.acc.munca si boli prof.</Den_ContC>
+			<Debit_Cont>6451</Debit_Cont>
+			<Credit_Cont>4315</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>2</Credit_Val>	
+		</NC>		
+		<NC id="CoAtCAS" obp="da" tip="Angajat" A_codOblig="412" DenA_codOblig="(412)-Contributia individuala de asigurari sociale retinuta de la asigurati" A_codBugetar="5502XXXXXX">
+			<Nr_Doc>8</Nr_Doc>
+			<Procent>10.5</Procent>
+			<Explicatie>Inreg.Contrib.Angajati la CAS 10.5% </Explicatie>
+			<Den_ContD>Personal Salarii Datorate</Den_ContD>       
+			<Den_ContC>Contrib Salariati Asig  Soc</Den_ContC>
+			<Debit_Cont>421</Debit_Cont>
+			<Credit_Cont>4312</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>126</Credit_Val>                        	
+		</NC>		
+		<NC id="CoAtCASS" obp="da" tip="Angajat" A_codOblig="432" DenA_codOblig="(432)-Contributia pentru asigurari sociale de sanatate retinuta de la asigurati" A_codBugetar="5502XXXXXX">
+			<Nr_Doc>9</Nr_Doc>
+			<Procent>5.5</Procent>
+			<Explicatie>Inreg.Contrib.Angajati la CASS 5.5% </Explicatie>
+			<Den_ContD>Personal Salarii Datorate</Den_ContD>       
+			<Den_ContC>Contrib Salariati Asig Soc de Sanatate</Den_ContC>
+			<Debit_Cont>421</Debit_Cont>
+			<Credit_Cont>4314</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>66</Credit_Val>	
+		</NC>
+		<NC id="CoAtFS" obp="da" tip="Angajat" A_codOblig="422" DenA_codOblig="(422)-Contributia individuala de asigurari pentru somaj retinuta de la asigurati" A_codBugetar="5502XXXXXX">
+			<Nr_Doc>10</Nr_Doc>
+			<Procent>0.5</Procent>			
+			<Explicatie>Inreg.Contrib.Angajati la F.de Somaj 0.5% </Explicatie>
+			<Den_ContD>Personal Salarii Datorate</Den_ContD>       
+			<Den_ContC>Contrib Salariati la Fondul de Somaj</Den_ContC>
+			<Debit_Cont>421</Debit_Cont>
+			<Credit_Cont>4372</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>6</Credit_Val>	
+		</NC>
+		<NC id="CoAtGrMat" obp="nu" tip="Angajat" A_codOblig="002" DenA_codOblig="51-Garantii materiale retinute de la angajati" A_codBugetar="0">
+			<Nr_Doc>11</Nr_Doc>
+			<Procent>0</Procent>
+			<Explicatie>Inreg.Retineri Garantii Materiale</Explicatie>
+			<Den_ContD>Personal Salarii Datorate</Den_ContD>       
+			<Den_ContC>Retineri Garantii Materiale</Den_ContC>
+			<Debit_Cont>421</Debit_Cont>
+			<Credit_Cont>4281</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>0</Credit_Val>	
+		</NC>
+		<NC id="CoAtImpS" obp="da" tip="Angajat" A_codOblig="602" DenA_codOblig="(602)-Impozit pe veniturile din salarii" A_codBugetar="20470101XX">
+			<Nr_Doc>12</Nr_Doc>
+			<Procent>16</Procent>
+			<Explicatie>Inreg.Impozit pe salarii </Explicatie>
+			<Den_ContD>Personal Salarii Datorate</Den_ContD>       
+			<Den_ContC>Impozit pe Salarii Datorat</Den_ContC>
+			<Debit_Cont>421</Debit_Cont>
+			<Credit_Cont>444</Credit_Cont>
+			<Debit_Val>0</Debit_Val>			
+			<Credit_Val>48</Credit_Val>	
+		</NC><!--Sablon_NCsal_BV-->
+</NCsal>
+	
+	<Totaluri>
+		<TotalVenitSal>0</TotalVenitSal>
+		<TotalFSBaza>0</TotalFSBaza>		
+		<TotalBCVBrut>0</TotalBCVBrut>
+		<TotalBCVBrutSO>0</TotalBCVBrutSO>
+		<TotalBCVBrutCI>0</TotalBCVBrutCI>
+		<TotalBCVBImpoz>0</TotalBCVBImpoz>		
+		<TotalZiLucru>0</TotalZiLucru>
+		<TotalOreLucru>0</TotalOreLucru>
+		<TotalZCO>0</TotalZCO>
+		<TotalZCM>0</TotalZCM>
+		<TotalSpor>0</TotalSpor>
+		<TotalDeduceri>0</TotalDeduceri>
+		<TotalRetineri>0</TotalRetineri>
+		<TotalFSPlata>0</TotalFSPlata>
+		<TotalCAtCAS>0</TotalCAtCAS>
+		<TotalCAtFS>0</TotalCAtFS>
+		<TotalCAtCASS>0</TotalCAtCASS>
+		<TotalGrMat>0</TotalGrMat>
+		<TotalAsigSO>0</TotalAsigSO>
+		<TotalAsigCI>0</TotalAsigCI> 		
+		<NEDEFINIT>0</NEDEFINIT>
+	</Totaluri>
+	<OPsal>
+		<OP_FS>
+			<NrOP>1</NrOP>
+			<BIC>TREZROBU</BIC>
+			<Ordin_de_plata>Ordin de Plata Trezorerie </Ordin_de_plata>
+			<Explicatii>Disponibil al bugetelor asigurărilor sociale şi fondurilor speciale</Explicatii>
+			<Valoare>0</Valoare>
+			<Nr_Cont_Buget>5502</Nr_Cont_Buget>
+		</OP_FS>
+		<OP_IMP>
+			<NrOP>2</NrOP>
+			<BIC>TREZROBU</BIC>
+			<Ordin_de_plata>Ordin de Plata Trezorerie</Ordin_de_plata>
+			<Explicatii>Venituri ale bugetului de stat în contul unic</Explicatii>
+			<Valoare>0</Valoare>
+			<Nr_Cont_Buget>20470101</Nr_Cont_Buget>  
+		</OP_IMP>
+	</OPsal>
+	
+	<DateLunare CuiFirma="ABC">
+		<Luna An="2011" nr="08" AnLuna="201108">
+			<Salariat id="1">
+				<Venit_Brut>0</Venit_Brut>
+				<Venit_Baza_Calcul>0</Venit_Baza_Calcul>
+				<VenitSalarial>0</VenitSalarial>
+				<VenitSalarialCO>0</VenitSalarialCO>	
+				<TarifSalOraLC>10</TarifSalOraLC>			
+				<Baza_CVenitSO>0</Baza_CVenitSO>
+				<Baza_CVenitCI>0</Baza_CVenitCI>	 					     			
+				<Retineri>10</Retineri>
+				<Alte_retineri>0</Alte_retineri>
+				<Spor_vechime>0</Spor_vechime>
+				<Spor_noapte>0</Spor_noapte>
+				<Spor_conducere>0</Spor_conducere>				
+	 			<Spor>11</Spor>
+				<CAS>0</CAS>
+				<Somaj>0</Somaj>
+				<CASS>0</CASS>
+				<Deduceri_Personale>0</Deduceri_Personale>
+				<Alte_deduceri>0</Alte_deduceri>				
+				<Deduceri>250</Deduceri>
+				<Garantii_Materiale>0</Garantii_Materiale>
+				<Popriri>0</Popriri>
+				<Impozit_Retinut>0</Impozit_Retinut>
+				<Total_de_Plata>0</Total_de_Plata>	
+				
+				<CoefCO>1</CoefCO>	
+				<CoefCM>1</CoefCM>				
+				<CoefCMat>1</CoefCMat>															
+						
+				<TotalPontaj>
+					<OreL1-15>100</OreL1-15>
+					<Ore tip="Lucru">0</Ore>
+					<ZileL/>
+					
+				</TotalPontaj>										
+				<Sapt nr="1">
+					<Zile>
+						<Ziua nr="1" sapt="1">
+							<OreZi tip="Invoire">2</OreZi>
+							<OreZi tip="Lucru">100</OreZi>						
+						</Ziua>
+						<Ziua nr="2" sapt="1">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="3" sapt="1">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="4" sapt="1">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="5" sapt="1">
+							<OreZi tip="COdihna">8</OreZi>
+						</Ziua>
+						<Ziua nr="6" sapt="1">
+							<OreZi tip="CMedic">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="7">
+							<OreZi tip="CMedic">6</OreZi>
+						</Ziua>	
+					</Zile>			
+				</Sapt>
+				<Sapt nr="2">
+					<Zile>
+						<Ziua nr="8">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="9">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="10">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="11">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="12">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>	
+						<Ziua nr="13">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="14">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+					</Zile>								
+				</Sapt>	
+				<Sapt nr="3">
+					<Zile>
+						<Ziua nr="15">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="16">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="17">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="18">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="19">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="20">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="21">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>							
+					</Zile>			
+				</Sapt>
+				<Sapt nr="4">
+					<Zile>
+						<Ziua nr="22">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="23">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="24">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>										
+						<Ziua nr="25">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="26">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="27">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="28">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>							
+					</Zile>			
+				</Sapt>
+				<Sapt nr="5">
+					<Zile>
+						<Ziua nr="29">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="30">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="31">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>									
+					</Zile>			
+				</Sapt>	
+			</Salariat>	
+			<Salariat id="2">
+				<Venit_Brut>0</Venit_Brut>
+				<Venit_Baza_Calcul>0</Venit_Baza_Calcul>
+				<VenitSalarial>0</VenitSalarial>
+				<VenitSalarialCO>0</VenitSalarialCO>	
+				<TarifSalOraLC>20</TarifSalOraLC>			
+				<Baza_CVenitSO>0</Baza_CVenitSO>
+				<Baza_CVenitCI>0</Baza_CVenitCI>	 					     			
+				<Retineri>10</Retineri>
+				<Alte_retineri>0</Alte_retineri>
+				<Spor_vechime>0</Spor_vechime>
+				<Spor_noapte>0</Spor_noapte>
+				<Spor_conducere>0</Spor_conducere>				
+	 			<Spor>11</Spor>
+				<CAS>0</CAS>
+				<Somaj>0</Somaj>
+				<CASS>0</CASS>
+				<Deduceri_Personale>0</Deduceri_Personale>
+				<Alte_deduceri>0</Alte_deduceri>				
+				<Deduceri>250</Deduceri>
+				<Garantii_Materiale>0</Garantii_Materiale>
+				<Popriri>0</Popriri>
+				<Impozit_Retinut>0</Impozit_Retinut>
+				<Total_de_Plata>0</Total_de_Plata>	
+				
+				<CoefCO>1</CoefCO>	
+				<CoefCM>1</CoefCM>				
+				<CoefCMat>1</CoefCMat>															
+						
+				<TotalPontaj>
+					<OreL1-15/>
+					<Ore tip="Lucru"/>
+					<ZileL/>
+					
+				</TotalPontaj>									
+				<Sapt nr="1">
+					<Zile>
+						<Ziua nr="1" sapt="1">
+
+							<OreZi tip="Lucru">2</OreZi>						
+						</Ziua>
+						<Ziua nr="2" sapt="1">
+							<OreZi tip="Nemotivat">8</OreZi>
+						</Ziua>
+						<Ziua nr="3" sapt="1">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="4" sapt="1">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="5" sapt="1">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="6" sapt="1">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="7">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>	
+					</Zile>			
+				</Sapt>
+				<Sapt nr="2">
+					<Zile>
+						<Ziua nr="8">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="9">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="10">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="11">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="12">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>	
+						<Ziua nr="13">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="14">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+					</Zile>								
+				</Sapt>	
+				<Sapt nr="3">
+					<Zile>
+						<Ziua nr="15">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="16">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="17">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="18">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="19">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="20">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="21">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>							
+					</Zile>			
+				</Sapt>
+				<Sapt nr="4">
+					<Zile>
+						<Ziua nr="22">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="23">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="24">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>										
+						<Ziua nr="25">
+							<OreZi tip="Codihna">8</OreZi>
+						</Ziua>
+						<Ziua nr="26">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="27">
+							<OreZi tip="CMedic">8</OreZi>
+						</Ziua>
+						<Ziua nr="28">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>							
+					</Zile>			
+				</Sapt>
+				<Sapt nr="5">
+					<Zile>
+						<Ziua nr="29">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="30">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="31">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>									
+					</Zile>			
+				</Sapt>	
+			</Salariat>	
+			<Salariat id="3">
+				<Venit_Brut>0</Venit_Brut>
+				<Venit_Baza_Calcul>0</Venit_Baza_Calcul>
+				<VenitSalarial>0</VenitSalarial>
+				<VenitSalarialCO>0</VenitSalarialCO>	
+				<TarifSalOraLC>30</TarifSalOraLC>			
+				<Baza_CVenitSO>0</Baza_CVenitSO>
+				<Baza_CVenitCI>0</Baza_CVenitCI>	 					     			
+				<Retineri>10</Retineri>
+				<Alte_retineri>0</Alte_retineri>
+				<Spor_vechime>0</Spor_vechime>
+				<Spor_noapte>0</Spor_noapte>
+				<Spor_conducere>0</Spor_conducere>				
+	 			<Spor>11</Spor>
+				<CAS>0</CAS>
+				<Somaj>0</Somaj>
+				<CASS>0</CASS>
+				<Deduceri_Personale>0</Deduceri_Personale>
+				<Alte_deduceri>0</Alte_deduceri>				
+				<Deduceri>250</Deduceri>
+				<Garantii_Materiale>0</Garantii_Materiale>
+				<Popriri>0</Popriri>
+				<Impozit_Retinut>0</Impozit_Retinut>
+				<Total_de_Plata>0</Total_de_Plata>	
+				
+				<CoefCO>1</CoefCO>	
+				<CoefCM>1</CoefCM>				
+				<CoefCMat>1</CoefCMat>
+																			
+				<TotalPontaj>
+					<OreL1-15/>
+					<Ore tip="Lucru"/>
+					<ZileL/>
+				</TotalPontaj>
+																	
+				<Sapt nr="1">
+					<Zile>
+						<Ziua nr="1" sapt="1">
+							<OreZi tip="Lucru">3</OreZi>						
+						</Ziua>
+						<Ziua nr="2" sapt="1">
+							<OreZi tip="Nemotivat">8</OreZi>
+						</Ziua>
+						<Ziua nr="3" sapt="1">
+							<OreZi tip="Nemotivat">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="4" sapt="1">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="5" sapt="1">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="6" sapt="1">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="7">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>	
+					</Zile>			
+				</Sapt>
+				<Sapt nr="2">
+					<Zile>
+						<Ziua nr="8">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="9">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="10">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="11">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="12">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>	
+						<Ziua nr="13">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="14">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+					</Zile>								
+				</Sapt>	
+				<Sapt nr="3">
+					<Zile>
+						<Ziua nr="15">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="16">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="17">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="18">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="19">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="20">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="21">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>							
+					</Zile>			
+				</Sapt>
+				<Sapt nr="4">
+					<Zile>
+						<Ziua nr="22">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="23">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="24">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>										
+						<Ziua nr="25">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="26">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="27">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="28">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>							
+					</Zile>			
+				</Sapt>
+				<Sapt nr="5">
+					<Zile>
+						<Ziua nr="29">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="30">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="31">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>									
+					</Zile>			
+				</Sapt>	
+			</Salariat>							
+		</Luna>	
+		
+		<Luna An="2011" nr="11" AnLuna="201111">
+			<Salariat id="1">
+				<Venit_Brut>0</Venit_Brut>
+				<Venit_Baza_Calcul>0</Venit_Baza_Calcul>
+				<VenitSalarial>0</VenitSalarial>
+				<VenitSalarialCO>0</VenitSalarialCO>	
+				<TarifSalOraLC>10</TarifSalOraLC>			
+				<Baza_CVenitSO>0</Baza_CVenitSO>
+				<Baza_CVenitCI>0</Baza_CVenitCI>	 					     			
+				<Retineri>10</Retineri>
+				<Alte_retineri>0</Alte_retineri>
+				<Spor_vechime>0</Spor_vechime>
+				<Spor_noapte>0</Spor_noapte>
+				<Spor_conducere>0</Spor_conducere>				
+	 			<Spor>11</Spor>
+				<CAS>0</CAS>
+				<Somaj>0</Somaj>
+				<CASS>0</CASS>
+				<Deduceri_Personale>0</Deduceri_Personale>
+				<Alte_deduceri>0</Alte_deduceri>				
+				<Deduceri>250</Deduceri>
+				<Garantii_Materiale>0</Garantii_Materiale>
+				<Popriri>0</Popriri>
+				<Impozit_Retinut>0</Impozit_Retinut>
+				<Total_de_Plata>0</Total_de_Plata>	
+				
+				<CoefCO>1</CoefCO>	
+				<CoefCM>1</CoefCM>				
+				<CoefCMat>1</CoefCMat>															
+						
+				<TotalPontaj>
+					<OreL1-15/>
+					<Ore tip="Lucru"/>
+					<ZileL/>
+					
+				</TotalPontaj>									
+				<Sapt nr="1">
+					<Zile>
+						<Ziua nr="1" sapt="1">
+							<OreZi tip="Invoire">2</OreZi>
+							<OreZi tip="Lucru">200</OreZi>						
+						</Ziua>
+						<Ziua nr="2" sapt="1">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="3" sapt="1">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="4" sapt="1">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="5" sapt="1">
+							<OreZi tip="COdihna">8</OreZi>
+						</Ziua>
+						<Ziua nr="6" sapt="1">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="7">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>	
+					</Zile>			
+				</Sapt>
+				<Sapt nr="2">
+					<Zile>
+						<Ziua nr="8">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="9">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="10">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="11">
+							<OreZi tip="CMedic">8</OreZi>
+						</Ziua>
+						<Ziua nr="12">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>	
+						<Ziua nr="13">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="14">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+					</Zile>								
+				</Sapt>	
+				<Sapt nr="3">
+					<Zile>
+						<Ziua nr="15">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="16">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="17">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="18">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="19">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="20">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="21">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>							
+					</Zile>			
+				</Sapt>
+				<Sapt nr="4">
+					<Zile>
+						<Ziua nr="22">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="23">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="24">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>										
+						<Ziua nr="25">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="26">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="27">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="28">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>							
+					</Zile>			
+				</Sapt>
+				<Sapt nr="5">
+					<Zile>
+						<Ziua nr="29">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="30">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="31">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>									
+					</Zile>			
+				</Sapt>	
+			</Salariat>	
+			<Salariat id="2">
+				<Venit_Brut>0</Venit_Brut>
+				<Venit_Baza_Calcul>0</Venit_Baza_Calcul>
+				<VenitSalarial>0</VenitSalarial>
+				<VenitSalarialCO>0</VenitSalarialCO>	
+				<TarifSalOraLC>20</TarifSalOraLC>			
+				<Baza_CVenitSO>0</Baza_CVenitSO>
+				<Baza_CVenitCI>0</Baza_CVenitCI>	 					     			
+				<Retineri>10</Retineri>
+				<Alte_retineri>0</Alte_retineri>
+				<Spor_vechime>0</Spor_vechime>
+				<Spor_noapte>0</Spor_noapte>
+				<Spor_conducere>0</Spor_conducere>				
+	 			<Spor>11</Spor>
+				<CAS>0</CAS>
+				<Somaj>0</Somaj>
+				<CASS>0</CASS>
+				<Deduceri_Personale>0</Deduceri_Personale>
+				<Alte_deduceri>0</Alte_deduceri>				
+				<Deduceri>250</Deduceri>
+				<Garantii_Materiale>0</Garantii_Materiale>
+				<Popriri>0</Popriri>
+				<Impozit_Retinut>0</Impozit_Retinut>
+				<Total_de_Plata>0</Total_de_Plata>	
+				
+				<CoefCO>1</CoefCO>	
+				<CoefCM>1</CoefCM>				
+				<CoefCMat>1</CoefCMat>															
+
+				<TotalPontaj>
+					<OreL1-15/>
+					<Ore tip="Lucru"/>
+					<ZileL/>
+					
+				</TotalPontaj>	
+																
+				<Sapt nr="1">
+					<Zile>
+						<Ziua nr="1" sapt="1">
+
+							<OreZi tip="Lucru">2</OreZi>						
+						</Ziua>
+						<Ziua nr="2" sapt="1">
+							<OreZi tip="Nemotivat">8</OreZi>
+						</Ziua>
+						<Ziua nr="3" sapt="1">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="4" sapt="1">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="5" sapt="1">
+							<OreZi tip="CMedic">8</OreZi>
+						</Ziua>
+						<Ziua nr="6" sapt="1">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="7">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>	
+					</Zile>			
+				</Sapt>
+				<Sapt nr="2">
+					<Zile>
+						<Ziua nr="8">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="9">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="10">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="11">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="12">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>	
+						<Ziua nr="13">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="CMedic">2</OreZi>
+						</Ziua>
+						<Ziua nr="14">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+					</Zile>								
+				</Sapt>	
+				<Sapt nr="3">
+					<Zile>
+						<Ziua nr="15">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="16">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="17">
+							<OreZi tip="CMedic">8</OreZi>
+						</Ziua>
+						<Ziua nr="18">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="19">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="20">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="21">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>							
+					</Zile>			
+				</Sapt>
+				<Sapt nr="4">
+					<Zile>
+						<Ziua nr="22">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="23">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="24">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>										
+						<Ziua nr="25">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="26">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="27">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="28">
+							<OreZi tip="CMedic">8</OreZi>
+						</Ziua>							
+					</Zile>			
+				</Sapt>
+				<Sapt nr="5">
+					<Zile>
+						<Ziua nr="29">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="30">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="31">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>									
+					</Zile>			
+				</Sapt>	
+			</Salariat>	
+			<Salariat id="3">
+				<Venit_Brut>0</Venit_Brut>
+				<Venit_Baza_Calcul>0</Venit_Baza_Calcul>
+				<VenitSalarial>0</VenitSalarial>
+				<VenitSalarialCO>0</VenitSalarialCO>	
+				<TarifSalOraLC>30</TarifSalOraLC>			
+				<Baza_CVenitSO>0</Baza_CVenitSO>
+				<Baza_CVenitCI>0</Baza_CVenitCI>	 					     			
+				<Retineri>10</Retineri>
+				<Alte_retineri>0</Alte_retineri>
+				<Spor_vechime>0</Spor_vechime>
+				<Spor_noapte>0</Spor_noapte>
+				<Spor_conducere>0</Spor_conducere>				
+	 			<Spor>11</Spor>
+				<CAS>0</CAS>
+				<Somaj>0</Somaj>
+				<CASS>0</CASS>
+				<Deduceri_Personale>0</Deduceri_Personale>
+				<Alte_deduceri>0</Alte_deduceri>				
+				<Deduceri>250</Deduceri>
+				<Garantii_Materiale>0</Garantii_Materiale>
+				<Popriri>0</Popriri>
+				<Impozit_Retinut>0</Impozit_Retinut>
+				<Total_de_Plata>0</Total_de_Plata>	
+				
+				<CoefCO>1</CoefCO>	
+				<CoefCM>1</CoefCM>				
+				<CoefCMat>1</CoefCMat>															
+						
+				<TotalPontaj>
+					<OreL1-15/>
+					<Ore tip="Lucru"/>
+					<ZileL/>
+					
+				</TotalPontaj>									
+				<Sapt nr="1">
+					<Zile>
+						<Ziua nr="1" sapt="1">
+							<OreZi tip="Lucru">3</OreZi>						
+						</Ziua>
+						<Ziua nr="2" sapt="1">
+							<OreZi tip="Nemotivat">8</OreZi>
+						</Ziua>
+						<Ziua nr="3" sapt="1">
+							<OreZi tip="Nemotivat">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="4" sapt="1">
+							<OreZi tip="CMedic">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="5" sapt="1">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="6" sapt="1">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="7">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>	
+					</Zile>			
+				</Sapt>
+				<Sapt nr="2">
+					<Zile>
+						<Ziua nr="8">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="9">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="10">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="11">
+							<OreZi tip="CMedic">8</OreZi>
+						</Ziua>
+						<Ziua nr="12">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>	
+						<Ziua nr="13">
+							<OreZi tip="COdihna">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="14">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+					</Zile>								
+				</Sapt>	
+				<Sapt nr="3">
+					<Zile>
+						<Ziua nr="15">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="16">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="17">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="18">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="19">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="20">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="21">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>							
+					</Zile>			
+				</Sapt>
+				<Sapt nr="4">
+					<Zile>
+						<Ziua nr="22">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="23">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="24">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>										
+						<Ziua nr="25">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="26">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="27">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="28">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>							
+					</Zile>			
+				</Sapt>
+				<Sapt nr="5">
+					<Zile>
+						<Ziua nr="29">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="30">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="31">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>									
+					</Zile>			
+				</Sapt>	
+			</Salariat>							
+		</Luna>
+		
+		<Luna An="2012" nr="02" AnLuna="201202">
+			<Salariat id="1">
+				<Venit_Brut>0</Venit_Brut>
+				<Venit_Baza_Calcul>0</Venit_Baza_Calcul>
+				<VenitSalarial>0</VenitSalarial>
+				<VenitSalarialCO>0</VenitSalarialCO>	
+				<TarifSalOraLC>10</TarifSalOraLC>			
+				<Baza_CVenitSO>0</Baza_CVenitSO>
+				<Baza_CVenitCI>0</Baza_CVenitCI>	 					     			
+				<Retineri>10</Retineri>
+				<Alte_retineri>0</Alte_retineri>
+				<Spor_vechime>0</Spor_vechime>
+				<Spor_noapte>0</Spor_noapte>
+				<Spor_conducere>0</Spor_conducere>				
+	 			<Spor>11</Spor>
+				<CAS>0</CAS>
+				<Somaj>0</Somaj>
+				<CASS>0</CASS>
+				<Deduceri_Personale>0</Deduceri_Personale>
+				<Alte_deduceri>0</Alte_deduceri>				
+				<Deduceri>250</Deduceri>
+				<Garantii_Materiale>0</Garantii_Materiale>
+				<Popriri>0</Popriri>
+				<Impozit_Retinut>0</Impozit_Retinut>
+				<Total_de_Plata>0</Total_de_Plata>	
+				
+				<CoefCO>1</CoefCO>	
+				<CoefCM>1</CoefCM>				
+				<CoefCMat>1</CoefCMat>															
+						
+				<TotalPontaj>
+					<OreL1-15/>
+					<Ore tip="Lucru"/>
+					<ZileL/>
+					
+				</TotalPontaj>									
+				<Sapt nr="1">
+					<Zile>
+						<Ziua nr="1" sapt="1">
+							<OreZi tip="Invoire">2</OreZi>
+							<OreZi tip="Lucru">300</OreZi>						
+						</Ziua>
+						<Ziua nr="2" sapt="1">
+							<OreZi tip="CMedic">8</OreZi>
+						</Ziua>
+						<Ziua nr="3" sapt="1">
+							<OreZi tip="CMedic">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="4" sapt="1">
+							<OreZi tip="">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="5" sapt="1">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="6" sapt="1">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="7">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>	
+					</Zile>			
+				</Sapt>
+				<Sapt nr="2">
+					<Zile>
+						<Ziua nr="8">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="9">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="10">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="11">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="12">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>	
+						<Ziua nr="13">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="14">
+							<OreZi tip="COdihna">8</OreZi>
+						</Ziua>
+					</Zile>								
+				</Sapt>	
+				<Sapt nr="3">
+					<Zile>
+						<Ziua nr="15">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="16">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="17">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="18">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="19">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="20">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="21">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>							
+					</Zile>			
+				</Sapt>
+				<Sapt nr="4">
+					<Zile>
+						<Ziua nr="22">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="23">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="24">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>										
+						<Ziua nr="25">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="26">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="27">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="28">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>							
+					</Zile>			
+				</Sapt>
+				<Sapt nr="5">
+					<Zile>
+						<Ziua nr="29">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="30">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="31">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>									
+					</Zile>			
+				</Sapt>	
+			</Salariat>	
+			<Salariat id="2">
+				<Venit_Brut>0</Venit_Brut>
+				<Venit_Baza_Calcul>0</Venit_Baza_Calcul>
+				<VenitSalarial>0</VenitSalarial>
+				<VenitSalarialCO>0</VenitSalarialCO>	
+				<TarifSalOraLC>20</TarifSalOraLC>			
+				<Baza_CVenitSO>0</Baza_CVenitSO>
+				<Baza_CVenitCI>0</Baza_CVenitCI>	 					     			
+				<Retineri>10</Retineri>
+				<Alte_retineri>0</Alte_retineri>
+				<Spor_vechime>0</Spor_vechime>
+				<Spor_noapte>0</Spor_noapte>
+				<Spor_conducere>0</Spor_conducere>				
+	 			<Spor>11</Spor>
+				<CAS>0</CAS>
+				<Somaj>0</Somaj>
+				<CASS>0</CASS>
+				<Deduceri_Personale>0</Deduceri_Personale>
+				<Alte_deduceri>0</Alte_deduceri>				
+				<Deduceri>250</Deduceri>
+				<Garantii_Materiale>0</Garantii_Materiale>
+				<Popriri>0</Popriri>
+				<Impozit_Retinut>0</Impozit_Retinut>
+				<Total_de_Plata>0</Total_de_Plata>	
+				
+				<CoefCO>1</CoefCO>	
+				<CoefCM>1</CoefCM>				
+				<CoefCMat>1</CoefCMat>															
+						
+				<TotalPontaj>
+					<OreL1-15/>
+					<Ore tip="Lucru"/>
+					<ZileL/>
+					
+				</TotalPontaj>	
+												
+				<Sapt nr="1">
+					<Zile>
+						<Ziua nr="1" sapt="1">
+
+							<OreZi tip="Lucru">2</OreZi>						
+						</Ziua>
+						<Ziua nr="2" sapt="1">
+							<OreZi tip="Nemotivat">8</OreZi>
+						</Ziua>
+						<Ziua nr="3" sapt="1">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="4" sapt="1">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="5" sapt="1">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="6" sapt="1">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="7">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>	
+					</Zile>			
+				</Sapt>
+				<Sapt nr="2">
+					<Zile>
+						<Ziua nr="8">
+							<OreZi tip="CMedic">8</OreZi>
+						</Ziua>
+						<Ziua nr="9">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="10">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="11">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="12">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>	
+						<Ziua nr="13">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="14">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+					</Zile>								
+				</Sapt>	
+				<Sapt nr="3">
+					<Zile>
+						<Ziua nr="15">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="16">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="17">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="18">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="19">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="20">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="21">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>							
+					</Zile>			
+				</Sapt>
+				<Sapt nr="4">
+					<Zile>
+						<Ziua nr="22">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="23">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="24">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>										
+						<Ziua nr="25">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="26">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="CMedic">2</OreZi>
+						</Ziua>
+						<Ziua nr="27">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="28">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>							
+					</Zile>			
+				</Sapt>
+				<Sapt nr="5">
+					<Zile>
+						<Ziua nr="29">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="30">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="31">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>									
+					</Zile>			
+				</Sapt>	
+			</Salariat>	
+			<Salariat id="3">
+				<Venit_Brut>0</Venit_Brut>
+				<Venit_Baza_Calcul>0</Venit_Baza_Calcul>
+				<VenitSalarial>0</VenitSalarial>
+				<VenitSalarialCO>0</VenitSalarialCO>	
+				<TarifSalOraLC>30</TarifSalOraLC>			
+				<Baza_CVenitSO>0</Baza_CVenitSO>
+				<Baza_CVenitCI>0</Baza_CVenitCI>	 					     			
+				<Retineri>10</Retineri>
+				<Alte_retineri>0</Alte_retineri>
+				<Spor_vechime>0</Spor_vechime>
+				<Spor_noapte>0</Spor_noapte>
+				<Spor_conducere>0</Spor_conducere>				
+	 			<Spor>11</Spor>
+				<CAS>0</CAS>
+				<Somaj>0</Somaj>
+				<CASS>0</CASS>
+				<Deduceri_Personale>0</Deduceri_Personale>
+				<Alte_deduceri>0</Alte_deduceri>				
+				<Deduceri>250</Deduceri>
+				<Garantii_Materiale>0</Garantii_Materiale>
+				<Popriri>0</Popriri>
+				<Impozit_Retinut>0</Impozit_Retinut>
+				<Total_de_Plata>0</Total_de_Plata>	
+				
+				<CoefCO>1</CoefCO>	
+				<CoefCM>1</CoefCM>				
+				<CoefCMat>1</CoefCMat>															
+						
+				<TotalPontaj>
+					<OreL1-15/>
+					<Ore tip="Lucru"/>
+					<ZileL/>
+					
+				</TotalPontaj>									
+				<Sapt nr="1">
+					<Zile>
+						<Ziua nr="1" sapt="1">
+							<OreZi tip="Lucru">3</OreZi>						
+						</Ziua>
+						<Ziua nr="2" sapt="1">
+							<OreZi tip="Nemotivat">8</OreZi>
+						</Ziua>
+						<Ziua nr="3" sapt="1">
+							<OreZi tip="Nemotivat">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="4" sapt="1">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="5" sapt="1">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="6" sapt="1">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="7">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>	
+					</Zile>			
+				</Sapt>
+				<Sapt nr="2">
+					<Zile>
+						<Ziua nr="8">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="9">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="10">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="11">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="12">
+							<OreZi tip="CMedic">8</OreZi>
+						</Ziua>	
+						<Ziua nr="13">
+							<OreZi tip="COdihna">2</OreZi>
+						</Ziua>
+						<Ziua nr="14">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+					</Zile>								
+				</Sapt>	
+				<Sapt nr="3">
+					<Zile>
+						<Ziua nr="15">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="16">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="17">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="18">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="19">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="20">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="21">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>							
+					</Zile>			
+				</Sapt>
+				<Sapt nr="4">
+					<Zile>
+						<Ziua nr="22">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="23">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="24">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>										
+						<Ziua nr="25">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>
+						<Ziua nr="26">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="27">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="28">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>							
+					</Zile>			
+				</Sapt>
+				<Sapt nr="5">
+					<Zile>
+						<Ziua nr="29">
+							<OreZi tip="Lucru">6</OreZi>
+							<OreZi tip="Invoire">2</OreZi>
+						</Ziua>
+						<Ziua nr="30">
+							<OreZi tip="Lucru">8</OreZi>
+						</Ziua>
+						<Ziua nr="31">
+							<OreZi tip="Lucru">8</OreZi>
+							<OreZi tip="S50">4</OreZi>
+						</Ziua>									
+					</Zile>			
+				</Sapt>	
+			</Salariat>							
+		</Luna>																					
+	</DateLunare>
+ </SAL>

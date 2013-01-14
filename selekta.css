@@ -1,0 +1,144 @@
+
+        /* LUNGIME BANDA SELECTIE 
+        xf|repeat {background:#eee;  float:left; width:3675px;}*/
+        ..xf-value {margin:1px 0;}
+        .xf-repeat-item {border:0px solid #6FA475;}
+        /* BANDA DE SELECTIE  CULOARE
+        xf|repeat .xf-repeat-index  {background:#F1F7BB; border:1px dotted black; }*/
+        .xf-repeat-index  { border:0px dotted black; }
+        ..xf-value {width:8em;}
+        
+        
+        /*  model delete confirmation box */
+        
+        /* pagina culoare marime pozitionate         
+        #background2 {position:fixed; top:0px; left:50px; background:#E0E0E00; width:100%; height:100%;} */
+        .background2 {font-size:1.4em; color:red;}
+        
+        /* pagina interna marime culoare dimensiuni bordura */
+        #delete-confirm-box {width:550px; height:200px; border:2px solid #1c5180; background:#C3C3C3; margin:auto; margin-top:250px;}
+        
+        /* pozitionare butoane*/
+        .delete-option-triggers {text-align:center; width:100%; margin-top:-180px;}
+       /*xf|trigger {margin-right:1px;} */
+
+        /*#content-for-deletion {float:left; width:240px; position:relative; top:10; left:10; padding:10px;}*/
+        #content-for-deletion {float:left; width:280px; position:relative; padding:80px;}
+        #content-for-deletion .p {padding:0; margin-bottom:50px; font-weight:bold; font-size:1.6em;}
+        #delete-confirm-box {font-size:1.0em; padding:10px; color:red; font-weight:bold;
+        text-align:center; background:#E8E8E8; }
+
+ /* pagina culoare marime pozitionate dreapta SUS */
+ 
+
+        .Fondt {background-color:#D7D5D8;}  
+		i {color:red;}
+         /* accnou */
+         
+            .titl {width:12em;text-align:left}            
+            .den input {width:15em;text-align:left;font-size:1.0em;}
+            .val input {width:5em;text-align:right}
+            .nrc input {width:3em;text-align:right}
+            .dfpl input {width:35px;text-align:right;font-size:1.0em;font-weight:bold; }
+            .df0 input {text-align:left;font-size:1.4em;font-style:italic;}
+            .df1 input {width:25em;text-align:left;font-size:0.9em;font-weight:bold; }
+            .df2 input {width:5em;text-align:right;font-size:0.9em;font-weight:bold; }
+            .df3 input {width:25em;text-align:left;font-size:0.9em;font-weight:bold; }
+            
+            .cd  {width:50px;text-align:left; padding:0px 0px 0px 0px;}
+            .d1  {width:30px;text-align:left; padding:0px 0px 0px 10px; background-color:#C2CCD0;}
+            .cdd  {width:30px;text-align:left; padding:0px 0px 0px 0px;}
+            .d2 {width:40px;text-align:left; padding:0px 0px 0px 0px; background-color:#C2CCD0;}  
+            
+            .cc  {width:40px;text-align:left; padding:0px 0px 0px 0px;}
+            .c1  {width:30px;text-align:left; padding:0px 0px 0px 10px; background-color:#C2CCD0;}            
+            .ccd  {width:30px;text-align:left; padding:0px 0px 0px 0px;}
+            .c2  {width:40px;text-align:left; padding:0px 0px 0px 0px; background-color:#C2CCD0;}
+                       
+            .ocod input {width:4em;text-align:left}
+            .odcod input {width:38em;text-align:left}
+            .bcod input {width:7em;text-align:left;font-size:1.8mm;}
+            #Sobp {background-color:#61797B;color:#005700;font-style:italic;}
+            .tab {border-width:thin; border-style:solid; border-color:#aaaaaa}
+            .tab2 {width:85em}
+            .trsm {width:4.25em}
+            .trmd {width:8.5em}
+            .trbig {width:34em}
+            #SobpD {color:red;font-style:italic;background-color:#D3DAC7; }
+            #SobpN {width:10em; font-style:italic;font-weight:bold;}
+            #Sterg {color:red;font-style:italic;font-size:0.8em;}
+            #Edit{color:#00006B;font-style:italic;font-size:1.0em;}
+            .Fond {background-color:#C2CCD0;}
+            .Fond1 {background-color:#D7D5D8;}
+            .Fond3 {background-color:#FFFFC0;font-style:italic;font-size:1.2em;padding:1px 15px 1px 15px;border-width:0.1mm; border-style:solid ;}
+            .Fond4 {background-color:#ffffff;font-style:italic;font-size:1.2em;}
+            .dg1{background-color:#D7D5D8;width:5em;text-align:center;font-weight:bold;font-size:1.0em;}
+            .dg2{background-color:#D7D5D8;width:15em;text-align:center;font-weight:bold;font-size:1.0em;}
+            .dg3{background-color:#D7D5D8;width:5em;text-align:left;font-weight:bold;font-size:1.0em;}
+            .dg4{background-color:#D7D5D8;width:25em;text-align:center;font-size:0.7em;} 
+                                   
+    /*  Butoane  */
+
+#dark{
+    background-color:#C3C3C3;
+    border:0px solid #000;
+    padding:5px 5px 5px 5px;
+    margin-top:30px;}
+    
+#light{
+    background-color:#FFF;
+    border:1px solid #dedede;
+    padding:10px;
+    margin-top:20px;}   
+    
+li{ 
+list-style:none;
+    padding-top:10px;
+    padding-bottom:10px;}   
+
+.button, .button:visited {
+    background: #222 url(overlay.png) repeat-x; 
+    display: inline-block; 
+    padding: 5px 10px 6px; 
+    color: #fff; 
+    text-decoration: none;
+    -moz-border-radius: 6px; 
+    -webkit-border-radius: 6px;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    position: relative;
+    cursor: pointer}
+ 
+    .button:hover                           { background-color: #111; color: #fff; }
+    .button:active                          { top: 1px; }
+    .small.button, .small.button:visited            { font-size: 12px}
+    .button, .button:visited,
+    .medium.button, .medium.button:visited { font-size: 13px; font-weight: bold; line-height: 1; text-shadow: 0 -1px 1px rgba(0,0,0,0.25);}
+                                                  
+    .large.button, .large.button:visited            { font-size: 16px; 
+                                                      padding: 8px 14px 9px; }
+                                                      
+    .super.button, .super.button:visited { font-size: 34px; padding: 8px 14px 9px; }
+    
+	.pink.button, .magenta.button:visited		{ background-color: #e22092; }
+	.pink.button:hover					{ background-color: #c81e82; }	
+	.green.button, .green.button:visited		{ background-color: #91bd09; }
+	.green.button:hover					{ background-color: #749a02; }	
+	.red.button, .red.button:visited			{ background-color: #e62727; }
+	.red.button:hover					{ background-color: #cf2525; }	
+	.orange.button, .orange.button:visited		{ background-color: #ff5c00; }
+	.orange.button:hover				{ background-color: #d45500; }	
+	.blue.button, .blue.button:visited			{ background-color: #2981e4; }
+	.blue.button:hover					{ background-color: #2F1EC0; }	
+	.yellow.button, .yellow.button:visited		{ background-color: #ffb515; }
+	.yellow.button:hover				{ background-color: #fc9200; }
+ 	.greenn.button, .greenn.button:visited		{ background-color: #008080; }
+	.greenn.button:hover				{ background-color:#009E9E; }  	
+	.white.button, .white.button:visited		{ background-color: #C000C0; }
+	.white.button:hover					{ background-color:#6E317A; }  
+	.back.button, .back.button:visited			{ background-color:#800000; }
+	.back.button:hover					{ background-color:#BF0000; }  
+            
+         

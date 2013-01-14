@@ -1,0 +1,92 @@
+ body{background-color:#ffffff; } 
+
+/* <link rel="stylesheet" href="raport.css" type="text/css"></link> */
+		 
+		 .xf-value {width: 100px; height:4.5mm; font-size:16px; border-width:0.1mm; border-style:solid;border-color:#676;}
+		   /* The default field width for all inputs */		   
+		   legend {font-size:1.2em;}	
+	           label {font-size:1.2em;}
+		   /* custom field width overrides relative to current font size */
+		   /* ex is the size of the current lowercase 'x' in pixels */
+		   /* em is the size of the current "M" character in pixels */
+
+ b {color:#000000;}
+ i {color:red;}
+
+/*Tabel04 Stat salarii si raport salatii OP*/ 
+
+.Tmarsal { vertical-align:top; border-width:0.1px; border-style:solid; width:325mm; }
+.T4nrc {vertical-align:top;border-width:3px;
+border-style:outset; width:6mm;
+ font-size:12px;}
+.T4exp {vertical-align:top; border-width:3px;
+border-style:outset; width:58mm; 
+font-size:12px;}
+.T4exp1 {vertical-align:top;border-width:3px;
+border-style:outset; width:43mm;
+ font-size:12px;}
+.T4pro {vertical-align:top; border-width:3px;
+border-style:outset; width:14mm; 
+font-size:12px;}
+.T4exp2 {vertical-align:top;border-width:3px;
+border-style:outset; width:58mm;
+ font-size:12px;}     
+	.T4trma {vertical-align:top; border-width:1px;
+border-style:outset; width:12mm; font-size:12px;}
+        .T4trmb {vertical-align:top; border-width:1px;
+border-style:outset; width:75mm; font-size:12px;}
+        .T4trmc {vertical-align:top; border-width:1px;
+border-style:outset; width:25mm; font-size:12px;
+                text-align:right;} 
+        .T4trmd {vertical-align:top; border-width:1px;
+border-style:outset; width:100mm; font-size:12px;}
+        .T4trme {vertical-align:top; border-width:1px;
+border-style:outset; width:100mm; font-size:12px;}
+               .T4val .xf-value {width:105mm; border-style:none;}
+               .T4val1 .xf-value {width:18mm; border-style:none;}
+               .T4val2 .xf-value {width:25mm; border-style:none;}
+               .T4val3 .xf-value {width:65mm; border-style:none;}
+               .T4val4 .xf-value {width:65mm; border-style:none;}
+               .T4vale .xf-value {width:37mm; border-style:none;}
+                                     .val1 .xf-value {width:105mm; border-style:none;}
+                                     .val2 .xf-value {width:10mm; border-style:none;}                   
+                                     .val3 .xf-value {width:30mm; border-style:none;}
+
+/*Note contabile*/
+           .TNmare{ vertical-align:top; border-width:0.1px; border-style:solid; width:auto; }
+
+           .TNct1 {vertical-align:top; border-width:1px;
+border-style:outset; width:92mm; 
+                  font-size:16px; text-align:center;}           
+           .TNct2 {vertical-align:top; border-width:1px;
+border-style:outset; width:24mm; 
+                  font-size:16px;}
+           .TNct3 {vertical-align:top; border-width:1px;
+border-style:outset; width:34mm;  
+                  font-size:16px;text-align:center;}       
+           .TNct7 {vertical-align:top; border-width:1px;
+border-style:outset; width:103mm; 
+                  font-size:16px; text-align:center;}
+ 
+.TNnrc {vertical-align:top; border-width:1px;
+border-style:outset; width:15mm; font-size:16px;
+        text-align:center;}
+.TNexp {vertical-align:top; border-width:1px;
+border-style:outset; width:105mm; font-size:16px;}
+.TNexp1 {vertical-align:top; border-width:1px;
+border-style:outset; width:25mm; font-size:16px;}
+.TNexp2 {vertical-align:top; border-width:1px;
+border-style:outset; width:20mm; font-size:16px; 
+        text-align:center;}
+.TNexp3 {vertical-align:top; border-width:1px;
+border-style:outset; width:30mm; font-size:16px; 
+        text-align:center;}
+.TNexp4 {vertical-align:top; border-width:1px;
+border-style:outset; width:25mm; font-size:16px;
+        text-align:right;}
+    
+               .TNnr .xf-value {width:14mm; border-style:none;}
+               .TNval .xf-value {width:18mm; border-style:none;text-align:center;}
+               .TNval1 .xf-value {width:22mm; border-style:none;}
+               .TNval2 .xf-value {width:103mm; border-style:none;}
+               .TNval3 .xf-value {width:29mm; border-style:none;}

@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="../xsltforms/xsltforms.xsl" type="text/xsl"?>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:xforms="http://www.w3.org/2002/xforms"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ev="http://www.w3.org/2001/xml-events"
+ xml:lang="en">
+	<head>
+	
+		<title>FOAIE COLECTIVĂ PONTAJ</title>  
+<!--<link rel="stylesheet" href="selektxxxxxxxx.css"></link>-->
+
+		<style type="text/css">
+
+
+	 
+			.xf-value {width:30px; height:5mm; font-size:14px; border-width:0.0mm; 
+			 border-style: solid; border-color:#666}
+
+			.legend {font-weight:bold; font-size:1.2em;}	
+			.label {font-weight:bold; font-size:1.4em;}
+
+	
+					.Tmaresal { vertical-align:top; border-width:0.1mm; border-style:solid;width:auto; }				 
+					.Zmarefcp {vertical-align:top; border-width:0.1mm; border-style:none; width:410mm;}
+					   
+					.Fnrc {vertical-align:top; border-width:1px;
+border-style:outset; width:12mm; font-size:12px;}
+					.Fpro {vertical-align:top; border-width:1px;
+border-style:outset; width:11.5mm; font-size:12px;}
+				  .Fpro1 {vertical-align:top; border-width:1px;
+border-style:outset; width:37mm; font-size:14px;}
+					.Fpro2 {vertical-align:top; border-width:1px;
+border-style:outset;width:12mm; font-size:12px;}
+
+				.Fnrx {vertical-align:top; border-width:0.1px; border-style: solid; width:5mm; font-size:12px;}		  
+				.Ftnrt {vertical-align:top; border-width:1px;
+border-style:outset; width:12mm; font-size:12px;text-align:center;}
+				.Ftnme {vertical-align:top; border-width:1px;
+border-style:outset; width:12mm; font-size:12px;text-align:center;}
+
+				.Ftnp {vertical-align:top; border-width:1px;
+border-style:outset; width:36mm; font-size:12px;}
+				.Ftnmf {vertical-align:top; border-width:1px;
+border-style:outset; width:36mm; font-size:12px;text-align:center;} 
+
+				.Ftnr {vertical-align:top; border-width:1px;
+border-style:outset; width:12.6mm; font-size:12px;text-align:center;}
+				.Ftnrr {vertical-align:top; border-width:1px;
+border-style:outset; width:16mm; font-size:12px;text-align:center;}
+				 
+				.Ftnrs {vertical-align:top; border-width:1px;
+border-style:outset; width:12.6mm; font-size:12px;text-align:center;}
+				.Ftnrr {vertical-align:top; border-width:1px;
+border-style:outset; width:14mm; font-size:12px;text-align:center;}
+				.Ftnrss {vertical-align:top; border-width:1px;
+border-style:outset; width:14mm; font-size:12px;text-align:center;}
+							   .Fvalx .xf-value {width:5mm; border-style:solid ; background-color:#FFEEB8;}
+							   .Fvaln .xf-value {width:11mm; border-style:none;}
+						 .Fval .xf-value {width:34mm; border-style:none;}
+
+							   .Fval1 .xf-value {width:11mm; border-style:none;text-align:left;}
+
+							   .Fval2 .xf-value {width:10mm; border-style:none;text-align:right;}
+							   .Fval3 .xf-value {width:65mm; border-style:none;}
+							   .Fval4 .xf-value {width:55mm; border-style:none;}
+							   .Fval5 .xf-value {width:11mm; border-style:none;}
+							   .Fval6 .xf-value {width:13mm; border-style:none;}
+							   .Fval7 .xf-value {width:13mm; border-style:none;}
+
+
+
+					.trf0 {vertical-align:top; border-width:1px;
+border-style:outset; width:16mm;font-size:11px;text-align:right; height:5.5mm;font-weight:bold}
+					.trf1 {vertical-align:top; border-width:1px;
+border-style:outset; width:16mm;font-size:11px;text-align:right; height:5.5mm;font-weight:bold}
+					.trf2 {vertical-align:top; border-width:1px;
+border-style:outset; width:36mm;font-size:11px; text-align:left;height:5.5mm;font-weight:bold}
+					.trf9 {vertical-align:top; border-width:1px;
+border-style:outset; width:36mm;font-size:11px; text-align:left;height:5.5mm;font-weight:bold}
+					.trsn {vertical-align:top; border-width:0.1mm; border-width:1px;
+border-style:outset; width:12mm;font-size:12px; text-align:center;font-weight:bold;height:5.5mm;}
+					.trfn {vertical-align:top; border-width:1px;
+border-style:outset; width:12mm;font-size:11px; text-align:left;font-weight:bold;height:5.5mm;}
+
+					.trf3 {vertical-align:top; border-width:1px;
+border-style:outset; width:34mm; font-size:10px;font-weight:bold;}
+					.trf4 {vertical-align:top; border-width:1px;
+border-style:outset; width:14mm;font-size:9px;text-align:center;font-weight:bold;}
+					.trf5 {vertical-align:top; border-width:1px;
+border-style:outset; width:10mm;font-size:9px;text-align:center;font-weight:bold;}
+					.trf7 {vertical-align:top; border-width:1px;
+border-style:outset; width:10mm;font-size:9px;text-align:center;font-weight:bold;}
+					.trf6 {vertical-align:top; border-width:1px;
+border-style:outset; width:34mm;font-size:10px;font-weight:bold;}
+					.trf8 {vertical-align:top; border-width:1px;
+border-style:outset; width:14mm;font-size:9px;text-align:center;font-weight:bold;}
+					.trf10 {vertical-align:top; border-width:1px;
+border-style:outset; width:36mm;font-size:12px; text-align:center;height:5.5mm;font-weight:bold;}
+
+					.valf1 .xf-value {width:14mm; border-style:none;text-align:right;font-weight:bold;}
+					.valf2 .xf-value {width:29mm; border-style:none;text-align:right;font-weight:bold;}
+					.valf5 .xf-value {width:25mm; border-style:none;}
+					.valfn .xf-value {width:10mm; border-style:none;text-align:right;font-weight:bold;}
+					.val1 .xf-value {width:105mm; border-style:none;font-size:12px;}
+					.val2 .xf-value {width:10mm; border-style:none;font-size:12px;}				   
+					.val3 .xf-value {width:30mm; border-style:none;font-size:12px;} 
+				</style>
+		<style type="text/css" media="print">
+			.noprint{display: none;}
+		</style>
+
+		<script type="text/javascript" src="loadSal.js"/>		
+		
+
+		<xforms:model id="SAL" version="1.1">
+		<xforms:instance id="sal" />
+		<xforms:instance id="ore">
+			<DATE xmlns="">
+				<Ore tip="Lucru" simbol="L">0</Ore>
+				<Ore tip="COdihna" simbol="CO">0</Ore>
+				<Ore tip="CMedical" simbol="CM">0</Ore>
+				<Ore tip="Invoire" simbol="FP">0</Ore>
+				<Ore tip="Nemotivat" simbol="N">0</Ore>
+				<Ore tip="S50" simbol="S50">0</Ore>																		
+			</DATE>
+		</xforms:instance> 	
+
+		</xforms:model>
+
+
+
+  </head>
+
+	<body bgcolor="#FFFFFF" text="#080808" rightmargin="80" topmargin="40" onload="loadSal();">
+
+			<table align="center">				
+					<tr>
+						<td><h3>FOAIE COLECTIVĂ DE PREZENŢĂ </h3></td> 
+						<td><label> - An : </label><b><xforms:output value="substring(instance('sal')/LunaLucru,1,4)" class="Fval1"/></b></td>
+						<td><label> - Luna : </label><b><xforms:output value="substring(instance('sal')/LunaLucru,5,2)" class="Fval1"/></b></td>	
+						<td>
+							<label id="Ant">Alege altă lună </label>
+							<xforms:select1 class="Ztd1" ref="instance('sal')/LunaLucru">
+								<xforms:itemset nodeset="instance('sal')/DateLunare/Luna/@AnLuna">
+									<xforms:label ref="."/>
+									<xforms:value ref="."/>
+								</xforms:itemset>                         
+						 	</xforms:select1>
+						</td>							
+					</tr>				
+			</table>
+
+       <div style="width:100%">
+<table>
+		
+			<tr>
+				<td><b><xforms:output ref="/SAL/Date_firma/Prefix" class="val3"/>
+					<xforms:output ref="/SAL/Date_firma/Firma" class="val2"/>
+					<xforms:output ref="/SAL/Date_firma/Sufix" class="val3"/></b></td>   
+				<td><label>CUI: RO </label><b><xforms:output ref="/SAL/Date_firma/CISTVA" class="val2"/></b></td>
+				<td><label>Nr.Inreg.ITM :</label><b><xforms:output ref="/SAL/Date_firma/Numar_ITM" class="val3"/></b></td>
+				<td><label>Nr Zile Lucratoare :</label><b><xforms:output ref="Luna/@NrZlucruL" class="val3"/></b></td>
+				<td><label>Ore conditii normale :</label><b><xforms:output ref="Luna/@OreNl" class="val1"/></b><label>/ luna</label></td>
+			</tr>
+		
+	</table> 
+            </div>
+        <br/>
+		<div style="font-weight:bold;width:100%">
+<table border="2" class="Zmarefcp">
+<tr><td>  
+					<table border="0" width="100%">
+						<tr>
+							<th class="pro">Date Salariat</th>
+							<th class="pro">ORE ZILNIC</th>
+							<th class="exp">Din Care</th>
+						</tr>
+					</table>
+
+<table class="Tmaresal">
+<tr><td>
+					<table border="1" cellspacing="2" cellpadding="3" width="100%"> 
+						<tr>
+							<th class="Fnrc">Nr. Crt</th>
+							<th colspan="2" class="Fpro1">Nume / Prenume</th>	  
+							<!--<th class="Fpro1">Prenume </th>	-->
+							<th class="Fpro">Ziua 1</th>
+							<th class="Fpro">Ziua 2</th>	
+							<th class="Fpro">Ziua 3</th>
+							<th class="Fpro">Ziua 4</th>
+							<th class="Fpro">Ziua 5</th>
+							<th class="Fpro">Ziua 6</th>   
+							<th class="Fpro">Ziua 7</th>
+							<th class="Fpro">Ziua 8</th>
+							<th class="Fpro">Ziua 9</th>
+							<th class="Fpro">Ziua 10</th>
+							<th class="Fpro">Ziua 11</th>
+							<th class="Fpro">Ziua 12</th>   
+							<th class="Fpro">Ziua 13</th>
+							<th class="Fpro">Ziua 14</th>
+							<th class="Fpro">Ziua 15</th>
+							<th class="Fpro">-</th>
+							<th class="Fpro">Total ore 1-15</th>
+							<th class="Fpro">Ore supl. 50%</th>
+							<th class="Fpro">Ore de noapte</th>
+							<th class="Fpro">Co</th>
+							<th class="Fpro">Bp</th>
+							<th class="Fpro">M</th>
+							<th class="Fpro">O</th>
+							<th class="Fpro">Prm</th>
+						</tr>			   
+						<tr>
+							<th class="Fpro2" >Marca</th>
+							<th class="Fpro1" >CNP</th>
+							<th class="Fpro1" >Funcţia</th>
+							<th class="Fpro">Ziua 16</th>
+							<th class="Fpro">Ziua 17</th>
+							<th class="Fpro">Ziua 18</th>
+							<th class="Fpro">Ziua 19</th>
+							<th class="Fpro">Ziua 20</th>
+							<th class="Fpro">Ziua 21</th>
+							<th class="Fpro">Ziua 22</th>	
+							<th class="Fpro">Ziua 23</th>		
+							<th class="Fpro">Ziua 24</th>
+							<th class="Fpro">Ziua 25</th>
+							<th class="Fpro">Ziua 26</th>
+							<th class="Fpro">Ziua 27</th>
+							<th class="Fpro">Ziua 28</th>
+							<th class="Fpro">Ziua 29</th>	
+							<th class="Fpro">Ziua 30</th>		
+							<th class="Fpro">Ziua 31</th> 
+							<th class="Fpro">Total ore lu- crate</th>
+							<th class="Fpro">Ore supl. 100%</th>
+							<th class="Fpro">Total ore nelu- crate</th>
+							<th class="Fpro">Bo</th>
+							<th class="Fpro">Am</th>
+							<th class="Fpro">CFP</th>
+							<th class="Fpro">N</th>
+							<th class="Fpro">Prb</th>
+						</tr>
+					</table>
+
+					<table border="1" cellspacing="0" cellpadding="0" width="100%"> 												
+						<xforms:repeat nodeset="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat" id="repeatRow">
+							<tr>
+								<td>
+							<table border="0" cellspacing="1" cellpadding="0" width="100%">
+								<tr>
+									<td class="Ftnrt"><xforms:output class="Fvaln" value="position()"/></td> 
+									<td colspan="2" class="Ftnp"><xforms:output class="Fval" value="concat(instance('sal')/Personal/Salariat[@id=current()/@id]/@Nume , '  ' , instance('sal')/Personal/Salariat[@id=current()/@id]/@Prenume)"/></td>
+									
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=1]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=2]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>		
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=3]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=4]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>		
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=5]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=6]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>		
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=7]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=8]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=9]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>		
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=10]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=11]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>		
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=12]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=13]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>		
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=14]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>	
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=15]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>
+																																												
+									<td class="Ftnr"><xforms:output class="Fval1" ref="Zilnic0"/>-</td>
+									<!--<td class="Ftnrr"><xforms:output class="Fval6" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@Marca=current()/@Marca]/Sapt/Zile/Ziua[@nr &lt; '16']/OreZi[@tip='Lucru'])"/></td>-->
+									<td class="Ftnrr"><xforms:output class="Fval6" value="TotalPontaj/OreL1-15"/></td>
+									<td class="Ftnr"><xforms:output class="Fval1" value="TotalPontaj/Ore[@tip='S50']"/></td>
+									<td class="Ftnrr"><xforms:output class="Fval1" ref="Zilnic0"/>A</td>
+									<td class="Ftnr"><xforms:output class="Fval1"  value="TotalPontaj/Ore[@tip='COdihna']"/></td>
+									<td class="Ftnr"><xforms:output class="Fval1" ref="Zilnic0"/>B</td>
+									<td class="Ftnr"><xforms:output class="Fval1" ref="Zilnic0"/>C</td>
+									<td class="Ftnr"><xforms:output class="Fval1" ref="Zilnic0"/>D</td>
+									<td class="Ftnr"><xforms:output class="Fval1" ref="Zilnic0"/>E</td>
+								</tr>  
+								
+								<tr>
+									<td class="Ftnme"><xforms:output class="Fval5" value="instance('sal')/Personal/Salariat[@id=current()/@id]/@id" /></td>
+									<td class="Ftnmf"><xforms:output class="Fval"  value="instance('sal')/Personal/Salariat[@id=current()/@id]/@CNP"/></td>
+									<td class="Ftnmf"><xforms:output class="Fval" value="instance('sal')/Personal/Salariat[@id=current()/@id]/@Functia"/></td>
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=16]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=17]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>		
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=18]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=19]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>		
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=20]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=21]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>		
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=22]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=23]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=24]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>		
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=25]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=26]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>		
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=27]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=28]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>		
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=29]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>	
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=30]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>
+									<td class="Ftnr">
+										<xforms:repeat nodeset="Sapt/Zile/Ziua[@nr=31]/OreZi">
+											<xforms:output class="Fval1" value="."/>
+											<xforms:output class="Fval2" value="if(./@tip != 'Lucru', instance('ore')/Ore[@tip=current()/@tip]/@simbol, '')"/>											
+										</xforms:repeat>
+									</td>									
+									<td class="Ftnrss"><xforms:output class="Fval7" value="TotalPontaj/Ore[@tip='Lucru']"/></td>
+									<td class="Ftnrs"><xforms:output class="Fval1" ref="Zilnic0"/>X</td>
+									<td class="Ftnrss"><xforms:output class="Fval1" ref="Zilnic0"/>Y</td>
+									<td class="Ftnrs"><xforms:output class="Fval1"  value="TotalPontaj/Ore[@tip='CMedical']"/></td>
+									<td class="Ftnrs"><xforms:output class="Fval1" ref="Zilnic0"/>Z</td>
+									<td class="Ftnrs"><xforms:output class="Fval1"  value="TotalPontaj/Ore[@tip='Invoire']"/></td>
+									<td class="Ftnrs"><xforms:output class="Fval1"  value="TotalPontaj/Ore[@tip='Nemotivat']"/></td>
+									<td class="Ftnrs"><xforms:output class="Fval1" ref="Zilnic0"/>W</td>
+								</tr>
+							</table>				
+								</td>
+							</tr>
+							<br/>
+						</xforms:repeat><!-- -->				
+					</table>
+</td></tr>
+				</table>
+</td></tr>
+			</table>
+				</div>
+
+
+				<div class="noprint">
+				<br/>
+					<a href="index01.xhtml">
+						<xforms:trigger> 									 
+							<xforms:label class="medium button green">&#171; Înapoi la pagina principală &#171;</xforms:label> 
+							<xforms:hint>Înapoi la pagina principală</xforms:hint>
+						</xforms:trigger>
+					</a>
+
+					<a href="fcpscurt.xhtml">
+						<xforms:trigger>
+							<xforms:label id="Back">&#171; Înapoi la Pontaj Salariati &#171;</xforms:label> 
+								<!--<xforms:label class="medium button gray">&#171;- back-Foaie Pontaj &#171;-</xforms:label> -->
+							<xforms:hint>Înapoi_la Pontaj_Salariati</xforms:hint>		
+						</xforms:trigger>
+					</a>
+					<a href="#" onclick="window.print()">
+						<xforms:trigger> 
+							<xforms:label><i> ^ Tipărire</i></xforms:label> 
+							<xforms:hint>Tiparire</xforms:hint>	
+						</xforms:trigger>
+					</a>
+					<br/>				
+				</div>
+
+
+	</body>
+</html>
+

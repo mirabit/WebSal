@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="../webgestext/xsltforms/xsltforms.xsl" type="text/xsl"?>
+<!--<?xml-stylesheet href="../xsltforms/xsltforms.xsl" type="text/xsl"?>-->
+<?css-conversion no?>
+
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:xforms="http://www.w3.org/2002/xforms"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ev="http://www.w3.org/2001/xml-events"
+ xml:lang="en">
+	<head>
+
+		<title>NOTE CONTABILE nc01</title> 
+
+		<link rel="stylesheet" href="raport.css"></link>
+
+		<style type="text/css" media="print">                                    
+		        .noprint{display: none;}               	 
+		        /* The default field width for all inputs */                       
+		        legend {font-weight:bold;font-size:1.0em;}
+		</style>
+
+		<script type="text/javascript" src="loadSal.js"/>	
+
+        <xforms:model id="SAL" version="1.1">
+            <xforms:instance id="sal" xmlns="">
+				<DATE/>
+																						
+			
+		 	</xforms:instance>           
+            <xforms:instance id="nc">
+				<DATE xmlns="">
+		   			<d/>																						
+				</DATE> 
+		 	</xforms:instance> 
+		 	
+			<!--<xforms:bind id="CUI" nodeset="/SAL/NCsal/@cuiFirma" calculate="/SAL/Date_firma/CISTVA"/>
+			<xforms:bind id="setAnLuna" nodeset="/SAL/NCsal/@AnLuna" calculate="/SAL/LunaLucru"/>
+			
+			<xforms:bind id="CoAtCAS" nodeset="/SAL/NCsal/NC[@id='CoAtCAS']/Credit_Val" 
+			calculate="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/CAS)"/>
+			
+			<xforms:bind id="CoAtFS" nodeset="/SAL/NCsal/NC[@id='CoAtFS']/Credit_Val" 
+			calculate="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Somaj)"/>
+			
+			<xforms:bind id="CoAtCASS" nodeset="/SAL/NCsal/NC[@id='CoAtCASS']/Credit_Val" 
+			calculate="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/CASS)" />
+
+			<xforms:bind id="CoAtGrMat" nodeset="/SAL/NCsal/NC[@id='CoAtGrMat']/Credit_Val" 
+			calculate="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Retineri)"/>
+
+									 NC CREDIT VALOARE Angajat
+			<xforms:bind id="CoAtImpS" nodeset="/SAL/NCsal/NC[@id='CoAtImpS']/Credit_Val" 
+			calculate="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Impozit_Retinut)"/>
+
+	        <xforms:bind id="ChArCAS" nodeset="/SAL/NCsal/NC[@id='ChArCAS']/Credit_Val" 
+	        calculate="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * (instance('sal')/NCsal/NC[@id='ChArCAS']/Procent) div 100)"/>
+
+	        <xforms:bind id="ChArFA" nodeset="/SAL/NCsal/NC[@id='ChArFA']/Credit_Val" 
+	        calculate="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * (instance('sal')/NCsal/NC[@id='ChArFA']/Procent) div 100)"/>
+
+			<xforms:bind id="ChArFS" nodeset="/SAL/NCsal/NC[@id='ChArFS']/Credit_Val" 
+			calculate="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Baza_CVenitSO) * (instance('sal')/NCsal/NC[@id='ChArFS']/Procent) div 100)"/>
+			
+			<xforms:bind id="ChArCASS" nodeset="/SAL/NCsal/NC[@id='ChArCASS']/Credit_Val" 
+			calculate="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Baza_CVenitCI) * (instance('sal')/NCsal/NC[@id='ChArCASS']/Procent) div 100)"/>
+
+			<xforms:bind id="ChArCM" nodeset="/SAL/NCsal/NC[@id='ChArCM']/Credit_Val" 
+			calculate="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * (instance('sal')/NCsal/NC[@id='ChArCM']/Procent) div 100)"/>
+
+			<xforms:bind id="ChArFG" nodeset=" /SAL/NCsal/NC[@id='ChArFG']/Credit_Val" 
+			calculate="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * (instance('sal')/NCsal/NC[@id='ChArFG']/Procent) div 100)"/>
+
+			<xforms:bind id="ChArSal" nodeset="/SAL/NCsal/NC[@id='ChArSal']/Credit_Val" 
+			calculate="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut)"/>-->
+
+            <!--<xforms:submission id="ncx" method="get" mediatype="application/zip" resource="ncsal.xml"/> -->
+            
+			<xforms:action ev:event="xforms-ready">
+				<xforms:setvalue ref="instance('sal')/NCsal/@cuiFirma" value="instance('sal')/Date_firma/CISTVA"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/@AnLuna" value="instance('sal')/LunaLucru"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='CoAtCAS']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/CAS)"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='CoAtFS']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Somaj)"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='CoAtCASS']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/CASS)"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='CoAtGrMat']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Retineri)"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='CoAtImpS']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Impozit_Retinut)"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArCAS']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * (instance('sal')/NCsal/NC[@id='ChArCAS']/Procent) div 100)"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArFA']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * (instance('sal')/NCsal/NC[@id='ChArFA']/Procent) div 100)"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArFS']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Baza_CVenitSO) * (instance('sal')/NCsal/NC[@id='ChArFS']/Procent) div 100)"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArCASS']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Baza_CVenitCI) * (instance('sal')/NCsal/NC[@id='ChArCASS']/Procent) div 100)"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArCM']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * (instance('sal')/NCsal/NC[@id='ChArCM']/Procent) div 100)"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArFG']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * (instance('sal')/NCsal/NC[@id='ChArFG']/Procent) div 100)"/>
+				<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArSal']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut)"/>												
+			</xforms:action>
+			
+        </xforms:model>
+    </head>
+
+    <body bgcolor="#ffffff" text="#080808" rightmargin="80" topmargin="40" onload="loadSal();">
+
+			<table align="center">				
+				<tr>
+					<td><h3>NOTE CONTABILE SALARII : </h3></td> 
+					<td><label> - An : </label><b><xforms:output value="substring(instance('sal')/LunaLucru,1,4)" class="TNval1"/></b></td>
+					<td><label> - Luna : </label><b><xforms:output value="substring(instance('sal')/LunaLucru,5,2)" class="TNval1"/></b></td>
+					<td>
+						<xforms:select1 class="Ztd1" ref="instance('sal')/LunaLucru">
+							<xforms:itemset nodeset="instance('sal')/DateLunare/Luna/@AnLuna">
+								<xforms:label ref="."/>
+								<xforms:value ref="."/>
+							</xforms:itemset>
+											                        
+						</xforms:select1>
+						<xforms:trigger> 
+							<xforms:label> Actualizare</xforms:label> 
+							<xforms:action ev:event="DOMActivate">
+								<xforms:setvalue ref="instance('sal')/NCsal/@cuiFirma" value="instance('sal')/Date_firma/CISTVA"/>
+								<xforms:setvalue ref="instance('sal')/NCsal/@AnLuna" value="instance('sal')/LunaLucru"/>
+								<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='CoAtCAS']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/CAS)"/>
+								<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='CoAtFS']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Somaj)"/>
+								<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='CoAtCASS']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/CASS)"/>
+								<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='CoAtGrMat']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Retineri)"/>
+								<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='CoAtImpS']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Impozit_Retinut)"/>
+								<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArCAS']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * (instance('sal')/NCsal/NC[@id='ChArCAS']/Procent) div 100)"/>
+								<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArFA']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * (instance('sal')/NCsal/NC[@id='ChArFA']/Procent) div 100)"/>
+								<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArFS']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Baza_CVenitSO) * (instance('sal')/NCsal/NC[@id='ChArFS']/Procent) div 100)"/>
+								<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArCASS']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Baza_CVenitCI) * (instance('sal')/NCsal/NC[@id='ChArCASS']/Procent) div 100)"/>
+								<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArCM']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * (instance('sal')/NCsal/NC[@id='ChArCM']/Procent) div 100)"/>
+								<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArFG']/Credit_Val" value="round(sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut) * (instance('sal')/NCsal/NC[@id='ChArFG']/Procent) div 100)"/>
+								<xforms:setvalue ref="instance('sal')/NCsal/NC[@id='ChArSal']/Credit_Val" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat/Venit_Brut)"/>	
+							</xforms:action>							
+						</xforms:trigger>						
+					</td>	 				
+				</tr>				
+			</table>
+				
+			<table align="center" border="0" width="40%"> 
+					<tr>
+						<td><b>
+							<xforms:output ref="/SAL/Date_firma/Prefix" class="TNval1"/>-
+							<xforms:output ref="/SAL/Date_firma/Firma" class="TNval1"/>-
+							<xforms:output ref="/SAL/Date_firma/Sufix" class="TNval1"/></b>
+						</td>   
+						<td>
+							<label>CUI: RO </label><b>
+							<xforms:output ref="instance('sal')/Date_firma/CISTVA" class="TNval1"/></b>
+						</td>
+					</tr>
+			</table>
+    <br/>
+
+    <table class="TNmare" align="center" border="1" width="100%">
+		<tr>
+			<td>
+				<table border="0" cellspacing="1" cellpadding="2" width="100%"> 
+                    <thead>
+						<tr>
+							<th class="TNnrc"> Nr. Crt</th>
+							<th class="TNexp2">Fel. Docu.</th>
+							<th class="TNexp2">Nr. Docu.</th>
+							<th class="TNexp3">Data Document</th> 
+							<th class="TNct7">Explicatie</th>
+							<th class="TNexp1">Cont Debit</th>
+							<th class="TNexp1">Cont Credit</th>
+							<th class="TNexp1">Valoare</th> 
+						</tr>
+                    </thead>
+				</table>
+
+				<table width="100%"> 
+					<xforms:repeat nodeset="/SAL/NCsal/NC[Credit_Val != '0']" id="Nc"> 
+						<tr>          
+							<td class="TNnrc"><xforms:output class="TNnr" value="position()"/></td>
+							<!--<td class="TNexp2"><xforms:label class="TNval"> NC </xforms:label></td>--> 
+							<td class="TNexp2"><xforms:output class="TNval" ref="@id"/></td>
+							<td class="TNexp2"><xforms:output class="TNval" ref="Nr_Doc"/></td>
+							<td class="TNexp3"><xforms:output class="TNval3" ref="../../Date_operare/Data"/></td>
+							<td class="TNexp"> <xforms:output class="TNval2" ref="Explicatie"/></td>
+							<td class="TNexp1"><xforms:output class="TNval1" ref="Debit_Cont"/></td>
+							<td class="TNexp1"><xforms:output class="TNval1" ref="Credit_Cont"/></td>
+							<td class="TNexp4"><xforms:output class="TNval1" ref="Credit_Val"/></td>     
+						</tr>
+					</xforms:repeat> 
+				</table>
+			</td>
+		</tr>
+    </table>
+<br/>
+		<div class="noprint">
+	
+			<a href="index01.xhtml">
+				<xforms:trigger> 									 
+					<xforms:label class="medium button green">&#171; Înapoi la pagina principală &#171;</xforms:label> 
+					<xforms:hint>Înapoi la pagina principală</xforms:hint>
+				</xforms:trigger>
+			</a>
+
+			<a href="#" onclick="window.print()">
+				<xforms:trigger> 
+					<xforms:label> ^ Tipărire</xforms:label> 
+					<xforms:hint>Tiparire</xforms:hint>	
+				</xforms:trigger>
+			</a>
+			<!--<xforms:trigger appearance="minimall" id="intr">
+				<xforms:label  class="medium button orange">
+					<i>&#164; Salvează &#164;</i>
+				</xforms:label>  
+				<xforms:hint>Salvează local datele (toate)</xforms:hint>	
+				<xforms:action ev:event="DOMActivate">					
+					<xforms:load resource="javascript:saveDataLocal('sal')"/>					
+				</xforms:action>
+			</xforms:trigger> 	-->		
+			<xforms:trigger appearance="minimall"> 
+				<xforms:label class="medium button orange"> Salvează NC în fișier </xforms:label>
+                <xforms:action ev:event="DOMActivate">
+                	<xforms:insert origin="instance('sal')/NCsal" context="instance('nc')" nodeset="." ev:event="DOMActivate"/>
+                </xforms:action>						
+				<xforms:load resource="javascript:saveToFile('nc')" ev:event="DOMActivate" />
+			</xforms:trigger> 							
+				
+		</div>
+		<br/>
+
+    </body>
+</html>
+
+

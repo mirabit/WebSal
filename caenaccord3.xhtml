@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>jQuery accordion CAEN</title>
+	
+		<link href="style/jquery-ui.css" rel="stylesheet"/>
+		<script src="js/jquery-1.7.2.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+	<style>
+	.ui-accordion .ui-accordion-content { padding-left: 2em;padding-right: 0;padding-top: 0;padding-bottom: 0; }
+	.ui-accordion .ui-accordion-content-active { padding-left: 2em;border:none;}
+	.ui-accordion .ui-accordion-header { background-color: white; border:none;}
+	.ui-accordion .ui-accordion-header-active {border:none;}
+	.ui-accordion .ui-accordion-header:hover { background-color: gray; }
+	</style>	
+	<script type="text/javascript">
+		var caenxml;
+		function loadXMLcaen() {
+		//	alert("begin load xml");
+			$.ajax({
+				type: "GET",
+				url: "ext/caen.xml",
+				dataType: "xml",
+				async: false,
+				success: parseXml,
+				error:function (jqXHR, textStatus, errorThrown){
+					alert("status:"+textStatus+"- -"+errorThrown);
+				},
+				failure: function(data) {
+					alert("XML File could not be found");
+				}
+			});	
+			function parseXml(xml) {
+				caenxml = xml;
+			//	alert("end parse xml");
+			}
+		}
+		
+		function buildAcco() {
+			var start=new Date();
+			var divacc = [];
+			divacc.push('&lt;div class="accordion"&gt;');
+			$(caenxml).find("Sectiune").each(function(){
+				divacc.push('&lt;h3&gt;&lt;a href="#"&gt;'+ $(this).attr("cod") + ' - ' + $(this).attr("den") +'&lt;/a&gt;&lt;/h3&gt;');
+				divacc.push('&lt;div&gt;&lt;div class="accordion"&gt;');
+				$(this).find("Level1").each(function(){
+					divacc.push('&lt;h3&gt;&lt;a href="#"&gt;'+ $(this).attr("cod") + ' - ' + $(this).attr("den") +'&lt;/a&gt;&lt;/h3&gt;');
+					divacc.push('&lt;div&gt;&lt;div class="accordion"&gt;');
+					$(this).find("Level2").each(function(){
+						divacc.push('&lt;h3&gt;&lt;a href="#"&gt;'+ $(this).attr("cod") + ' - ' + $(this).attr("den") +'&lt;/a&gt;&lt;/h3&gt;');
+						divacc.push('&lt;div&gt;');
+						$(this).find("Activitate").each(function(){
+						//	divacc.push('&lt;div style="padding-left:2em;backgroundColor=\'white\';" onclick=\'style.backgroundColor="pink";setDecompl('+$(this).attr("cod")+');\'&gt;'+ $(this).attr("cod") + ' - ' + $(this).text() +'&lt;/div&gt;');
+							divacc.push('&lt;div onclick=\'setDecompl('+$(this).attr("cod")+');style.backgroundColor="pink";\' &gt;'+ $(this).attr("cod") + ' - ' + $(this).text() +'&lt;/div&gt;');
+						});
+						divacc.push('&lt;/div&gt;');
+					});
+					divacc.push('&lt;/div&gt;&lt;/div&gt;');
+				});	
+				divacc.push('&lt;/div&gt;&lt;/div&gt;');
+			});
+			divacc.push('&lt;/div&gt;');
+		//	alert(divacc.join(' '));
+			$( "#accdcaen" ).append(divacc.join(' '));
+			$( ".accordion" ).accordion({ autoHeight: false, collapsible: true, active: false, animated: false});
+			var timp =new Date()-start;
+			//alert("timp exec: "+timp);
+		}
+		function setDecompl(id){
+			$('#decompl').val(id);
+			$(document).find('div').css('background-color', 'pink').each(function(){
+				$(this).css("background-color", "white");
+			});
+			//onmouseover=\'style.backgroundColor="gray";\' onmouseout=\'style.backgroundColor="white";\'
+		}
+	</script>
+</head>
+<body style="font-size:62.5%;" onload="loadXMLcaen(); buildAcco();">
+<input type="text" value="" id="decompl"/>
+	<div id="accdcaen"></div>
+	
+ 	<br/><br/>
+ 	<div class="demo">
+
+	<div class="accordion">
+		<a href="#">Section 1</a>
+		<div>
+			<p>
+			Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+			ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+			amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+			odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+			</p>
+			<div class="accordion">
+				<h3><a href="#"> sub Section 1</a></h3>
+				<div>
+
+					<p>
+					The underlying HTML markup is a series of headers (H3 tags) and content divs so the content is
+					usable without JavaScript.
+					</p>
+				</div>
+				<h3><a href="#"> sub Section 1</a></h3>			
+				<div>
+				
+					<p>
+					Click headers to expand/collapse content that is broken into logical sections, much like tabs.
+					Optionally, toggle sections open/closed on mouseover.
+					</p>
+
+				</div>
+				<h3><a href="#"> sub Section 1</a></h3>
+				<div>
+					
+					<p>
+					Click headers to expand/collapse content that is broken into logical sections, much like tabs.
+					Optionally, toggle sections open/closed on mouseover.
+					</p>
+				</div>
+
+			</div>								
+		</div>
+		
+		<h3><a href="#">Section 2</a></h3>
+		<div>
+			<p>
+			Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+			purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+			velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+			suscipit faucibus urna.
+			</p>
+		</div>
+		<h3><a href="#">Section 3</a></h3>
+		<div>
+			<p>
+			Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+			Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+			ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+			lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+			</p>
+			<ul>
+				<li>List item one</li>
+				<li>List item two</li>
+				<li>List item three</li>
+			</ul>
+		</div>
+		<h3><a href="#">Section 4</a></h3>
+		<div>
+			<p>
+			Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+			et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+			faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+			mauris vel est.
+			</p>
+			<p>
+			Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+			Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+			inceptos himenaeos.
+			</p>
+		</div>
+	</div>
+
+	</div>
+
+	<div style="display: none;" class="demo-description">
+		<p>
+		Click headers to expand/collapse content that is broken into logical sections, much like tabs.
+		Optionally, toggle sections open/closed on mouseover.
+		</p>
+		<p>
+		The underlying HTML markup is a series of headers (H3 tags) and content divs so the content is
+		usable without JavaScript.
+		</p>
+	</div>
+	 
+</body>
+</html>

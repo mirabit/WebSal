@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Tabel dinamic</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+<script type="text/javascript" src="../webgestext/jq/jquery.min.js" ></script>
+<script type='text/javascript' src='../webgestext/jq/jquery-ui.min.js'></script>
+<link rel="stylesheet" type="text/css" href="../webgestext/jq/jquery-ui.css" ></link>
+<script type='text/javascript'>
+	var totalzile,anluna,zi1,nrziset,idsal;
+	var fxml=null;
+	//onload page
+	$(document).ready(function(){
+		//definire dialog
+		$( "#dialog-ore" ).dialog({
+				height: 240,
+				width : 400,
+				modal: true,
+				autoOpen: false,
+				position: ['left','top'],
+				title: "Selecteaza tipul si orele de munca"
+			});
+		// afisare in alta pagina
+		$( "#dialog-calendar" ).dialog({
+				height: 580,
+				width : 1010,
+				modal: true,
+				autoOpen: false,
+				title: "Seteaza pontajul"
+			});
+		// citire xml din local storage 
+		var lsxml=localStorage.getItem("salxml");
+		if(lsxml==null){
+			$.ajax({
+				type: "GET",
+				url: "sal.xml",
+				dataType: "xml",
+				success: setFxml,
+				error: 	errAjx,
+				async:false
+			});
+		}else{
+		//	fxml=xmlToString(lsxml);
+			fxml=lsxml;
+			alert("fxml incarcat din local storage");
+		}
+	});
+	//setare xml citit din fisier
+	function setFxml(data, textStatus,jqXHR){
+			fxml=data;
+			//alert("fxml incarcat din fisier:"+fxml);
+	}
+	//
+	function saveToFile(){	
+			window.location.href = "data:application/x-download;charset=utf-8," + encodeURIComponent(xmlToString(fxml));
+	}
+	//eroare ajax
+	function errAjx(jqXHR, textStatus, errorThrown){
+		alert("EROARE:"+textStatus+"- -"+errorThrown);
+	}
+	//salvare xml in local storage
+	function saveToLocalStorage(){
+		localStorage.setItem("salxml", fxml);
+	}
+	//afiseaza tabel
+	function showtable() {
+		var anul=$("#anul").val();
+		var luna=$("#luna").val();
+		anluna=anul.concat(luna);
+		idsal=document.getElementById('salariat').value;
+		totalzile=new Date(anul,luna,0).getDate();
+		zi1=new Date(anul, luna-1, 1).getDay();
+		if(zi1==0)zi1=7;
+		$("#tbl").find("tr").remove();
+		$(document).find("#saveLS").remove();
+		$(document).find("#cnl").remove();
+		$(document).find("#saveF").remove();
+		createDynamicTable($("#tbl"), 6, 7);
+	}
+	//creere tabel
+	function createDynamicTable(tbody, rows, cols) {
+	    if (tbody == null || tbody.length < 1) return;
+		var cp = $("<tr style='background-color:#8CB6FF; width:100%;'><TD style='width:14%; text-align:center;'>Luni</TD><td style='width:14%;text-align:center;'>Marti</td><td style='width:14%;text-align:center;'>Miercuri</td><td style='width:14%;text-align:center;'>Joi</td><td style='width:14%;text-align:center;'>Vineri</td><td style='width:14%; background-color:#748DFF;text-align:center;'>Sambata</td><td style='width:15%; background-color:#748DFF; text-align:center;'>Duminica</td></tr>")
+		var cellText;
+		var orezi,ozi;
+		cp.appendTo(tbody);
+		var nr=1;
+		for (var r = 1; r <= rows; r++){
+	      	var trow = $("<tr>");
+	        for (var c = 1; c <= cols; c++){
+	 		if((r==1&&c>=zi1)||(r==rows&&nr<=totalzile)||(r==rows-1&&nr<=totalzile)||(r!=1&&r!=rows&&r!=rows-1)){
+					orezi=$(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat[id='"+idsal+"']").find("Ziua[nr='"+nr+"']").find("OreZi");
+					if((nr+'').length==1) var nrs="0"+nr;
+					else nrs=nr;
+					cellText = "<div style='width:100%;'><div style='width:50%;text-align:left;float:left;'><span style='padding:0.2em;margin:0.2em;text-align:center;background-color:#FF907F;border:thin solid #FF907F;border-radius:.9em;'>"+nrs+"</span></div><div style='width:50%;text-align:right;float:left;'><a href='javascript:crDialOre(\""+nr+"\");' style=';margin:0.2em;padding-left:0.5;padding-right:0.5;text-align:center;border:thin dotted #AADE97;border-radius:.2em;background-color:#AADE97;text-decoration:none;'>+</a></div></div><br><br>";
+					cellText1="";
+					for(var k=0;k<orezi.length;k++){
+						ozi=orezi[k];
+						var tip=$(ozi).attr("tip");
+						var nrore=$(ozi).text();
+						cellText1 = cellText1 + "<div style='text-align:left;float:left'>"+tip+"</div><div style='text-align: right;'><INPUT type='text' value='"+nrore+"' size='1' onblur='setNrore(this.value, \""+nr+"\", \""+tip+"\")'/></div>\n";
+					}
+					cellText = cellText+cellText1;
+					nr++;
+			}else{
+					cellText='&nbsp;';
+			}			
+			if((c==6)||(c==7)){
+				$("<td>")
+					.addClass("tableCellSD")
+					.html(cellText)
+					.data("col", c)
+					.appendTo(trow);
+			}else {
+				$("<td>")
+					.addClass("tableCell")
+					.html(cellText)
+					.data("col", c)
+					.appendTo(trow);
+			}		
+		  }
+		trow.appendTo(tbody);
+		}
+		var btn=$("<input type='button' style='margin:2em;' id='saveLS' value='Salvează în LocalStorage' onclick='saveToLocalStorage();' disabled='disabled'></input>");
+		$("#dialog-calendar").append(btn);
+		var btn=$("<input type='button' class='savef' id='saveF' value='Salveaza in fisier' onclick='saveToFile();'></input>");
+		$("#dialog-calendar").append(btn);
+		var btn=$("<input type='button' class='reluare' id='cnl' value='Reluare' onclick='window.location.reload();'></input>");
+		$("#dialog-calendar").append(btn);
+	}
+	//recreere tabel dupa modificare date 
+	function reCreateDynamicTable() {
+		$(document).find("#tbl").find("tbody").find("tr").remove();
+		$(document).find("#saveLS").remove();
+		$(document).find("#cnl").remove();
+		$(document).find("#saveF").remove();
+	//
+	//$(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat['"+idsal+"']").find("Ziua[nr='"+nrzi+"']").find("OreZi:contains('0')").remove();
+		createDynamicTable($("#tbl"), 6, 7);
+	}
+	// deschidere dialog 
+	function crDialOre(nrzi){
+		nrziset=nrzi;
+		$( "#dialog-ore" ).dialog("open");
+	}
+	function afisTabel(){
+		$( "#dialog-calendar" ).dialog("open");
+		capTabel();
+		showtable();
+	}
+	//setare ore in xml pt.un tip existent
+	function setNrore(nrore, nrzi, tip){
+		$(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat[id='"+idsal+"']").find("Ziua[nr='"+nrzi+"']").find("OreZi[tip='"+tip+"']").text(nrore);
+		if(nrore==0){
+			var nrtot=$(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat[id='"+idsal+"']").find("Ziua[nr='"+nrzi+"']").find("OreZi").length;
+			if(nrtot>1){
+				$(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat[id='"+idsal+"']").find("Ziua[nr='"+nrzi+"']").find("OreZi[tip='"+tip+"']").remove();
+				reCreateDynamicTable();
+			}
+		}
+	}
+	//stergere noduri cu 0
+	function stergeNod0(nrziset){
+		var orezi=$(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat[id='"+idsal+"']").find("Ziua[nr='"+nrziset+"']").find("OreZi");
+		var nrtot=$(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat[id='"+idsal+"']").find("Ziua[nr='"+nrziset+"']").find("OreZi").length;
+		if(nrtot>1){
+			for(var k=0;k<orezi.length;k++){
+				var ozi=orezi[k];
+				var nrore=$(ozi).text();
+				if(nrore==0){ $(ozi).remove(); }
+			}
+		}
+	}
+	//adaugare ore in xml pt. u tip nou
+	function save(){
+		var tip1=document.getElementById('tip1').value;
+		var ore1=document.getElementById('ore1').value;
+		///
+		var orezi=$(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat[id='"+idsal+"']").find("Ziua[nr='"+nrziset+"']").find("OreZi");
+		var gasit=0;
+		for(var k=0;k<orezi.length;k++){
+			var ozi=orezi[k];
+			var tipcurent=$(ozi).attr("tip");
+			if(tipcurent==tip1){
+				$(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat[id='"+idsal+"']").find("Ziua[nr='"+nrziset+"']").find("OreZi[tip='"+tip1+"']").text(ore1);
+				gasit=1;
+			}
+		}
+		if(gasit==0){
+			var txt0=$(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat[id='"+idsal+"']").find("Ziua[nr='"+nrziset+"']").find("OreZi")[0];
+			$(txt0)
+				.clone()
+				.attr("tip",tip1)
+				.text(ore1)
+				.appendTo($(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat[id='"+idsal+"']").find("Ziua[nr='"+nrziset+"']"));
+		}
+	//	var xmlstr=xmlToString(fxml);
+	//    alert("xml intreg:"+xmlstr);// afisare in alert xml indentat din obiectul fxml
+	//	var node=$(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat[id='"+idsal+"']").find("Ziua[nr='"+nrziset+"']");
+	//	alert("node xml:"+xmlToStringJQ($(node)));
+		$( '#dialog-ore' ).dialog('close');
+		stergeNod0(nrziset);
+		reCreateDynamicTable();
+	}
+	//alegere nume an luna din xml
+	function capTabel(){
+		idsal=2;
+		var numeSal=$(fxml).find("Personal").find("Salariat[id='"+idsal+"']").attr("Nume");
+		var prenumeSal=$(fxml).find("Personal").find("Salariat[id='"+idsal+"']").attr("Prenume");
+
+		$("#nnumesal").text(numeSal +" "+ prenumeSal + " ");
+	//	var lunaS=txt0=$(fxml).find("DateLunare").find("Luna");
+	//	var anS=txt0=$(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat");
+	}
+	//serializare xml din obiect
+	function xmlToString(xmlData) {
+	
+	    var xmlString;
+	    //IE
+	    if (window.ActiveXObject){
+	        xmlString = xmlData.xml;
+	    }
+	    // code for Mozilla, Firefox, Opera, etc.
+	    else{
+	        xmlString = (new XMLSerializer()).serializeToString(xmlData);
+	    }
+	    return xmlString;
+	}
+	//serializare xml din obiect (jq)
+	function xmlToStringJQ(xmlData) {
+	
+	    var xmlString;
+	    //IE
+	    if (window.ActiveXObject){
+	        xmlString = xmlData.xml;
+	    }
+	    // code for Mozilla, Firefox, Opera, etc.
+	    else{
+	        xmlString = (new XMLSerializer()).serializeToString(xmlData[0]);
+	    }
+	    return xmlString;
+	}
+</script>
+<style type="text/css">
+    td.tableCellSD { padding: 5px; background-color:#FFE7A0; vertical-align:top;}
+    td.tableCell { padding: 5px; background-color:#FFF7A0; vertical-align:top;}/*border-collapse:#000000;*/
+	.ta { width:100%;border:thin solid #6E9EC4 }/*width:90%;background-color:#E3E3E3;*/
+	.buttons{color:#7CFC00; margin-right:3em; font-weight: bold;}
+	.buttonr{color:#DC143C; margin-left:2em; font-weight: bold;}
+	.savef{color:#5619FF; margin:2em;}
+	.reluare{margin:2em; background-color:#E0FFFF; color:#20B2AA}
+	.afiscal{color:red; border-radius:10px; background-color:#D3FF7A}
+	.tipul{ color:#091CC6; cursor:pointer;}
+</style>
+</head>
+
+<body bgcolor="#CACDFF" style="padding:2em;">
+<div id="main">
+	<div>Alegeti luna
+	<select id="luna">
+		<option>01</option>
+		<option>02</option>
+		<option>03</option>
+		<option>04</option>
+		<option>05</option>
+		<option>06</option>
+		<option>07</option>
+		<option>08</option>
+		<option>09</option>
+		<option>10</option>
+		<option>11</option>
+		<option>12</option>
+	</select>
+	Anul
+	<select id="anul">
+		<option>2005</option>
+		<option>2006</option>
+		<option>2007</option>
+		<option>2008</option>
+		<option>2009</option>
+		<option>2010</option>
+		<option>2011</option>
+		<option>2012</option>
+		<option>2013</option>
+		<option>2014</option>
+		<option>2015</option>
+	</select>
+	</div><br/>
+
+	<div>Alegeti salariat
+	<select id="salariat">
+		<option label="AȚÂȚATU ÎNCURCAT" value="1">AȚÂȚATU ÎNCURCAT</option>
+		<option label="BISTRIȚEANU PRUNĂ" value="2">BISTRIȚEANU PRUNĂ</option>
+		<option label="CRĂCĂNEL CÂRLIONȚATU" value="3">CRĂCĂNEL CÂRLIONȚATU</option>
+	</select>
+	</div><br/>
+	<div id="btntbl">
+	<button onclick="afisTabel()" class="afiscal">Afiseaza Calendar</button><br/><br/><br/>
+    	<div id="dialog-calendar">
+		<div align="center">
+			Salariat: <span id="nnumesal"> </span>Luna: <span id="luna"> </span>Anul: <span id="anul"> </span>
+		</div><br />
+		<table id="tbl" class="ta">
+		<tbody></tbody>
+		</table>
+	</div>
+    </div>
+</div>
+<!-- dialog jq - adauga ore suplimentare -->
+<div id="dialog-ore">
+		<div style="margin-top:1em;">
+		Alegeti tipul<select id="tip1" name="tip1" style="margin-left:1.5em">
+			<option label="Lucru" value="Lucru" class="tipul">Lucru</option>
+			<option label="Invoire" value="Invoire" class="tipul">Invoire</option>
+			<option label="Nemotivat" value="Nemotiv" class="tipul">Nemotivat</option>
+			<option label="C. Odihna" value="COdihna" class="tipul">C. Odihna</option>
+			<option label="C. Medical" value="CMedic" class="tipul">C. Medical</option>
+			<option label="Ore suplimentare 50%" value="S50" class="tipul">Ore suplimentare 50%</option>
+			<option label="Weekend" value="Weekend" class="tipul">Weekend</option>
+		</select>
+		</div><br/>
+		<div>Numar de ore<input type="text" value="" size="5" id="ore1" name="ore1" style="margin-left:0.65em"/></div><br/>
+		<div>
+			 <button type="button" class="buttons" name="save" id="save" onclick="save()">
+       				<img src="apply.png" alt="" width="15" height="15"/>
+      			  	Salveaza
+    			</button>
+			<button type="button" class="buttonr" id="renunta" name="renunta" onclick="$( '#dialog-ore' ).dialog('close')">
+       				<img src="cancel.png" alt="" width="17" height="15 "/>
+      			  	Renunta
+    			</button>
+		</div>
+</div>
+</body>
+</html>

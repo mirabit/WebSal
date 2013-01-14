@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="../webgestext/xsltforms/xsltforms.xsl" type="text/xsl"?>
+<!--<?xml-stylesheet href="../xsltforms/xsltforms.xsl" type="text/xsl"?>-->
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:xforms="http://www.w3.org/2002/xforms"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:my="http://commerce.example.com/payment"
+ xmlns:ev="http://www.w3.org/2001/xml-events"
+ xml:lang="en">
+  <head>
+    
+     <title>CalculatorCM</title>  
+ <!--<link rel="stylesheet" href="sal.css" type="text/css"></link>--> 
+<style type="text/css">
+		   @namespace xforms url("http://www.w3.org/2002/xforms");
+          .body {font-size: 1.8em;}
+	.xf-value {width: 25px; height:6.5mm; font-size:8px; border-width:0.1mm; border-style:solid;font-weight:bold; border-color:#676;}
+                 i {color:#1B26FF; font-size:13px;}
+	       b {color:#FF0C24;font-size:16px;}
+	  legend {font-weight:bold; font-size:1.0em;color:#000000;}	
+	   label {font-weight:bold; font-size:1.0em;}		
+ #conc {color:blue;font-weight:bold; font-size:1.2em;}
+ #conced {color:red;font-weight:bold; font-size:1.2em;}
+
+	.inp1 .xforms-value {width:280px; height:5.5mm; font-size:16px; border-width:0.1mm; border-style: none; border-color:#666;text-align:left;}
+	.inpd .xforms-value {width:100px; height:5.5mm; font-size:16px; border-width:0.1mm; border-style: none; border-color:#666;text-align:center;}
+	.inp2 .xforms-value {width:310px; height:5.5mm; font-size:16px; border-width:0.1mm; border-style: none; border-color:#666;text-align:right;}
+	.inp3 .xforms-value {width:200px; height:5.5mm; font-size:16px; border-width:0.1mm; border-style: none; border-color:#666;text-align:right;}
+	.inpVal .xforms-value {width:80px; height:5.5mm; font-size:16px; border-width:0.1mm; border-style: none; border-color:#666;text-align:right;}
+	.inpVal1 .xforms-value {width:25px; height:5.5mm; font-size:16px; border-width:1.1mm; border-style: none; border-color:#666;text-align:right;}
+  .Tco1 {vertical-align:top; border-width:0.1mm; border-style: none ; width:35mm; font-size:14px;text-align:center;background-color:#C2CCD0;}       
+  .Tco2 {vertical-align:top; border-width:0.1mm; border-style: none; width:28mm; font-size:12px;text-align:center;}
+  .Tco3 {vertical-align:top; border-width:0.1mm; border-style: none; width:103mm; font-size:12px;}
+  .Tco4 {vertical-align:top; border-width:0.1mm; border-style: none ; width:35mm; font-size:12px;text-align:center;background-color:#C2CCD0;}
+ .Tco44 {vertical-align:top; border-width:1.1mm; border-style: none ; width:25mm; font-size:12px;text-align:left;background-color:#C2CCD0;}
+  .Tco5 {vertical-align:top; border-width:0.1mm; border-style: none; width:55mm; font-size:12px;text-align:center;background-color:#C2CCD0;}
+  .Tco6 {vertical-align:top; border-width:0.1mm; border-style: none; width:55mm; font-size:12px;text-align:center;background-color:#C2CCD0;color:blue;}
+  .Tco7 {vertical-align:top; border-width:0.1mm; border-style: none ; width:60mm; font-size:20px;text-align:center;font-weight:bold; background-color:#F5F6E1}
+  .Tco8 {vertical-align:top; border-width:0.1mm; border-style:none; width:35mm; font-size:12px;text-align:center;background-color:#C2CCD0;color:blue;}
+  .Tco9 {vertical-align:top; border-width:0.1mm; border-style: none; width:155px; font-size:12px;text-align:center;background-color:#F5F6E1}
+  .Tco10 {vertical-align:top; border-width:0.1mm; border-style: none ; width:60mm; font-size:20px;text-align:left;font-weight:bold; background-color:#F5F6E1}
+
+  .Tcoval1 .xf-value {width:15mm; border-style:none;text-align:center;background:#FCFFB4;}
+  .Tcoval2 .xf-value {width:45mm; border-style:none;text-align:center;}
+  .Tcoval3 .xf-value {width:45mm; border-style:none;text-align:center;}
+  .Tcoval4 .xf-value {width:59mm; border-style:none;text-align:center;}
+  .Tcoval5 .xf-value {width:34mm; border-style:none;text-align:center;}
+  .Tcoval6 .xf-value {width:45mm; border-style:none;text-align:center;}                                                           
+  .Tcoval7 .xf-value {width:45mm; border-style:none;text-align:center;font-size:22px;color:red;} 
+
+.t7r1c1  {border-width:0.1mm; border-style: none; width:25mm;text-align:center; padding:2px}
+.t7r1c2  {border-width:0.1mm; border-style: none; width:150mm;text-align:left; padding:2px}
+
+.t7r1c3  {border-width:0.1mm; border-style: none; width:150mm;text-align:left; padding:2px}
+.t7r1c33  {border-width:0.1mm; border-style: none; width:25mm;text-align:left; padding:2px}
+.t7r1c4  {border-width:0.1mm; border-style: none; width:200mm;text-align:right;font-weight:bold;font-size:14px;
+			padding:0px 10px 0px 0px;background-color:#C2CCD0; }
+.t7r1c5  {border-width:0.1mm; border-style: none; width:160mm;text-align:left; padding:2px }
+
+.t7r1c6  {border-width:0.1mm; border-style: none; width:70mm;text-align:center; padding:2px}
+.t7r2c4  {border-width:0.1mm; border-style: none; width:70mm;text-align:center; padding:2px}
+.t7r2c5  {border-width:0.0mm; border-style: none; width:60mm;text-align:left; padding:2px}
+
+	.T1val0 .xf-value {width:60mm; border-style:none;}
+	.T1val4 .xf-value {width:60mm; border-style:none;text-align:left;}
+</style>
+
+		<script type="text/javascript">	
+			function ChangePath() {
+			//var cale=GetCookie('cale'); 		
+			var theCookie=""+document.cookie;
+			var ind=theCookie.indexOf("cale=");
+			if (ind==-1){//
+			alert("Nu am găsit cookie");
+			}else{
+				var ind1=theCookie.indexOf(";",ind);
+				if (ind1==-1) ind1=theCookie.length; 
+				//return unescape(theCookie.substring(ind+cale.length+1,ind1));
+				var cale= unescape(theCookie.substring(ind+5,ind1));	
+				//alert("cale:"+cale);
+				var model=document.getElementById("SAL");
+				
+				var instanceElement = document.getElementById('sal');			   
+				instanceElement.setAttribute('resource', cale); 
+
+				//alert("file:"+instanceElement.getAttribute('resource'));	
+				var submitsal = document.getElementById('s01');			   
+				submitsal.setAttribute('action', cale);	
+						
+				model.refresh();					
+				}	
+			}
+		</script>
+
+
+
+
+ <xforms:model version="1.1">
+      <xforms:instance id="co" resource="cocm.xml"/>
+      <xforms:instance id="sal" resource="salsablon.xml"/>
+      <!--<xforms:instance id="sal" resource="sal.xml"/>-->
+      <xforms:submission id="submit" method="put" action="cocm.xml" ref="/CO"/>
+
+        <!--<xforms:instance id="concediu">
+         <Concediu>          
+            <Luna1CO>800</Luna1CO>
+            <Luna2CO>0</Luna2CO>
+            <Luna3CO>0</Luna3CO>
+            <ZileL1CO>0</ZileL1CO>
+            <ZileL2CO>0</ZileL2CO>
+            <ZileL3CO>0</ZileL3CO>
+            <TVU3L>0</TVU3L>
+            <TZU3L>0</TZU3L>
+         </Concediu>         
+     </xforms:instance> -->   
+
+<xforms:bind nodeset="/CO/ConcediuM/TVU6L" 
+calculate="/CO/ConcediuM/Luna1CM + /CO/ConcediuM/Luna2CM + /CO/ConcediuM/Luna3CM + /CO/ConcediuM/Luna4CM + /CO/ConcediuM/Luna5CM + /CO/ConcediuM/Luna6CM"/>
+
+<xforms:bind nodeset="/CO/ConcediuM/TZU6L" 
+calculate="/CO/ConcediuM/ZileL1CM + /CO/ConcediuM/ZileL2CM + /CO/ConcediuM/ZileL3CM + /CO/ConcediuM/ZileL4CM + /CO/ConcediuM/ZileL5CM + /CO/ConcediuM/ZileL6CM"/>
+
+<xforms:bind nodeset="/CO/ConcediuM/MedV6L" 
+calculate="/CO/ConcediuM/TVU6L div (/CO/ConcediuM/TZU6L)"/>
+
+<xforms:bind nodeset="/CO/ConcediuM/IndemCMBr" 
+calculate="round((/CO/ConcediuM/MedV6L * /CO/ConcediuM/ProcCM */CO/ConcediuM/NrZCM) div 100)"/>
+
+<xforms:bind nodeset="/CO/ConcediuM/ValCASAt" 
+calculate="round((/CO/ConcediuM/SalMinEC * /CO/ConcediuM/CASAt) div 100)"/>
+
+<!--<xforms:bind nodeset="/CO/ConcediuM/ValCASAt" 
+calculate="round((/CO/ConcediuM/SalMinEC * instance('sal')/SAL/Coeficienti/RetineriAngajat/CAS_Angajat/Procent) div 100)"/>-->
+
+<xforms:bind nodeset="/CO/ConcediuM/IndemPlCM" 
+calculate="/CO/ConcediuM/IndemCMBr - /CO/ConcediuM/ValCASAt "/>
+
+<xforms:bind nodeset="/CO/ConcediuM/NrZCM"
+calculate="/CO/Certificat/ZileCM"/>
+
+<xforms:bind nodeset="/CO/ConcediuM/IndemSSoc" 
+calculate="round((/CO/ConcediuM/MedV6L * /CO/ConcediuM/NrZCMSoc * /CO/ConcediuM/ProcCM ) div 100) "/>
+<xforms:bind nodeset="/CO/ConcediuM/IndemSBASCI" 
+calculate="round((/CO/ConcediuM/MedV6L * /CO/ConcediuM/NrZCMBasci * /CO/ConcediuM/ProcCM ) div 100) "/>
+<xforms:bind nodeset="/CO/ConcediuM/IndemSFAAMBP" 
+calculate="round((/CO/ConcediuM/MedV6L * /CO/ConcediuM/NrZCMFaambp * /CO/ConcediuM/ProcCM ) div 100) "/>
+
+<xforms:bind nodeset="/CO/Certificat/DataAcord" type="xsd:date" />
+<xforms:bind nodeset="/CO/Certificat/DataDela" type="xsd:date" />
+<xforms:bind nodeset="/CO/Certificat/DataPanala" type="xsd:date" />
+</xforms:model>
+  </head>
+<body bgcolor="#E9E9E9" text="#080808" leftmargin="80" topmargin="40" onload="ChangePath()">
+
+	<table align="center">
+		<tr>
+			<h4 align="center">CALCULATOR CONCEDIU MEDICAL</h4>  
+
+		<td>An : </td>
+		<td><b><xforms:output ref="instance('sal')/An" class="val3"/></b></td>
+		<td> - Luna : </td>
+		<td><b><xforms:output ref="instance('sal')/Luna" class="val3"/></b></td>
+		</tr>
+	</table>
+
+<div align="left" style="width:100% ; padding:0px 0px 0px 40px;">
+
+	<table>
+		<tr>
+			<td>  
+				<label>Societatea : </label><b>
+				<xforms:output ref="instance('sal')/Date_firma/Prefix" class="val3"/>
+				<xforms:output ref="instance('sal')/Date_firma/Firma" class="val2"/>
+				<xforms:output ref="instance('sal')/Date_firma/Sufix" class="val3"/>
+				</b></td>   
+			<td>
+				<label>CUI: RO </label><b>
+				<xforms:output ref="instance('sal')/Date_firma/CISTVA" class="val2"/></b> 
+		</td>
+    </tr>
+  </table>
+
+</div>
+
+		<table align="center" border="0" cellspacing="3" cellpadding="0" width="90%"> 
+
+					<tr>
+						<td class="t7r1c4">CNP - <xforms:label/></td>
+						<td class="t7r1c3"><xforms:output class="T1val0" ref="instance('sal')/Date_firma/CISTVA"/></td>
+						<td class="t7r1c4">Serie certificat - <xforms:label/></td>
+						<td class="t7r1c3"><xforms:input class="inpVal" ref="/CO/Certificat/SerieCM"/></td>
+					</tr>
+					<tr>
+						<td class="t7r1c4">Nume - <xforms:label/></td>
+						<td class="t7r1c3"><xforms:output class="T1val0" ref="instance('sal')/Date_firma/CISTVA"/></td>
+						<td class="t7r1c4">Nr.certificat - <xforms:label class="T1val0"/></td>
+						<td class="t7r1c3"><xforms:input class="inp3" ref="/CO/Certificat/NrCM"/></td>
+					</tr>	
+					<tr>
+						<td class="t7r1c4">Prenume - <xforms:label/></td>
+						<td class="t7r1c3"><xforms:output class="T1val0" ref="instance('sal')/Date_firma/CISTVA"/></td>
+						<td class="t7r1c4">Data acordări - <xforms:label/></td>
+						<td class="t7r1c3"><xforms:input class="inpd" ref="/CO/Certificat/DataAcord"/></td>
+					</tr>
+					<tr>
+						<td class="t7r1c4">Salariu bază - <xforms:label/></td>
+						<td class="t7r1c3"><xforms:output class="inp2" ref="instance('sal')/Date_firma/CISTVA"/></td>
+						<td class="t7r1c4">Zile concediu medical - <xforms:label/></td>
+						<td class="t7r1c3"><xforms:input class="inpVal" ref="/CO/Certificat/ZileCM"/></td>
+					</tr>
+					<tr>
+						<!--<td class="t7r1c4">DATA ACORDARII - DE LA<xforms:output/></td>-->
+						<td colspan='2' class="t7r1c4">Certificat medical - Perioada acordare - Data : <xforms:label/></td>
+						<td colspan='0' class="t7r1c3"><xforms:label>de la : </xforms:label>
+							<xforms:input class="inpd" ref="/CO/Certificat/DataDela"/></td>
+						<!--<td colspan='0' class="t7r1c4"> PANA LA - DATA - <xforms:label/></td>-->
+						<td colspan='0' class="t7r1c3"><xforms:label>până la : </xforms:label>
+							<xforms:input class="inpd" ref="/CO/Certificat/DataPanala"/></td>
+					</tr>
+					<tr>
+						<td class="t7r1c4">Medic prescriptor - <xforms:label/></td>
+						<td class="t7r1c3"><xforms:input class="inp1" ref="/CO/Certificat/Medic"/></td>
+						<td class="t7r1c4">Unitatea sanitară - <xforms:label class="T1val1"/></td>
+						<td class="t7r1c3"><xforms:input class="inp1" ref="/CO/Certificat/Umedicala"/></td>
+					</tr>
+
+<hr align="center" color="#D7D5D8" width="90%"/>
+					<tr>
+			<td colspan='0' class="t7r1c4">Cod indemnizatie -<xforms:label class="T1val1"/></td>
+
+				<td colspan='0' class="Tco10">
+				<xforms:select1 ref="/CO/ConcediuM/ProcCM">  
+							<xforms:item>
+								<xforms:label>01 - Boală obişnuită 75 % </xforms:label>
+								<xforms:value>75</xforms:value> 
+							</xforms:item>
+							<xforms:item>
+								<xforms:label>02 - Accident in timpul deplasari la locul de munca 100 % </xforms:label>
+								<xforms:value>100</xforms:value> 
+							</xforms:item>
+							<xforms:item>
+								<xforms:label>02 - Accident in timpul deplasari la locul de munca 80 % </xforms:label>
+								<xforms:value>80</xforms:value> 
+							</xforms:item>
+
+							<xforms:item>
+								<xforms:label>03 - Accident de muncă 100 % </xforms:label>
+								<xforms:value>100</xforms:value> 
+							</xforms:item>
+
+							<xforms:item>
+								<xforms:label>03 - Accident de muncă 80 % </xforms:label>
+								<xforms:value>80</xforms:value>
+							</xforms:item>
+
+							<xforms:item>
+								<xforms:label>04 - Boală profesională 100 % </xforms:label>
+								<xforms:value>100</xforms:value> 
+							</xforms:item>
+
+							<xforms:item>
+								<xforms:label>04 - Boală profesională 80 % </xforms:label>
+								<xforms:value>80</xforms:value>
+							</xforms:item>
+
+							<xforms:item>
+								<xforms:label>05 - Boala infectioasa din grupa A 100 % </xforms:label>
+								<xforms:value>100</xforms:value>
+							</xforms:item>
+
+							<xforms:item>
+								<xforms:label>06 - Urgenta medico-chirurgicală 100 % </xforms:label>
+								<xforms:value>100</xforms:value> 
+							</xforms:item>
+
+							<xforms:item>
+								<xforms:label>07 - Carantină 70 % </xforms:label>
+								<xforms:value>75</xforms:value>
+							</xforms:item>
+
+
+							<xforms:item>
+								<xforms:label>08 - Sarcină şi lehuzie 85 %</xforms:label>
+								<xforms:value>85</xforms:value>
+							</xforms:item>
+
+							<xforms:item>
+								<xforms:label>09 -Ingrigire copil bolnav cu vârsta pana la 7 ani 85 %</xforms:label>
+								<xforms:value>85</xforms:value>
+							</xforms:item> 
+
+							<xforms:item>
+								<xforms:label>10 -Reducerea cu 1/4 a duratei normale de lucru 25 %</xforms:label>
+								<xforms:value>25</xforms:value>
+							</xforms:item> 
+
+							<xforms:item>
+								<xforms:label>11 -Trecerea temoprară în altă muncă 25 %</xforms:label>
+								<xforms:value>25</xforms:value>
+							</xforms:item> 
+			
+							<xforms:item>
+								<xforms:label>12 -Tuberculoză 100 %</xforms:label>
+								<xforms:value>100</xforms:value>
+							</xforms:item> 
+
+							<xforms:item>
+								<xforms:label>13 -Boală cardio vasculară 75 %</xforms:label>
+								<xforms:value>75</xforms:value>
+							</xforms:item> 
+
+							<xforms:item>
+								<xforms:label>14 -Cancer HIV SIDA 100 %</xforms:label>
+								<xforms:value>100</xforms:value>
+							</xforms:item> 
+
+							<xforms:item>
+								<xforms:label>15 -Risc maternal 75 %</xforms:label>
+								<xforms:value>75</xforms:value>
+							</xforms:item> 			
+
+							<xforms:item>
+								<xforms:label>99 - Creşterea copilului cu vărsta pana la 2 ani 0 % </xforms:label>
+								<xforms:value>0</xforms:value>
+							</xforms:item>
+					</xforms:select1></td>
+	<td colspan="0" rowspan='0' class="t7r1c4">Cod diagnostic -<xforms:label class="T1val1"/></td>
+
+	<td rowspan='0' class="Tco10"><xforms:input class="inpVal" value="/CO/ConcediuM/Codiag"/>
+
+	<!--<td></td>
+	<td  class="t7r1c4X">Acut - <xforms:label class="T1val1"/></td>
+	<td>X</td>-->
+							<b>
+								<xforms:select ref="/CO/ConcediuM/CodiagTip"  appearance="full">
+									<xforms:item>
+										<xforms:label>Acut</xforms:label>
+										<xforms:value>Acut</xforms:value>
+									</xforms:item>
+									<xforms:item>
+										<xforms:label>Subacut</xforms:label>
+										<xforms:value>Subacut</xforms:value>
+									</xforms:item>
+									<xforms:item>
+										<xforms:label>Cronic</xforms:label>
+										<xforms:value>Cronic</xforms:value>
+									</xforms:item>
+									<xforms:item>
+										<xforms:label>Peste 30Zile</xforms:label>
+										<xforms:value>Peste 30Zile</xforms:value>
+									</xforms:item>
+								</xforms:select></b>
+							</td>
+
+
+
+
+					</tr>			
+		</table>
+
+
+
+<hr align="center" color="#D7D5D8" width="90%"/>
+
+<table align="center" border="0" cellspacing="3" cellpadding="0" width="90%">
+<xforms:group ref="/CO/ConcediuM">
+    <tr>
+      <th colspan='2' class="Tco1">Baza / Calcul</th>
+      <th class="Tco1">luna-1</th>
+      <th class="Tco1">luna-2</th>
+      <th class="Tco1">luna-3</th>
+      <th class="Tco1">luna-4</th>
+      <th class="Tco1">luna-5</th>
+      <th class="Tco1">luna-6</th>
+      <th colspan='2' class="Tco1">total venit-zile / ultimlel-6luni</th>
+   </tr>
+
+    <tr>
+		<td colspan='2' class="Tco1" >Venit/Luna<xforms:label class="inpVal"/></td>
+		<td class="Tco4"><xforms:input class="inpVal" ref="Luna1CM"/></td>
+		<td class="Tco4"><xforms:input class="inpVal" ref="Luna2CM"/></td>
+		<td class="Tco4"><xforms:input class="inpVal" ref="Luna3CM"/></td>
+		<td class="Tco4"><xforms:input class="inpVal" ref="Luna4CM"/></td>
+		<td class="Tco4"><xforms:input class="inpVal" ref="Luna5CM"/></td>
+		<td class="Tco4"><xforms:input class="inpVal" ref="Luna6CM"/></td>
+		<td colspan='2' class="Tco1"><xforms:output class="Tcoval1" ref="TVU6L"/></td>
+    </tr>
+    <tr>
+		<td colspan='2' class="Tco1">Zile Lucru/Luna<xforms:label class="Tcoval1"/></td>
+		<!--<td class="Tco4"><xforms:input class="inpVal" ref="ZileL1CM"/></td>-->
+     <td class="Tco4">
+         <xforms:select1 ref="ZileL1CM">  
+                <xforms:item>
+                    <xforms:label>23 Zile</xforms:label>
+                    <xforms:value>23</xforms:value> 
+                </xforms:item>
+
+                <xforms:item>
+                    <xforms:label>22 Zile</xforms:label>
+                    <xforms:value>22</xforms:value>
+                </xforms:item>
+
+                <xforms:item>
+                    <xforms:label>21 Zile</xforms:label>
+                    <xforms:value>21</xforms:value>
+                </xforms:item>
+
+                <xforms:item>
+                    <xforms:label>20 Zile</xforms:label>
+                    <xforms:value>20</xforms:value>
+                </xforms:item> 
+
+               <xforms:item>
+                    <xforms:label>19 Zile</xforms:label>
+                    <xforms:value>19</xforms:value>
+                </xforms:item> 
+         </xforms:select1>
+	</td>
+		<!--<td class="Tco4"><xforms:input class="inpVal" ref="ZileL2CM"/></td>-->
+     <td class="Tco4">
+         <xforms:select1 ref="ZileL2CM">  
+                <xforms:item>
+                    <xforms:label>23 Zile</xforms:label>
+                    <xforms:value>23</xforms:value> 
+                </xforms:item>
+
+                <xforms:item>
+                    <xforms:label>22 Zile</xforms:label>
+                    <xforms:value>22</xforms:value>
+                </xforms:item>
+
+                <xforms:item>
+                    <xforms:label>21 Zile</xforms:label>
+                    <xforms:value>21</xforms:value>
+                </xforms:item>
+
+                <xforms:item>
+                    <xforms:label>20 Zile</xforms:label>
+                    <xforms:value>20</xforms:value>
+                </xforms:item> 
+
+               <xforms:item>
+                    <xforms:label>19 Zile</xforms:label>
+                    <xforms:value>19</xforms:value>
+                </xforms:item> 
+         </xforms:select1>
+	</td>
+		<!--<td class="Tco4"><xforms:input class="inpVal" ref="ZileL3CM"/></td>-->
+     <td class="Tco4">
+         <xforms:select1 ref="ZileL3CM">  
+                <xforms:item>
+                    <xforms:label>23 Zile</xforms:label>
+                    <xforms:value>23</xforms:value> 
+                </xforms:item>
+
+                <xforms:item>
+                    <xforms:label>22 Zile</xforms:label>
+                    <xforms:value>22</xforms:value>
+                </xforms:item>
+
+                <xforms:item>
+                    <xforms:label>21 Zile</xforms:label>
+                    <xforms:value>21</xforms:value>
+                </xforms:item>
+
+                <xforms:item>
+                    <xforms:label>20 Zile</xforms:label>
+                    <xforms:value>20</xforms:value>
+                </xforms:item> 
+
+               <xforms:item>
+                    <xforms:label>19 Zile</xforms:label>
+                    <xforms:value>19</xforms:value>
+                </xforms:item> 
+         </xforms:select1>
+	</td>
+		<!--<td class="Tco4"><xforms:input class="inpVal" ref="ZileL4CM"/></td> -->
+     <td class="Tco4">
+         <xforms:select1 ref="ZileL4CM">  
+                <xforms:item>
+                    <xforms:label>23 Zile</xforms:label>
+                    <xforms:value>23</xforms:value> 
+                </xforms:item>
+
+                <xforms:item>
+                    <xforms:label>22 Zile</xforms:label>
+                    <xforms:value>22</xforms:value>
+                </xforms:item>
+
+                <xforms:item>
+                    <xforms:label>21 Zile</xforms:label>
+                    <xforms:value>21</xforms:value>
+                </xforms:item>
+
+                <xforms:item>
+                    <xforms:label>20 Zile</xforms:label>
+                    <xforms:value>20</xforms:value>
+                </xforms:item> 
+
+               <xforms:item>
+                    <xforms:label>19 Zile</xforms:label>
+                    <xforms:value>19</xforms:value>
+                </xforms:item> 
+         </xforms:select1>
+	</td>
+		<!--<td class="Tco4"><xforms:input class="inpVal" ref="ZileL5CM"/></td>-->
+     <td class="Tco4">
+         <xforms:select1 ref="ZileL5CM">  
+                <xforms:item>
+                    <xforms:label>23 Zile</xforms:label>
+                    <xforms:value>23</xforms:value> 
+                </xforms:item>
+
+                <xforms:item>
+                    <xforms:label>22 Zile</xforms:label>
+                    <xforms:value>22</xforms:value>
+                </xforms:item>
+
+                <xforms:item>
+                    <xforms:label>21 Zile</xforms:label>
+                    <xforms:value>21</xforms:value>
+                </xforms:item>
+
+                <xforms:item>
+                    <xforms:label>20 Zile</xforms:label>
+                    <xforms:value>20</xforms:value>
+                </xforms:item> 
+
+               <xforms:item>
+                    <xforms:label>19 Zile</xforms:label>
+                    <xforms:value>19</xforms:value>
+                </xforms:item> 
+         </xforms:select1>
+	</td>
+		<!--<td class="Tco4"><xforms:input class="inpVal" ref="ZileL4CM"/></td>-->
+     <td class="Tco4">
+         <xforms:select1 ref="ZileL6CM">  
+                <xforms:item>
+                    <xforms:label>23 Zile</xforms:label>
+                    <xforms:value>23</xforms:value> 
+                </xforms:item>
+
+                <xforms:item>
+                    <xforms:label>22 Zile</xforms:label>
+                    <xforms:value>22</xforms:value>
+                </xforms:item>
+
+                <xforms:item>
+                    <xforms:label>21 Zile</xforms:label>
+                    <xforms:value>21</xforms:value>
+                </xforms:item>
+
+                <xforms:item>
+                    <xforms:label>20 Zile</xforms:label>
+                    <xforms:value>20</xforms:value>
+                </xforms:item> 
+
+               <xforms:item>
+                    <xforms:label>19 Zile</xforms:label>
+                    <xforms:value>19</xforms:value>
+                </xforms:item> 
+         </xforms:select1>
+	</td>
+		<td colspan='2' class="Tco1"><xforms:output class="inpVal" ref="TZU6L"/></td>   
+    </tr>
+
+    <tr>
+		<td colspan='10' class="Tco9"><i>
+ CALCUL IN FUNCTIE DE VENITUL SI ZILELE LUCRATE PE ULTIMELE 6 LUNI INAINTE DE PLECAREA IN CONCEDIU MEDICAL CARE SUNT PRELUATE DIN ULTIMELE 6 STATE DE PLATA
+</i><xforms:label class="Tcoval1"/></td>
+   </tr>
+</xforms:group>
+</table>
+
+<hr align="center" color="#D7D5D8" width="90%"/>
+
+<table align="center" border="0" cellspacing="3" cellpadding="3" width="90%"> 
+  <xforms:group ref="/CO/ConcediuM">   
+    <tr>
+      <th class="Tco8">Total venit pe ultimele 6luni-(1)</th>
+      <th class="Tco8">Total zile lucrate pe ultimele 6luni-(2)</th>
+      <th class="Tco8">Media zilnica baza de calcul indemnizatie 6luni-(3)<br/>3=1/3 </th>
+      <th class="Tco8">Procent baza calcul indemnizatie CM - % - (4)</th> 
+      <th class="Tco8">NR ZILE CONCEDIU MEDICAL - (5)</th> 
+      <th class="Tco8">INDEM.BRUTA CONCEDIU MED (6)<br/>6=3*5*6</th>
+   </tr>     
+    <tr>
+      <td class="Tco7"><xforms:output class="Tcoval7" ref="TVU6L"/></td>
+      <td class="Tco7"><xforms:output class="Tcoval7" ref="TZU6L"/></td>
+      <td class="Tco7"><xforms:output class="Tcoval7" ref="MedV6L"/></td>
+      <td class="Tco7"><xforms:output class="Tcoval7" ref="ProcCM"/> %</td>
+      <td class="Tco7"><xforms:output class="Tcoval7" ref="NrZCM"/></td>
+      <td class="Tco7"><xforms:output class="Tcoval7" ref="IndemCMBr"/></td>     
+   </tr>
+ </xforms:group>
+</table>
+
+<hr align="center" color="#D7D5D8" width="90%"/>
+ 
+	<table align="center" border="0" cellspacing="3" cellpadding="3" width="90%">
+		<xforms:group ref="/CO/ConcediuM">   
+			<tr>
+				<th class="Tco8">Salarui minim pe economie</th>
+				<th class="Tco8">Procent CAS asigurat % </th>
+				<th class="Tco8">Valoare CAS asigurat</th>
+				<th class="Tco8">Indemnizatie CM brut</th> 
+				<th class="Tco8">INDEMNIZATIE PLATA CON.MEDICAL</th>
+			</tr>   
+			<tr>
+				<td class="Tco7"><xforms:input class="inpVal" ref="SalMinEC"/> lei</td>
+				<td class="Tco7"><xforms:input class="inpVal" ref="CASAt"/> %</td>
+				<td class="Tco7"><b><xforms:output class="Tcoval7" ref="ValCASAt"/></b></td>
+				<td class="Tco7"><xforms:output class="Tcoval7" ref="IndemCMBr"/></td>
+				<td class="Tco7"><b><xforms:output class="Tcoval7" ref="IndemPlCM"/></b></td>     
+			</tr>
+
+<!--	<tr id="co">
+		<td colspan="3" class="Tco10"><xforms:label id="conced">INDEMNIZATIA DE PLATA PRNTRU CONCEDIUL MEDICAL ESTE : </xforms:label></td> 
+		<td colspan="2" class="Tco9"><b><xforms:output class="Tcoval7" ref="IndemPlCM"/></b></td>
+    </tr>-->
+
+		</xforms:group>
+	</table>
+
+		<hr align="center" color="#D7D5D8" width="90%"/>
+
+		<table align="center" border="0" cellspacing="2" cellpadding="0" width="90%"> 				
+					<tr>
+						<td colspan="2" class="t7r1c4">Indemnizatia suportata de catre angajator<xforms:label/></td>						
+						<td colspan="2" class="t7r1c4">Indemnizatia suportata de bugetul asigurarilor de sanatate pentru concedii si indemnizatii<xforms:label/></td>
+						<td colspan="2" class="t7r1c4">Indemnizatia suportata de de fondul de asig pentruAccidente de munca si boli profesionale<xforms:label/></td>
+					</tr>
+					<tr>
+						<td class="t7r1c4">Nr.Zile<xforms:label/></td>
+						<td class="t7r1c4">lei<xforms:label/></td>
+						<td class="t7r1c4">Nr.Zile<xforms:label/></td>
+						<td class="t7r1c4">lei<xforms:label/></td>
+						<td class="t7r1c4">Nr.Zile<xforms:label/></td>
+						<td class="t7r1c4">lei<xforms:label/></td>
+					</tr>	
+					<tr>
+						<td class="Tco7"><xforms:input class="inpVal" ref="/CO/ConcediuM/NrZCMSoc"/></td>
+						<td class="Tco7"><xforms:input class="inp3" ref="/CO/ConcediuM/IndemSSoc"/></td>
+						<td class="Tco7"><xforms:input class="inpVal" ref="/CO/ConcediuM/NrZCMBasci"/></td>
+						<td class="Tco7"><xforms:input class="inp3" ref="/CO/ConcediuM/IndemSBASCI"/></td>
+						<td class="Tco7"><xforms:input class="inpVal" ref="/CO/ConcediuM/NrZCMFaambp"/></td>
+						<td class="Tco7"><xforms:input class="inp3" ref="/CO/ConcediuM/IndemSFAAMBP"/></td>
+					</tr>			
+		</table>
+
+<hr align="center" color="#D7D5D8" width="90%"/>
+
+<a href="fcpscurt.xhtml">
+             <xforms:trigger id="deletebutton"> 
+ <xforms:hint>Inapoi la pontaj</xforms:hint>         
+ <xforms:label> ^ Pontaj</xforms:label> 
+        </xforms:trigger>
+             </a>
+ <xforms:submit submission="submit">
+       <xforms:label id="Save">  ^ Save</xforms:label>
+   <xforms:hint>Click pentru salvare</xforms:hint>
+</xforms:submit>
+<a href="CoMed.xhtml">
+             <xforms:trigger id="deletebutton"> 
+ <xforms:hint>Vezi legislatia</xforms:hint>         
+ <xforms:label> ^ Legea nr. 399/2006</xforms:label> 
+        </xforms:trigger>
+             </a>
+
+<br/>
+</body>
+</html>
+
+ 

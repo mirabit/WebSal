@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CO xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:my="http://commerce.example.com/payment">
+	<Certificat>
+		<SerieCM>XHBH</SerieCM>
+		<NrCM>7752</NrCM>
+		<ZileCM>7</ZileCM>
+		<DataAcord>10.01.2012</DataAcord>
+		<DataDela>10.01.2012</DataDela>
+		<DataPanala>19.01.2012</DataPanala>
+		<Medic>POPESCU OCTAVIAN</Medic>
+		<Umedicala>Spital judetean</Umedicala>		
+	</Certificat>
+	
+	<ConcediuM>
+		<Luna1CM>600</Luna1CM>
+		<Luna2CM>600</Luna2CM>             
+		<Luna3CM>600</Luna3CM>
+		<Luna4CM>800</Luna4CM>
+		<Luna5CM>800</Luna5CM>
+		<Luna6CM>800</Luna6CM>
+		<ZileL1CM>21</ZileL1CM>
+		<ZileL2CM>21</ZileL2CM>
+		<ZileL3CM>23</ZileL3CM>
+		<ZileL4CM>20</ZileL4CM>
+		<ZileL5CM>23</ZileL5CM>
+		<ZileL6CM>22</ZileL6CM>
+		<TVU6L>4200</TVU6L>
+		<TZU6L>130</TZU6L>
+		<MedV6L>32.30769230769231</MedV6L>
+		<ProcCM>80</ProcCM>
+		<Codiag>513</Codiag>
+		<CodiagTip>Acut</CodiagTip>		
+		<NrZCM>7</NrZCM>
+		<NrZCMSoc>0</NrZCMSoc>
+		<NrZCMBasci>0</NrZCMBasci>
+		<NrZCMFaambp>0</NrZCMFaambp>
+		<SalMinEC>700</SalMinEC>
+		<CASAt>5.5</CASAt>	
+		<ValCASAt>39</ValCASAt>
+		<IndemCMBr>226</IndemCMBr>
+		<IndemPlCM>187</IndemPlCM>
+		<IndemSSoc>0</IndemSSoc>
+		<IndemSBASCI>0</IndemSBASCI>
+		<IndemSFAAMBP>0</IndemSFAAMBP>
+	</ConcediuM>
+	
+	<ConcediuO>          	
+		<Luna1CO>600</Luna1CO>
+		<Luna2CO>600</Luna2CO>
+		<Luna3CO>700</Luna3CO>
+		<ZileL1CO>21</ZileL1CO>
+		<ZileL2CO>21</ZileL2CO>
+		<ZileL3CO>22</ZileL3CO>
+		<NrZCO>20</NrZCO>
+		<NrZLC>21</NrZLC>	  
+		<SalariuLC>700</SalariuLC>
+		<MedV3L>29.6875</MedV3L>
+		<MedVZLc>33.333333333333336</MedVZLc>	  
+		<TVU3L>1900</TVU3L>
+		<TZU3L>64</TZU3L>
+		<IndemCOF1>594</IndemCOF1>
+		<IndemCOF2>667</IndemCOF2>
+		<IndemPlCO>667</IndemPlCO>
+	</ConcediuO>
+		     
+</CO>

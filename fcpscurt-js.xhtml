@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="../webgestext/xsltforms/xsltforms.xsl" type="text/xsl"?>
+<!--<?xml-stylesheet href="../xsltforms/xsltforms.xsl" type="text/xsl"?>-->
+<!--<?xsltforms-options lang="ro" debug="yes"?>-->
+<?css-conversion no?>
+
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:xforms="http://www.w3.org/2002/xforms"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ev="http://www.w3.org/2001/xml-events"
+ xml:lang="en">
+	<head>
+	
+		<title>FOAIE CALCUL PREZENŢĂ fcpscurt</title>  
+		<link rel="stylesheet" href="selekt.css"></link>
+
+		<style type="text/css">
+
+			@namespace xforms url("http://www.w3.org/2002/xforms");
+		
+		</style>
+		<style type="text/css">
+
+
+    		#comed { width: 80em;height: 65em;}
+    		.row * {
+			   display:inline;			  
+			}
+    		#codihna{ width: 78em;height: 43em;}
+    		.row * {
+			   display:inline;			  
+			}
+
+
+    		#editPontaj { width: 80em;height: 42em; align: center;}
+    		.row * {
+			   display:inline;			  
+			}
+
+		#OreZiNoi { width: 20em;height: 5em;}
+    		.row * {
+			   display:inline;			  
+			}
+
+			.cpont {vertical-align:top;border-width:0.1mm;border-style:solid; padding:1px;
+			width:15px;font-size:25px;font-weight:bold; color:#000000;background-color:#C9C9C9;} 
+			.cpont1 {vertical-align:top;border-width:0.1mm;border-style:solid; padding:1px;
+			width:15px;font-size:14px; color:#000000;background-color:#C2CCD0;}
+			.valpont .xf-value {width:12mm;border-width:0.1mm; border-style:solid;text-align:right;background:#F6FCFF;}
+            .tdziles {width:10.9em;height:3.4em;border-width:0.0px; border-style:solid;text-align:right;background:#F6FCFF;}
+            .orezidr .xf-value {text-align:right;}  
+		.leftt{padding:15px 0px 15px 60px;}
+
+		 td.tableCellSD { padding: 5px; background-color:#B9FF7F; #FFE7A0; vertical-align:top;}
+   		 td.tableCell { padding: 5px; background-color:#FFF7A0; vertical-align:top;}/*border-collapse:#000000;*/
+		.ta { width:100%;border:thin solid #6E9EC4 }/*width:90%;background-color:#E3E3E3;*/
+		.buttons{color:#7CFC00; margin-right:3em; font-weight: bold;}
+		.buttonr{color:#DC143C; margin-left:2em; font-weight: bold;}
+		.savef{color:#5619FF; margin:2em;}
+		.reluare{margin:2em; background-color:#E0FFFF; color:#20B2AA}
+		.afiscal{color:red; border-radius:10px; background-color:#D3FF7A}
+		.tipul{ color:#091CC6; cursor:pointer;}
+
+		</style>
+
+		<script type="text/javascript" src="loadSal.js"/>
+		<script type="text/javascript" src="modalwin.js"/>
+		<script type="text/javascript" src="../webgestext/jq/jquery.min.js" ></script>
+		<script type='text/javascript' src='../webgestext/jq/jquery-ui.min.js'></script>
+		<link rel="stylesheet" type="text/css" href="../webgestext/jq/jquery-ui.css" ></link>
+		
+		<xforms:model id="SAL" version="1.1">
+
+            <xforms:instance id="sal">
+				<DATE xmlns="">
+		   			<d/>																						
+				</DATE> 
+		 	</xforms:instance>             
+            <xforms:instance id="sapt" resource="sapt.xml" />
+			<xforms:instance id="tmp">
+				<DATE xmlns="">
+					<marca>2</marca>
+					<AnLunaDL/>	
+					<contor>0</contor>
+					<Ore tip="">0</Ore>
+					<NrPI/>																					
+				</DATE> 
+			</xforms:instance>	           
+			<xforms:instance id="ore">
+				<DATE xmlns="">
+					<Ziua/>
+					<OreZi tip="Lucru" simbol="L" totalIn="0" totalSf="0" oreIn="0">0</OreZi>
+					<OreZi tip="COdihna" simbol="CO" totalIn="0" totalSf="0" oreIn="0">0</OreZi>
+					<OreZi tip="CMedical" simbol="CM" totalIn="0" totalSf="0" oreIn="0">0</OreZi>
+					<OreZi tip="Invoire" simbol="I" totalIn="0" totalSf="0" oreIn="0">0</OreZi>
+					<OreZi tip="Nemotivat" simbol="N" totalIn="0" totalSf="0" oreIn="0">0</OreZi>
+					<OreZi tip="S50" simbol="S50" totalIn="0" totalSf="0" oreIn="0">0</OreZi>
+					<OreZi tip="CMatern" simbol="CMat" totalIn="0" totalSf="0" oreIn="0">0</OreZi>
+				</DATE>
+			</xforms:instance> 
+            <xforms:instance id="dg" resource="dategen.xml" />
+            			
+			<xforms:submission id="s01" method="put" action="sal.xml" ref="/SAL"/>
+			<xforms:bind nodeset="instance('sal')/Date_operare/DataP" type="xsd:date" />
+			<!--<xforms:bind id="d" required="true()" type="xsd:date" nodeset="instance('sal')/Date_operare/DataP" />
+			<xforms:bind nodeset="/SAL/Date_operare/NrSal" calculate="count(/SAL/Personal/Salariat)"/>-->
+			<xforms:bind nodeset="/SAL/Personal/Salariat/@Nume" required="true()"/>
+	
+
+
+
+<xforms:instance id="como" resource="cocm.xml"/>
+
+<xforms:bind nodeset="/CO/ConcediuM/TVU6L" 
+calculate="/CO/ConcediuM/Luna1CM + /CO/ConcediuM/Luna2CM + /CO/ConcediuM/Luna3CM + /CO/ConcediuM/Luna4CM + /CO/ConcediuM/Luna5CM + /CO/ConcediuM/Luna6CM"/>
+
+<xforms:bind nodeset="/CO/ConcediuM/TZU6L" 
+calculate="/CO/ConcediuM/ZileL1CM + /CO/ConcediuM/ZileL2CM + /CO/ConcediuM/ZileL3CM + /CO/ConcediuM/ZileL4CM + /CO/ConcediuM/ZileL5CM + /CO/ConcediuM/ZileL6CM"/>
+
+<xforms:bind nodeset="/CO/ConcediuM/MedV6L" 
+calculate="/CO/ConcediuM/TVU6L div (/CO/ConcediuM/TZU6L)"/>
+
+<xforms:bind nodeset="/CO/ConcediuM/IndemCMBr" 
+calculate="round((/CO/ConcediuM/MedV6L * /CO/ConcediuM/ProcCM */CO/ConcediuM/NrZCM) div 100)"/>
+
+<xforms:bind nodeset="/CO/ConcediuM/ValCASAt" 
+calculate="round((/CO/ConcediuM/SalMinEC * /CO/ConcediuM/CASAt) div 100)"/>
+
+<xforms:bind nodeset="/CO/ConcediuM/IndemPlCM" 
+calculate="/CO/ConcediuM/IndemCMBr - /CO/ConcediuM/ValCASAt "/>
+
+<xforms:bind nodeset="/CO/ConcediuM/NrZCM"
+calculate="/CO/Certificat/ZileCM"/>
+
+<xforms:bind nodeset="instance('como')/CO/Certificat/DataAcord" type="xsd:date" />
+<xforms:bind nodeset="instance('como')/CO/Certificat/DataDela" type="xsd:date" />
+<xforms:bind nodeset="instance('como')/CO/Certificat/DataPanala" type="xsd:date" />
+<xforms:bind required="true()" type="xsd:date" nodeset="instance('sal')/Date_operare/Data"/>
+
+</xforms:model>
+
+<script type="text/javascript">
+<![CDATA[
+		var totalzile,anluna,zi1,nrziset,idsal,anul,luna;
+		var fxml=localStorage.getItem("salxml");
+		$(document).ready(function(){
+			//definire dialog
+			$( "#dialog-ore" ).dialog({
+					height: 240,
+					width : 400,
+					modal: true,
+					autoOpen: false,
+					position: ['left','top'],
+					title: "Selecteaza tipul si orele de munca"
+				});
+			// afisare in alta pagina
+			$( "#dialog-calendar" ).dialog({
+					height: 800,
+					width : 1110,
+					modal: true,
+					autoOpen: false,
+					title: "Seteaza pontajul"
+				});	
+		});
+
+		function showtable() {
+			var model = document.getElementById("SAL").xfElement;
+			insttmp = model.getInstanceDocument("tmp");
+			instsal = model.getInstanceDocument("sal");
+			instdg = model.getInstanceDocument("dg");
+
+			anluna=$(instsal).find("LunaLucru").text();
+			 anul=anluna.substring(0,4);
+			 luna=anluna.substring(4,6);
+			//anluna=anul.concat(luna);
+			idsal=$(insttmp).find("marca").text();
+			//idsal=$(instsal).find("LunaLucru").text();
+			totalzile=new Date(anul,luna,0).getDate();
+			//alert("anul=" + anul + " luna=" + luna + "idsal= " + idsal);
+			zi1=new Date(anul, luna-1, 1).getDay();
+			if(zi1==0)zi1=7;
+			$("#tbl").find("tr").remove();
+			$(document).find("#saveLS").remove();
+			$(document).find("#cnl").remove();
+			$(document).find("#saveF").remove();
+			createDynamicTable($("#tbl"), 6, 7);
+		}
+
+		// citeste zile libere
+		function zileLibere(nrziset){
+			var model = document.getElementById("SAL").xfElement;
+			instdg = model.getInstanceDocument("dg");
+			var zilib=$(instdg).find("ZileLibere").find("Anul[nr='"+anul+"']").find("Luna[nr='"+luna+"']").find("Ziua[nr='"+nrziset+"']")[0];
+			//alert("zilib=" + zilib + " nrziset=" + nrziset);
+			if(zilib) return true;
+			else return false;
+		}
+		//creere tabel
+		function createDynamicTable(tbody, rows, cols) {
+
+	        if (tbody == null || tbody.length < 1) return;
+	        
+			var cp = $("<tr style='background-color:#8CB6FF; width:100%;'><TD style='width:14%; text-align:center;'>Luni</TD><td style='width:14%;text-align:center;'>Marti</td><td style='width:14%;text-align:center;'>Miercuri</td><td style='width:14%;text-align:center;'>Joi</td><td style='width:14%;text-align:center;'>Vineri</td><td style='width:14%; background-color:#748DFF;text-align:center;'>Sambata</td><td style='width:15%; background-color:#748DFF; text-align:center;'>Duminica</td></tr>")
+			var cellText;
+			var orezi,ozi;
+			cp.appendTo(tbody);
+			
+			var nr=1;
+			for (var r = 1; r <= rows; r++){
+		      	var trow = $("<tr>");
+				for (var c = 1; c <= cols; c++){
+			 		if((r==1&&c>=zi1)||(r==rows&&nr<=totalzile)||(r==rows-1&&nr<=totalzile)||(r!=1&&r!=rows&&r!=rows-1)){
+						orezi=$(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat[id='"+idsal+"']").find("Ziua[nr='"+nr+"']").find("OreZi");
+						if((nr+'').length==1) var nrs="0"+nr;
+						else nrs=nr;
+						cellText = "<div style='width:100%;'><div style='width:50%;text-align:left;float:left;'><span style='padding:0.2em;margin:0.2em;text-align:center;background-color:#FF907F;border:thin solid #FF907F;border-radius:.9em;'>"+nrs+"</span></div><div style='width:50%;text-align:right;float:left;'><a href='javascript:crDialOre(\""+nr+"\");' style=';margin:0.2em;padding-left:0.5;padding-right:0.5;text-align:center;border:thin dotted #AADE97;border-radius:.2em;background-color:#AADE97;text-decoration:none;'>+</a></div></div><br><br>";
+						cellText1="";
+						for(var k=0;k<orezi.length;k++){
+							ozi=orezi[k];
+							var tip=$(ozi).attr("tip");
+							var nrore=$(ozi).text();
+							cellText1 = cellText1 + "<div style='text-align:left;float:left'>"+tip+"</div><div style='text-align: right;'><INPUT type='text' value='"+nrore+"' size='1' onblur='setNrore(this.value, \""+nr+"\", \""+tip+"\")'/></div>\n";
+						}
+						cellText = cellText+cellText1;
+						nr++;
+					}else{
+						cellText='&nbsp;';
+					}			
+					if((c==6)||(c==7)||zileLibere(nrs)){
+						$("<td>")
+							.addClass("tableCellSD")
+							.html(cellText)
+							.data("col", c)
+							.appendTo(trow);
+					}else {
+						$("<td>")
+							.addClass("tableCell")
+							.html(cellText)
+							.data("col", c)
+							.appendTo(trow);
+					}		
+				}
+			trow.appendTo(tbody);
+			}
+			var btn=$("<input type='button' style='margin:2em;' id='saveLS' value='Salvează în LocalStorage' onclick='saveToLocalStorage();' disabled='disabled'></input>");
+			$("#dialog-calendar").append(btn);
+			var btn=$("<input type='button' class='savef' id='saveF' value='Salveaza in fisier' onclick='saveToFile();'></input>");
+			$("#dialog-calendar").append(btn);
+			var btn=$("<input type='button' class='reluare' id='cnl' value='Reluare' onclick='window.location.reload();'></input>");
+			$("#dialog-calendar").append(btn);
+		}
+			//setare ore in xml pt.un tip existent
+			function setNrore(nrore, nrzi, tip){
+				$(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat[id='"+idsal+"']").find("Ziua[nr='"+nrzi+"']").find("OreZi[tip='"+tip+"']").text(nrore);
+				if(nrore==0){
+					var nrtot=$(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat[id='"+idsal+"']").find("Ziua[nr='"+nrzi+"']").find("OreZi").length;
+					if(nrtot>1){
+						$(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat[id='"+idsal+"']").find("Ziua[nr='"+nrzi+"']").find("OreZi[tip='"+tip+"']").remove();
+						reCreateDynamicTable();
+					}
+				}
+			}
+			//stergere noduri cu 0
+			function stergeNod0(nrziset){
+				var orezi=$(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat[id='"+idsal+"']").find("Ziua[nr='"+nrziset+"']").find("OreZi");
+				var nrtot=$(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat[id='"+idsal+"']").find("Ziua[nr='"+nrziset+"']").find("OreZi").length;
+				if(nrtot>1){
+					for(var k=0;k<orezi.length;k++){
+						var ozi=orezi[k];
+						var nrore=$(ozi).text();
+						if(nrore==0){ $(ozi).remove(); }
+					}
+				}
+			}
+
+		function saveToFile(){	
+			window.location.href = "data:application/x-download;charset=utf-8," + encodeURIComponent(xmlToString(fxml));
+		}
+
+		function save(){
+			var tip1=document.getElementById('tip1').value;
+			var ore1=document.getElementById('ore1').value;
+			///
+			var orezi=$(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat[id='"+idsal+"']").find("Ziua[nr='"+nrziset+"']").find("OreZi");
+			var gasit=0;
+			for(var k=0;k<orezi.length;k++){
+				var ozi=orezi[k];
+				var tipcurent=$(ozi).attr("tip");
+				if(tipcurent==tip1){
+					$(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat[id='"+idsal+"']").find("Ziua[nr='"+nrziset+"']").find("OreZi[tip='"+tip1+"']").text(ore1);
+					gasit=1;
+				}
+			}
+			if(gasit==0){
+				var txt0=$(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat[id='"+idsal+"']").find("Ziua[nr='"+nrziset+"']").find("OreZi")[0];
+				$(txt0)
+					.clone()
+					.attr("tip",tip1)
+					.text(ore1)
+					.appendTo($(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat[id='"+idsal+"']").find("Ziua[nr='"+nrziset+"']"));
+			}
+		//	var xmlstr=xmlToString(fxml);
+		//    alert("xml intreg:"+xmlstr);// afisare in alert xml indentat din obiectul fxml
+			var node=$(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat[id='"+idsal+"']").find("Ziua[nr='"+nrziset+"']");
+			alert("node xml:"+xmlToStringJQ($(node)));
+			$( '#dialog-ore' ).dialog('close');
+			stergeNod0(nrziset);
+			reCreateDynamicTable();
+		}		
+
+		//recreere tabel dupa modificare date 
+		function reCreateDynamicTable() {
+			$(document).find("#tbl").find("tbody").find("tr").remove();
+			$(document).find("#saveLS").remove();
+			$(document).find("#cnl").remove();
+			$(document).find("#saveF").remove();
+		//
+		//$(fxml).find("DateLunare").find("Luna[AnLuna='"+anluna+"']").find("Salariat['"+idsal+"']").find("Ziua[nr='"+nrzi+"']").find("OreZi:contains('0')").remove();
+			createDynamicTable($("#tbl"), 6, 7);
+		}
+
+		// deschidere dialog 
+		function crDialOre(nrzi){
+			nrziset=nrzi;
+			$( "#dialog-ore" ).dialog("open");
+		}
+
+		function afisTabel(){
+			$( "#dialog-calendar" ).dialog("open");
+			showtable();
+			capTabel();
+		}
+	
+		//alegere nume an luna din xml
+		function capTabel(){
+			var numeSal=$(fxml).find("Personal").find("Salariat[id='"+idsal+"']").attr("Nume");
+			var prenumeSal=$(fxml).find("Personal").find("Salariat[id='"+idsal+"']").attr("Prenume");
+			$("#nnumesal").text(numeSal +" "+ prenumeSal + " ");
+		}
+]]>
+			function creCTP() {
+				//citesc luna an din instanta 
+				var model = document.getElementById("SAL").xfElement;
+				var inst = model.getInstanceDocument("sal");
+				//var year=inst.getElementsByTagName("An")[0].childNodes[0].nodeValue;
+				//var month=inst.getElementsByTagName("Luna")[0].getAttribute("nr");
+				var yearmonth=inst.getElementsByTagName("LunaLucru")[0].childNodes[0].nodeValue;
+				var year=yearmonth.substr(0,4);
+				var month=yearmonth.substr(4);
+				//alert(month);
+				//creez array cu primele 7 zile din luna ( ca si nr zi din saptamana) 
+				var l1=new Array();
+				for(var i=1; i &lt; 8; i++){
+					d = new Date(year,month-1,i);
+					l1[i-1]=d.getDay();
+				}				
+				//creere cap tabel pontaj
+				var zilesapt=["Duminică","Luni____","Marți___","Miercuri","Joi_____","Vineri__","Sâmbătă"];
+				var lct=document.getElementById("ctpontaj");
+				if ( lct.hasChildNodes() )
+				{
+					while ( lct.childNodes.length >= 1 )
+					{
+						lct.removeChild( lct.firstChild );       
+					} 
+				}				
+				for(var i=0; i &lt; 7; i++){
+					var col=document.createElement("td");
+					var idx=l1[i];
+					var nume=zilesapt[idx];
+					col.appendChild(document.createTextNode(nume));
+					lct.appendChild(col);
+				}
+			}
+		
+		</script>	
+		
+	</head>
+
+	<body bgcolor="#F3F3F3" text="#000000" rightmargin="80" topmargin="40" onload="loadInstFromLocal('sal');">
+		<div style="width:100%">
+			<div><h3 align="center"> PONTAJ </h3></div>
+			<table border="0" width="100%">                                                                     
+				<table align="left">
+					<tr>
+						<td colspan="4">
+							<label>Soc :</label>
+							<b class="nzo1">							
+							<xforms:output value="instance('sal')/Date_firma/Prefix" class="val3"/>
+							<xforms:output value="instance('sal')/Date_firma/Firma" class="val2"/>
+							<xforms:output value="instance('sal')/Date_firma/Sufix" class="val3"/></b>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>An :</label>
+							<b class="nzo1"><xforms:output value="substring(instance('sal')/LunaLucru,1,4)" class="val1Z"/></b>
+						</td>
+						<td>
+							<label>Luna :</label>
+							<b class="nzo1"><xforms:output value="substring(instance('sal')/LunaLucru,5,2)" class="val1"/></b>
+						</td>
+						<td>
+							<label>Nr Zile Lucrătoare :
+							<xforms:trigger appearance="minimal">
+								<xforms:hint class="afisare">
+								<p>Acest câmp este editabil în funcţie de zilele libere acordate în luna de lucru conform legii</p>
+								</xforms:hint>
+							</xforms:trigger>
+							</label><b class="nzoin">
+							<xforms:input ref="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/@NrZlucruL" /></b>
+						</td>
+						<td>
+							<label>Ore in Conditii normale de munca : </label><b class="nzo">
+							<xforms:output value="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/@NrZlucruL * 8"/></b>	
+						</td>
+						<td>
+							<label>Alege altă lună </label>
+							<xforms:select1 class="Ztd1" ref="instance('sal')/LunaLucru">
+								<xforms:itemset nodeset="instance('sal')/DateLunare/Luna/@AnLuna">
+									<xforms:label ref="."/>
+									<xforms:value ref="."/>
+								</xforms:itemset>
+					                        
+						 	</xforms:select1>
+						</td>							
+					</tr>
+				</table>
+			</table>
+		</div>
+
+        <div align="left" style="width:100%">    
+            <div align="center" style="width:90%">
+
+        <table class="tab" border="0" cellspacing="6" cellpadding="10" width="100%">  
+            <hr align="center" color="#D7D5D8" width="100%"/> 
+                <table class="tab" border="0" cellspacing="6" cellpadding="10" width="100%"> 
+                    <tr>
+                        <th class="Fnrc"> Nr. Crt</th>
+                        <th class="Fprob">Pontaj salariat
+						<xforms:trigger appearance="minimal">
+							<xforms:hint class="afisare">
+							<p>Click pentru modificare date pontaj pe butonul ( Pontej )</p>
+							</xforms:hint>
+						</xforms:trigger></th>
+						<!--<th class="Fprob">Nr. Crt / Pontaj salariat</th>-->
+                        <th class="Fpro1">Nume</th> 
+                        <th class="Fpro1">Prenume</th> 
+                        <th class="Fpro1">Funcţia</th>	
+                        <th class="Fpro">Total Ore lucrate 1-15</th>
+                        <th class="Fpro">Total Zile_1-15</th>	
+                        <th class="Fpro">Total Ore lucrate luna 1-31</th>
+                        <th class="Fpro">Total Zile_1-31</th>
+                    </tr>
+				</table>  
+                <table class="tab" border="0" cellspacing="4" cellpadding="10" width="100%"> 
+                    <table>
+                        <xforms:repeat nodeset="/SAL/Personal/Salariat" id="repeatRow"> 
+                            <tr id="SAL">
+                                <td class="Ftnrt"><xforms:output class="Fvaln" value="position()"/>
+                                </td>
+
+                                <td class="Ftnmp">
+                                    <xforms:trigger appearance="minimal">
+                                        <!--<xforms:label class="small button blue">X</xforms:label>-->
+										<xforms:label class="small button greenn">Pontaj</xforms:label>
+										
+									
+										<!--<xforms:hint>Clik pentru pontaj salariat</xforms:hint
+										<xforms:setvalue ref="instance('tmp')/marca" value="current()/@id" ev:event="DOMActivate"/>-->
+<xforms:setvalue ref="instance('tmp')/marca" value="current()/@id" ev:event="DOMActivate"/>
+										<xforms:setvalue ref="instance('tmp')/NrPI" value="if(current()/@Copii_intretinere &lt; 4 , current()/@Copii_intretinere , 4)" ev:event="DOMActivate"/>
+										<!--<xforms:setvalue ref="instance('tmp')/AnLunaDL" value="current()/@id" ev:event="DOMActivate"/>
+										
+										<xforms:action ev:event="DOMActivate" if="not(instance('sal')/LunaLucru = instance('sal')/DateLunare/Luna/@AnLuna[/Salariat[@id = current()/@id]])">-->
+										<xforms:action ev:event="DOMActivate" if="not(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id = current()/@id])">
+                                			<xforms:show dialog="lipsaLuna"/>
+                            			</xforms:action>							
+										<xforms:action ev:event="DOMActivate">
+
+											<xforms:load resource="javascript:afisTabel()"/> 
+                                			
+                            			</xforms:action><!-- -->
+                                    </xforms:trigger>
+                                </td>
+                                <td class="Ftnmf"><xforms:output class="Fval" value="@Nume"/></td> 
+                                <td class="Ftnmf"><xforms:output class="Fval" value="@Prenume"/></td> 
+                                <td class="Ftnmf"><xforms:output class="Fval" value="@Functia"/></td>
+                                <td class="Ftnrs"><xforms:output class="Fval1" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=current()/@id]/Sapt/Zile/Ziua[@nr &lt; '16']/OreZi[@tip='Lucru'])"/></td>
+                                <td class="Ftnrs"><xforms:output class="Fval1" value="Zile_Lucrate1_15"/>-</td>
+                                <td class="Ftnrs"><xforms:output class="Fval1" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=current()/@id]/Sapt/Zile/Ziua/OreZi[@tip='Lucru'])"/></td>
+                                <td class="Ftnrs"><xforms:output class="Fval1" value="Zile_Lucrate1_31"/>-</td>
+                            </tr>  
+                        </xforms:repeat>
+                    </table>
+				</table>
+            	<hr align="center" color="#D7D5D8" width="100%" />
+            </table>
+   
+				</div>
+
+		<br/>
+
+        <div align="center" style="width:97%">
+
+	<table class="Foond" border="0" cellspacing="3" cellpadding="2" width="100%">
+			<tr>
+				<td>
+					<xforms:trigger appearance="minimal" ev:event="DOMActivate"> 									 
+						<xforms:label class="medium button white">&#171; Înapoi la pagina principală &#171;</xforms:label> 
+						<xforms:hint>Înapoi la pagina principală</xforms:hint>
+						<xforms:load resource="index01.xhtml" ev:event="DOMActivate"/>
+					</xforms:trigger>
+
+					<xforms:trigger appearance="minimal" id="intr">
+						<xforms:label  class="medium button orange">
+							<i>&#164; Salvează &#164;</i>
+						</xforms:label>  
+						<xforms:hint>Salvează datele introduse/modificate</xforms:hint>	
+							<xforms:action ev:event="DOMActivate">					
+							<xforms:load resource="javascript:saveDataLocal('sal')"/>					
+						</xforms:action>
+					</xforms:trigger> 
+
+					<xforms:trigger appearance="minimal" ev:event="DOMActivate">
+						<xforms:label class="medium button blue">&#187; Next &#187; Stat salarii &#187;</xforms:label>
+						<xforms:hint>Înapoi la pagina principală</xforms:hint>
+						<xforms:load resource="sal01.xhtml" ev:event="DOMActivate"/>	
+					</xforms:trigger>
+
+					<xforms:trigger appearance="minimal" ev:event="DOMActivate">
+						<xforms:label class="medium button back"> &#171; Back &#171; Liste Personal &#171;</xforms:label>
+						<xforms:hint>Înapoi la Liste Personal</xforms:hint>
+						<xforms:load resource="ldpscurt.xhtml" ev:event="DOMActivate"/>	
+					</xforms:trigger>
+			</td>
+		</tr>         
+	</table>
+
+         </div> 
+	</div>
+        <br/>
+
+
+                           
+
+
+<!--"editPontaj" -->
+ 
+        
+		<xforms:dialog id="alege"> 
+			 		
+			<div>					
+				<div>
+					<xforms:output ref="instance('ore')/Ziua">
+						<xforms:label>Ziua</xforms:label>
+					</xforms:output>
+					<xforms:repeat nodeset="instance('ore')/OreZi" id="repeatOreD">										
+						Ore <xforms:output ref="@tip" />    
+						<xforms:input ref="." />
+					</xforms:repeat>   	
+		        </div>		        	   
+				<hr/>       
+            </div>
+            <xforms:group nodeset="Salariat" ref="instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=instance('tmp')/marca]">		
+			<xforms:trigger appearance="minimal">
+				<xforms:label class="medium button teal"> OK </xforms:label>				
+		        <xforms:action ev:event="DOMActivate">
+		        	
+		        	<xforms:setvalue ref="instance('tmp')/contor" value="1"/>		        	
+		        </xforms:action>
+		        
+		        <xforms:action ev:event="DOMActivate" while="instance('tmp')/contor &lt; count(instance('ore')/OreZi) + 1">
+		        	<!-- Setări în instanța 'ore' -->
+		        	<xforms:action ev:event="DOMActivate" if="instance('ore')/OreZi[number(instance('tmp')/contor)] &lt; 1">
+		        		<xforms:delete nodeset="Sapt/Zile/Ziua[@nr = instance('ore')/Ziua]/OreZi[@tip = instance('ore')/OreZi[number(instance('tmp')/contor)]/@tip]"/>
+		        	</xforms:action>
+		        	<xforms:action ev:event="DOMActivate" if="instance('ore')/OreZi[number(instance('tmp')/contor)] &gt; 0">
+		        		<xforms:action ev:event="DOMActivate" if="Sapt/Zile/Ziua[@nr = instance('ore')/Ziua]/OreZi[@tip = instance('ore')/OreZi[number(instance('tmp')/contor)]/@tip] != 0">
+		        			<xforms:setvalue ref="Sapt/Zile/Ziua[@nr = instance('ore')/Ziua]/OreZi[@tip = instance('ore')/OreZi[number(instance('tmp')/contor)]/@tip]" value="instance('ore')/OreZi[number(instance('tmp')/contor)]"/>
+		        		</xforms:action>			        	
+				    	<xforms:action ev:event="DOMActivate" if="not(Sapt/Zile/Ziua[@nr = instance('ore')/Ziua]/OreZi[@tip = instance('ore')/OreZi[number(instance('tmp')/contor)]/@tip])">
+							<xforms:insert origin="instance('ore')/OreZi[number(instance('tmp')/contor)]" context="Sapt[index('repeatSapt')]/Zile/Ziua[index('repeatZis')]" nodeset="/OreZi"/>
+				    	</xforms:action>
+				    </xforms:action>		     	
+	        		<!-- Setări în totaluri
+			    	<xforms:action ev:event="DOMActivate" if="not(TotalPontaj/Ore[@tip = instance('ore')/OreZi[number(instance('tmp')/contor)]/@tip])">
+			    		<xforms:setvalue ref="instance('tmp')/Ore/@tip" value="instance('ore')/OreZi[number(instance('tmp')/contor)]/@tip"/>
+			    		<xforms:setvalue ref="instance('tmp')/Ore" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=instance('tmp')/marca]/Sapt/Zile/Ziua/OreZi[@tip = instance('ore')/OreZi[number(instance('tmp')/contor)]/@tip])"/>
+						<xforms:insert origin="instance('tmp')/Ore" context="TotalPontaj" nodeset="Ore"/>
+			    	</xforms:action>				    	
+			    	<xforms:action ev:event="DOMActivate" if="not(Sapt/Zile/Ziua/OreZi[@tip = instance('ore')/OreZi[number(instance('tmp')/contor)]/@tip])">
+						<xforms:delete nodeset="TotalPontaj/Ore[@tip = instance('ore')/OreZi[number(instance('tmp')/contor)]/@tip]"/>
+			    	</xforms:action>
+			    	<xforms:action ev:event="DOMActivate" if="Sapt/Zile/Ziua/OreZi[@tip = instance('ore')/OreZi[number(instance('tmp')/contor)]/@tip]">			        	
+		        		<xforms:setvalue ref="TotalPontaj/Ore[@tip = instance('ore')/OreZi[number(instance('tmp')/contor)]/@tip]" value="sum(instance('sal')/DateLunare/Luna[@AnLuna = instance('sal')/LunaLucru]/Salariat[@id=instance('tmp')/marca]/Sapt/Zile/Ziua/OreZi[@tip = instance('ore')/OreZi[number(instance('tmp')/contor)]/@tip])"/>
+			    	</xforms:action> -->			    			        	
+					<xforms:setvalue ref="instance('tmp')/contor" value=". + 1"/>
+		        </xforms:action>
+		        <xforms:action ev:event="DOMActivate">
+		        	<xforms:hide dialog="alege"/>
+		        </xforms:action> 			         		         
+            </xforms:trigger>
+            </xforms:group>   		
+		</xforms:dialog> 
+
+		
+		<xforms:dialog id="lipsaLuna"> 
+			<div>	
+				Nu sunt date pentru luna aleasă ! Alegeți altă lună sau inițializați-o pe cea dorită.
+				<br/>
+				<xforms:trigger appearance="minimal">
+					<xforms:label class="medium button teal"> Închide </xforms:label>				
+				    <xforms:action ev:event="DOMActivate">
+				    	<xforms:hide dialog="lipsaLuna"/>
+				    </xforms:action> 
+		        </xforms:trigger>   		            	
+            </div>		        			
+		</xforms:dialog>  
+
+
+
+
+
+<div id="dialog-calendar">
+		<div align="center">
+			Salariat: <span id="nnumesal"> </span>
+		</div><br />
+		<table id="tbl" class="ta">
+		<tbody></tbody>
+		</table>
+</div>
+
+<div id="dialog-ore">
+		<div style="margin-top:1em;">
+		Alegeti tipul<select id="tip1" name="tip1" style="margin-left:1.5em">
+			<option label="Lucru" value="Lucru" class="tipul">Lucru</option>
+			<option label="Invoire" value="Invoire" class="tipul">Invoire</option>
+			<option label="Nemotivat" value="Nemotiv" class="tipul">Nemotivat</option>
+			<option label="C. Odihna" value="COdihna" class="tipul">C. Odihna</option>
+			<option label="C. Medical" value="CMedic" class="tipul">C. Medical</option>
+			<option label="Ore suplimentare 50%" value="S50" class="tipul">Ore suplimentare 50%</option>
+			<option label="Weekend" value="Weekend" class="tipul">Weekend</option>
+		</select>
+		</div><br/>
+		<div>Numar de ore<input type="text" value="" size="5" id="ore1" name="ore1" style="margin-left:0.65em"/></div><br/>
+		<div>
+			 <button type="button" class="buttons" name="save" id="save" onclick="save()">
+       				<img src="apply.png" alt="" width="15" height="15"/>
+      			  	Salveaza
+    			</button>
+			<button type="button" class="buttonr" id="renunta" name="renunta" onclick="$( '#dialog-ore' ).dialog('close')">
+       				<img src="cancel.png" alt="" width="17" height="15 "/>
+      			  	Renunta
+    			</button>
+		</div>
+</div>
+
+
+
+ currentid= <xforms:output ref="instance('tmp')/marca" /> 
+
+    </body>
+</html>
+

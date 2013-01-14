@@ -1,0 +1,503 @@
+<DateGen>
+	<data>2011-10-25</data>
+	<Districts>
+		<District code="AB" name="ALBA" country="ROM"/>
+		<District code="AR" name="ARAD" country="ROM"/>
+		<District code="AG" name="ARGES" country="ROM"/>
+		<District code="BC" name="BACAU" country="ROM"/>
+		<District code="BH" name="BIHOR" codjudet="05"/>
+		<District code="BN" name="BISTRITA-NASAUD" country="ROM"/>
+		<District code="BT" name="BOTOSANI" country="ROM"/>
+		<District code="BV" name="BRASOV" country="ROM"/>
+		<District code="BR" name="BRAILA" country="ROM"/>
+		<District code="BZ" name="BUZAU" country="ROM"/>
+		<District code="CS" name="CARAS-SEVERIN" country="ROM"/>
+		<District code="CJ" name="CLUJ" country="ROM"/>
+		<District code="CT" name="CONSTANTA" country="ROM"/>
+		<District code="CV" name="COVASNA" country="ROM"/>
+		<District code="DB" name="DIMBOVITA" country="ROM"/>
+		<District code="DJ" name="DOLJ" country="ROM"/>
+		<District code="GL" name="GALATI" country="ROM"/>
+		<District code="GJ" name="GORJ" country="ROM"/>
+		<District code="HR" name="HARGHITA" country="ROM"/>
+		<District code="HD" name="HUNEDOARA" country="ROM"/>
+		<District code="IL" name="IALOMITA" country="ROM"/>
+		<District code="IS" name="IASI" country="ROM"/>
+		<District code="IF" name="ILFOV" country="ROM"/>
+		<District code="MM" name="MARAMURES" country="ROM"/>
+		<District code="MH" name="MEHEDINTI" country="ROM"/>	
+		<District code="MS" name="MURES" country="ROM"/>
+		<District code="NT" name="NEAMT" country="ROM"/>
+		<District code="OT" name="OLT" country="ROM"/>
+		<District code="PH" name="PRAHOVA" country="ROM"/>
+		<District code="SM" name="SATU_MARE" country="ROM"/>
+		<District code="SJ" name="SALAJ" country="ROM"/>
+		<District code="SB" name="SIBIU" country="ROM"/>
+		<District code="SV" name="SUCEAVA" country="ROM"/>
+		<District code="TR" name="TELEORMAN" country="ROM"/>
+		<District code="TM" name="TIMIS" country="ROM"/>
+		<District code="TL" name="TULCEA" country="ROM"/>
+		<District code="VS" name="VASLUI" country="ROM"/>
+		<District code="VL" name="VILCEA" country="ROM"/>
+		<District code="VN" name="VRANCEA" country="ROM"/>
+		<District code="B" name="BUCURESTI" country="ROM"/>
+		<District code="CL" name="CALARASI" country="ROM"/>
+		<District code="GR" name="GIURGIU" country="ROM"/>
+	</Districts>
+
+	<Luni>
+		<Luna nr="01" NrZlucruL="21" OreNl="168">IANUARIE</Luna>
+		<Luna nr="02" NrZlucruL="20" OreNl="160">FEBRUARIE</Luna>
+		<Luna nr="03" NrZlucruL="23" OreNl="184">MARTIE</Luna>
+		<Luna nr="04" NrZlucruL="20" OreNl="160">APRILIE</Luna>
+		<Luna nr="05" NrZlucruL="22" OreNl="176">MAI</Luna>
+		<Luna nr="06" NrZlucruL="21" OreNl="168">IUNIE</Luna>
+		<Luna nr="07" NrZlucruL="21" OreNl="168">IULIE</Luna>
+		<Luna nr="08" NrZlucruL="22" OreNl="176">AUGUST</Luna>
+		<Luna nr="09" NrZlucruL="21" OreNl="168">SEPTEMBRIE</Luna>
+		<Luna nr="10" NrZlucruL="21" OreNl="168">OCTOMBRIE</Luna>
+		<Luna nr="11" NrZlucruL="22" OreNl="176">NOIEMBRIE</Luna>
+		<Luna nr="12" NrZlucruL="20" OreNl="160">DECEMBRIE</Luna>
+	</Luni>
+	
+	<ZileLibere>
+		<Anul nr="2011">
+			<Ziua nr="1" nume="Anul Nou 2011" luna="01"/>
+			<Ziua nr="2" nume="După Anul Nou 2011" luna="01"/>
+			<Ziua nr="11" nume="Paștele Catolic 2011" luna="04"/>
+			<Ziua nr="18" nume="Paștele Ortodox 2011" luna="04"/>
+			<Ziua nr="10" nume="Special Day" luna="11"/>
+			<Ziua nr="25" nume="Crăciunul 2011" luna="12"/>
+			<Ziua nr="26" nume="Crăciunul 2 2011" luna="12"/>					
+		<Ziua nr="07" nume="Special Day 7" luna="07"/></Anul>	
+		<Anul nr="2012">
+			<Ziua nr="1" nume="Anul Nou" luna="01"/>
+			<Ziua nr="2" nume="După Anul Nou" luna="01"/>
+			<Ziua nr="8" nume="Paștele Catolic" luna="04"/>
+			<Ziua nr="9" nume="Paștele Catolic 2" luna="04"/>
+			<Ziua nr="15" nume="Paștele Ortodox" luna="04"/>
+			<Ziua nr="16" nume="Paștele Ortodox 2" luna="04"/>
+			<Ziua nr="26" nume="Special Day" luna="11"/>
+			<Ziua nr="25" nume="Crăciunul" luna="12"/>
+			<Ziua nr="26" nume="Crăciunul 2" luna="12"/>
+		</Anul>							
+	</ZileLibere>
+	    
+    <Creante>      
+        <Den nr="01" id="CoAtImpS" tip="Angajat" A_codOblig="602" A_codBugetar="20470101XX">(602)-Impozit pe veniturile din salarii</Den>
+        <Den nr="02" id="CoAtCAS" tip="Angajat" A_codOblig="412" A_codBugetar="5502XXXXXX">(412)-Contributia individuala de asigurari sociale retinuta de la asigurati</Den>
+        <Den nr="03" id="CoAtCASS03" tip="Angajat" A_codOblig="413" A_codBugetar="5502XXXXXX">(413)-Contributia de asigurari sociale datorata pentru persoanele pentru care plata drepturilor se suporta din bugetul asigurarilor pentru somaj</Den>
+        <Den nr="04" id="CoAtCASS04" tip="Angajat" A_codOblig="418" A_codBugetar="5502XXXXXX">(418)-Contributia de asigurare pentru accidente de munca si boli profesionale pentru someri</Den>
+        <Den nr="05" id="ChArCAS" tip="Angajator" A_codOblig="411" A_codBugetar="5502XXXXXX">(411)-Contributia de asigurari sociale datorata de angajator</Den>
+        <Den nr="06" id="ChArFA" tip="Angajator" A_codOblig="416" A_codBugetar="5502XXXXXX">(416)-Contributia de asigurare pentru accidente de munca si boli profesionale datorata de angajator</Den>
+        <Den nr="07" id="CoAtCASS" tip="Angajat" A_codOblig="432" A_codBugetar="5502XXXXXX">(432)-Contributia pentru asigurari sociale de sanatate retinuta de la asigurati</Den>
+        <Den nr="08" id="CoAtCASS08" tip="Angajat" A_codOblig="433" A_codBugetar="5502XXXXXX">(433)-Contributia pentru  asigurari sociale de sanatate datorata pentru persoanele pentru care plata drepturilor se suporta din bugetul asigurarilor pentru somaj</Den>
+        <Den nr="09" id="CoAtCASS09" tip="Angajat" A_codOblig="438" A_codBugetar="5502XXXXXX">(438)-Contributia de asigurari sociale de sanatate, datorata pentru persoanele care se afla in concediu medical pentru incapacitate de munca din cauza de accident  de munca sau boala profesionala suportata de angajator , conform Legii nr.95/2006, cu modificarile si completarile ulterioare </Den>
+        <Den nr="10" id="CoAtCASS10" tip="Angajat" A_codOblig="441" A_codBugetar="5502XXXXXX">(441)-Contributia pentru  asigurari sociale de sanatate datorata pentru persoanele care executa o pedeapsa privativa de libertate sau se afla in arest preventiv</Den>
+        <Den nr="11" id="CoAtCASS11" tip="Angajat" A_codOblig="435" A_codBugetar="5502XXXXXX">(435)-Contributia pentru  asigurari sociale de sanatate datorata pentru persoanele care executa o pedeapsa privativa de libertate sau se afla in arest preventiv</Den>
+        <Den nr="12" id="CoAtCASScc" tip="Angajat" A_codOblig="437" A_codBugetar="5502XXXXXX">(437)-Contributia individuala pentru asigurari sociale de sanatate pentru persoanele aflate in concediu pentru cresterea copilului pana la implinirea varstei de 2 ani si in cazul copilului cu handicap pana la implinirea de catre copil a varstei de 3 ani</Den>
+        <Den nr="13" id="ChArCASS" tip="Angajator" A_codOblig="431" A_codBugetar="5502XXXXXX">(431)-Contributia pentru asigurari sociale de sanatate datorata de angajator</Den>
+        <Den nr="14" id="CoAtCASSsj" tip="Angajat" A_codOblig="440" A_codBugetar="5502XXXXXX">(440)-Contributia pentru concedii si indemnizatii datorata de persoanele aflate in somaj</Den>        
+        <Den nr="15" id="ChArCM" tip="Angajator" A_codOblig="439" A_codBugetar="5502XXXXXX">(439)-Contributia pentru concedii si indemnizatii de la persoanele juridice sau fizice care au calitatea de angajator</Den>
+        <Den nr="16" id="CoAtFS" tip="Angajat" A_codOblig="422" A_codBugetar="5502XXXXXX">(422)-Contributia individuala de asigurari pentru somaj retinuta de la asigurati</Den>
+        <Den nr="17" id="ChArFS" tip="Angajator" A_codOblig="421" A_codBugetar="5502XXXXXX">(421)-Contributia de asigurari pentru somaj datorata de angajator</Den>
+        <Den nr="18" id="ChArFG" tip="Angajator" A_codOblig="423" A_codBugetar="5502XXXXXX">(423)-Contributia angajatorilor la Fondul de garantare pentru plata creantelor salariale</Den>
+        <Den nr="19" id="CoAtCASSmg" tip="Angajat" A_codOblig="444" A_codBugetar="5502XXXXXX">(444)-Contributia pentru asigurari sociale de sanatate datorata pentru persoanele care fac parte dintr-o /familie care are dreptul la ajutor social, potrivit Legii nr.416/ 2001 privind venitul minim garantat, cu modificarile si completarile ulterioare/</Den>
+        <Den nr="20" id="CoAtCASSi20" tip="Angajat" A_codOblig="445" A_codBugetar="5502XXXXXX">(445)-Contributia individuala de sanatate datorata pentru persoanele care sunt returnate sau expulzate ori /sunt victime ale traficului de persoane si se afla in timpul procedurilor necesare stabilirii identitatii/</Den>
+        <Den nr="21" id="CoAtCASSi21" tip="Angajat" A_codOblig="446" A_codBugetar="5502XXXXXX">(446)-Contributia individuala de sanatate datorata pentru persoanele care se afla in executarea masurilor /prevazute la art. 105, 113, 114 din Codul penal; persoanele care se afla in perioada de amanare sau intrerupere a executarii pedepsei/</Den> 
+        <Den nr="22" id="CoAtCASSi22" tip="Angajat" A_codOblig="447" A_codBugetar="5502XXXXXX">(447)-Contributia individuala de sanatate datorata pentru personalul monahal al cultelor recunoscute</Den>
+        <Den nr="23" id="CoAtCASSi23" tip="Angajat" A_codOblig="449" A_codBugetar="5502XXXXXX">(449)-Contributia individuala de sanatate datorata pentru persoanele, cetateni romani, care sunt victime ale/traficului de persoane, pentru o perioada de cel mult 12 luni</Den> 
+        <Den nr="24" id="CoAtCASScm" tip="FAAMBP" A_codOblig="448" A_codBugetar="5502XXXXXX">(448)-Contribuţia de asigurări sociale de sănătate datorată de angajator pentru persoanele care se află în/concediu medical pentru incapacitate de muncă,urmare unui accident de muncă sau boală profesională suportată din FAAMBP, conform Legii nr.95/2006, cu modificările şi completările ulterioare</Den>
+        <Den nr="25" id="CoAtCASSi25" tip="Angajat" A_codOblig="419" A_codBugetar="5502XXXXXX">(419)-Contributia individuala de asigurari sociale datorata de persoanele care realizeaza venituri de natura /profesionala, altele decat cele de natura salariala</Den>
+        <Den nr="26" id="CoAtCASSi26" tip="Angajat" A_codOblig="424" A_codBugetar="5502XXXXXX">(424)-Contributia individuala de asigurari pentru somaj datorata de persoanele care realizeaza venituri de/ natura profesionala, altele decat cele de natura salariala</Den>
+        <Den nr="27" id="CoAtImpP" tip="Angajat" A_codOblig="607" A_codBugetar="20470101XX">(607)-Impozit pe veniturile din pensii</Den>
+        <Den nr="28" id="CoAtImpA" tip="Angajat" A_codOblig="611" A_codBugetar="20470101XX">(611)-Impozit pe veniturile din drepturi de autor si drepturi conexe, definite potrivit art.7 alin.(1) pct.13^1 din/ Legea nr.571/2003 privind Codul fiscal, cu modificarile si completarile ulterioare</Den> 
+        <Den nr="29" id="CoAtImpAP" tip="Angajat" A_codOblig="616" A_codBugetar="20470101XX">(616)-Impozit pe veniturile rezultate din activitati profesionale desfasurate in baza contractelor/conventiilor/ incheiate potrivit Codului civil</Den>
+        <Den nr="50" id="ChArSal" tip="Firma" A_codOblig="001" A_codBugetar="0">(50)-Fond de salarii</Den>
+        <Den nr="51" id="CoAtGrMat" tip="Angajat" A_codOblig="002" A_codBugetar="0">(51)-Garantii materiale retinute de la angajati</Den>    
+    </Creante>
+    
+<Deduceri>				
+	<DeduceriPL id="0">
+		<Deducere VenitMin="0" VenitMax="1079" expl="(F) Venit brut între: 0 - 1079">250</Deducere>
+		<Deducere VenitMin="1080" VenitMax="1159" expl="(F) Venit brut între: 1080 - 1159">240</Deducere>
+		<Deducere VenitMin="1160" VenitMax="1239" expl="(F) Venit brut între: 1160 - 1239">230</Deducere>
+		<Deducere VenitMin="1240" VenitMax="1319" expl="(F) Venit brut între: 1240 - 1319">220</Deducere>
+		<Deducere VenitMin="1320" VenitMax="1399" expl="(F) Venit brut între: 1320 - 1399">210</Deducere>
+		<Deducere VenitMin="1400" VenitMax="1479" expl="(F) Venit brut între: 1400 - 1479">200</Deducere>
+		<Deducere VenitMin="1480" VenitMax="1559" expl="(F) Venit brut între: 1480 - 1559">190</Deducere>
+		<Deducere VenitMin="1560" VenitMax="1639" expl="(F) Venit brut între: 1560 - 1639">180</Deducere>		
+		<Deducere VenitMin="1640" VenitMax="1719" expl="(F) Venit brut între: 1640 - 1719">170</Deducere>
+		<Deducere VenitMin="1720" VenitMax="1799" expl="(F) Venit brut între: 1720 - 1799">160</Deducere>
+		<Deducere VenitMin="1800" VenitMax="1879" expl="(F) Venit brut între: 1800 - 1879">150</Deducere>
+		<Deducere VenitMin="1880" VenitMax="1959" expl="(F) Venit brut între: 1880 - 1959">140</Deducere>
+		<Deducere VenitMin="1960" VenitMax="2039" expl="(F) Venit brut între: 1960 - 2039">130</Deducere>
+		<Deducere VenitMin="2039" VenitMax="999999" expl="(F) Venit brut peste 2039">0</Deducere>
+	</DeduceriPL>
+	<DeduceriPL id="1">
+		<Deducere VenitMin="0" VenitMax="1079" expl="(1) Venit brut între: 0 - 1057">350</Deducere>
+		<Deducere VenitMin="1058" VenitMax="1114" expl="(1) Venit brut între: 1058 - 1114">340</Deducere>
+		<Deducere VenitMin="1115" VenitMax="1171" expl="(1) Venit brut între: 1115 - 1171">330</Deducere>
+		<Deducere VenitMin="1172" VenitMax="1228" expl="(1) Venit brut între: 1172 - 1228">320</Deducere>
+		<Deducere VenitMin="1229" VenitMax="1285" expl="(1) Venit brut între: 1229 - 1285">310</Deducere>
+		<Deducere VenitMin="1286" VenitMax="1342" expl="(1) Venit brut între: 1286 - 1342">300</Deducere>
+		<Deducere VenitMin="1343" VenitMax="1399" expl="(1) Venit brut între: 1343 - 1399">290</Deducere>
+		<Deducere VenitMin="1400" VenitMax="1457" expl="(1) Venit brut între: 1400 - 1457">280</Deducere>		
+		<Deducere VenitMin="1458" VenitMax="1514" expl="(1) Venit brut între: 1458 - 1514">270</Deducere>
+		<Deducere VenitMin="1515" VenitMax="1571" expl="(1) Venit brut între: 1515 - 1571">260</Deducere>
+		<Deducere VenitMin="1572" VenitMax="1628" expl="(1) Venit brut între: 1572 - 1628">250</Deducere>
+		<Deducere VenitMin="1629" VenitMax="1685" expl="(1) Venit brut între: 1629 - 1685">240</Deducere>
+		<Deducere VenitMin="1686" VenitMax="1742" expl="(1) Venit brut între: 1686 - 1742">230</Deducere>			
+		<Deducere VenitMin="1743" VenitMax="1799" expl="(1) Venit brut între: 1743 - 1799">220</Deducere>
+		<Deducere VenitMin="1800" VenitMax="1857" expl="(1) Venit brut între: 1800 - 1857">210</Deducere>
+		<Deducere VenitMin="1858" VenitMax="1914" expl="(1) Venit brut între: 1858 - 1914">200</Deducere>
+		<Deducere VenitMin="1915" VenitMax="1971" expl="(1) Venit brut între: 1915 - 1971">190</Deducere>
+		<Deducere VenitMin="1972" VenitMax="2028" expl="(1) Venit brut între: 1972 - 2028">180</Deducere>
+		<Deducere VenitMin="2028" VenitMax="999999" expl="(F) Venit brut peste 2028">0</Deducere>		
+	</DeduceriPL>	
+	<DeduceriPL id="2">
+		<Deducere VenitMin="0" VenitMax="1044" expl="(2) Venit brut între: 0 - 1044">450</Deducere>
+		<Deducere VenitMin="1045" VenitMax="1088" expl="(2) Venit brut între: 1045 - 1088">440</Deducere>
+		<Deducere VenitMin="1089" VenitMax="1133" expl="(2) Venit brut între: 1089 - 1133">430</Deducere>
+		<Deducere VenitMin="1134" VenitMax="1177" expl="(2) Venit brut între: 1134 - 1177">420</Deducere>
+		<Deducere VenitMin="1178" VenitMax="1222" expl="(2) Venit brut între: 1178 - 1222">410</Deducere>
+		<Deducere VenitMin="1223" VenitMax="1266" expl="(2) Venit brut între: 1223 - 1266">400</Deducere>
+		<Deducere VenitMin="1267" VenitMax="1311" expl="(2) Venit brut între: 1267 - 1311">390</Deducere>
+		<Deducere VenitMin="1312" VenitMax="1355" expl="(2) Venit brut între: 1312 - 1355">380</Deducere>		
+		<Deducere VenitMin="1356" VenitMax="1399" expl="(2) Venit brut între: 1356 - 1399">370</Deducere>
+		<Deducere VenitMin="1400" VenitMax="1444" expl="(2) Venit brut între: 1400 - 1444">360</Deducere>
+		<Deducere VenitMin="1445" VenitMax="1488" expl="(2) Venit brut între: 1445 - 1488">350</Deducere>
+		<Deducere VenitMin="1489" VenitMax="1533" expl="(2) Venit brut între: 1489 - 1533">340</Deducere>
+		<Deducere VenitMin="1534" VenitMax="1577" expl="(2) Venit brut între: 1534 - 1577">330</Deducere>			
+		<Deducere VenitMin="1578" VenitMax="1622" expl="(2) Venit brut între: 1578 - 1622">320</Deducere>
+		<Deducere VenitMin="1623" VenitMax="1666" expl="(2) Venit brut între: 1623 - 1666">310</Deducere>
+		<Deducere VenitMin="1667" VenitMax="1711" expl="(2) Venit brut între: 1667 - 1711">300</Deducere>
+		<Deducere VenitMin="1712" VenitMax="1755" expl="(2) Venit brut între: 1712 - 1755">290</Deducere>
+		<Deducere VenitMin="1756" VenitMax="1799" expl="(2) Venit brut între: 1756 - 1799">280</Deducere>			
+		<Deducere VenitMin="1800" VenitMax="1844" expl="(2) Venit brut între: 1800 - 1844">270</Deducere>
+		<Deducere VenitMin="1845" VenitMax="1888" expl="(2) Venit brut între: 1845 - 1888">260</Deducere>
+		<Deducere VenitMin="1889" VenitMax="1933" expl="(2) Venit brut între: 1889 - 1933">250</Deducere>
+		<Deducere VenitMin="1934" VenitMax="1977" expl="(2) Venit brut între: 1934 - 1977">240</Deducere>
+		<Deducere VenitMin="1978" VenitMax="2022" expl="(2) Venit brut între: 1978 - 2022">230</Deducere>
+		<Deducere VenitMin="2022" VenitMax="999999" expl="(F) Venit brut peste 2022">0</Deducere>
+	</DeduceriPL>	
+	<DeduceriPL id="3">
+		<Deducere VenitMin="0" VenitMax="1036" expl="(3) Venit brut între: 0 - 1036">550</Deducere>
+		<Deducere VenitMin="1037" VenitMax="1072" expl="(3) Venit brut între: 1037 - 1072">540</Deducere>
+		<Deducere VenitMin="1073" VenitMax="1109" expl="(3) Venit brut între: 1073 - 1109">530</Deducere>
+		<Deducere VenitMin="1110" VenitMax="1145" expl="(3) Venit brut între: 1110 - 1145">520</Deducere>
+		<Deducere VenitMin="1146" VenitMax="1181" expl="(3) Venit brut între: 1146 - 1181">510</Deducere>
+		<Deducere VenitMin="1182" VenitMax="1218" expl="(3) Venit brut între: 1182 - 1218">500</Deducere>
+		<Deducere VenitMin="1219" VenitMax="1254" expl="(3) Venit brut între: 1219 - 1254">490</Deducere>
+		<Deducere VenitMin="1255" VenitMax="1290" expl="(3) Venit brut între: 1255 - 1290">480</Deducere>				
+		<Deducere VenitMin="1291" VenitMax="1327" expl="(3) Venit brut între: 1291 - 1327">470</Deducere>
+		<Deducere VenitMin="1328" VenitMax="1363" expl="(3) Venit brut între: 1328 - 1363">460</Deducere>
+		<Deducere VenitMin="1364" VenitMax="1999" expl="(3) Venit brut între: 1364 - 1999">450</Deducere>
+		<Deducere VenitMin="1400" VenitMax="1436" expl="(3) Venit brut între: 1400 - 1436">440</Deducere>
+		<Deducere VenitMin="1437" VenitMax="1472" expl="(3) Venit brut între: 1437 - 1472">430</Deducere>			
+		<Deducere VenitMin="1473" VenitMax="1509" expl="(3) Venit brut între: 1473 - 1509">420</Deducere>
+		<Deducere VenitMin="1510" VenitMax="1545" expl="(3) Venit brut între: 1510 - 1545">410</Deducere>
+		<Deducere VenitMin="1546" VenitMax="1581" expl="(3) Venit brut între: 1546 - 1581">400</Deducere>
+		<Deducere VenitMin="1582" VenitMax="1618" expl="(3) Venit brut între: 1582 - 1618">390</Deducere>
+		<Deducere VenitMin="1619" VenitMax="1654" expl="(3) Venit brut între: 1619 - 1654">380</Deducere>		
+		<Deducere VenitMin="1655" VenitMax="1690" expl="(3) Venit brut între: 1655 - 1690">370</Deducere>
+		<Deducere VenitMin="1691" VenitMax="1727" expl="(3) Venit brut între: 1691 - 1727">360</Deducere>
+		<Deducere VenitMin="7281" VenitMax="1763" expl="(3) Venit brut între: 1281 - 1763">350</Deducere>
+		<Deducere VenitMin="1764" VenitMax="1799" expl="(3) Venit brut între: 1764 - 1799">340</Deducere>
+		<Deducere VenitMin="1800" VenitMax="1836" expl="(3) Venit brut între: 1800 - 1836">330</Deducere>			
+		<Deducere VenitMin="1837" VenitMax="1872" expl="(3) Venit brut între: 1837 - 1872">320</Deducere>
+		<Deducere VenitMin="1873" VenitMax="1909" expl="(3) Venit brut între: 1873 - 1909">310</Deducere>
+		<Deducere VenitMin="1910" VenitMax="1945" expl="(3) Venit brut între: 1910 - 1945">300</Deducere>
+		<Deducere VenitMin="1946" VenitMax="1981" expl="(3) Venit brut între: 1946 - 1981">290</Deducere>
+		<Deducere VenitMin="1982" VenitMax="2018" expl="(3) Venit brut între: 1982 - 2018">280</Deducere>
+		<Deducere VenitMin="2018" expl="(F) Venit brut peste 2018">0</Deducere>		
+	</DeduceriPL>	
+	<DeduceriPL id="4">
+		<Deducere VenitMin="0" VenitMax="1030" expl="(4+) Venit brut între: 0 - 1030">650</Deducere>
+		<Deducere VenitMin="1031" VenitMax="1061" expl="(4+) Venit brut între: 1080 - 1061">640</Deducere>
+		<Deducere VenitMin="1062" VenitMax="1092" expl="(4+) Venit brut între: 1160 - 1092">630</Deducere>
+		<Deducere VenitMin="1093" VenitMax="1123" expl="(4+) Venit brut între: 1240 - 1123">620</Deducere>
+		<Deducere VenitMin="1124" VenitMax="1153" expl="(4+) Venit brut între: 1124 - 1153">610</Deducere>
+		<Deducere VenitMin="1154" VenitMax="1184" expl="(4+) Venit brut între: 1154 - 1184">600</Deducere>
+		<Deducere VenitMin="1185" VenitMax="1215" expl="(4+) Venit brut între: 1185 - 1215">590</Deducere>
+		<Deducere VenitMin="1216" VenitMax="1246" expl="(4+) Venit brut între: 1216 - 1246">580</Deducere>				
+		<Deducere VenitMin="1247" VenitMax="1276" expl="(4+) Venit brut între: 1247 - 1276">570</Deducere>
+		<Deducere VenitMin="1277" VenitMax="1307" expl="(4+) Venit brut între: 1277 - 1307">560</Deducere>
+		<Deducere VenitMin="1308" VenitMax="1338" expl="(4+) Venit brut între: 1308 - 1338">550</Deducere>
+		<Deducere VenitMin="1339" VenitMax="1369" expl="(4+) Venit brut între: 1339 - 1369">540</Deducere>
+		<Deducere VenitMin="1370" VenitMax="1399" expl="(4+) Venit brut între: 1370 - 1399">530</Deducere>			
+		<Deducere VenitMin="1400" VenitMax="1430" expl="(4+) Venit brut între: 1400 - 1430">520</Deducere>
+		<Deducere VenitMin="1431" VenitMax="1461" expl="(4+) Venit brut între: 1431 - 1461">510</Deducere>
+		<Deducere VenitMin="1462" VenitMax="1492" expl="(4+) Venit brut între: 1462 - 1492">500</Deducere>
+		<Deducere VenitMin="1493" VenitMax="1523" expl="(4+) Venit brut între: 1493 - 1523">490</Deducere>
+		<Deducere VenitMin="1524" VenitMax="1553" expl="(4+) Venit brut între: 1524 - 1553">480</Deducere>		
+		<Deducere VenitMin="1554" VenitMax="1584" expl="(4+) Venit brut între: 1554 - 1584">470</Deducere>
+		<Deducere VenitMin="1585" VenitMax="1615" expl="(4+) Venit brut între: 1585 - 1615">460</Deducere>
+		<Deducere VenitMin="1616" VenitMax="1646" expl="(4+) Venit brut între: 1616 - 1646">450</Deducere>
+		<Deducere VenitMin="1647" VenitMax="1676" expl="(4+) Venit brut între: 1647 - 1676">440</Deducere>
+		<Deducere VenitMin="1677" VenitMax="1707" expl="(4+) Venit brut între: 1677 - 1707">430</Deducere>		
+		<Deducere VenitMin="1708" VenitMax="1738" expl="(4+) Venit brut între: 1708 - 1738">420</Deducere>
+		<Deducere VenitMin="1739" VenitMax="1769" expl="(4+) Venit brut între: 1739 - 1769">410</Deducere>
+		<Deducere VenitMin="1770" VenitMax="1799" expl="(4+) Venit brut între: 1770 - 1799">400</Deducere>
+		<Deducere VenitMin="1800" VenitMax="1830" expl="(4+) Venit brut între: 1800 - 1830">390</Deducere>
+		<Deducere VenitMin="1831" VenitMax="1861" expl="(4+) Venit brut între: 1831 - 1862">380</Deducere>		
+		<Deducere VenitMin="1862" VenitMax="1892" expl="(4+) Venit brut între: 1862 - 1892">370</Deducere>
+		<Deducere VenitMin="1893" VenitMax="1923" expl="(4+) Venit brut între: 1893 - 1923">360</Deducere>
+		<Deducere VenitMin="1924" VenitMax="1953" expl="(4+) Venit brut între: 1924 - 1953">350</Deducere>
+		<Deducere VenitMin="1954" VenitMax="1984" expl="(4+) Venit brut între: 1954 - 1984">340</Deducere>
+		<Deducere VenitMin="1985" VenitMax="2015" expl="(4+) Venit brut între: 1985 - 2015">330</Deducere>
+		<Deducere VenitMin="2015" expl="(F) Venit brut peste 2015">0</Deducere>
+	</DeduceriPL>				
+</Deduceri>
+
+
+<!--	
+	<Luni>
+		<Luna LunaL="IANUARIE" nr="01" NrZlucruL="111"/>
+		<Luna LunaL="FEBRUARIE" nr="02" NrZlucruL="20"/>
+		<Luna LunaL="MARTIE" nr="03" NrZlucruL="3333"/>
+		<Luna LunaL="APRILIE" nr="04" NrZlucruL="40"/>
+		<Luna LunaL="MAI" nr="05" NrZlucruL="50"/>
+		<Luna LunaL="IUNIE" nr="06" NrZlucruL="60"/>
+		<Luna LunaL="IULIE" nr="07" NrZlucruL="70"/>
+		<Luna LunaL="AUGUST" nr="08" NrZlucruL="80"/>
+		<Luna LunaL="SEPTEMBRIE" nr="09" NrZlucruL="90"/>
+		<Luna LunaL="OCTOMBRIE" nr="10" NrZlucruL="100"/>
+		<Luna LunaL="NOIEMBRIE" nr="11" NrZlucruL="110"/>
+		<Luna LunaL="DECEMBRIE" nr="12" NrZlucruL="120"/>
+	</Luni>		
+-->	
+   <!--	
+				 <Pontaj>
+		<OreZ  code="0" name="0"/>
+		<OreZ  code="1" name="1"/>
+		<OreZ  code="2" name="2"/>
+		<OreZ  code="3" name="3"/>
+		<OreZ  code="4" name="4"/>
+		<OreZ  code="5" name="5"/>
+		<OreZ  code="6" name="0"/>
+		<OreZ  code="7" name="0"/>
+		<OreZ  code="8" name="0"/>		
+		<OreZ  code="9" name="0"/>
+		<OreZ  code="10" name="0"/>
+		<OreZ  code="11" name="0"/>
+		<OreZ  code="12" name="0"/>
+		<OreZ  code="I" name="0"/>
+		<OreZ  code="N" name="0"/>
+		<OreZ  code="CO" name="0"/>
+		<OreZ  code="M" name="0"/>		
+		<OreZ  code="BO" name="0"/>
+		<OreZ  code="BP" name="0"/>
+		<OreZ  code="PRB" name="0"/>
+		<OreZ  code="PRM" name="0"/>
+		<OreZ  code="AM" name="0"/>	 			  			  			  			  		
+	</Pontaj>			 
+			   
+			   
+			   <OreZi0>0</OreZi0>
+			<OreZi1>1</OreZi1>
+			<OreZi2>2</OreZi2>
+			<OreZi3>3</OreZi3>
+			<OreZi4>4</OreZi4>
+			<OreZi5>5</OreZi5>
+			<OreZi6>6</OreZi6>
+			<OreZi7>7</OreZi7>
+			<OreZi8>8</OreZi8>
+			<OreZi9>9</OreZi9>
+			<OreZi10>10</OreZi10>
+			<OreZi11>11</OreZi11>
+			<OreZi12>12</OreZi12>
+			<Codihna>CO</Codihna>		   	  
+			<Cboala>CB</Cboala>
+			<PredBo>PRB</PredBo>
+			<Maternitate>M</Maternitate>
+			<Invoire>CB</Invoire>
+			<Nemotivat>N</Nemotivat>
+			<Invoire>CB</Invoire>
+   
+
+   <CoduriCAEN>
+	  <CodCAEN simbol="123" explicatie="gytftftft"/><DateGen>
+	  <CodCAEN simbol="234" explicatie="jhgfdrddsedsed"/>
+   </CoduriCAEN>
+
+   <CoduriCM>
+	  <CodCM simbol="123" explicatie="gytftftft"/>
+	  <CodCM simbol="234" explicatie="jhgfdrddsedsed"/>
+   </CoduriCM>
+
+   <ContBanci>
+	  <CB>
+		 <Nume>BCR</Nume>
+		 <Adresa>ererere</Adresa>
+		 <IBAN>213RNCB34434343</IBAN>
+	  </CB>
+	  <CB>
+		 <Nume>Trezorerie</Nume>
+		 <Adresa>ererere</Adresa>
+		 <IBAN>2133TREZ4434343</IBAN>
+	  </CB>
+   </ContBanci>
+
+   <CaseAsigurari>
+	  <Casa simbol="123" explicatie="gytftftft"/>
+	  <Casa simbol="234" explicatie="jhgfdrddsedsed"/>
+   </CaseAsigurari>
+
+   <Activitati>
+	  <activitate nume="strungar" explicatie="gytftftft"/>
+	  <Casa nume="vanzator" explicatie="jhgfdrddsedsed"/>
+   </Activitati>-->
+
+<!--	<Coeficienti>
+		<RetineriAngajat>  
+			<CAS_Angajat>	
+				<Nr_Crt>1</Nr_Crt>		
+				<Procent>10.5</Procent>
+				<Den_ContD>Personal Salarii Datorate</Den_ContD>	   
+				<Den_ContC>Contrib Salariaţi Asig  Soc</Den_ContC>		  
+				<Debit_Cont>421</Debit_Cont>
+				<Credit_Cont>4312</Credit_Cont>
+				<Explicatie>CAS Salariaţi</Explicatie>
+			</CAS_Angajat>
+			<Somaj_Angajat>		   
+				<Nr_Crt>2</Nr_Crt>
+				<Procent>0.5</Procent>			
+				<Den_ContD>Personal Salarii Datorate</Den_ContD> 
+				<Den_ContC>Contrib Salariaţi la Fondul de Şomaj</Den_ContC>		   
+				<Debit_Cont>421</Debit_Cont>
+				<Credit_Cont>4372</Credit_Cont>
+				<Explicatie>Şomaj Salariaţi</Explicatie>
+			</Somaj_Angajat>					  
+			<CASS_Angajat>
+				<Nr_Crt>3</Nr_Crt>
+				<Procent>5.5</Procent>
+				<Den_ContD>Personal Salarii Datorate</Den_ContD> 
+				<Den_ContC>Contrib Salariaţi Asig Soc de Sănătate</Den_ContC>  
+				<Debit_Cont>421</Debit_Cont>
+				<Credit_Cont>4314</Credit_Cont>   
+				<Explicatie>CASS Salariaţi</Explicatie>
+			</CASS_Angajat>
+		</RetineriAngajat>
+
+		<ObligatiiAngajator>
+			<CAS_Angajator>		
+				<Nr_Crt>1</Nr_Crt>
+				<Procent>20.8</Procent>
+				<Den_ContD>Contrib.Unitătii la asigurările sociale</Den_ContD> 
+				<Den_ContC>Contrib Salariaţi Asig.Soc.de Sănătate</Den_ContC>		   
+				<Debit_Cont>6451</Debit_Cont>
+				<Credit_Cont>4311</Credit_Cont>	 
+				<Explicatie>CAS Angajator</Explicatie>		  
+			</CAS_Angajator>
+			<FAcc_Angajator>
+				<Nr_Crt>2</Nr_Crt>			
+				<Procent>0.168</Procent>
+				<Den_ContD>Contrib.Unităţii la asigurarile sociale</Den_ContD> 
+				<Den_ContC>Contrib Soc la Fondul de Accidente</Den_ContC>		   
+				<Debit_Cont>6451</Debit_Cont>
+				<Credit_Cont>4315</Credit_Cont>	  
+				<Explicatie>Fond de accidente</Explicatie>				   
+			</FAcc_Angajator>	
+			<Somaj_Angajator>
+				<Nr_Crt>3</Nr_Crt>		   
+				<Procent>0.5</Procent>
+				<Den_ContD>Contrib.Unităţii pentru ajutorul de Şomaj</Den_ContD>	 
+				<Den_ContC>Contrib Soc la Fond de Şomaj</Den_ContC>
+				<Debit_Cont>6452</Debit_Cont>
+				<Credit_Cont>4371</Credit_Cont>	 
+				<Explicatie>Fondul de Şomaj</Explicatie>		   		  
+			</Somaj_Angajator>
+			<CASS_Angajator>
+				<Nr_Crt>4</Nr_Crt>			
+				<Procent>5.2</Procent>
+				<Den_ContD>Contrib.Angajatorului ptr.asig.soc.de Sănătate</Den_ContD>   
+				<Den_ContC>Contrib Soc AS de Sănătate</Den_ContC>
+				<Debit_Cont>6453</Debit_Cont>
+				<Credit_Cont>4313</Credit_Cont>		  
+				<Explicatie>CASS Angajator</Explicatie>		  		  
+			</CASS_Angajator>
+			<CM_Angajator>
+				<Nr_Crt>5</Nr_Crt>			
+				<Procent>0.85</Procent>
+				<Den_ContD>Cheltuieli cu FD CCI</Den_ContD>		 
+				<Den_ContC>Contrib Soc Fond CM</Den_ContC>
+				<Debit_Cont>6454</Debit_Cont> 
+				<Credit_Cont>43111</Credit_Cont>	  
+				<Explicatie>Fond Concedii Medicale</Explicatie>		  				
+			</CM_Angajator>	
+			<ITM_Angajator>
+				<Nr_Crt>6</Nr_Crt>			
+				<Procent>0.75</Procent>
+				<Den_ContD>Cheltuieli privind comis.şi onorariile</Den_ContD>		  
+				<Den_ContC>Comision ITM</Den_ContC>		  
+				<Debit_Cont>622</Debit_Cont>
+				<Credit_Cont>4471</Credit_Cont>	
+				<Explicatie>Comision ITM</Explicatie>						
+			</ITM_Angajator>
+			<FGr_Angajator>
+				<Nr_Crt>7</Nr_Crt>		   
+				<Procent>0.25</Procent>
+				<Den_ContD>Contrib.Unitaţii pentru ajutorul de Şomaj</Den_ContD>		   
+				<Den_ContC>Contrib Soc Fond Garant Sal</Den_ContC>		  
+				<Debit_Cont>6452</Debit_Cont>
+				<Credit_Cont>4373</Credit_Cont>	 
+				<Explicatie>Fond Garant Sal</Explicatie>		  		
+			</FGr_Angajator>	
+	  	</ObligatiiAngajator>
+	
+		<IMP_Salarii>
+			<Nr_Crt>4</Nr_Crt>
+			<Procent>16</Procent>
+			<Den_ContD>Impozit pe Salarii Datorat</Den_ContD> 
+			<Den_ContC>Personal Salarii Datorate</Den_ContC>  
+			<Debit_Cont>444</Debit_Cont>
+			<Credit_Cont>421</Credit_Cont>   
+			<Explicatie>Impozit pe Salarii</Explicatie>
+        </IMP_Salarii> --> 
+		
+		<!--<Salariuminim>
+				<valoare nr="1111"/>
+				<data nr="22.02.2002">
+			</Salariuminim>
+		
+			<Salariumediu>
+				<valoare nr="1111"/>
+				<data nr="22.02.2002">
+			</Salariumediu>
+		
+			<Zilelucratoare nr="22"/>-->
+
+<!--		<Sporuri>
+			<Spor>
+				<Explicatie>Spor Conducere</Explicatie>		  
+				<Procent>10</Procent>
+			</Spor>
+			<Spor>
+				<Explicatie>Spor Vechime</Explicatie>		  
+				<Procent>5</Procent>
+			</Spor>
+		</Sporuri>
+	
+		<Deduceri>
+				<Pana_1000> 0 - 1.000 lei </Pana_1000>
+				<Dedu_Pers>250</Dedu_Pers>		  
+				<O_Persoana>350</O_Persoana>
+				<Doua_Persoane>450</Doua_Persoane>			 
+				<Trei_Persoane>550</Trei_Persoane>		   
+				<Patru_Persoane>650</Patru_Persoane>		   
+		</Deduceri>
+	
+		<Retineri>
+			<Explicatii>Alte reţineri salariale</Explicatii>		  
+			<Suma_Procent>0</Suma_Procent>
+		</Retineri>
+    </Coeficienti>-->
+
+	<Date_operare>
+		<Data>25-03-2009</Data>
+	  	<Pers_intocmit>ADMINISTRATOR</Pers_intocmit>
+ 	 	<Functia>CONTABIL</Functia>
+	</Date_operare>
+		
+</DateGen>

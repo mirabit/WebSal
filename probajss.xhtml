@@ -1,0 +1,60 @@
+<?xml-stylesheet href="../xsltforms/xsltforms.xsl" type="text/xsl"?>
+<?xsltforms-options debug="yes" lang="en"?>
+<html
+     xmlns:xforms="http://www.w3.org/2002/xforms"
+     xmlns:txs="http://www.agencexml.com/txs"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:ev="http://www.w3.org/2001/xml-events"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <head>
+     <title>Javascript Submission</title>
+     <xforms:model>
+       <xforms:instance id="val">
+	<data  xmlns="">
+	  <value>Initial value</value>
+	</data>
+
+       </xforms:instance>
+
+       <xforms:submission
+	  id="class"
+	  method="get"
+	  serialization="none"
+	  replace="none"
+	  resource="javascript:setClass()"/>
+	<xforms:send ev:event="xforms-model-construct-done" submission="class"/>
+       <xforms:submission
+	  id="value"
+	  method="get"
+	  serialization="none"
+	  replace="instance"
+	  targetref="value"
+	  
+	resource="javascript:'&lt;value xmlns=&quot;&quot;&gt;Javascript  
+value at '+'bbbbbb'+'&lt;/value&gt;'"/>
+     </xforms:model>
+	<!--resource="javascript:'&lt;value xmlns=&quot;&quot;&gt;Javascript  
+value at '+(new Date())+'&lt;/value&gt;'"/>-->
+<style type="text/css">
+.red { color: red; }
+.blue { color: blue; }
+</style>
+
+<script type="text/javascript">
+function setClass() {
+   var p = window.document.getElementById('par');
+   p.setAttribute("class", "blue");
+}
+</script>
+
+   </head>
+   <body>
+     <p id="par" class="red"><xforms:output  ref="instance('val')"/></p>
+
+     <xforms:submit submission="value">
+       <xforms:label>Load from Javascript</xforms:label></xforms:submit>
+
+     <xforms:submit submission="class">
+       <xforms:label>Change class</xforms:label></xforms:submit>
+   </body>
+</html>

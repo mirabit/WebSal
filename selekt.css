@@ -1,0 +1,322 @@
+@namespace xforms url("http://www.w3.org/2002/xforms");
+  
+		/* Pentru output fcpscurt*/
+		.outputp .xf-value {width:10em;border:solid 1px #EE82EE;text-align:right;background-color: white;}       
+ 
+        .label {font-weight: bold;}
+        .header {color: white;background-color: gray;font-weight: bold;float:left;width:800px;}
+        header .leftColumn, .header .rightColumn {display:block;  width:11em;  float:left; margin:5px 20px;}
+        .leftColumn, .rightColumn {display: inline; margin-left: 10px; }
+
+        /* LUNGIME BANDA SELECTIE 
+        xf|repeat {background:#eee;  float:left; width:3675px;}*/
+        xf|repeat .xf-value {margin:1px 0;}
+        xf|repeat .xf-repeat-item {border:0px solid #6FA475;}
+        
+        /* BANDA DE SELECTIE  CULOARE
+        xf|repeat .xf-repeat-index  {background:#F1F7BB; border:1px dotted black; }*/
+       /* xf|repeat .xf-repeat-index  { border:1px dotted #EE82EE; }*/
+		xf|repeat .xf-repeat-index {padding:0.1em;color:#008080;-moz-border-radius: .7em  .7em .7em .7em;-moz-box-shadow: 
+							0px 0px 8px #E3E3E3;border:solid 1px #EE82EE;}        
+        
+               
+        xforms|input xf-value {width:3em;}
+        
+        /*  model delete confirmation box */
+        /* pagina culoare marime pozitionate */
+        #background2 {position:absolute; top:10px; left:50px; width:60%; height:40%;}
+        
+        /* pagina interna marime culoare dimensiuni bordura */
+        delete-confirm-box {width:320px;height:220px;border:1px solid #000000;margin:auto;margin-top:180px;}
+        /* pozitionare butoane */
+		
+        #delete-option-triggers {text-align:center; width:50%; margin-top:-90px; margin-right:10px;border:1px}
+        xf|trigger {margin-right:5px;}
+
+        /*#content-for-deletion {float:left; width:240px; position:relative; top:10; left:10; padding:10px;}*/
+        content-for-deletion {float:left; width:200px; position:relative; padding:0px;}
+        content-for-deletion .p {padding:0; margin-bottom:5px; font-weight:bold; font-size:1.1em;}
+        
+        #delete-confirm-box {font-size:0.9em; padding:12px; color:red; font-weight:bold;
+							text-align:center; background:#E3E3E3; width:420px; height:125px; 
+							border:1px solid #000000;  margin-top:5px;}
+
+
+
+
+
+/*-------------------div INCARCA / MODIFICA -----------------*/
+
+/* pagina culoare marime pozitionate dreapta SUS*/
+        #modific {position:absolute; top:0; left:0; background:#E3E3E3;padding:3mm 3mm 3mm 3mm; width:100%; height:170%;
+        margin:0px 0px 0px 0px;}
+        #coeficienti {position:absolute; top:0; left:0; background:#E3E3E3;padding:25mm 0mm 0mm 3mm; width:93%; height:50%;
+        margin:0px 0px 0px 0px;}
+        #foaiep {position:absolute; top:0; left:0; background:#E3E3E3;padding:5mm 0mm 0mm 3mm; width:99%; height:99%;
+        margin:0px 0px 0px 0px; }
+        
+        /* pagina culoare marime pozitionate dreapta SUS*/ 
+        #modificRVS {position:absolute; top:0; left:0;background:#E9E9E9;padding:3mm 3mm 3mm 3mm; width:99%; height:99%;
+        margin:0px 0px 0px 0px;} 
+
+    /* pagina culoare marime pozitionate CENTRU 
+        #modific {position:absolute; top:0; left:0; background:#E0EEEE;padding:3mm 3mm 3mm 3mm; width:97%; height:80%;
+        margin:80px 0px 0px 10px;}
+        #pontaj {position:absolute; top:0; left:0; background:#E0EEEE;padding:10mm 0mm 0mm 3mm; width:93%; height:45%;
+        margin:80px 0px 0px 40px;}
+        #foaiep {position:absolute; top:0; left:0; background:#E0EEEE;padding:5mm 0mm 0mm 3mm; width:97%; height:58%;
+        margin:85px 0px 0px 10px; }*/
+
+    /* Butoane css */
+        .Home {color:#005700;font-style:italic;font-size:1.0em;}
+        .Next {color:#6C3600;font-style:italic;font-size:1.2em;}
+        .Back {color:#3C35B9;font-style:italic;font-size:1.2em;}
+        .Sterg {color:red;font-style:italic;font-size:1.0em;}
+        .Salve {color:red;font-weight:bold; font-size:1.2em;}
+		.Fcps {background-color:#AFE3AB;font-style:italic;font-size:1.1em;padding:1px 15px 1px 15px;
+		border-width:0.1mm; border-style:solid ;}
+        .FcpsX {color:#C31A45;font-weight:bold; font-size:18px;}
+        .Vizual {color:#000000;font-style:italic; font-size:1.0em;}
+    
+    /* Antet ldpscurt & fcpscurt */
+
+        .val1 .xf-value {width:25mm; border-style:solid;border-width:0.1mm;}
+        .val2 .xf-value {width:150mm; border-style:none;border-width:0.1mm;}                   
+        .val3 .xf-value {width:30mm; border-style:none;}
+		.nzo {width:10mm; border-style:solid;border-width:0.1px; background-color:#FFFFFF;color:red;padding:2px 7px 2px 7px;}
+		.nzop {width:5mm; border-style:solid;border-width:0.0px; background-color:#E3E3E3;color:#000000;padding:3px 7px 3px 7px;}
+		.nzoO {width:40mm; border-style:inset;border-width:0.1px; background-color:#FFFFFF;color:blue;padding:2px 5px 2px 5px;}
+		.nzoin .xforms-value {width:30px;height:5.5mm;font-size:16px;font-weight:bold;border-width:1.0px;border-style:inset;border-color:#800000;text-align:center;color:#000000; padding:1px 5px 1px 5px;}
+		.nzo1 {width:5mm; border-style:solid;border-width:0.0px; background-color:#F3F3F3;color:#000000;padding:3px 7px 3px 7px;}
+         
+    /* ldp talel incarcare date */           
+        .df1 .xf-value {width:49mm; border-style:solid;text-align:left;background:#F6FCFF;}
+        .df11 .xf-value {width:49mm; border-style:solid;text-align:right;background:#F6FCFF;font-weight:bold;padding:0px 0px 0px 0px;}
+        .df2 .xf-value {width:45mm; border-style:solid;text-align:left;background:#F6FCFF;}
+        .df3 .xf-value {width:49mm;font-weight:bold; border-style:solid;text-align:center;background:#FFFFFF;}
+        .dfm .xf-value {width:80mm; border-style:solid;text-align:left;background:#F6FCFF;}
+        
+        .valdf1 .xf-value {width:77mm;border-width:0.0mm; border-style:solid;text-align:right;background:#F6FCFF;} 
+        .valdf2 .xf-value {width:77mm;border-width:0.0mm; border-style:solid;text-align:right;background:#D7DCD6;}
+        .valdf3 .xf-value {width:30mm;border-width:0.0mm; border-style:solid;text-align:center;background:#E9FFC9;
+        padding:0mm 3mm 0mm 3mm;border-width:0.1mm;}
+        .Ttd1 { vertical-align:top; border-width:0.0mm; border-style: none solid solid none; width:80mm; font-size:14px;
+              text-align:right; padding:1px 10px 1px 0px;}
+        .Ttd2 {border-width:0.0mm; border-style: none solid solid none; width:50mm; font-size:14px;}
+        
+        .Ttd3 { vertical-align:top; border-width:0.0mm; border-style: none solid solid none; width:80mm; font-size:18px;
+              text-align:center;font-weight:bold;}
+		.Ttd4 {border-width:0.0mm; border-style: none solid solid none; width:85mm; font-size:14px;}
+         
+        .SobpD {color:#000000;background-color:#C3C3C3; }
+        .SobpD1 {color:#000000;font-style:italic;background-color:#C3C3C3; }      
+        .Fond {background-color:#C2CCD0;}
+        .Foond {background-color:#C2CCD0;}
+        .Ant  {font-size:14px;font-style:italic;}		
+        .Ant2  {font-size:14px;font-style:italic;color:red;}
+        
+   /* tabel ldpscurt  */
+      /*  .tabldp { vertical-align:top; border-width:0.5mm; border-style:none; width:305mm; }                                
+        .Ldtnr1 {vertical-align:top; width:6mm; font-size:14px; color:#ffffff; background-color:#61797B;}
+        .Ldtrm1s {vertical-align:top; width:10mm; font-size:14px;color:#ffffff;background-color:#61797B;}
+        .Ldtrm2s {vertical-align:top; width:55mm; font-size:14px;color:#ffffff;background-color:#61797B;} 
+        .Ldtrm3s {vertical-align:top; width:39mm; font-size:14px;color:#ffffff;background-color:#61797B;}
+        .Ldtrm4 {vertical-align:top; width:85mm; font-size:14px;color:#ffffff; background-color:#61797B;}
+        .Ldtrm5 {vertical-align:top; width:50mm; font-size:14px;color:#ffffff; background-color:#61797B;}
+        .Ldtrm6s {vertical-align:top; width:30mm; font-size:14px;color:#ffffff; background-color:#61797B;} 
+        .Ldtrm7 {vertical-align:top; width:20mm; font-size:14px;color:#ffffff; background-color:#61797B;}   */
+        .tabldp { vertical-align:top; border-width:0.0mm; border-style:solid; width:305mm; }                                
+        .Ldtnr1 {vertical-align:top; width:6mm;border-width:0.1mm;border-style: none solid solid none;font-size:14px; color:#00006B; background-color:#C2CCD0;}
+        .Ldtrm1s {vertical-align:top; width:28mm;border-width:0.1mm;border-style: none solid solid none; font-size:16px;color:#00006B;background-color:#D7D5D8;}
+        .Ldtrm2s {vertical-align:top; width:55mm;border-width:0.1mm;border-style: none solid solid none; font-size:16px;color:#00006B;background-color:#C2CCD0;} 
+        .Ldtrm3s {vertical-align:top; width:39mm;border-width:0.1mm;border-style: none solid solid none; font-size:16px;color:#00006B;background-color:#C2CCD0;}
+        .Ldtrm4 {vertical-align:top; width:85mm; font-size:16px;color:#00006B; background-color:#C2CCD0;}
+        .Ldtrm5 {vertical-align:top; width:50mm; font-size:16px;color:#00006B; background-color:#C2CCD0;}
+        .Ldtrm6s {vertical-align:top; width:30mm;border-width:0.1mm;border-style: none solid solid none;font-size:16px;color:#00006B; background-color:#C2CCD0;} 
+        .Ldtrm7 {vertical-align:top; width:20mm; font-size:16px;color:#00006B; background-color:#D7D5D8;}
+ 
+        .Ldnrx {vertical-align:top; border-width:0.0mm; border-style: solid; width:5mm; font-size:16px;font-weight:bold;}      
+        .Ldtnrc {vertical-align:top; border-width:0.0mm; border-style: solid solid solid solid; width:10mm; font-size:16px;text-align:center;font-weight:bold;}
+        .Ldtrmt {vertical-align:top; border-width:0.0mm; border-style:  none solid solid none; width:32mm; font-size:16px;font-weight:bold;}
+        .Ldtrmns {vertical-align:top; border-width:0.0mm; border-style: none solid solid none; width:56mm; font-size:16px;font-weight:bold;} 
+        .Ldtrmes {vertical-align:top; border-width:0.0mm; border-style: none solid solid none; width:40mm; font-size:16px;font-weight:bold;}
+        .Ldtrmf {vertical-align:top; border-width:0.0mm; border-style: none solid solid none; width:75mm; font-size:16px;font-weight:bold;}
+        .Ldtrmp {vertical-align:top; border-width:0.0mm; border-style: none solid solid none; width:50mm; font-size:16px;font-weight:bold;}
+        .Ldtrms {vertical-align:top; border-width:0.0mm; border-style: none solid solid none; width:38mm; font-size:16px;font-weight:bold;}
+        .Ldtrmks {vertical-align:top; border-width:0.0mm; border-style: none solid solid none; width:31mm; font-size:16px;text-align:right;font-weight:bold}
+        .Ldtrmg {vertical-align:top; border-width:0.0mm; border-style: none solid solid none; width:21mm; font-size:16px;font-weight:bold;} 
+            
+        .Ldvalx .xf-value {width:10mm; border-style:none;}              
+        .Ldvals .xf-value {width:55mm; border-style:none;}
+        .Ldval1s .xf-value {width:39mm; border-style:none;}
+        .Ldval2s .xf-value {width:13mm; border-style:none;}
+        .Ldval3s .xf-value {width:74mm; border-style:none;}
+        .Ldval4s .xf-value {width:30mm; border-style:none;}
+        .Ldval5s .xf-value {width:49mm; border-style:none;}
+           
+ /* tabel fcpscurt  */
+                                       
+        .Ttitl { font-size:16px; font-weight:bold;  border-width:0.0mm; border-style:solid solid solid solid;padding:8px 0px 8px 0px;
+                text-align:center;background-color:#C2CCD0;font-weight:bold;} 
+        .tab { vertical-align:top; border-width:0.0mm; border-style:none; width:330mm; }                
+        .Ttd4 { vertical-align:top; border-width:0.0mm; border-style: none solid solid none; width:80mm; font-size:16px;
+                text-align:center;background-color:#C2CCD0;}                
+        .Ttd5 { vertical-align:top; border-width:0.0mm; border-style: none solid solid none; width:80mm; font-size:16px;
+                background-color:#F6FCFF}
+        .Ttd6 { vertical-align:top; border-width:0.0mm; border-style: none solid solid none; width:80mm; font-size:16px;
+                text-align:right;background-color:#DCDCDC;padding:0px 10px 0px 0px;}
+        .Ttd7 { vertical-align:top; border-width:0.0mm; border-style: none solid solid none; width:80mm; font-size:16px;
+                text-align:center;background-color:#DCDCDC;}       
+        .Fnrc {vertical-align:top;border-width:0.1mm;border-style: none solid solid none; 
+                width:8mm; font-size:14px; color:#00006B;background-color:#C2CCD0;}
+        .Fpro {vertical-align:top;border-width:0.1mm;border-style: none solid solid none;
+                width:30mm; font-size:14px; color:#00006B;background-color:#C2CCD0;}
+        .Fprob {vertical-align:top;border-width:0.1mm;border-style: none solid solid none;
+                width:30mm; font-size:14px; color:#00006B;background-color:#D7D5D8;}                
+        .Fpro1 {vertical-align:top;border-width:0.1mm;border-style: none solid solid none;
+                width:45mm; font-size:16px; color:#00006B;background-color:#C2CCD0;}        
+        .Ftnrt {vertical-align:top; border-width:0.0mm; border-style: solid solid solid solid; width:15mm; font-size:16px;font-weight:bold;text-align:center;}
+		.Ftnmp {vertical-align:top; border-width:0.0mm; border-style: none solid solid none; width:50mm; font-size:16px;font-weight:bold;text-align:center;}  
+        .Ftnmf {vertical-align:top; border-width:0.0mm; border-style: none solid solid none; width:60mm; font-size:16px;font-weight:bold;}  
+        .Ftnrs {vertical-align:top; border-width:0.0mm; border-style: none solid solid none; width:38mm; font-size:16px;text-align:right;            
+                padding:0px 6px 0px 0px; font-weight:bold;}
+
+        .FvalxXX .xf-value {width:5mm; border-style:solid solid solid solid; background-color:#FFEEB8;}
+        .Fvaln .xf-value {width:5mm; border-style:solid solid solid solid;font-size:16px;}
+        .Fval .xf-value {width:49mm; border-style:none;}
+        .Fval1 .xf-value {width:26mm; border-style:none;text-align:center;}
+        .Fval2XX .xf-value {width:10mm; border-style:none;}
+        .Fval3XX .xf-value {width:65mm; border-style:none;}
+        .Fval4XX .xf-value {width:55mm; border-style:none;}
+        .Fval5XX .xf-value {width:14mm; border-style:none;}
+        
+		#ctpontaj {vertical-align:top; border-width:5px;border-style:outset; width:45.3mm; font-size:16px;
+				text-align:center; color:#000000;background-color:#C9C9C9;}
+        .Ztd1 {vertical-align:top; border-width:0.1mm; border-style: none solid solid none; width:45.3mm; font-size:16px;
+                text-align:center; color:#382EFF;background-color:#DCDCDC;}
+        .Ztd2 {vertical-align:top; border-width:0.1mm; border-style: none solid solid none; width:45.3mm; font-size:16px;
+                text-align:center; color:red;background-color:#DCDCDC;}
+		.Ztd2o {vertical-align:top; border-width:0.1mm; border-style: none solid solid none; width:45.3mm; font-size:16px;
+				text-align:center; color:red;background-color:#C9C9C9;}       
+        .Ztd6 {vertical-align:top;  border-style:none solid solid none ; width:80mm; font-weight:bold;
+                font-size:16px;text-align:center;color:#000000; background-color:#C9C9C9;}
+                
+                
+ /* concediu - medical */  
+ 
+ .conc {color:blue;font-weight:bold; font-size:1.0em;}
+ .conced {color:red;font-weight:bold; font-size:1.0em;}
+
+	
+	.inpd .xforms-value {width:100px; height:5.5mm; font-size:16px; border-width:0.0px; border-style: solid; border-color:#666;text-align:center;}
+	.inp1 .xforms-value {width:50px; height:5.5mm; font-size:16px; border-width:1.0px; border-style: solid; border-color:#666;text-align:right;}
+	.inp2 .xforms-value {width:310px; height:5.5mm; font-size:16px; border-width:1.0px; border-style: solid; border-color:#666;text-align:right;}
+	.inp3 .xforms-value {width:200px; height:5.5mm; font-size:16px; border-width:1.0px; border-style: solid; border-color:#666;text-align:right;}
+	.inp4 .xforms-value {width:280px; height:5.5mm; font-size:16px; border-width:1.0px; border-style: solid; border-color:#666;text-align:left;}
+	.inp5 .xforms-value {width:180px; height:5.5mm; font-size:16px; border-width:1.0px; border-style: solid; border-color:#666;text-align:left;}
+	
+	.inpVal .xforms-value {width:80px; height:5.5mm; font-size:16px; border-width:1.0px; border-style: solid; border-color:#666;text-align:right;}
+
+  .Tco1 {vertical-align:top; border-width:0.0mm; border-style: outset ; width:30mm; font-size:14px;text-align:center;background-color:#C2CCD0;}       
+  .Tco2 {vertical-align:top; border-width:0.0mm; border-style: solid none solid solid; width:28mm; font-size:12px;text-align:center;background-color:#C2CCD0;}
+  .Tco3 {vertical-align:top; border-width:0.0mm; border-style: none ; width:103mm; font-size:12px; text-align:right; background-color:#F5F6E1;}
+  .Tco4 {vertical-align:top; border-width:0.0mm; border-style: outset ; width:30mm; font-size:12px;text-align:center;background-color:#F5F6E1;}
+
+  .Tco5 {vertical-align:top; border-width:0.0mm; border-style: solid none solid solid; width:55mm; font-size:12px;text-align:center;background-color:#C2CCD0;}
+  .Tco6 {vertical-align:top; border-width:0.0mm; border-style: solid none solid solid; width:55mm; font-size:12px;text-align:center;background-color:#C2CCD0;color:#0E0609;}
+  .Tco7 {vertical-align:top; border-width:0.0mm; border-style: solid ; width:60mm; font-size:14px;text-align:center;font-weight:bold; background-color:#C2CCD0}
+  .Tco8 {vertical-align:top; border-width:0.0mm; border-style: solid none solid solid; width:35mm; font-size:12px;text-align:center;background-color:#C2CCD0;color:#0E0609;}
+  .Tco9 {vertical-align:top; border-width:0.0mm; border-style: solid; width:155px; font-size:12px;text-align:center;background-color:#C2CCD0}
+  .Tco10 {vertical-align:top; border-width:0.0mm; border-style: solid ; width:60mm; font-size:14px;text-align:left;font-weight:bold; background-color:#F5F6E1}
+
+ .Tco15 {vertical-align:top; border-width:0.0mm; border-style: solid none solid solid; width:55mm; font-size:12px;text-align:center;background-color:#F5F6E1;}
+  .Tco16 {vertical-align:top; border-width:0.0mm; border-style: solid none solid solid; width:55mm; font-size:12px;text-align:center;background-color:#F5F6E1;}
+  .Tco17 {vertical-align:top; border-width:0.0mm; border-style: solid ; width:60mm; font-size:14px;text-align:center;font-weight:bold; background-color:#F5F6E1}
+  .Tco18 {vertical-align:top; border-width:0.0mm; border-style: solid none solid solid; width:35mm; font-size:12px;text-align:center;background-color:#F5F6E1;}
+  .Tco19 {vertical-align:top; border-width:0.0mm; border-style: solid; width:155px; font-size:12px;text-align:center;background-color:#F5F6E1}
+
+
+  .Tcoval1 .xf-value {width:15mm; border-style:inset;text-align:center;background:#FCFFB4;}
+  .Tcoval2 .xf-value {width:45mm; border-style:none;text-align:center;}
+  .Tcoval3 .xf-value {width:45mm; border-style:none;text-align:center;}
+  .Tcoval4 .xf-value {width:59mm; border-style:none;text-align:center;}
+  .Tcoval5 .xf-value {width:34mm; border-style:none;text-align:center;}
+  .Tcoval6 .xf-value {width:45mm; border-style:none;text-align:center;}                                                           
+  .Tcoval7 .xf-value {width:45mm; border-style:none;text-align:center;font-size:22px;color:red;} 
+
+.t7r1c1  {border-width:0.0mm; border-style: solid solid solid solid; width:25mm;text-align:center; padding:2px}
+.t7r1c2  {border-width:0.0mm; border-style: none solid solid solid; width:150mm;text-align:left; padding:2px}
+
+.t7r1c3  {border-width:0.0mm; border-style: outset; width:150mm;text-align:left; padding:2px;background-color:#F5F6E1}
+.t7r1c4  {border-width:0.0mm; border-style: inset; width:200mm;text-align:right;font-size:12px;
+font-weight:bold;padding:0px 15px 0px 0px;background-color:#C2CCD0; }
+.t7r1c5  {border-width:0.0mm; border-style: outset; width:160mm;text-align:left; padding:2px }
+
+.t7r1c6  {border-width:0.0mm; border-style: none solid solid solid; width:70mm;text-align:center; padding:2px}
+.t7r2c4  {border-width:0.0mm; border-style: none solid solid solid; width:70mm;text-align:center; padding:2px}
+.t7r2c5  {border-width:0.0mm; border-style: none solid solid solid; width:60mm;text-align:left; padding:2px}
+
+	.T1val0 .xf-value {width:60mm; border-style:none;}
+	.T1val4 .xf-value {width:60mm; border-style:none;text-align:left;}
+ 
+                                                                
+ /* Butoane css3 */   
+ 
+#dark{
+	background-color:#C3C3C3;
+	border:0px solid #000;
+	padding:5px;
+	margin-top:25px;}
+	
+#light{
+	background-color:#FFF;
+	border:1px solid #dedede;
+	padding:10px;
+	margin-top:20px;}	
+	
+li{ 
+list-style:none;
+	padding-top:10px;
+	padding-bottom:10px;}	
+
+.button, .button:visited {
+	background: #222 url(overlay.png) repeat-x; 
+	display: inline-block; 
+	padding: 5px 10px 6px; 
+	color: #fff; 
+	text-decoration: none;
+	border-radius: 6px; 
+	box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer}
+ 
+	.button:hover	{ background-color: #111; color: #fff; }
+	.button:active	{ top: 1px; }
+	.small.button, .small.button:visited 	{ font-size: 12px}
+	.button, .button:visited,
+	.medium.button, .medium.button:visited 	{ font-size: 13px; font-weight: bold; line-height: 1; text-shadow: 0 -1px 1px rgba(0,0,0,0.25);}
+												  
+	.large.button, .large.button:visited 	{ font-size: 14px;  padding: 8px 14px 9px; }
+													  
+	.super.button, .super.button:visited 	{ font-size: 34px; padding: 8px 14px 9px; }
+	
+	.pink.button, .magenta.button:visited		{ background-color: #e22092; }
+	.pink.button:hover					{ background-color: #c81e82; }	
+	.green.button, .green.button:visited		{ background-color: #91bd09; }
+	.green.button:hover					{ background-color: #749a02; }	
+	.red.button, .red.button:visited			{ background-color: #e62727; }
+	.red.button:hover					{ background-color: #cf2525; }	
+	.orange.button, .orange.button:visited		{ background-color: #ff5c00; }
+	.orange.button:hover				{ background-color: #d45500; }	
+	.blue.button, .blue.button:visited			{ background-color: #2981e4; }
+	.blue.button:hover					{ background-color: #2F1EC0; }	
+	.yellow.button, .yellow.button:visited		{ background-color: #ffb515; }
+	.yellow.button:hover				{ background-color: #fc9200; }
+ 	.greenn.button, .greenn.button:visited		{ background-color: #008080; }
+	.greenn.button:hover				{ background-color:#009E9E; }  	
+	.white.button, .white.button:visited		{ background-color: #C000C0; }
+	.white.button:hover					{ background-color:#6E317A; }  
+	.back.button, .back.button:visited			{ background-color:#800000; }
+	.back.button:hover					{ background-color:#BF0000; }  

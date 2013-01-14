@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="../webgestext/xsltforms/xsltforms.xsl" type="text/xsl"?>
+<!--<?xml-stylesheet href="../xsltforms/xsltforms.xsl" type="text/xsl"?>-->
+<?xsltforms-options debug="yes"?>
+<html
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:xforms="http://www.w3.org/2002/xforms"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:ev="http://www.w3.org/2001/xml-events"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:javascript="http://www.w3.org/2002/xforms#inline">	
+	
+	<head>
+		<meta version="0.9.5" http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+		<title>WebSal</title>  
+		<link rel="stylesheet" href="index.css"/>
+
+		<style type="text/css">
+			@namespace xforms url("http://www.w3.org/2002/xforms");		 
+			/* The default field width for all inputs */		   		  
+		</style>
+		<script type="text/javascript">
+			function confirmS(){
+				var r=confirm(" Atenție !!! Asigurați-vă că datele curente au fost salvate. Altfel ele se vor pierde. \n Continuați ? ");
+				if (r==true){
+  					location="demo.xhtml";
+				}else{
+					//alert("You pressed Cancel!");
+				}
+			}
+		</script>
+		<script type="text/javascript" src="loadSal.js"/>				
+		
+		<xforms:model id="SAL" version="1.1">
+			<xforms:instance id="sal">
+				<data  xmlns="">
+					<!--<sal>Initial value </sal>-->
+				</data>
+			</xforms:instance>	
+			<xforms:instance id="salnou" resource="salsablon.xml" />
+			<xforms:instance id="sablon" resource="salsablon.xml"/>
+			<xforms:instance id="up" xmlns="">
+				<data>
+					<file id="pathf" filename="aaaa" mediatype="" size="" xsi:type="xsd:anyURI">_</file>
+				</data>
+			</xforms:instance>
+			
+			<xforms:submission id="ads" method="get" action="ads01.xhtml" />
+			<xforms:submission id="adsxqjs" method="get" resource="a4.xhtml" ref="instance('aleg')" />			
+			
+			<xforms:submission id="intrare" method="get" action="index01.xhtml" />
+			<xforms:submission id="lunanoua" method="get" action="adsln.xhtml" />
+			<xforms:submission id="firmanoua" method="get" action="adss.xhtml" />
+			<xforms:submission id="s01" method="put" action="sal.xml" ref="instance('salnou')" includenamespaceprefixes="no"/>
+			<!--<xforms:submission id="Salege" method="get" replace="instance" instance="sal" serialization="none" action="file://sp"/>
+			
+			<xforms:submission id="loadsalxml" method="get" serialization="none" replace="instance" targetref="sal" 		resource="javascript:'&lt;sal xmlns=&quot;&quot;&gt;Javascript value at '+(loadSalIndex())+'&lt;/sal&gt;'"/>
+			<xforms:send ev:event="xforms-model-construct-done" submission="loadsalxml"/>-->
+			<xforms:submission id="loadsalxml" method="get" serialization="none" replace="instance" targetref="sal" 		resource="javascript:loadSalIndex()"/>
+		</xforms:model>
+	</head>
+	
+
+	<!--<body bgcolor="#F3F3F3" width="100%" text="#080808" onload="loadSalIndex();">-->
+	<body bgcolor="#F3F3F3" width="100%" text="#080808" onload="loadSalIndex();">
+<xforms:output ref="instance('sal')/sal"/>
+	<br/><br/><br/>
+	<table border="0" class="dvtxt01" align="center" cellspacing="0" cellpadding="0" width="80%">
+	<tr>
+	<td>
+		<div style="width:100%;padding:2em;">
+			<div style="padding-left:5em;">
+				<span style="font-size:3em;color:#008080;padding:0.5em;">WebSal</span>
+				<span style="font-size:1.5em;color:#008080;padding:0.2em;">versiunea</span>
+				<span style="font-size:1.5em;color:#008080;padding:0.2em;">
+				<xforms:output ref="instance('sablon')/@vers"/></span>
+			</div>
+			<div class="divbuton" >
+				<div class="divprez" ><i>Evidență personal-salarii, generare declarația unică (D112), state de plată, note contabile... </i></div>
+			</div>
+			<div class="divbuton">
+				<xforms:trigger appearance="minimal">
+
+					<!--<xforms:label class="super button  red teal  green   orange   magenta ">-->
+					<xforms:label>
+						<div  class="divtrigger">
+							<div  style="font-size:1.4em;"><b><i>Lansare aplicație </i></b></div>
+							<div  style="font-size:1.0em;">Firma:  <xforms:output ref="instance('sal')/Date_firma/Firma" /></div>
+							<div  style="font-size:0.9em;">Luna: <xforms:output ref="instance('sal')/Luna" /><xforms:output ref="instance('sal')/An" /></div>
+							<div  style="font-size:1.0em;">Versiune date:  <xforms:output ref="instance('sal')/@vers" /></div>							
+						</div>
+					</xforms:label>
+					<!--<xforms:load resource="javascript:ChangePath()" ev:event="DOMActivate"/>					
+					<xforms:action if="not(instance('sal')/@primavscompat = instance('sablon')/@primavscompat)" level="modal" ev:event="DOMActivate">
+						<xforms:toggle case="updatealert" />
+					</xforms:action>
+					<xforms:action if="instance('sal')/@primavscompat = instance('sablon')/@primavscompat" ev:event="DOMActivate">-->
+						<!--<xforms:load resource="javascript:changeSrcAttribute()"/>	
+						<xforms:load resource="javascript:WritePath()"/>
+						<xforms:send submission="intrare"/>						
+					</xforms:action>	-->	
+					<xforms:action ev:event="DOMActivate">
+						<!--<xforms:send submission="intrare"/>	-->
+						<xforms:load resource="javascript:intrIndex01()"/>
+					</xforms:action>					
+				</xforms:trigger>
+			</div>
+			
+			<div class="divbuton" style="margin-top:0.5em;text-align:right;">
+						<!--<xforms:trigger appearance="minimal">
+							<xforms:label>
+								<div style="border-style:none;text-align:right;"><u>Alege alte date</u></div>
+							</xforms:label>
+							
+							<xforms:action ev:event="DOMActivate">
+								<xforms:toggle case="alege" />
+							</xforms:action>
+						</xforms:trigger>
+	  			<xforms:submit submission="Salege">
+					<xforms:label><i> Alege alte date</i></xforms:label>
+	     			 	<xforms:hint>Click pentru a alege </xforms:hint>
+	     			 	<xforms:refresh ev:event="DOMActivate" model="SAL"/>
+				</xforms:submit>	-->
+				Alege alte date: 
+				<!--<input type="file" id="fileupl" onchange="readFile('sal',this.id)"/>-->				
+				<input type="file" id="fileupl" onchange="readFile('sal',this.id)"/>
+				
+			</div>
+			<div class="divbuton">
+				<xforms:trigger appearance="minimal">
+					<xforms:label>
+						<div  class="divtrigger">Încarcă datele alese într-o lună nouă (aceeași firmă) </div>
+					</xforms:label>
+					<!--<xforms:action if="not(instance('sal')/@primavscompat = instance('sablon')/@primavscompat)" level="modal" ev:event="DOMActivate">
+						<xforms:toggle case="updatealert" />
+					</xforms:action>
+					<xforms:action if="instance('sal')/@primavscompat = instance('sablon')/@primavscompat" ev:event="DOMActivate">
+						<xforms:send submission="lunanoua"/>								
+					</xforms:action>-->
+					<xforms:action ev:event="DOMActivate">
+						<!--<xforms:send submission="intrare"/>	-->
+						<xforms:load resource="javascript:intrLN()"/>
+					</xforms:action>						
+				</xforms:trigger>
+			</div>
+			<div class="divbuton" style="width:100%;">
+
+					<xforms:trigger appearance="minimal">
+						<xforms:label>
+							<span  class="divtrigger" style="padding-right:3em;">Creere firmă nouă  </span>
+						
+						</xforms:label>
+						
+						<!--<xforms:action if="instance('sal')/@primavscompat = instance('sablon')/@primavscompat" ev:event="DOMActivate">-->
+						<xforms:action ev:event="DOMActivate">
+							<xforms:message level="modal"> Atenție !!! Asigurați-vă că datele curente au fost salvate. Altfel ele se vor pierde, fiind suprascrise cu cele nou introduse, în momentul salvării. </xforms:message>
+							<!--<xforms:send submission="firmanoua"/>-->
+							<xforms:load resource="javascript:location='adss.xhtml'"/>								
+						</xforms:action>
+					</xforms:trigger>
+				<span style="padding-left:10em;"></span>
+				<xforms:trigger appearance="minimal">
+					<xforms:label>
+						<span  class="divtrigger" style="padding-right:4.0em;">Demo </span>
+					</xforms:label>					
+					<xforms:action ev:event="DOMActivate"> 
+						<xforms:load resource="javascript:confirmS()"/>
+					</xforms:action> 
+				</xforms:trigger> 					
+			</div>
+			<div class="divbuton" >	
+				<xforms:trigger appearance="minimal"> 
+					<xforms:label class="medium button orange"> Salvează datele în fișier </xforms:label>					
+					<xforms:load resource="javascript:saveToFile('sal')" ev:event="DOMActivate" />
+				</xforms:trigger> 
+			</div>						
+			<div class="divbuton" >
+				<hr align="center" color="#C2CCD0" width="100%"/>
+				<a href="http://www.xdoc.webgest.ro/aplicatii/websal.zip">  Download   </a> | 
+				<a href="http://www.webgest.ro/">  webgest.ro  </a> | 
+				<a href="http://forum.webgest.ro/">  Forum </a>
+			</div>
+		
+		</div>
+
+		
+		<!--<xforms:switch id="swgenmmmm">
+			<xforms:case id="gen">
+				<div>
+					
+				</div>
+			</xforms:case>
+			
+			<xforms:case id="alege">
+				<div style="z-index:5;background-color:transparent;width:100%;">
+				<div class="divsupra">
+					<div>
+						Alege un fișier cu date (sal.xml)
+					</div><br/>
+					<div>
+						<span>
+			
+						</span>
+						<span>
+							<xforms:trigger appearance="minimal" id="intr">
+								<xforms:label  class="medium button teal">
+									<i> OK </i>
+								</xforms:label>  
+
+								<xforms:action ev:event="DOMActivate">
+									<xforms:load resource="javascript:changeSrcAttribute()"/>
+									<xforms:load resource="javascript:WritePath()"/>
+									<xforms:toggle case="gen" />
+								</xforms:action>
+							</xforms:trigger>     
+							</span>
+					</div>
+				</div>
+			</div>
+			</xforms:case>
+			<xforms:case id="updatealert">
+				<div width="100%">
+					<div class="divsupra">
+						<div>
+							Versiunea datelor alese este incompatibilă cu versiunea actuală a aplicației. Vreți să actualizați datele ?
+						</div><br/>
+						<div>
+							<span>
+								<xforms:trigger appearance="minimal" id="da">
+									<xforms:label  class="medium button teal">
+										<i> DA </i>
+									</xforms:label>  
+
+									<xforms:action ev:event="DOMActivate">
+										<xforms:insert context="instance('salnou')/NCsal/NC[@id='CoAtCAS']" nodeset="/Procent" origin="instance('sal')/Coeficienti/RetineriAngajat/CAS_Angajat/Procent"/>			
+										<xforms:insert context="instance('salnou')/NCsal/NC[@id='CoAtFS']" nodeset="/Procent" origin="instance('sal')/Coeficienti/RetineriAngajat/Somaj_Angajat/Procent"/>		
+										<xforms:insert context="instance('salnou')/NCsal/NC[@id='CoAtCASS']" nodeset="/Procent" origin="instance('sal')/Coeficienti/RetineriAngajat/CASS_Angajat/Procent"/>		
+										<xforms:insert context="instance('salnou')/NCsal/NC[@id='CoAtImpS']" nodeset="/Procent" origin="instance('sal')/Coeficienti/ObligatiiAngajator/IMP_Salarii/Procent"/>		
+										<xforms:insert context="instance('salnou')/NCsal/NC[@id='ChArCAS']" nodeset="/Procent" origin="instance('sal')/Coeficienti/ObligatiiAngajator/CAS_Angajator/Procent"/>		
+										<xforms:insert context="instance('salnou')/NCsal/NC[@id='ChArFA']" nodeset="/Procent" origin="instance('sal')/Coeficienti/ObligatiiAngajator/FAcc_Angajator/Procent"/>		
+										<xforms:insert context="instance('salnou')/NCsal/NC[@id='ChArFS']" nodeset="/Procent" origin="instance('sal')/Coeficienti/ObligatiiAngajator/Somaj_Angajator/Procent"/>		
+										<xforms:insert context="instance('salnou')/NCsal/NC[@id='ChArFG']" nodeset="/Procent" origin="instance('sal')/Coeficienti/ObligatiiAngajator/FGr_Angajator/Procent"/>		
+										<xforms:insert context="instance('salnou')/NCsal/NC[@id='ChArCASS']" nodeset="/Procent" origin="instance('sal')/Coeficienti/ObligatiiAngajator/CASS_Angajator/Procent"/>		
+										<xforms:insert context="instance('salnou')/NCsal/NC[@id='ChArCM']" nodeset="/Procent" origin="instance('sal')/Coeficienti/ObligatiiAngajator/CM_Angajator/Procent"/>
+										
+										<xforms:setvalue ref="instance('salnou')/@vers" value="instance('sablon')/@vers" />
+
+										<xforms:insert context="instance('salnou')" nodeset="." origin="instance('sablon')/@primavscompat"/>
+										
+
+										<xforms:toggle case="update" />
+									</xforms:action>	
+								</xforms:trigger>    
+							</span>
+							<span>	
+								<xforms:trigger appearance="minimal" id="nu">
+									<xforms:label  class="medium button teal">
+										<i> NU </i>
+									</xforms:label>  
+								
+									<xforms:action ev:event="DOMActivate">
+										<xforms:toggle case="gen" />
+									</xforms:action>	
+								</xforms:trigger>     
+							</span>
+						</div>
+					</div>
+				</div>
+			</xforms:case>
+			<xforms:case id="update">
+				<div width="100%">
+					<div class="divsupra">
+						<div>
+							Datele au fost actualizate cu succes, în locația:
+						</div>
+						<div>
+							<xforms:output ref="instance('up')/file"/>
+						</div>
+						<div>
+							<b> Versiunea veche: <xforms:output ref="instance('sal')/@primavscompat"/></b>
+							<br/>
+							<b> Versiunea nouă: <xforms:output ref="instance('sablon')/@primavscompat"/></b>
+							<br/>							
+						</div>
+						<div>	
+							<span>	
+								<xforms:trigger appearance="minimal" id="u-index01">
+									<xforms:label  class="medium button teal">
+										<i> OK </i>
+									</xforms:label>  
+									
+									<xforms:action ev:event="DOMActivate">
+									
+										<xforms:send submission="intrare"/>			
+									</xforms:action>	
+								</xforms:trigger>     
+							</span>
+						</div>
+					</div>
+				</div>
+			</xforms:case>
+		</xforms:switch>	-->	
+	</td>		
+	</tr>	
+	</table>
+						<!--<div>	
+							<span>	
+								<xforms:trigger appearance="minimal">
+									<xforms:label  class="medium button teal">
+										<i> loadsal </i>
+									</xforms:label>  
+									
+									<xforms:action ev:event="DOMActivate">
+									
+										<xforms:send submission="loadsalxml"/>			
+									</xforms:action>	
+								</xforms:trigger>     
+							</span>
+						</div>	-->	
+	</body>
+</html>
+
